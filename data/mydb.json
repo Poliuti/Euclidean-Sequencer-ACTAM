@@ -1,0 +1,188 @@
+{
+    "custom": {
+      "euclideanPatternList": [
+      {
+        "numSteps":7,
+        "numPulses":3, 
+        "numRotations":0,
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 1,
+        "url": "ciaao",
+        "state":"on"
+      },
+      {
+        "numSteps":8,
+        "numPulses":1, 
+        "numRotations":0,
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 2,
+        "url": "ciaao",
+        "state":"on"
+      },
+      {
+        "numSteps":10,
+        "numPulses":4, 
+        "numRotations":0,
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 3,
+        "url": "ciaao",
+        "state":"on"
+      },
+      {
+        "numSteps":5,
+        "numPulses":2, 
+        "numRotations":0,
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 4,
+        "url": "ciaao",
+        "state":"on"
+      }
+    ]},
+  
+    "africa": {
+      "euclideanPatternList": [
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 1,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 2,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 3,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 4,
+        "url": "ciaao"
+      }
+    ]},
+  
+    "southamerica": {
+      "euclideanPatternList": [
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 1,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 2,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 3,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 4,
+        "url": "ciaao"
+      }
+    ]},
+  
+    "middleeast": {
+      "euclideanPatternList": [
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 1,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 2,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 3,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 4,
+        "url": "ciaao"
+      }
+    ]},
+  
+    "india": {
+      "euclideanPatternList": [
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 1,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 2,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 3,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 4,
+        "url": "ciaao"
+      }
+    ]},
+  
+    "restoftheworld": {
+      "euclideanPatternList": [
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 1,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 2,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 3,
+        "url": "ciaao"
+      },
+      {
+        "euclideanArray": [1,0,0,1,0,0],
+        "length": 6,
+        "id": 4,
+        "url": "ciaao"
+      }
+    ]}
+  
+    
+  
+  }
