@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar">
       <h1>The Euclidean Sequencer</h1>
       <div className="links">
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/about" style={{ 
           color: 'white', 
           backgroundColor: '#f1356d',

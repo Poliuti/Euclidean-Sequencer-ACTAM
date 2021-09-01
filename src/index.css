@@ -145,5 +145,21 @@
   cursor: pointer;
 }
 
+.diocan {
+  width: 10%;
+}
+
+
+.circle-container {
+  position: relative;
+  top: 5rem;
+}
+
+.pattern-controls {
+  position: relative;
+  top: 2rem;
+}
+
+
 
 

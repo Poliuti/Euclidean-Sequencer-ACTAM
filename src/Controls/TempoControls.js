@@ -1,19 +1,23 @@
 import BpmSlider from "./BpmSlider"
-import TempoModifier from "./TempoModifier"
+
 import computeTatum from "./../computeTatum"
 import React, { useEffect } from "react";
+import { TabPane } from "react-bootstrap";
+import * as Tone from "tone";
+import SwingSlider from "../SwingSlider";
+import SwingSubdivisionSlider from "../SwingSubdivisionSlider";
 
 
 const TempoControls = ({tempo, setTempo}) => {
-useEffect(() => {
-    setTempo({...tempo, tatum: computeTatum(tempo.bpm)})
-}, [tempo.bpm])
+
 
 
 
   return <div className="tempo-controls">
-      <BpmSlider tempo={tempo} setTempo={setTempo}/>
-      <TempoModifier tempo={tempo} setTempo={setTempo}/>
+      <BpmSlider tempo={tempo} setTempo={setTempo} />
+      <SwingSlider swingPercentage={Tone.Transport.swing} transport={Tone.Transport}/>
+      <SwingSubdivisionSlider transport = {Tone.Transport}/>
+      
       <hr />
   </div>;
 };

@@ -1,83 +1,153 @@
-import React, { useContext, useEffect, useState } from "react";
-import { CustomContext } from "./Contexts/Custom/CustomContext";
+import React, { useContext, useEffect } from "react";
 import TempoControls from "./Controls/TempoControls";
 import PatternControlsList from "./Controls/PatternControlsList";
 import * as Tone from "tone";
-import PlayPauseButton from "./Controls/PlayPauseButton";
+import {Transport } from "tone";
+import Dropdown from "react-dropdown";
+import "/Users/Progetti Programmazione/Visual Studio Code/React/actamproject/node_modules/react-dropdown/style.css";
+import MacroControls from "./Controls/MacroControls";
+import creaSequenceList from "./CreaSequenceList";
+import colora from "./Controls/colora";
 
-const EuclideanSequencer = () => {
+
+const EuclideanSequencer = ({ context }) => {
+  
   const {
     linesList,
     setLinesList,
     tempo,
     setTempo,
-    customDefault,
-    playbackState,
-    setPlaybackState,
-    sequenza,
-    synth
-  } = useContext(CustomContext);
+    envDefault,
+    synth,
+    sequenceList,
+    channelList,
+    initialPositionArray,
+    setInitialPositionArray,
+    dummy,
+    setDummy,
+    actualNoteArray,
+    setActualNoteArray
+    
+  } = useContext(context);
 
-useEffect(() => {
-  sequenza.dispose();
-  Tone.Transport.stop();
-  sequenza.set({
-	events: linesList[0].euclideanArray,
-  });
-}, [linesList[0].euclideanArray])
+  console.log("Euclidean Sequencer re-rendered");
+  console.log(initialPositionArray);
 
-console.log("Sequenza in EuclideanSequencer: ")
- console.log(sequenza._eventsArray);
+  useEffect(() => {
+    console.log("UseEffect 1");
+    
+    
+    sequenceList.forEach((seq, index) => {
+      seq.start("0:0:0");}
+    )
 
-const handlePlayClick = () => {
-  sequenza.start()
-  console.log(sequenza._eventsArray);
-  console.log(sequenza);
-  
-  Tone.Transport.start();
+    linesList.forEach((line, ind)=>{
+      colora(linesList[ind].euclideanArray, ind);
+    
+    })
 
-  
-}
+    Transport.scheduleOnce(() => {
+      linesList.forEach((line, ind)=>{
+      colora(linesList[ind].euclideanArray, ind);
+    
+    })
+    }, "+0.5");
+              
 
-const handleStopClick = () => {
-  
+            
+    
+    
 
-  Tone.Transport.stop();
+    /* Tone.Transport.start("+1"); */
 
-}
+    return () => {
+      console.log("UseEffect Return");
+      sequenceList.forEach((seq, index) => {
+        seq.stop();
+        seq.clear();
+      });
+      
+    };
+  }, [sequenceList[0], sequenceList[1], sequenceList[2], sequenceList[3]]);
+
+  console.log("Nel corpo di Euclidean Sequencer : ");
+  /* console.log(sequenceList); */
+
+  const handleStopClick = () => {
+    Tone.Transport.stop();
+    
+    sequenceList.forEach((seq, index) => {
+      //DA RIMETTERE!!
+
+      seq.stop();
+      
+      
+    });
+
+    let dumDummy = dummy + 1;
+    setDummy(dumDummy);
+
+    /* setInitialPositionArray([0,0,0,0]); */
+    
+
+    linesList.forEach((line, ind)=>{
+      colora(linesList[ind].euclideanArray, ind);
+    
+    })
+    console.log(linesList);
+    
+
+  };
+
+  const handleContextResumeClick = () => {
+    console.log(Tone.context.state);
+
+    if (Tone.context.state === "suspended") {
+      Tone.context.resume();
+    } else {
+      sequenceList.forEach((seq, index) => {
+        //DA RIMETTERE!!
+        seq.start("0:0:0");
+      });
 
 
-
-const handleContextResumeClick = () => {
-Tone.context.resume();
-  console.log("resumed");
-  //Tone.start();
-
-}
-
-const handlePositionClick = () => {
-  console.log(Tone.Transport.position);
-
-}
+      Tone.Transport.start("+0.1");
+      
+    }
+  };
 
   return (
     <div className="euclidean-sequencer">
-      {/* {<PlayPauseButton
-        playbackState={playbackState}
-        setPlaybackState={setPlaybackState}
-        linesList={linesList}
-        sequenza={sequenza}
-      />} */}
       <TempoControls tempo={tempo} setTempo={setTempo} />
+      <MacroControls />
       <PatternControlsList
         linesList={linesList}
         setLinesList={setLinesList}
-        customDefault={customDefault}
+        envDefault={envDefault}
+        sequenceList={sequenceList}
+        synth={synth}
+        tempo={tempo}
+        setTempo={setTempo}
+        channelList={channelList}
+        context={context}
+        setInitialPositionArray ={setInitialPositionArray}
+        actualNoteArray={actualNoteArray}
+        setActualNoteArray={setActualNoteArray}
       />
-      <button onClick={handlePlayClick} className="play">Play Diocan</button>
-      <button onClick={handleStopClick} className="stop">Stop Diocan</button>
-      <button onClick={handleContextResumeClick} className="start-context">Start Context</button>
-      <button onClick={handlePositionClick} className="position">Transport Position</button>
+
+      <Dropdown
+        options={["A", "B", "C"]}
+        onChange={console.log("changed")}
+        value={"A"}
+        placeholder="Select an option"
+      />
+
+      <button onClick={handleStopClick} className="stop">
+        Stop
+      </button>
+      <button onClick={handleContextResumeClick} className="start-context">
+        Play
+      </button>
     </div>
   );
 };

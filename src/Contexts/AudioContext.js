@@ -6,6 +6,8 @@ import * as Tone from "tone";
 export const AudioContext = createContext();
 
 
+// NOT USED FOR NOW
+
 const AudioContextProvider = (props) => {
 
 let synth = new Tone.Synth().toDestination();

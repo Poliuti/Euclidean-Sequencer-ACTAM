@@ -1,8 +1,16 @@
 import { useEffect, useRef } from "react";
+import { Transport } from "tone";
 
-const RotateSlider = ({ defaultValue, value, max, setNumRotations }) => {
+const RotateSlider = ({ defaultValue, value, max, setNumRotations,/*  setInitialPositionArray */}) => {
   const rotateSliderRef = useRef(null);
 
+  const handleChange = (sliderValue) => {
+    setNumRotations(sliderValue);
+    /* setInitialPositionArray([0,0,0,0]); */
+    Transport.stop();
+    /* Transport.start("+0.02") */
+
+  }
 
   return (
     <div className="Rotate-slider">
@@ -13,10 +21,14 @@ const RotateSlider = ({ defaultValue, value, max, setNumRotations }) => {
         min="0"
         defaultValue={defaultValue}
         max={max}
-        onChange={(e) => setNumRotations(e.target.valueAsNumber)}
-        id="ps"
+        onKeyDown={() => Transport.stop()}
+        onKeyUp={() => Transport.start()}
+        onPointerDown={() => Transport.stop()}
+        onPointerUp={() => Transport.start()}
+        onChange={(e) => handleChange(e.target.valueAsNumber)}
+        id="rs"
       />
-      <label htmlFor="ps">Rotations: {value}</label>
+      <label htmlFor="rs">Rotations: {value}</label>
     </div>
   );
 };
