@@ -3,7 +3,6 @@ import PulseSlider from "./PulseSlider";
 import RotateSlider from "./RotateSlider";
 import StepSlider from "./StepSlider";
 import "./patternControls.css";
-import "./test_style.css"
 import bjorklund from "./../bjorklund";
 import TempoModifier from "./TempoModifier";
 import colora from "./colora";
