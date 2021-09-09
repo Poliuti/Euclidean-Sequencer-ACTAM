@@ -29,7 +29,7 @@ const StepSlider = ({
   };
 
   return (
-    <div className="step-slider">
+    <div className="slider-base step-slider">
       <input
         ref={stepSliderRef}
         type="range"

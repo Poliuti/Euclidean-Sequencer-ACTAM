@@ -3,7 +3,7 @@ import { useState } from "react";
 const SwingSubdivisionSlider = ({ transport }) => {
   const [swingSubd, setSwingSubd] = useState("8");
   return (
-    <div className="swing-subd-slider">
+    <div className="slider-base swing-subd-slider">
       <input
         type="range"
         //defaultValue= {`1/${transport.swingSubdivision}`}

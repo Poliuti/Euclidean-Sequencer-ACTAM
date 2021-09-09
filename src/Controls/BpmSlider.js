@@ -6,7 +6,7 @@ const BpmSlider = ({tempo, setTempo}) => {
 
   const [tempoo, setTempoo] = useState(120);
   return (
-    <div className="bpm-slider">
+    <div className="slider-base bpm-slider">
       <input
         type="range"
         min="30"

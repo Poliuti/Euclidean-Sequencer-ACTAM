@@ -6,7 +6,7 @@ const MacroVolume = () => {
 
     const [volume, setVolume] = useState(parseInt(Tone.Destination.volume.value));
     
-    return ( <div className="macro-volume">
+    return ( <div className="slider-base macro-volume">
         <input
         type="range"
         min="-70"

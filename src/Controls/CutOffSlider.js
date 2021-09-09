@@ -7,7 +7,7 @@ const CutOffSlider = () => {
 
     const [cutoff, setCutoff] = useState(20000);
 
-    return ( <div className="cutoff-slider">
+    return ( <div className="slider-base cutoff-slider">
         <input
         type="range"
         min="0"

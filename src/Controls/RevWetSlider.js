@@ -7,7 +7,7 @@ const RevWetSlider = ({
     const [wet, setWet] = useState(reverb.wet.value);
 
   
-    return ( <div className="rev-wet-slider">
+    return ( <div className="slider-base rev-wet-slider">
         <input
         type="range"
         min="0"
