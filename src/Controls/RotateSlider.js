@@ -13,7 +13,7 @@ const RotateSlider = ({ defaultValue, value, max, setNumRotations,/*  setInitial
   }
 
   return (
-    <div className="Rotate-slider">
+    <div className="slider-base Rotate-slider">
       <input
         ref={rotateSliderRef}
         required

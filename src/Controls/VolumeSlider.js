@@ -8,7 +8,7 @@ const VolumeSlider = ({
     console.log(channel);
     
   return (
-    <div className="volume-slider">
+    <div className="slider-base volume-slider">
       <input
         type="range"
         min="-100"
