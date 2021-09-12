@@ -3,7 +3,7 @@ import {samplerList, channelList} from "../sampler";
 
 import creaSequenceList from "../CreaSequenceList";
 
-import initializeClickState from "../initializeClickedGrid";
+import initializePatternArray from "../initializePatternArray";
 import defaultLines from "../defaultLines";
 
 
@@ -50,19 +50,17 @@ const EnvironmentContextProvider = (props) => { // this context provides common 
    //ogni render del context viene azzerata la posizione del tick
   
   
-  let noteArray = ["A1", "C2", "E2", "G2"]; // info sulle note che suona ogni sequenza (mi serve quando creo la sequenza)
+  let noteArray = ["A1", "A1", "A1", "A1"]; // info sulle note che suona ogni sequenza (mi serve quando creo la sequenza)
 
   
   
-  const [selectedPattern, setSelectedPattern] = useState(initializeClickState(envDefaultInfo[0][0], numInstr));
+  const [selectedPattern, setSelectedPattern] = useState(initializePatternArray(envDefaultInfo[0][0], numInstr));
 
 
   const [linesList, setLinesList] = useState(envDefaultInfo[1]); // memorizzo la lista di linee euclidiane in uno stato
   const [tempo, setTempo] = useState(tempoInfo); // memorizzo tempo information in uno stato
 
-  
-  console.log("linesList");
-  console.log(linesList);
+
 
   const [dummy, setDummy] = useState(0);
   const [actualNoteArray, setActualNoteArray] = useState(noteArray);

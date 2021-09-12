@@ -1,4 +1,4 @@
-const initializeClickState = (chosenPattern, numSamples) => {
+const initializePatternArray = (chosenPattern, numSamples) => {
 
     let clickState = [];
     const euclideanArray = chosenPattern.euclideanArray;
@@ -10,4 +10,4 @@ const initializeClickState = (chosenPattern, numSamples) => {
   
 }
 
-export default initializeClickState
+export default initializePatternArray

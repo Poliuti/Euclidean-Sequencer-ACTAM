@@ -7,28 +7,13 @@ import bjorklund from "./../bjorklund";
 import TempoModifier from "./TempoModifier";
 import colora from "./colora";
 
-
-const PatternControls = ({
-  idx,
-  linesList,
-  setLinesList,
-  setTempo,
-  tempo
-}) => {
+const PatternControls = ({ idx, linesList, setLinesList, setTempo, tempo }) => {
   const [numSteps, setNumSteps] = useState(linesList[idx].numSteps);
   const [numPulses, setNumPulses] = useState(linesList[idx].numPulses);
   const [numRotations, setNumRotations] = useState(linesList[idx].numRotations);
 
 
-  console.log("Tempo Inside PatternControls: ");
-  console.log(tempo);
-
-  console.log("PatternControls " + idx + " ha re rendered ");
-
-
   useEffect(() => {
-    
-    
     let tempList = [...linesList];
     tempList[idx] = {
       numSteps: numSteps,
@@ -36,18 +21,11 @@ const PatternControls = ({
       numRotations: numRotations,
       euclideanArray: bjorklund(numSteps, numPulses, numRotations),
       id: idx,
-      
     };
 
     setLinesList(tempList);
     colora(tempList[idx].euclideanArray, idx);
-    
-    
-
   }, [numSteps, numPulses, numRotations]);
-
-
-  
 
   return (
     <div className="pattern-controls" id={idx}>
@@ -59,14 +37,12 @@ const PatternControls = ({
         setNumPulses={setNumPulses}
         setNumRotations={setNumRotations}
         numRotations={numRotations}
-  
       />
       <PulseSlider
         defaultValue={numPulses}
         value={linesList[idx].numPulses}
         max={numSteps}
         setNumPulses={setNumPulses}
-        
       />
       <RotateSlider
         defaultValue={numRotations}
@@ -74,10 +50,7 @@ const PatternControls = ({
         max={numSteps - 1}
         setNumRotations={setNumRotations}
       />
-      <TempoModifier tempo={tempo} setTempo={setTempo} index={idx}/>
-
-      
-      
+      <TempoModifier tempo={tempo} setTempo={setTempo} index={idx} />
 
       <div>
         <ul style={{ display: "flex", listStyleType: "none" }}>
@@ -86,12 +59,8 @@ const PatternControls = ({
           ))}
         </ul>
       </div>
-
-      
     </div>
   );
 };
 
 export default PatternControls;
-
-

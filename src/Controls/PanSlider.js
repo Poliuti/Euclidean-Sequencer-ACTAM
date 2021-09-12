@@ -3,10 +3,10 @@ import { useState } from "react";
 const PanSlider = ({ channel }) => {
   const [pan, setPan] = useState(Math.round(channel.pan.value * 100) / 100);
 
-  const onPanChange =(panValue) => {
-          channel.pan.value = panValue;
-          setPan(panValue);
-        }
+  const onPanChange = (panValue) => {
+    channel.pan.value = panValue;
+    setPan(panValue);
+  };
 
   return (
     <div className="pan-slider">

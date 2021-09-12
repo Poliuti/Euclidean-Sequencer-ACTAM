@@ -1,19 +1,16 @@
 import { useState } from "react";
-import { Transport } from "tone";
+
 
 const MuteButton = ({ channel }) => {
   const [muteState, setMuteState] = useState("Mute");
 
   const handleMute = (stringa, channel) => {
-    
     if (stringa === "Mute") {
       channel.mute = true;
       setMuteState("UnMute");
-      
     } else {
       channel.mute = false;
       setMuteState("Mute");
-      
     }
   };
 

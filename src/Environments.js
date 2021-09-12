@@ -7,23 +7,18 @@ import India from "./Environments/India";
 import RestOfWorld from "./Environments/RestOfWorld";
 import SideBar from "./SideBar";
 
-
 const Environments = () => {
   return (
     <Router>
       <div className="environments">
-      <SideBar />
-      
-      
-        
-        <Switch>
+        <SideBar />
 
-        
+        <Switch>
           <Route exact path="/environments/custom">
             <Custom />
           </Route>
 
-          <Route exact path="/environments/africa" >
+          <Route exact path="/environments/africa">
             <Africa />
           </Route>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SwingSlider = ({transport }) => {
+const SwingSlider = ({ transport }) => {
   const [swing, setSwing] = useState(0);
   return (
     <div className="swing-slider">

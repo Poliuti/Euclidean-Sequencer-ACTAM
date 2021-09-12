@@ -1,4 +1,4 @@
-import {activeColor, currentColor, nonActiveColor, tempNonActiveColor} from "./../colori"
+import {activeColor, nonActiveColor, tempNonActiveColor} from "./../colori"
 
 const colora = (euclideanArray, index) => {
 

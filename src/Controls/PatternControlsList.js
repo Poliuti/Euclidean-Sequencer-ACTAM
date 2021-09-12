@@ -2,7 +2,6 @@ import PatternControls from "./PatternControls";
 import CircleContainer from "./../CircleContainer";
 import ChannelControls from "./ChannelControls";
 
-
 const PatternControlsList = ({
   linesList,
   setLinesList,
@@ -10,39 +9,29 @@ const PatternControlsList = ({
   setTempo,
   tempo,
   channelList,
-  context,
-
-  mode
+  mode,
 }) => {
-
   const elementoBase = {
-    height: "17rem"
-  }
-  
-  console.log("tempo in patternControlList : ");
-  console.log(tempo);
+    height: "17rem",
+  };
+
   return (
     <div className="pattern-controls-list">
-      {linesList.map((line, id) => (//  
+      {linesList.map((line, id) => (
         <div key={id} className="elemento-base" style={elementoBase}>
-          <CircleContainer
-            lineIndex={id}
-            tempo={tempo}
-            setTempo={setTempo}
-          />
+          <CircleContainer lineIndex={id} tempo={tempo} setTempo={setTempo} />
 
-          
-          {mode && <PatternControls
-            
-            setTempo={setTempo}
-            tempo={tempo}
-            idx={id}
-            line={line}
-            setLinesList={setLinesList}
-            linesList={linesList}
-            envDefault={envDefault}
-          
-          />}
+          {mode && (
+            <PatternControls
+              setTempo={setTempo}
+              tempo={tempo}
+              idx={id}
+              line={line}
+              setLinesList={setLinesList}
+              linesList={linesList}
+              envDefault={envDefault}
+            />
+          )}
           <ChannelControls channel={channelList[id]} />
         </div>
       ))}

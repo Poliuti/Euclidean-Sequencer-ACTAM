@@ -1,8 +1,6 @@
 import SideBar from "./SideBar";
 
-
 const Home = () => {
-  
   return (
     <div className="Home">
       <SideBar />

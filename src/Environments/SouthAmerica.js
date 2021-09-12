@@ -1,12 +1,12 @@
-import EnvironmentContextProvider, { EnvironmentContext } from "../Contexts/EnvironmentContext";
+import EnvironmentContextProvider from "../Contexts/EnvironmentContext";
 import EuclideanSequencer from "../EuclideanSequencer";
 
 const SouthAmerica = () => {
   return (
     <div className="south-america">
-    <h1>South America</h1>
+      <h1>South America</h1>
       <EnvironmentContextProvider name={"southAmerica"} num={2}>
-        <EuclideanSequencer  />
+        <EuclideanSequencer />
       </EnvironmentContextProvider>
     </div>
   );

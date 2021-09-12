@@ -14,7 +14,7 @@ const samplesPools = [
 
   customSamples,
   africaSamples,
-  
+
   middleEastSamples,
   southAmericaSamples,
   indiaSamples,
@@ -24,8 +24,22 @@ const samplesPools = [
 
 
 
-let samplerList = [[], [], [], [], [], []];
-let channelList = [[], [], [], [], [], []];
+let samplerList = [
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+];
+let channelList = [
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+];
 
 for (let j = 0; j < samplesPools.length; j++) {
   for (let i = 0; i < samplesPools[j].length; i++) {

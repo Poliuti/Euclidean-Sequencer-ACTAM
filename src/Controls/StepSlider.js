@@ -1,6 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Transport } from "tone";
-
 
 const StepSlider = ({
   defaultValue,
@@ -10,7 +9,6 @@ const StepSlider = ({
   numPulses,
   setNumRotations,
   numRotations,
-  
 }) => {
   const stepSliderRef = useRef(null);
 
@@ -23,9 +21,7 @@ const StepSlider = ({
       setNumRotations(num - 1);
     }
 
-    
     Transport.stop();
-    
   };
 
   return (

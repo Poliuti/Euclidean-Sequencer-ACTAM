@@ -3,15 +3,14 @@ import RevDecaySlider from "./RevDecaySlider";
 import myReverb from "./reverb";
 import RevWetSlider from "./RevWetSlider";
 
-
 const ReverbControls = () => {
-
-  
-  return <div className="reverb-controls">
-      <RevDecaySlider reverb  = {myReverb} />
-      <RevWetSlider reverb  = {myReverb}/>
+  return (
+    <div className="reverb-controls">
+      <RevDecaySlider reverb={myReverb} />
+      <RevWetSlider reverb={myReverb} />
       <CutOffSlider />
-  </div>;
+    </div>
+  );
 };
 
 export default ReverbControls;

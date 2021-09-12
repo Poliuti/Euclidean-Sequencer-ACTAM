@@ -1,10 +1,7 @@
 import * as Tone from "tone";
-import computeTatum from "../computeTatum";
 
 const TempoModifier = ({ tempo, setTempo, index }) => {
-  console.log("Tempo inside Tempo Modifier : ");
-
-  console.log(tempo);
+  
 
   const handleDouble = () => {
     let tempoUpdate = { ...tempo };

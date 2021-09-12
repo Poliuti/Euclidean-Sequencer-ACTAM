@@ -16,7 +16,9 @@ const SwingSubdivisionSlider = ({ transport }) => {
           setSwingSubd(parseInt(e.target.valueAsNumber));
         }}
       />
-      <label htmlFor="swing-subd-slid">Swing Subdivision: {`1/${swingSubd}`} </label>
+      <label htmlFor="swing-subd-slid">
+        Swing Subdivision: {`1/${swingSubd}`}{" "}
+      </label>
     </div>
   );
 };

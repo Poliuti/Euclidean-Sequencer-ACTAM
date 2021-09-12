@@ -1,47 +1,25 @@
-import {activeColor, nonActiveColor, tempNonActiveColor} from "./colori";
+import { activeColor, nonActiveColor, tempNonActiveColor } from "./colori";
 
-
-
-
-
-
-
-const Dot = ({ isActive, cellIdx, radius, angle, lineIndex}) => {
-
-
+const Dot = ({ isActive, cellIdx, radius, angle, lineIndex }) => {
   angle = angle - 90;
   let color;
   isActive ? (color = activeColor[lineIndex]) : (color = nonActiveColor);
 
+  const dotClassName = `dot`;
 
-  const dotClassName =  `dot`;
-
-  const dotId  = `${lineIndex}${cellIdx}`;
-
-
+  const dotId = `${lineIndex}${cellIdx}`;
 
   const handleClick = (elem) => {
     let actualColor = elem.style.backgroundColor;
-    
-   
-    console.log(actualColor);
+
     if (actualColor === activeColor[lineIndex]) {
       elem.style.backgroundColor = tempNonActiveColor[lineIndex];
       elem.classList.add("tempInactive");
-       
-    }
-
-    else if (actualColor === tempNonActiveColor[lineIndex]) {elem.style.backgroundColor = activeColor[lineIndex];
+    } else if (actualColor === tempNonActiveColor[lineIndex]) {
+      elem.style.backgroundColor = activeColor[lineIndex];
       elem.classList.remove("tempInactive");
-       }
-
-       
-
-       
-   
-  } 
-
-  
+    }
+  };
 
   const active = {
     position: "absolute",
@@ -55,16 +33,12 @@ const Dot = ({ isActive, cellIdx, radius, angle, lineIndex}) => {
     transform: `rotate(${angle}deg) translate(${radius}px)`,
   };
 
-
-
   return (
     <div
       style={active}
-      className= {dotClassName}
-      id = {dotId}
-      onClick = {
-        (e) => handleClick(e.currentTarget)
-      }
+      className={dotClassName}
+      id={dotId}
+      onClick={(e) => handleClick(e.currentTarget)}
     ></div>
   );
 };

@@ -3,7 +3,10 @@ import {
   Transport
 } from "tone";
 
-import {activeColor, currentColor, nonActiveColor, tempNonActiveColor} from "./colori";
+import {
+  activeColor,
+  currentColor
+} from "./colori";
 
 
 const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone.js), ritorna la lista aggiornata e la lista del tick position
@@ -23,14 +26,13 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
 
   {
-    console.log("creaSequenceList chiamata");
-    console.log(initialPositionArray);
+
     let currentPosArr = initialPositionArray;
 
 
-/*     patternList.forEach((line, id) =>{
-      colora(line, id);
-    }); */
+    /*     patternList.forEach((line, id) =>{
+          colora(line, id);
+        }); */
 
 
 
@@ -44,7 +46,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
 
             currentPosArr[index] %= line.length;
-            /* console.log(currentPosArr); */
+
 
             if (event === 1 && Transport.state === "started") {
 
@@ -53,7 +55,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
                 "8n",
                 time
               );
-              /* console.log("suona in posizione " + currentPosArr[index]); */
+
 
             }
 
@@ -87,8 +89,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
 
 
-            /*   console.log(`currentPosition of line ${index} :`);
-            console.log(currentPosArr[index]); */
+
           },
           line,
           noteSpeedArray[index]
@@ -99,22 +100,18 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
     });
 
     return initialList
-    
-  }
-  else
-  {let currentPosArr = initialPositionArray[0];
+
+  } else {
+    let currentPosArr = initialPositionArray[0];
 
 
-/*     clickedState.forEach((line, id) =>{
-      colora(line, id);
-    }); */
 
-    let numLines = clickedState.length ;
+    let numLines = clickedState.length;
 
-    
-   
 
-console.log(clickedState);
+
+
+    console.log(clickedState);
 
     clickedState.map((line, index) => {
 
@@ -131,7 +128,7 @@ console.log(clickedState);
 
             let dotColor = dot.style.backgroundColor;
 
-            if (event === 1 && Transport.state === "started" && dotColor===activeColor[index]) {
+            if (event === 1 && Transport.state === "started" && dotColor === activeColor[index]) {
 
               instrumentList[index].triggerAttackRelease(
                 noteArray[index],
@@ -139,14 +136,14 @@ console.log(clickedState);
                 time
               );
 
-             
-              console.log("suona in posizione " + currentPosArr);
+
+
 
             }
-            console.log(instrumentList[0]);
 
 
-            
+
+
 
 
             if (Transport.state === "started") {
@@ -157,8 +154,9 @@ console.log(clickedState);
                 dot.style.backgroundColor = dotColor;
               }, "+0.005");
 
-              if (index === (numLines-1))
-              {currentPosArr++}
+              if (index === (numLines - 1)) {
+                currentPosArr++
+              }
 
             } else {
               currentPosArr = initialPositionArray[0];
@@ -167,8 +165,7 @@ console.log(clickedState);
 
 
 
-            /*   console.log(`currentPosArrition of line ${index} :`);
-            console.log(currentPosArrArr[index]); */
+
           },
           line,
           noteSpeedArray[index]
@@ -179,7 +176,7 @@ console.log(clickedState);
     });
 
     return initialList
-    }
+  }
 };
 
 export default creaSequenceList

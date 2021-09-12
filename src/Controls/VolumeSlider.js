@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-const VolumeSlider = ({
-    channel
-}) => {
+const VolumeSlider = ({ channel }) => {
+  const [volume, setVolume] = useState(
+    parseInt(Math.round(channel.volume.value))
+  );
+  
 
-    const [volume, setVolume] = useState(parseInt(Math.round(channel.volume.value)));
-    console.log(channel);
-    
   return (
     <div className="volume-slider">
       <input
@@ -16,9 +15,9 @@ const VolumeSlider = ({
         max="0"
         defaultValue={channel.volume.value}
         required
-        onChange= {(e) => {
-            channel.volume.value = e.target.valueAsNumber;
-            setVolume(e.target.valueAsNumber);
+        onChange={(e) => {
+          channel.volume.value = e.target.valueAsNumber;
+          setVolume(e.target.valueAsNumber);
         }}
         id="volume"
       />
@@ -28,4 +27,3 @@ const VolumeSlider = ({
 };
 
 export default VolumeSlider;
-

@@ -9,11 +9,8 @@ import MacroControls from "./Controls/MacroControls";
 import colora from "./Controls/colora";
 import startSequences from "./startSequences";
 import onSequenceListChange from "./onSequenceListChange";
-import "./dropdown.css";
-import initializeClickState from "./initializeClickedGrid";
+import initializePatternArray from "./initializePatternArray";
 import { EnvironmentContext } from "./Contexts/EnvironmentContext";
-
-
 
 const EuclideanSequencer = () => {
   const {
@@ -32,19 +29,14 @@ const EuclideanSequencer = () => {
     setSelectedPattern,
   } = useContext(EnvironmentContext);
 
-  console.log("envDefault  ")
-  console.log(envDefault)
-  
   useEffect(() => {
     Transport.stop();
   }, []);
 
   useEffect(() => {
-    
     Transport.bpm.value = tempo.bpm;
     Transport.swing = 0;
-    Transport.swingSubdivision = "8n"
-    
+    Transport.swingSubdivision = "8n";
   }, [tempo]);
 
   const [patternName, setPatternName] = useState(envDefault[0][0].name);
@@ -60,8 +52,6 @@ const EuclideanSequencer = () => {
     };
   }, [sequenceList]);
 
-  console.log("Nel corpo di Euclidean Sequencer : ");
-
   const handleStopClick = () => {
     Tone.Transport.stop();
 
@@ -72,15 +62,12 @@ const EuclideanSequencer = () => {
     let dumDummy = dummy + 1;
     setDummy(dumDummy);
 
-
     patternArrayList.forEach((line, ind) => {
       colora(line, ind);
     });
   };
 
   const handleContextResumeClick = () => {
-    console.log(Tone.context.state);
-
     if (Tone.context.state === "suspended") {
       Tone.context.resume();
       startSequences(sequenceList);
@@ -89,13 +76,12 @@ const EuclideanSequencer = () => {
     }
   };
 
-
   const removeClass = (classToRemove, searchClass) => {
     let $domElements = document.getElementsByClassName(searchClass);
     for (let item of $domElements) {
       item.classList.remove(classToRemove);
     }
-  }
+  };
   const changeMode = () => {
     setMode(!mode);
     removeClass("tempInactive", "dot");
@@ -108,28 +94,23 @@ const EuclideanSequencer = () => {
     linesList.forEach((line, idx) => {
       if (line.name === string) {
         chosenPattern = line;
-        let chosenPatternExt = initializeClickState(chosenPattern, 4);
+        let chosenPatternExt = initializePatternArray(chosenPattern, 4);
         setSelectedPattern(chosenPatternExt);
         removeClass("tempInactive", "dot");
         setPatternName(string);
-        
-        
       }
     });
-    
+
     Transport.start("+0.1");
-    
   };
 
   let dropDownOptions = envDefault[0].map((line) => {
     let name;
-    if (line.name !== undefined) {name = line.name} else return "noNameForNow";
+    if (line.name !== undefined) {
+      name = line.name;
+    } else return "noNameForNow";
     return name;
-
-    
   });
-
-
 
   return (
     <div className="euclidean-sequencer">
@@ -144,17 +125,17 @@ const EuclideanSequencer = () => {
       <button onClick={changeMode} className="changeMode">
         Change Mode
       </button>
-      
-      {!mode && (<div className="dropDown">
-        <h1>{patternName}</h1>
-        <Dropdown
-          options={dropDownOptions}
-          onChange={(e) => handleOnChange(e.value, envDefault[0])}
-          value={dropDownOptions[0]}
-          placeholder="Select a Euclidean Pattern"
-        />
+
+      {!mode && (
+        <div className="dropDown">
+          <h1>{patternName}</h1>
+          <Dropdown
+            options={dropDownOptions}
+            onChange={(e) => handleOnChange(e.value, envDefault[0])}
+            value={dropDownOptions[0]}
+            placeholder="Select a Euclidean Pattern"
+          />
         </div>
-        
       )}
       <PatternControlsList
         linesList={linesList}
@@ -165,10 +146,6 @@ const EuclideanSequencer = () => {
         channelList={channelList}
         mode={mode}
       />
-
-      
-
-      
     </div>
   );
 };
