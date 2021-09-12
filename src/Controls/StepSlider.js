@@ -10,7 +10,7 @@ const StepSlider = ({
   numPulses,
   setNumRotations,
   numRotations,
-  /* setInitialPositionArray  */
+  
 }) => {
   const stepSliderRef = useRef(null);
 
@@ -23,9 +23,9 @@ const StepSlider = ({
       setNumRotations(num - 1);
     }
 
-    /* setInitialPositionArray([0,0,0,0]); */
+    
     Transport.stop();
-    /*  Transport.start("+0.5");  */
+    
   };
 
   return (

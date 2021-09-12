@@ -6,7 +6,7 @@ const SwingSlider = ({transport }) => {
     <div className="swing-slider">
       <input
         type="range"
-        defaultValue={transport.swing}
+        defaultValue={0}
         min="0"
         max="100"
         id="swingSlider"

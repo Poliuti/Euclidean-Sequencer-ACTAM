@@ -1,13 +1,12 @@
-import * as Tone from "tone";
 import {
   makeChannel
 } from "./makeChannel"
-import customSamples from "./Contexts/Custom/customSamples";
-import africaSamples from "./Contexts/Africa/AfricaSamples";
-import indiaSamples from "./Contexts/India/IndiaSamples";
-import middleEastSamples from "./Contexts/MiddleEast/MiddleEastSamples";
-import restOfTheWorldSamples from "./Contexts/RestOfTheWorld/RestOfTheWorldSamples";
-import southAmericaSamples from "./Contexts/SouthAmerica/SouthAmericaSamples";
+import customSamples from "./Samples/customSamples";
+import africaSamples from "./Samples/africaSamples";
+import indiaSamples from "./Samples/indiaSamples";
+import middleEastSamples from "./Samples/middleEastSamples";
+import restOfTheWorldSamples from "./Samples/restOfTheWorldSamples";
+import southAmericaSamples from "./Samples/southAmericaSamples";
 
 
 
@@ -15,9 +14,10 @@ const samplesPools = [
 
   customSamples,
   africaSamples,
-  indiaSamples,
+  
   middleEastSamples,
   southAmericaSamples,
+  indiaSamples,
   restOfTheWorldSamples
 ]
 
@@ -32,14 +32,15 @@ for (let j = 0; j < samplesPools.length; j++) {
     let {
       sampler,
       channel
-    } = makeChannel(customSamples[i], 0.2 * i, -5 * i);
+    } = makeChannel(samplesPools[j][i], 0.2 * i, -2 * i);
 
     samplerList[j].push(sampler);
     channelList[j].push(channel);
   }
 }
 
-console.log(channelList);
+console.log("samplerList");
+console.log(samplerList);
 
 export {
   samplerList,

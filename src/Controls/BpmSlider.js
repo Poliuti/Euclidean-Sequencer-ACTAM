@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as Tone from "tone";
+
 import computeTatum from "../computeTatum";
 
 const BpmSlider = ({tempo, setTempo}) => {
 
-  const [tempoo, setTempoo] = useState(120);
+  console.log("QUESTOOOOOOOO")
+  console.log(tempo.bpm);
+
+
+
+ 
+
+  
+  
   return (
     <div className="bpm-slider">
       <input
@@ -18,19 +27,16 @@ const BpmSlider = ({tempo, setTempo}) => {
           let newBpmValue = parseInt(e.target.valueAsNumber);
           let newTempo = {...tempo, bpm : newBpmValue};
          
-          setTempoo(newBpmValue);
-          Tone.Transport.stop();
-          Tone.Transport.bpm.value = newBpmValue;
-          Tone.Transport.start();
-          newTempo.tatum = newTempo.tatum.map((tatum, indexx) => 120 / Tone.Transport.bpm.value * tatum);
+          
           setTempo(newTempo);
-          console.log(newTempo);
-          console.log(Tone.Transport.getSecondsAtTime());
+          Tone.Transport.stop();
+          
+          Tone.Transport.start("+0.1");
 
         }}
         id="bpms"
       />
-      <label htmlFor="bpms">BPM: {tempoo}</label>
+      <label htmlFor="bpms">BPM: {tempo.bpm}</label>
     </div>
   );
 };

@@ -1,7 +1,6 @@
-import ColorContextProvider from "../Contexts/ColorContext";
-import CustomContextProvider, { CustomContext } from "../Contexts/Custom/CustomContext";
+import EnvironmentContextProvider, { EnvironmentContext } from "../Contexts/EnvironmentContext";
 import EuclideanSequencer from "../EuclideanSequencer"
-import CircleContainer from "./../CircleContainer";
+
 
 
 
@@ -11,9 +10,9 @@ const Custom = () => {
   return (
     <div className="custom">
            <h1>Custom</h1>
-        <CustomContextProvider >
-          <EuclideanSequencer context={CustomContext}/>
-        </CustomContextProvider>
+        <EnvironmentContextProvider name = {"custom"} num={0}>
+          <EuclideanSequencer/>
+        </EnvironmentContextProvider>
         
         
       

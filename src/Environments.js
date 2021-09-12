@@ -23,7 +23,7 @@ const Environments = () => {
             <Custom />
           </Route>
 
-          <Route exact path="/environments/africa">
+          <Route exact path="/environments/africa" >
             <Africa />
           </Route>
 

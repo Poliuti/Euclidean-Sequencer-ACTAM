@@ -1,29 +1,47 @@
-import { useContext, useEffect } from "react";
-import { ColorContext } from "./Contexts/ColorContext";
-import noteNames from "./noteNames";
+import {activeColor, nonActiveColor, tempNonActiveColor} from "./colori";
 
 
-const Dot = ({ isActive, cellIdx, radius, angle, lineIndex, actualNoteArray, setActualNoteArray }) => {
-  const { activeColor, nonActiveColor } =
-    useContext(ColorContext);
+
+
+
+
+
+const Dot = ({ isActive, cellIdx, radius, angle, lineIndex}) => {
+
 
   angle = angle - 90;
   let color;
-  isActive ? (color = activeColor) : (color = nonActiveColor);
+  isActive ? (color = activeColor[lineIndex]) : (color = nonActiveColor);
 
-const dotClassName =  `${lineIndex}dot`;
+
+  const dotClassName =  `dot`;
 
   const dotId  = `${lineIndex}${cellIdx}`;
 
-  console.log("Dot Id ");
-  console.log(dotId);
 
-  const handleClick = (ev) => {
-    let temp = actualNoteArray;
-    let indexx= Math.round(Math.random() * 100) % noteNames.length;
-    temp[lineIndex] = noteNames[indexx];
-    setActualNoteArray(temp);
-  }
+
+  const handleClick = (elem) => {
+    let actualColor = elem.style.backgroundColor;
+    
+   
+    console.log(actualColor);
+    if (actualColor === activeColor[lineIndex]) {
+      elem.style.backgroundColor = tempNonActiveColor[lineIndex];
+      elem.classList.add("tempInactive");
+       
+    }
+
+    else if (actualColor === tempNonActiveColor[lineIndex]) {elem.style.backgroundColor = activeColor[lineIndex];
+      elem.classList.remove("tempInactive");
+       }
+
+       
+
+       
+   
+  } 
+
+  
 
   const active = {
     position: "absolute",
@@ -37,12 +55,16 @@ const dotClassName =  `${lineIndex}dot`;
     transform: `rotate(${angle}deg) translate(${radius}px)`,
   };
 
+
+
   return (
     <div
       style={active}
       className= {dotClassName}
       id = {dotId}
-      onClick = {(e) => handleClick()}
+      onClick = {
+        (e) => handleClick(e.currentTarget)
+      }
     ></div>
   );
 };

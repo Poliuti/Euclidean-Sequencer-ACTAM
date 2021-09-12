@@ -1,13 +1,19 @@
+import {activeColor, currentColor, nonActiveColor, tempNonActiveColor} from "./../colori"
+
 const colora = (euclideanArray, index) => {
 
     euclideanArray.forEach((cell, idx) => {
         let dot = document.getElementById(`${index}${idx}`);
 
         if (dot !== null) {
-            if (cell === 1) {
-                dot.style.backgroundColor = "rgb(241, 53, 109)";
+            if (cell === 1 ) {
+                
+                if (dot.classList.contains("tempInactive")){
+                    dot.style.backgroundColor = tempNonActiveColor[index]
+                }
+                else {dot.style.backgroundColor = activeColor[index];}
             } else {
-                dot.style.backgroundColor = "rgba(187, 187, 187, 0.58)";
+                dot.style.backgroundColor = nonActiveColor;
             }
         } else {}
     })

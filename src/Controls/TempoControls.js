@@ -6,12 +6,13 @@ import { TabPane } from "react-bootstrap";
 import * as Tone from "tone";
 import SwingSlider from "../SwingSlider";
 import SwingSubdivisionSlider from "../SwingSubdivisionSlider";
+import { Transport } from "tone/build/esm/core/clock/Transport";
 
 
 const TempoControls = ({tempo, setTempo}) => {
 
-
-
+  
+  
 
   return <div className="tempo-controls">
       <BpmSlider tempo={tempo} setTempo={setTempo} />

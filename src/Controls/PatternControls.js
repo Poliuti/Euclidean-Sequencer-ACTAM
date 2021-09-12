@@ -13,14 +13,12 @@ const PatternControls = ({
   linesList,
   setLinesList,
   setTempo,
-  tempo,
-  sequenceList,
-  setInitialPositionArray
+  tempo
 }) => {
   const [numSteps, setNumSteps] = useState(linesList[idx].numSteps);
   const [numPulses, setNumPulses] = useState(linesList[idx].numPulses);
   const [numRotations, setNumRotations] = useState(linesList[idx].numRotations);
-  const [note, setNote] = useState("C3");
+
 
   console.log("Tempo Inside PatternControls: ");
   console.log(tempo);
@@ -49,16 +47,10 @@ const PatternControls = ({
   }, [numSteps, numPulses, numRotations]);
 
 
-/*   useEffect(() => {
-   colora(bjorklund(numSteps, numPulses, numRotations), idx);
-  }, [numSteps, numPulses, numRotations]) */
-
-  
-
   
 
   return (
-    <div className="pattern-controls">
+    <div className="pattern-controls" id={idx}>
       <StepSlider
         defaultValue={numSteps}
         value={linesList[idx].numSteps}
@@ -67,14 +59,13 @@ const PatternControls = ({
         setNumPulses={setNumPulses}
         setNumRotations={setNumRotations}
         numRotations={numRotations}
-        setInitialPositionArray={setInitialPositionArray}
+  
       />
       <PulseSlider
         defaultValue={numPulses}
         value={linesList[idx].numPulses}
         max={numSteps}
         setNumPulses={setNumPulses}
-        setInitialPositionArray={setInitialPositionArray}
         
       />
       <RotateSlider
@@ -82,9 +73,8 @@ const PatternControls = ({
         value={linesList[idx].numRotations}
         max={numSteps - 1}
         setNumRotations={setNumRotations}
-        setInitialPositionArray={setInitialPositionArray}
       />
-      <TempoModifier tempo={tempo} setTempo={setTempo} index={idx} />
+      <TempoModifier tempo={tempo} setTempo={setTempo} index={idx}/>
 
       
       

@@ -1,31 +1,31 @@
 import Dot from "./Dot";
-import * as Tone from "tone";
-import ColorContextProvider, { ColorContext } from "./Contexts/ColorContext";
-import { useEffect } from "react";
-import { useState } from "react";
+
+
 
 const CircleLine = ({
   lineIndex,
-  euclideanArray,
-  actualNoteArray,
-  setActualNoteArray
+  patternArray
 }) => {
-  const angle = 360 / euclideanArray.length;
+  const angle = 360 / patternArray.length;
 
   const anglesArray = [];
-  euclideanArray.map((cell, idx) => {
+  patternArray.map((cell, idx) => {
     anglesArray.push(angle * idx);
   });
 
-  let radius = 45;
+  let radius = 55;
 
-  console.log("Euclidean Array:  ");
-  console.log(euclideanArray);
+  console.log("pattern Array:  ");
+  console.log(patternArray);
+
+ 
+
+
 
   return (
-    <ColorContextProvider>
+    
       <div className="circle-line">
-        {euclideanArray.map((cell, cellIndex) => (
+        {patternArray.map((cell, cellIndex) => (
           <div key={cellIndex}>
             <Dot
               isActive={cell}
@@ -33,13 +33,13 @@ const CircleLine = ({
               radius={radius}
               angle={anglesArray[cellIndex]}
               lineIndex={lineIndex}
-              actualNoteArray={actualNoteArray}
-              setActualNoteArray={setActualNoteArray}
+              
+              
             />
           </div>
         ))}
       </div>
-    </ColorContextProvider>
+    
   );
 };
 

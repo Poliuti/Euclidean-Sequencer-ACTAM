@@ -1,71 +1,78 @@
-import { Sequence, Transport } from "tone";
-import colora from "./Controls/colora";
+import {
+  Sequence,
+  Transport
+} from "tone";
+
+import {activeColor, currentColor, nonActiveColor, tempNonActiveColor} from "./colori";
 
 
 const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone.js), ritorna la lista aggiornata e la lista del tick position
-    linesLista,
-    initialList,
-    noteArray,
-    noteSpeedArray,
-    instrumentList,
-    initialPositionArray
-  
-    
-  ) => {
+  patternList,
+  initialList,
+  noteArray,
+  noteSpeedArray,
+  instrumentList,
+  initialPositionArray,
+  mode,
+  clickedState
 
-    
 
-    
+) => {
+
+  if (mode)
+
+
+  {
     console.log("creaSequenceList chiamata");
+    console.log(initialPositionArray);
     let currentPosArr = initialPositionArray;
 
 
-    /* linesLista.forEach((line, id) =>{
-      colora(line.euclideanArray, id);
+/*     patternList.forEach((line, id) =>{
+      colora(line, id);
     }); */
 
-    
 
-   
 
-    linesLista.map((line, index) => {
+
+
+    patternList.map((line, index) => {
 
       initialList.push(
         new Sequence(
           (time, event) => {
 
-           
-            currentPosArr[index] %= linesLista[index].euclideanArray.length;
-            console.log(currentPosArr);
-            
+
+            currentPosArr[index] %= line.length;
+            /* console.log(currentPosArr); */
+
             if (event === 1 && Transport.state === "started") {
-                 
-                 instrumentList[index].triggerAttackRelease(
-                  noteArray[index],
+
+              instrumentList[index].triggerAttackRelease(
+                noteArray[index],
                 "8n",
                 time
               );
-              console.log("suona in posizione " + currentPosArr[index]);
-              
+              /* console.log("suona in posizione " + currentPosArr[index]); */
+
             }
-            
-            
-            
-            
-          
-            
-            
-            
+
+
+
+
+
+
+
+
             /*  */
 
             let dot = document.getElementById(`${index}${currentPosArr[index]}`);
 
-            
+
             let dotColor = dot.style.backgroundColor;
-            
-            
-            if (Transport.state === "started")
-            {
+
+
+            if (Transport.state === "started") {
               dot.style.backgroundColor = "white";
 
               Transport.scheduleOnce(() => {
@@ -73,25 +80,106 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
               }, "+0.005");
               currentPosArr[index]++;
 
+            } else {
+              currentPosArr = initialPositionArray;
             }
-            else {currentPosArr = initialPositionArray;}
-            
-            
 
-            
-             /*   console.log(`currentPosition of line ${index} :`);
+
+
+
+            /*   console.log(`currentPosition of line ${index} :`);
             console.log(currentPosArr[index]); */
           },
-          linesLista[index].euclideanArray,
+          line,
           noteSpeedArray[index]
         )
       );
-      
+
 
     });
 
-    return { initialList, currentPosArr};
-  };
+    return initialList
+    
+  }
+  else
+  {let currentPosArr = initialPositionArray[0];
 
-  export default creaSequenceList
 
+/*     clickedState.forEach((line, id) =>{
+      colora(line, id);
+    }); */
+
+    let numLines = clickedState.length ;
+
+    
+   
+
+console.log(clickedState);
+
+    clickedState.map((line, index) => {
+
+      initialList.push(
+        new Sequence(
+          (time, event) => {
+
+
+            currentPosArr %= line.length;
+            console.log(currentPosArr);
+
+            let dot = document.getElementById(`${index}${currentPosArr}`);
+
+
+            let dotColor = dot.style.backgroundColor;
+
+            if (event === 1 && Transport.state === "started" && dotColor===activeColor[index]) {
+
+              instrumentList[index].triggerAttackRelease(
+                noteArray[index],
+                "8n",
+                time
+              );
+
+             
+              console.log("suona in posizione " + currentPosArr);
+
+            }
+            console.log(instrumentList[0]);
+
+
+            
+
+
+            if (Transport.state === "started") {
+              dot.style.backgroundColor = currentColor;
+
+
+              Transport.scheduleOnce(() => {
+                dot.style.backgroundColor = dotColor;
+              }, "+0.005");
+
+              if (index === (numLines-1))
+              {currentPosArr++}
+
+            } else {
+              currentPosArr = initialPositionArray[0];
+            }
+
+
+
+
+            /*   console.log(`currentPosArrition of line ${index} :`);
+            console.log(currentPosArrArr[index]); */
+          },
+          line,
+          noteSpeedArray[index]
+        )
+      );
+
+
+    });
+
+    return initialList
+    }
+};
+
+export default creaSequenceList
