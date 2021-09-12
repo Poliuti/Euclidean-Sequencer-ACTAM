@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Custom from "./Environments/Custom";
-import Africa from "./Environments/Africa";
-import SouthAmerica from "./Environments/SouthAmerica";
-import MiddleEast from "./Environments/MiddleEast";
-import India from "./Environments/India";
-import RestOfWorld from "./Environments/RestOfWorld";
-import SideBar from "./SideBar";
+import Custom from "./Custom";
+import Africa from "./Africa";
+import SouthAmerica from "./SouthAmerica";
+import MiddleEast from "./MiddleEast";
+import India from "./India";
+import RestOfWorld from "./RestOfWorld";
+import SideBar from "../Components/PageBasicComponents/SideBar";
 
 const Environments = () => {
   return (

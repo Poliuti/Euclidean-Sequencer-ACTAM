@@ -1,4 +1,4 @@
-import bjorklund from "./bjorklund";
+import bjorklund from "./../Functions/bjorklund";
 
 const setInitialSettings = (defaultInfo) => {
     let defaultInfoo = defaultInfo.map((pattern, index) => {

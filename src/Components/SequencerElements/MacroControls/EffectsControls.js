@@ -1,11 +1,11 @@
+import myReverb from "./../../../Default/reverb";
 import CutOffSlider from "./CutOffSlider";
 import RevDecaySlider from "./RevDecaySlider";
-import myReverb from "./reverb";
 import RevWetSlider from "./RevWetSlider";
 
-const ReverbControls = () => {
+const EffectsControls = () => {
   return (
-    <div className="reverb-controls">
+    <div className="effects-controls">
       <RevDecaySlider reverb={myReverb} />
       <RevWetSlider reverb={myReverb} />
       <CutOffSlider />
@@ -13,4 +13,4 @@ const ReverbControls = () => {
   );
 };
 
-export default ReverbControls;
+export default EffectsControls;

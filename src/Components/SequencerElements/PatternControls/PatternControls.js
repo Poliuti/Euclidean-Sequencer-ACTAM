@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import PulseSlider from "./PulseSlider";
 import RotateSlider from "./RotateSlider";
 import StepSlider from "./StepSlider";
-import "./patternControls.css";
-import bjorklund from "./../bjorklund";
-import TempoModifier from "./TempoModifier";
-import colora from "./colora";
+import "./../../../Styles/patternControls.css";
+import bjorklund from "../../../Functions/bjorklund";
+import TempoModifier from "../TempoControls/TempoModifier";
+import colora from "../../../Functions/colora";
 
 const PatternControls = ({ idx, linesList, setLinesList, setTempo, tempo }) => {
   const [numSteps, setNumSteps] = useState(linesList[idx].numSteps);

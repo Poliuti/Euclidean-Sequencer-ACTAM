@@ -1,5 +1,5 @@
 import * as Tone from "tone";
-import myLPFilter from "./Controls/filter";
+import myLPFilter from "./../Default/filter";
 
 export const makeChannel = (url, pan, volume) => {
 

@@ -1,4 +1,4 @@
-import setInitialSettings from "./setInitialSettings"
+import setInitialSettings from "./../Functions/setInitialSettings"
 
 let defaultLines = {
     custom: [  

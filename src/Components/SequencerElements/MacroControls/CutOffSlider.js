@@ -1,5 +1,5 @@
 import { useState } from "react";
-import myLPFilter from "./filter";
+import myLPFilter from "./../../../Default/filter";
 
 const CutOffSlider = () => {
   const [cutoff, setCutoff] = useState(20000);

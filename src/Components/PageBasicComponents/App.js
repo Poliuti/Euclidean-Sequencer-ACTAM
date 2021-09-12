@@ -1,10 +1,10 @@
-import "./App.css";
+import "./../../Styles/App.css";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NotFound from "./NotFound";
 import About from "./About";
-import Environments from "./Environments";
+import Environments from "../../Environments/Environments";
 
 function App() {
   return (

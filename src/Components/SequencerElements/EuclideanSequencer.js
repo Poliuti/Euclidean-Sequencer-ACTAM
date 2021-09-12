@@ -1,16 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
-import TempoControls from "./Controls/TempoControls";
-import PatternControlsList from "./Controls/PatternControlsList";
+
 import * as Tone from "tone";
 import { Transport } from "tone";
 import Dropdown from "react-dropdown";
-import "/Users/Progetti Programmazione/Visual Studio Code/React/actamproject/node_modules/react-dropdown/style.css";
-import MacroControls from "./Controls/MacroControls";
-import colora from "./Controls/colora";
-import startSequences from "./startSequences";
-import onSequenceListChange from "./onSequenceListChange";
-import initializePatternArray from "./initializePatternArray";
-import { EnvironmentContext } from "./Contexts/EnvironmentContext";
+import "./../../../node_modules/react-dropdown/style.css";
+import colora from "./../../Functions/colora";
+import startSequences from "./../../Functions/startSequences";
+import onSequenceListChange from "./../../Functions/onSequenceListChange";
+import initializePatternArray from "./../../Functions/initializePatternArray";
+
+
+import { EnvironmentContext } from "./../../Contexts/EnvironmentContext";
+import TempoControls from "./TempoControls/TempoControls";
+import MacroControls from "./MacroControls/MacroControls";
+import PatternControlsList from "./PatternControls/PatternControlsList";
+
+
+
+
 
 const EuclideanSequencer = () => {
   const {
@@ -128,7 +135,7 @@ const EuclideanSequencer = () => {
 
       {!mode && (
         <div className="dropDown">
-          <h1>{patternName}</h1>
+          <h2>Chosen Pattern : {patternName}</h2>
           <Dropdown
             options={dropDownOptions}
             onChange={(e) => handleOnChange(e.value, envDefault[0])}

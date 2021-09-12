@@ -1,4 +1,4 @@
-import { activeColor, nonActiveColor, tempNonActiveColor } from "./colori";
+import { activeColor, nonActiveColor, tempNonActiveColor } from "./../../../Default/colori";
 
 const Dot = ({ isActive, cellIdx, radius, angle, lineIndex }) => {
   angle = angle - 90;

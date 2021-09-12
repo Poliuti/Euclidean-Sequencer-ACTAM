@@ -57,7 +57,7 @@ function bjorklund(steps, pulses, rotations) {
       for (var i=0; i < counts[level]; i++) {
         build(level-1); 
       }  
-      if (remainders[level] != 0) {
+      if (remainders[level] !== 0) {
             build(level-2);
       }
     } else if (level === -1) {

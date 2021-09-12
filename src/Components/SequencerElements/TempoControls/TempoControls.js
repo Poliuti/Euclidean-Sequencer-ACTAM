@@ -1,8 +1,11 @@
-import BpmSlider from "./BpmSlider";
+
 import React from "react";
 import * as Tone from "tone";
-import SwingSlider from "../SwingSlider";
-import SwingSubdivisionSlider from "../SwingSubdivisionSlider";
+import BpmSlider from "./BpmSlider";
+import SwingSlider from "./SwingSlider";
+import SwingSubdivisionSlider from "./SwingSubdivisionSlider";
+
+
 
 const TempoControls = ({ tempo, setTempo }) => {
   return (

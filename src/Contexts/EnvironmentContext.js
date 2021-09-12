@@ -1,8 +1,8 @@
 import React, { createContext, useState } from "react";
-import { samplerList, channelList } from "../sampler";
-import creaSequenceList from "../CreaSequenceList";
-import initializePatternArray from "../initializePatternArray";
-import defaultLines from "../defaultLines";
+import { samplerList, channelList } from "./../Default/sampler";
+import creaSequenceList from "./../Functions/CreaSequenceList";
+import initializePatternArray from "./../Functions/initializePatternArray";
+import defaultLines from "./../Default/defaultLines";
 
 // INFO ABOUT THE VARIOUS LISTS:
 // linesList is the list of all the info contained in the line object
@@ -77,7 +77,8 @@ const EnvironmentContextProvider = (props) => {
       mode,
       selectedPattern
     );
-  console.log(envDefaultInfo[mode]);
+
+
 
   return (
     <EnvironmentContext.Provider

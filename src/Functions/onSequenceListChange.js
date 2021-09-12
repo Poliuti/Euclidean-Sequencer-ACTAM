@@ -1,7 +1,7 @@
 import {
   Transport
 } from "tone";
-import colora from "./Controls/colora";
+import colora from "./colora";
 
 const onSequenceListChange = (sequences, patternList) => {
   sequences.forEach((seq) => {

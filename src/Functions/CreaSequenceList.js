@@ -6,7 +6,7 @@ import {
 import {
   activeColor,
   currentColor
-} from "./colori";
+} from "./../Default/colori";
 
 
 const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone.js), ritorna la lista aggiornata e la lista del tick position
@@ -111,7 +111,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
 
 
-    console.log(clickedState);
+    
 
     clickedState.map((line, index) => {
 
@@ -121,7 +121,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
 
             currentPosArr %= line.length;
-            console.log(currentPosArr);
+           
 
             let dot = document.getElementById(`${index}${currentPosArr}`);
 

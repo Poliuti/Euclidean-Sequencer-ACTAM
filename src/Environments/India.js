@@ -1,5 +1,5 @@
-import EnvironmentContextProvider from "../Contexts/EnvironmentContext";
-import EuclideanSequencer from "../EuclideanSequencer";
+import EnvironmentContextProvider from "./../Contexts/EnvironmentContext";
+import EuclideanSequencer from "./../Components/SequencerElements/EuclideanSequencer";
 
 const India = () => {
   return (

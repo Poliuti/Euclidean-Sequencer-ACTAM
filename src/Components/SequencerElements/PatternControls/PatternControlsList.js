@@ -1,6 +1,8 @@
 import PatternControls from "./PatternControls";
-import CircleContainer from "./../CircleContainer";
-import ChannelControls from "./ChannelControls";
+import CircleContainer from "./CircleContainer";
+import ChannelControls from "./../ChannelControls/ChannelControls";
+
+
 
 const PatternControlsList = ({
   linesList,

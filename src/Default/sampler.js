@@ -1,12 +1,12 @@
 import {
   makeChannel
-} from "./makeChannel"
-import customSamples from "./Samples/customSamples";
-import africaSamples from "./Samples/africaSamples";
-import indiaSamples from "./Samples/indiaSamples";
-import middleEastSamples from "./Samples/middleEastSamples";
-import restOfTheWorldSamples from "./Samples/restOfTheWorldSamples";
-import southAmericaSamples from "./Samples/southAmericaSamples";
+} from "../Functions/makeChannel"
+import customSamples from "../Samples/customSamples";
+import africaSamples from "../Samples/africaSamples";
+import indiaSamples from "../Samples/indiaSamples";
+import middleEastSamples from "../Samples/middleEastSamples";
+import restOfTheWorldSamples from "../Samples/restOfTheWorldSamples";
+import southAmericaSamples from "../Samples/southAmericaSamples";
 
 
 
