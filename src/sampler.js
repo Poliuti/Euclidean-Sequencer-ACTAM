@@ -14,9 +14,8 @@ const samplesPools = [
 
   customSamples,
   africaSamples,
-
-  middleEastSamples,
   southAmericaSamples,
+  middleEastSamples,
   indiaSamples,
   restOfTheWorldSamples
 ]
@@ -46,7 +45,7 @@ for (let j = 0; j < samplesPools.length; j++) {
     let {
       sampler,
       channel
-    } = makeChannel(samplesPools[j][i], 0.2 * i, -2 * i);
+    } = makeChannel(samplesPools[j][i], 0.2 * i, -2);
 
     samplerList[j].push(sampler);
     channelList[j].push(channel);

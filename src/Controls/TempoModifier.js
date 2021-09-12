@@ -1,8 +1,6 @@
 import * as Tone from "tone";
 
 const TempoModifier = ({ tempo, setTempo, index }) => {
-  
-
   const handleDouble = () => {
     let tempoUpdate = { ...tempo };
     tempoUpdate.tempoSpeedIndex[index] *= 2;
@@ -33,7 +31,7 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
       <button onClick={handleHalf} className="diviso-due">
         :2
       </button>
-      <h6>{`1 / ${8 * tempo.tempoSpeedIndex[index]}`}</h6>
+      <h4>{`1 / ${8 * tempo.tempoSpeedIndex[index]}`}</h4>
     </div>
   );
 };
