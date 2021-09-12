@@ -3,9 +3,9 @@ import { useState } from "react";
 const RevDecaySlider = ({ reverb }) => {
   const [decay, setDecay] = useState(reverb.decay);
 
-  return (
-    <div className="rev-decay-slider">
-      <input
+  
+    return ( <div className="slider-base rev-decay-slider">
+        <input
         type="range"
         min="0.01"
         step="0.1"

@@ -3,9 +3,9 @@ import { useState } from "react";
 const RevWetSlider = ({ reverb }) => {
   const [wet, setWet] = useState(reverb.wet.value);
 
-  return (
-    <div className="rev-wet-slider">
-      <input
+  
+    return ( <div className="slider-base rev-wet-slider">
+        <input
         type="range"
         min="0"
         step="0.01"

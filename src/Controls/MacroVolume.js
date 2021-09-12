@@ -4,9 +4,11 @@ import * as Tone from "tone";
 const MacroVolume = () => {
   const [volume, setVolume] = useState(parseInt(Tone.Destination.volume.value));
 
-  return (
-    <div className="macro-volume">
-      <input
+
+    
+    
+    return ( <div className="slider-base macro-volume">
+        <input
         type="range"
         min="-70"
         step="1"

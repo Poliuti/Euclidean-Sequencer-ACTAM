@@ -9,7 +9,7 @@ const PanSlider = ({ channel }) => {
   };
 
   return (
-    <div className="pan-slider">
+    <div className="slider-base pan-slider">
       <input
         type="range"
         min="-1"

@@ -3,7 +3,7 @@ import { useState } from "react";
 const SwingSlider = ({ transport }) => {
   const [swing, setSwing] = useState(0);
   return (
-    <div className="swing-slider">
+    <div className="slider-base swing-slider">
       <input
         type="range"
         defaultValue={0}

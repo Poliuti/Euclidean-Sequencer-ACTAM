@@ -1,7 +1,7 @@
 import * as Tone from "tone";
 const BpmSlider = ({ tempo, setTempo }) => {
   return (
-    <div className="bpm-slider">
+    <div className="slider-base bpm-slider">
       <input
         type="range"
         min="30"

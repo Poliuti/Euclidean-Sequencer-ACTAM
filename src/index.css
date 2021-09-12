@@ -113,6 +113,26 @@
   cursor: pointer;
 }
 
+/*style of sliders */
+
+.slider-base{
+  justify-content: space-between;
+  display: flex;
+  margin-left: 30%;
+  width: 40%;
+}
+
+
+.slider-base>input[type=range]{
+  width: 50%;
+}
+.rev-decay-slider>input[type=range]{
+  width: 50%;
+}
+
+
+
+
 /* create new blog form */
 .create {
   max-width: 400px;
