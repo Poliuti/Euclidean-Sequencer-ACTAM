@@ -113,6 +113,11 @@
   cursor: pointer;
 }
 
+.pattern-controls-list{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+ }
 /*style of sliders */
 
 .slider-base{
@@ -131,7 +136,7 @@
 }
 
 
-
+.euc
 
 /* create new blog form */
 .create {
