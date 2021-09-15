@@ -10,7 +10,7 @@ const PulseSlider = ({ defaultValue, value, max, setNumPulses }) => {
   };
 
   return (
-    <div className="slider-base Pulse-slider">
+    <div className="slider-pattern Pulse-slider">
       <input
         ref={pulseSliderRef}
         required

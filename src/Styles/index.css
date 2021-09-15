@@ -116,7 +116,8 @@
 .pattern-controls-list{
   display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 10px;
+  grid-gap: 30px;
+  margin-top: 50px;
  }
 /*style of sliders */
 
@@ -127,8 +128,19 @@
   width: 40%;
 }
 
+.slider-pattern{
+  justify-content: space-between;
+  display: flex;
+  margin-left: 0%;
+  width: 40%;
+}
+
 
 .slider-base>input[type=range]{
+  width: 50%;
+}
+
+.slider-pattern>input[type=range]{
   width: 50%;
 }
 .rev-decay-slider>input[type=range]{

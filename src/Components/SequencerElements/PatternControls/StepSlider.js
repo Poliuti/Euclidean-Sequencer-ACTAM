@@ -25,7 +25,7 @@ const StepSlider = ({
   };
 
   return (
-    <div className="slider-base step-slider">
+    <div className="slider-pattern step-slider">
       <input
         ref={stepSliderRef}
         type="range"

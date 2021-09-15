@@ -7,7 +7,7 @@ const VolumeSlider = ({ channel }) => {
   
 
   return (
-    <div className="slider-base volume-slider">
+    <div className="slider-pattern volume-slider">
       <input
         type="range"
         min="-100"
