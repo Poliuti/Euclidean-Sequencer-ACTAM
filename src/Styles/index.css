@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-
+.stop{
+  width: 135px;
+  margin-top: 10px;
+}
+.changeMode{
+  width: 135px;
+  margin-top: 10px;
+}
+.start-context{
+  width: 135px;
+  margin-top: 10px;
+}
 
 /* base styles */
 :root {
