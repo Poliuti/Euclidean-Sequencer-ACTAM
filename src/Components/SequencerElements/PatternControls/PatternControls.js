@@ -53,11 +53,6 @@ const PatternControls = ({ idx, linesList, setLinesList, setTempo, tempo }) => {
       <TempoModifier tempo={tempo} setTempo={setTempo} index={idx} />
 
       <div>
-        <ul style={{ display: "flex", listStyleType: "none" }}>
-          {linesList[idx].euclideanArray.map((cell, id) => (
-            <li key={id}>{cell}</li>
-          ))}
-        </ul>
       </div>
     </div>
   );
