@@ -124,13 +124,10 @@ const EuclideanSequencer = () => {
       <TempoControls tempo={tempo} setTempo={setTempo} />
       <MacroControls />
       <button onClick={handleStopClick} className="stop">
-        Stop
       </button>
       <button onClick={handleContextResumeClick} className="start-context">
-        Play
       </button>
       <button onClick={changeMode} className="changeMode">
-        Change Mode
       </button>
 
       {!mode && (

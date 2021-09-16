@@ -2,15 +2,32 @@
 
 .stop{
   width: 135px;
-  margin-top: 10px;
+  height: 50px;
+  margin-top: 20px;
+  background-image: url('C:\Users\eugep\Desktop\EUGE\MAE\Advanced coding\Progetto\Euclidean-Sequencer-ACTAM\src\img\pause.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
+
 .changeMode{
   width: 135px;
-  margin-top: 10px;
+  height: 50px;
+  margin-top: 20px;
+  background-image: url('C:\Users\eugep\Desktop\EUGE\MAE\Advanced coding\Progetto\Euclidean-Sequencer-ACTAM\src\img\load.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
+
 .start-context{
   width: 135px;
-  margin-top: 10px;
+  height: 50px;
+  margin-top: 20px;
+  background-image: url('C:\Users\eugep\Desktop\EUGE\MAE\Advanced coding\Progetto\Euclidean-Sequencer-ACTAM\src\img\play.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 /* base styles */
