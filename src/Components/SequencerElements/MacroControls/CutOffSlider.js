@@ -20,7 +20,7 @@ const CutOffSlider = () => {
         }}
         id="cutoff"
       />
-      <label htmlFor="cutoff">CUTOFF: {Math.round(cutoff)}</label>
+      <label htmlFor="cutoff">CUTOFF: {Math.round(cutoff)} Hz</label>
     </div>
   );
 };
