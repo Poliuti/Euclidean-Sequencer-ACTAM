@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  margin-left: 296px;
 }
 
 .changeMode{
@@ -18,6 +19,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  align-items: center;
 }
 
 .start-context{
@@ -28,6 +30,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  text-align: center;
 }
 
 /* base styles */
@@ -222,7 +225,7 @@
 
 .pattern-controls {
   position: relative;
-  top: 2rem;
+
 }
 
 
