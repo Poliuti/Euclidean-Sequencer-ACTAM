@@ -1,6 +1,9 @@
+import { useState } from "react";
 import * as Tone from "tone";
 
 const TempoModifier = ({ tempo, setTempo, index }) => {
+  
+
   const handleDouble = () => {
     let tempoUpdate = { ...tempo };
     tempoUpdate.tempoSpeedIndex[index] *= 2;
@@ -23,6 +26,7 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
     Tone.Transport.start("+0.1");
   };
 
+
   return (
     <div className="tempo-modifier">
       <button onClick={handleDouble} className="per-due">
@@ -31,7 +35,7 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
       <button onClick={handleHalf} className="diviso-due">
         :2
       </button>
-      <h4>{`1 / ${8 * tempo.tempoSpeedIndex[index]}`}</h4>
+      
     </div>
   );
 };

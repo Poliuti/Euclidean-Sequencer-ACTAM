@@ -4,7 +4,7 @@
   width: 135px;
   height: 50px;
   margin-top: 20px;
-  background-image: url('C:\Users\eugep\Desktop\EUGE\MAE\Advanced coding\Progetto\Euclidean-Sequencer-ACTAM\src\img\pause.png');
+  background-image: url('./../img/pause.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -14,7 +14,7 @@
   width: 135px;
   height: 50px;
   margin-top: 20px;
-  background-image: url('C:\Users\eugep\Desktop\EUGE\MAE\Advanced coding\Progetto\Euclidean-Sequencer-ACTAM\src\img\load.svg');
+  background-image: url('./../img/load.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -24,7 +24,7 @@
   width: 135px;
   height: 50px;
   margin-top: 20px;
-  background-image: url('C:\Users\eugep\Desktop\EUGE\MAE\Advanced coding\Progetto\Euclidean-Sequencer-ACTAM\src\img\play.png');
+  background-image: url('./../img/play.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

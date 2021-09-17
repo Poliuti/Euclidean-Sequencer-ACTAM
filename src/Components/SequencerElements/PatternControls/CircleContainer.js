@@ -14,6 +14,7 @@ const CircleContainer = ({ lineIndex, tempo, setTempo }) => {
         tempo={tempo}
         setTempo={setTempo}
       />
+      <h4>{`1 / ${8 * tempo.tempoSpeedIndex[lineIndex]}`}</h4>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const PatternControlsList = ({
   const elementoBase = {
     height: "17rem",
   };
-  
+
   return (
     <div className="pattern-controls-list">
       {linesList.map((line, id) => (
