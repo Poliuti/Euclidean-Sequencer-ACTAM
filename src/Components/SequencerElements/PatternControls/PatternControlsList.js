@@ -1,6 +1,7 @@
 import PatternControls from "./PatternControls";
 import CircleContainer from "./CircleContainer";
 import ChannelControls from "./../ChannelControls/ChannelControls";
+import OtherControls from "./OtherControls";
 
 
 
@@ -34,7 +35,9 @@ const PatternControlsList = ({
               envDefault={envDefault}
             />
           )}
-          <ChannelControls channel={channelList[id]} />
+          <OtherControls channel={channelList[id]} tempo={tempo} setTempo={setTempo} index={id}/>
+          
+          
         </div>
       ))}
     </div>

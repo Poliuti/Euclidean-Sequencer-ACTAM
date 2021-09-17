@@ -50,7 +50,7 @@ const PatternControls = ({ idx, linesList, setLinesList, setTempo, tempo }) => {
         max={numSteps - 1}
         setNumRotations={setNumRotations}
       />
-      <TempoModifier tempo={tempo} setTempo={setTempo} index={idx} />
+      
 
       <div>
       </div>
