@@ -7,15 +7,16 @@ import SwingSubdivisionSlider from "./SwingSubdivisionSlider";
 
 
 
-const TempoControls = ({ tempo, setTempo }) => {
+const TempoControls = ({ tempo, setTempo, color }) => {
   return (
     <div className="tempo-controls">
-      <BpmSlider tempo={tempo} setTempo={setTempo} />
+      <BpmSlider tempo={tempo} setTempo={setTempo} color={color} />
       <SwingSlider
         swingPercentage={Tone.Transport.swing}
         transport={Tone.Transport}
+        color={color}
       />
-      <SwingSubdivisionSlider transport={Tone.Transport} />
+      <SwingSubdivisionSlider transport={Tone.Transport} color={color}/>
 
       <hr />
     </div>

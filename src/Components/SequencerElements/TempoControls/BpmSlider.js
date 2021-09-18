@@ -1,5 +1,5 @@
 import * as Tone from "tone";
-const BpmSlider = ({ tempo, setTempo }) => {
+const BpmSlider = ({ tempo, setTempo, color }) => {
   return (
     <div className="slider-base bpm-slider">
       <input
@@ -19,6 +19,7 @@ const BpmSlider = ({ tempo, setTempo }) => {
           Tone.Transport.start("+0.1");
         }}
         id="bpms"
+        style={{"--c": `${color}`}}
       />
       <label htmlFor="bpms">BPM: {tempo.bpm}</label>
     </div>

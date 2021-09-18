@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const RevWetSlider = ({ reverb }) => {
+const RevWetSlider = ({ reverb, color }) => {
   const [wet, setWet] = useState(reverb.wet.value);
 
   
@@ -17,6 +17,7 @@ const RevWetSlider = ({ reverb }) => {
           setWet(Math.round(reverb.wet.value * 100) / 100);
         }}
         id="wet"
+        style={{"--c": `${color}`}}
       />
       <label htmlFor="wet">Wet: {wet}</label>
     </div>

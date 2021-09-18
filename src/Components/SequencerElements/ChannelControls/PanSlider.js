@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const PanSlider = ({ channel }) => {
+const PanSlider = ({ channel,color }) => {
   const [pan, setPan] = useState(Math.round(channel.pan.value * 100) / 100);
 
   const onPanChange = (panValue) => {
@@ -19,6 +19,7 @@ const PanSlider = ({ channel }) => {
         required
         onChange={(e) => onPanChange(e.target.valueAsNumber)}
         id="pan"
+        style={{"--c": `${color}`}}
       />
       <label htmlFor="pan"> Pan: {pan}</label>
     </div>

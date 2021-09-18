@@ -3,11 +3,11 @@ import PanSlider from "./PanSlider";
 import SoloButton from "./SoloButton";
 import VolumeSlider from "./VolumeSlider";
 
-const ChannelControls = ({ channel }) => {
+const ChannelControls = ({ channel, color }) => {
   return (
     <div className="channel-controls">
-      <PanSlider channel={channel} />
-      <VolumeSlider channel={channel} />
+      <PanSlider channel={channel} color = {color}/>
+      <VolumeSlider channel={channel} color = {color}/>
       <MuteButton channel={channel} />
       <SoloButton channel={channel} />
     </div>

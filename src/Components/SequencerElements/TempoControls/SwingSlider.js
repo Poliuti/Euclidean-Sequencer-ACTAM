@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SwingSlider = ({ transport }) => {
+const SwingSlider = ({ transport, color }) => {
   const [swing, setSwing] = useState(0);
   return (
     <div className="slider-base swing-slider">
@@ -16,6 +16,7 @@ const SwingSlider = ({ transport }) => {
 
           console.log(transport.swing);
         }}
+        style={{"--c": `${color}`}}
       />
       <label htmlFor="swingSlider">Swing: {swing} </label>
     </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const RevDecaySlider = ({ reverb }) => {
+const RevDecaySlider = ({ reverb, color }) => {
   const [decay, setDecay] = useState(reverb.decay);
 
   
@@ -17,6 +17,7 @@ const RevDecaySlider = ({ reverb }) => {
           setDecay(Math.round(reverb.decay * 100) / 100);
         }}
         id="decay"
+        style={{"--c": `${color}`}}
       />
       <label htmlFor="decay">Decay: {decay}</label>
     </div>

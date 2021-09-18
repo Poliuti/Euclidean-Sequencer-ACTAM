@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Transport } from "tone";
 
-const PulseSlider = ({ defaultValue, value, max, setNumPulses }) => {
+const PulseSlider = ({ defaultValue, value, max, setNumPulses, color }) => {
   const pulseSliderRef = useRef(null);
 
   const handleChange = (sliderValue) => {
@@ -24,6 +24,7 @@ const PulseSlider = ({ defaultValue, value, max, setNumPulses }) => {
         onPointerUp={() => Transport.start()}
         onChange={(e) => handleChange(e.target.valueAsNumber)}
         id="ps"
+        style={{"--c": `${color}`}}
       />
       <label htmlFor="ps">Pulses: {value}</label>
     </div>

@@ -4,7 +4,7 @@
   width: 135px;
   height: 50px;
   margin-top: 20px;
-  background-image: url('./../img/pause.png');
+  background-image: url('./../img/myPause.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -15,7 +15,7 @@
   width: 135px;
   height: 50px;
   margin-top: 20px;
-  background-image: url('./../img/load.svg');
+  background-image: url('./../img/change.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -26,7 +26,8 @@
   width: 135px;
   height: 50px;
   margin-top: 20px;
-  background-image: url('./../img/play.png');
+  background-image: url('./../img/myPlay2.png');
+  background-color: white;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -213,9 +214,6 @@
   cursor: pointer;
 }
 
-.diocan {
-  width: 10%;
-}
 
 
 .circle-container {
@@ -227,6 +225,10 @@
   position: relative;
 
 }
+
+
+
+
 
 
 

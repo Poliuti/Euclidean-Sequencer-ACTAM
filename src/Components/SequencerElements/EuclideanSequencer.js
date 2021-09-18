@@ -8,6 +8,7 @@ import colora from "./../../Functions/colora";
 import startSequences from "./../../Functions/startSequences";
 import onSequenceListChange from "./../../Functions/onSequenceListChange";
 import initializePatternArray from "./../../Functions/initializePatternArray";
+import {activeColor} from "./../../Default/colori"
 
 
 import { EnvironmentContext } from "./../../Contexts/EnvironmentContext";
@@ -121,8 +122,8 @@ const EuclideanSequencer = () => {
 
   return (
     <div className="euclidean-sequencer">
-      <TempoControls tempo={tempo} setTempo={setTempo} />
-      <MacroControls />
+      <TempoControls tempo={tempo} setTempo={setTempo} color={activeColor[0]}/>
+      <MacroControls color={activeColor[0]}/>
       <button onClick={handleStopClick} className="stop">
       </button>
       <button onClick={handleContextResumeClick} className="start-context">
@@ -149,6 +150,7 @@ const EuclideanSequencer = () => {
         setTempo={setTempo}
         channelList={channelList}
         mode={mode}
+        colors={activeColor}
       />
     </div>
   );

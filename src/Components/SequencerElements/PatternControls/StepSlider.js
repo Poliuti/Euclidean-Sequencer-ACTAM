@@ -9,8 +9,10 @@ const StepSlider = ({
   numPulses,
   setNumRotations,
   numRotations,
+  color
 }) => {
   const stepSliderRef = useRef(null);
+
 
   const onStepChange = (num) => {
     setNumSteps(num);
@@ -39,7 +41,7 @@ const StepSlider = ({
         onPointerDown={() => Transport.stop()}
         onPointerUp={() => Transport.start()}
         onChange={(e) => onStepChange(e.target.valueAsNumber)}
-        id="ss"
+        style={{"--c": `${color}`}}
       />
       <label htmlFor="ss">Steps: {value}</label>
     </div>

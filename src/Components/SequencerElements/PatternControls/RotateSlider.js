@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Transport } from "tone";
 
-const RotateSlider = ({ defaultValue, value, max, setNumRotations }) => {
+const RotateSlider = ({ defaultValue, value, max, setNumRotations, color }) => {
   const rotateSliderRef = useRef(null);
 
   const handleChange = (sliderValue) => {
@@ -24,6 +24,7 @@ const RotateSlider = ({ defaultValue, value, max, setNumRotations }) => {
         onPointerUp={() => Transport.start()}
         onChange={(e) => handleChange(e.target.valueAsNumber)}
         id="rs"
+        style={{"--c": `${color}`}}
       />
       <label htmlFor="rs">Rotations: {value}</label>
     </div>

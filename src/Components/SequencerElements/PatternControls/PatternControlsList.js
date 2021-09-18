@@ -1,7 +1,7 @@
 import PatternControls from "./PatternControls";
 import CircleContainer from "./CircleContainer";
-import ChannelControls from "./../ChannelControls/ChannelControls";
 import OtherControls from "./OtherControls";
+
 
 
 
@@ -13,6 +13,7 @@ const PatternControlsList = ({
   tempo,
   channelList,
   mode,
+  colors
 }) => {
   const elementoBase = {
     height: "17rem",
@@ -20,7 +21,9 @@ const PatternControlsList = ({
 
   return (
     <div className="pattern-controls-list">
-      {linesList.map((line, id) => (
+      {linesList.map((line, id) => {
+        const color = colors[id];
+        return (
         <div key={id} className="elemento-base" style={elementoBase}>
           <CircleContainer lineIndex={id} tempo={tempo} setTempo={setTempo} />
 
@@ -33,13 +36,14 @@ const PatternControlsList = ({
               setLinesList={setLinesList}
               linesList={linesList}
               envDefault={envDefault}
+              color={color}
             />
           )}
-          <OtherControls channel={channelList[id]} tempo={tempo} setTempo={setTempo} index={id}/>
+          <OtherControls channel={channelList[id]} tempo={tempo} setTempo={setTempo} index={id} color={color}/>
           
           
         </div>
-      ))}
+      )})}
     </div>
   );
 };

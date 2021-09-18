@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const VolumeSlider = ({ channel }) => {
+const VolumeSlider = ({ channel, color }) => {
   const [volume, setVolume] = useState(
     parseInt(Math.round(channel.volume.value))
   );
@@ -20,6 +20,7 @@ const VolumeSlider = ({ channel }) => {
           setVolume(e.target.valueAsNumber);
         }}
         id="volume"
+        style={{"--c": `${color}`}}
       />
       <label htmlFor="volume">Volume: {volume}</label>
     </div>

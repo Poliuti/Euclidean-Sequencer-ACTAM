@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SwingSubdivisionSlider = ({ transport }) => {
+const SwingSubdivisionSlider = ({ transport, color }) => {
   const [swingSubd, setSwingSubd] = useState("8");
   return (
     <div className="slider-base swing-subd-slider">
@@ -15,6 +15,7 @@ const SwingSubdivisionSlider = ({ transport }) => {
           transport.swingSubdivision = `${parseInt(e.target.valueAsNumber)}n`;
           setSwingSubd(parseInt(e.target.valueAsNumber));
         }}
+        style={{"--c": `${color}`}}
       />
       <label htmlFor="swing-subd-slid">
         Swing Subdivision: {`1/${swingSubd}`}{" "}

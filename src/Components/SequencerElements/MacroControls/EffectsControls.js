@@ -3,12 +3,12 @@ import CutOffSlider from "./CutOffSlider";
 import RevDecaySlider from "./RevDecaySlider";
 import RevWetSlider from "./RevWetSlider";
 
-const EffectsControls = () => {
+const EffectsControls = ({color}) => {
   return (
     <div className="effects-controls">
-      <RevDecaySlider reverb={myReverb} />
-      <RevWetSlider reverb={myReverb} />
-      <CutOffSlider />
+      <RevDecaySlider reverb={myReverb} color={color} />
+      <RevWetSlider reverb={myReverb} color={color} />
+      <CutOffSlider color={color} />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import * as Tone from "tone";
 
-const MacroVolume = () => {
+const MacroVolume = ({color}) => {
   const [volume, setVolume] = useState(parseInt(Tone.Destination.volume.value));
 
 
@@ -20,6 +20,7 @@ const MacroVolume = () => {
           setVolume(parseInt(Tone.Destination.volume.value));
         }}
         id="volume"
+        style={{"--c": `${color}`}}
       />
       <label htmlFor="volume">Volume: {volume}</label>
     </div>
