@@ -1,11 +1,11 @@
 const initializePatternArray = (chosenPattern, numSamples) => {
 
-    let clickState = [];
+    let initialArray = [];
     const euclideanArray = chosenPattern.euclideanArray;
     for (let i = 0; i < numSamples; i++) {
-        clickState.push(euclideanArray)
+        initialArray.push(euclideanArray)
     };
-    return clickState;
+    return initialArray;
 
   
 }

@@ -36,8 +36,6 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
 
 
-
-
     patternList.map((line, index) => {
 
       initialList.push(

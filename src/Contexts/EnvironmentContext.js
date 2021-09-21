@@ -2,7 +2,11 @@ import React, { createContext, useState } from "react";
 import { samplerList, channelList } from "./../Default/sampler";
 import creaSequenceList from "./../Functions/CreaSequenceList";
 import initializePatternArray from "./../Functions/initializePatternArray";
-import defaultLines from "./../Default/defaultLines";
+import defaultLines from "../Default/defaultLines";
+
+
+
+
 
 // INFO ABOUT THE VARIOUS LISTS:
 // linesList is the list of all the info contained in the line object
@@ -16,7 +20,11 @@ const noteArray = ["A1", "A1", "A1", "A1"]; // info sulle note che suona ogni se
 const EnvironmentContextProvider = (props) => {
   // this context provides common info within the environment
 
+
   console.log("Context ran");
+
+
+ 
   const envDefaultInfo = defaultLines[props.name];
   const tempoSpeedIndex = samplerList[props.num].map(() => 1);
   const tempoSpeedIndexForTone = tempoSpeedIndex.map(

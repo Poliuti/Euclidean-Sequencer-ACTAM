@@ -1,338 +1,112 @@
-import setInitialSettings from "./../Functions/setInitialSettings"
+import EuclideanLine from "../EuclideanLine";
+
 
 let defaultLines = {
-    custom: [  
-        [{
-         numSteps: 8,
-         numPulses: 5,
-         numRotations: 0,
-         name: "Tresillo",
-       },
-       {
-         numSteps: 8,
-         numPulses: 1,
-         numRotations: 0,
-         name: "Cinquillo"
-       },
-       {
-         numSteps: 10,
-         numPulses: 4,
-         numRotations: 0,
-         name: "Settilio"
-     
-       },
-       {
-         numSteps: 5,
-         numPulses: 2,
-         numRotations: 0,
-         name: "daje"
-       }],
+    custom: [  // Lista iniziale dei parametri euclidiani MODE 2
+        [new EuclideanLine(8, 5, 0, 'Tresillo'),
+        new EuclideanLine(8, 1, 0, 'Cinquillo'),
+        new EuclideanLine(10, 4, 0, 'Settillo'),
+        new EuclideanLine(5, 2, 0, 'Daje'),
+       ],
        [  // Lista iniziale dei parametri euclidiani MODE 1
-         {
-           numSteps: 7,
-           numPulses: 3,
-           numRotations: 4
-         },
-         {
-           numSteps: 8,
-           numPulses: 1,
-           numRotations: 0
-         },
-         {
-           numSteps: 10,
-           numPulses: 4,
-           numRotations: 7
-         },
-         {
-           numSteps: 5,
-           numPulses: 2,
-           numRotations: 4
-         }
-     
-        
+        new EuclideanLine(7, 3, 4, ''),
+        new EuclideanLine(8, 1, 0, ''),
+        new EuclideanLine(5, 2, 4, ''),
+        new EuclideanLine(10, 4, 7, '')
        ],
        
        
      ],
-    india: [  
-        [{
-         numSteps: 8,
-         numPulses: 5,
-         numRotations: 0,
-         name: "India 1",
-       },
-       {
-         numSteps: 11,
-         numPulses: 5,
-         numRotations: 0,
-         name: "India 2"
-       },
-       {
-         numSteps: 13,
-         numPulses: 4,
-         numRotations: 0,
-         name: "India 3"
-     
-       },
-       {
-         numSteps: 5,
-         numPulses: 2,
-         numRotations: 0,
-         name: "daje"
-       }],
+    india:[  
+        [new EuclideanLine(8, 5, 0, 'Tresillo'),
+        new EuclideanLine(8, 1, 0, 'Magentium'),
+        new EuclideanLine(10, 4, 0, 'Settillo'),
+        new EuclideanLine(5, 2, 0, 'Daje'),
+       ],
        [  // Lista iniziale dei parametri euclidiani MODE 1
-         {
-           numSteps: 15,
-           numPulses: 9,
-           numRotations: 4
-         },
-         {
-           numSteps: 8,
-           numPulses: 3,
-           numRotations: 0
-         },
-         {
-           numSteps: 10,
-           numPulses: 6,
-           numRotations: 7
-         },
-         {
-           numSteps: 5,
-           numPulses: 2,
-           numRotations: 4
-         }
-     
-        
+        new EuclideanLine(7, 3, 4, ''),
+        new EuclideanLine(8, 1, 0, ''),
+        new EuclideanLine(5, 2, 4, ''),
+        new EuclideanLine(10, 4, 7, '')
        ],
        
        
      ],
     middleEast: [  
-        [{
-         numSteps: 8,
-         numPulses: 5,
-         numRotations: 0,
-         name: "Tresillo",
-       },
-       {
-         numSteps: 8,
-         numPulses: 1,
-         numRotations: 0,
-         name: "Cinquillo"
-       },
-       {
-         numSteps: 10,
-         numPulses: 4,
-         numRotations: 0,
-         name: "Settilio"
-     
-       },
-       {
-         numSteps: 5,
-         numPulses: 2,
-         numRotations: 0,
-         name: "daje"
-       }],
+        [new EuclideanLine(8, 5, 0, 'Tresillo'),
+        new EuclideanLine(8, 1, 0, 'Achraf'),
+        new EuclideanLine(10, 4, 0, 'Settillo'),
+        new EuclideanLine(5, 2, 0, 'Daje'),
+       ],
        [  // Lista iniziale dei parametri euclidiani MODE 1
-         {
-           numSteps: 7,
-           numPulses: 3,
-           numRotations: 4
-         },
-         {
-           numSteps: 8,
-           numPulses: 1,
-           numRotations: 0
-         },
-         {
-           numSteps: 10,
-           numPulses: 4,
-           numRotations: 7
-         },
-         {
-           numSteps: 5,
-           numPulses: 2,
-           numRotations: 4
-         }
-     
-        
+        new EuclideanLine(7, 3, 4, ''),
+        new EuclideanLine(8, 1, 0, ''),
+        new EuclideanLine(5, 2, 4, ''),
+        new EuclideanLine(10, 4, 7, '')
        ],
        
        
      ],
     restOfTheWorld: [  
-        [{
-         numSteps: 8,
-         numPulses: 5,
-         numRotations: 0,
-         name: "Tresillo",
-       },
-       {
-         numSteps: 8,
-         numPulses: 1,
-         numRotations: 0,
-         name: "Cinquillo"
-       },
-       {
-         numSteps: 10,
-         numPulses: 4,
-         numRotations: 0,
-         name: "Settilio"
-     
-       },
-       {
-         numSteps: 5,
-         numPulses: 2,
-         numRotations: 0,
-         name: "daje"
-       }],
+        [new EuclideanLine(8, 5, 0, 'Tresillo'),
+        new EuclideanLine(8, 1, 0, 'Cinquillo'),
+        new EuclideanLine(10, 4, 0, 'Settillo'),
+        new EuclideanLine(5, 2, 0, 'Daje'),
+       ],
        [  // Lista iniziale dei parametri euclidiani MODE 1
-         {
-           numSteps: 7,
-           numPulses: 3,
-           numRotations: 4
-         },
-         {
-           numSteps: 8,
-           numPulses: 1,
-           numRotations: 0
-         },
-         {
-           numSteps: 10,
-           numPulses: 4,
-           numRotations: 7
-         },
-         {
-           numSteps: 5,
-           numPulses: 2,
-           numRotations: 4
-         }
-     
-        
+        new EuclideanLine(7, 3, 4, ''),
+        new EuclideanLine(8, 1, 0, ''),
+        new EuclideanLine(5, 2, 4, ''),
+        new EuclideanLine(10, 4, 7, '')
        ],
        
        
      ],
     africa: [  
-        [{
-         numSteps: 18,
-         numPulses: 13,
-         numRotations: 0,
-         name: "Eddaiii",
-       },
-       {
-         numSteps: 8,
-         numPulses: 1,
-         numRotations: 0,
-         name: "Cinquillo"
-       },
-       {
-         numSteps: 10,
-         numPulses: 4,
-         numRotations: 0,
-         name: "Settilio"
-     
-       },
-       {
-         numSteps: 5,
-         numPulses: 2,
-         numRotations: 0,
-         name: "daje"
-       }],
+        [new EuclideanLine(8, 5, 0, 'Kalulu'),
+        new EuclideanLine(8, 1, 0, 'Cinquillo'),
+        new EuclideanLine(10, 4, 0, 'Settillo'),
+        new EuclideanLine(5, 2, 0, 'Daje'),
+       ],
        [  // Lista iniziale dei parametri euclidiani MODE 1
-         {
-           numSteps: 15,
-           numPulses: 11,
-           numRotations: 7
-         },
-         {
-           numSteps: 8,
-           numPulses: 1,
-           numRotations: 0
-         },
-         {
-           numSteps: 10,
-           numPulses: 4,
-           numRotations: 7
-         },
-         {
-           numSteps: 5,
-           numPulses: 2,
-           numRotations: 4
-         }
-     
-        
+        new EuclideanLine(7, 3, 4, ''),
+        new EuclideanLine(8, 1, 0, ''),
+        new EuclideanLine(5, 2, 4, ''),
+        new EuclideanLine(10, 4, 7, '')
        ],
        
        
      ],
     southAmerica: [  
-        [{
-         numSteps: 8,
-         numPulses: 5,
-         numRotations: 0,
-         name: "Tresillo",
-       },
-       {
-         numSteps: 8,
-         numPulses: 1,
-         numRotations: 0,
-         name: "Cinquillo"
-       },
-       {
-         numSteps: 10,
-         numPulses: 4,
-         numRotations: 0,
-         name: "Settilio"
-     
-       },
-       {
-         numSteps: 5,
-         numPulses: 2,
-         numRotations: 0,
-         name: "daje"
-       }],
+        [new EuclideanLine(8, 5, 0, 'Fuego'),
+        new EuclideanLine(8, 1, 0, 'Cinquillo'),
+        new EuclideanLine(10, 4, 0, 'Settillo'),
+        new EuclideanLine(5, 2, 0, 'Daje'),
+       ],
        [  // Lista iniziale dei parametri euclidiani MODE 1
-         {
-           numSteps: 7,
-           numPulses: 3,
-           numRotations: 4
-         },
-         {
-           numSteps: 8,
-           numPulses: 1,
-           numRotations: 0
-         },
-         {
-           numSteps: 10,
-           numPulses: 4,
-           numRotations: 7
-         },
-         {
-           numSteps: 5,
-           numPulses: 2,
-           numRotations: 4
-         }
-     
-        
+        new EuclideanLine(7, 3, 4, ''),
+        new EuclideanLine(8, 1, 0, ''),
+        new EuclideanLine(5, 2, 4, ''),
+        new EuclideanLine(10, 4, 7, '')
        ],
        
        
-     ]
+     ],
 
 }
 
+//setting EuclideanLines.id
+ Object.keys(defaultLines).forEach((key) =>
+     defaultLines[key] = defaultLines[key].map((mode) =>
+         mode.map((line, ind) => {
+             line.setId(ind);
 
-// autogenero info aggiuntive in defaultLines
-Object.keys(defaultLines).forEach((key) => 
-        defaultLines[key] = defaultLines[key].map((mode) => 
-        setInitialSettings(mode))
-         
-);
-
-
-
-
-
+             return line
+         })
+     )
+ );
 
 export default defaultLines
+
+
+

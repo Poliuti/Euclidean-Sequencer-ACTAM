@@ -40,7 +40,13 @@
   font-family: "Quicksand";
   color: rgb(169, 212, 212);
   background: linear-gradient(to right, #08090e, #27333a);
+  
+  
+  /* opacity: 0.3; */
+  
 }
+
+
 .navbar {
   padding: 20px;
   display: flex;
@@ -102,9 +108,8 @@
   color: #f1356d;
 }
 .content {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
+  width: 100%;
+
 }
 
 /* blog previews / list */
@@ -158,6 +163,7 @@
   display: flex;
   margin-left: 30%;
   width: 40%;
+  margin:1rem;
 }
 
 .slider-pattern{
@@ -225,6 +231,45 @@
   position: relative;
 
 }
+
+.environment{
+  width:100%;
+}
+
+.elemento-base{
+  margin: 1rem;
+}
+
+/* .euclidean-sequencer{
+  background-color: rgba(19, 14, 14, 0.8);
+  padding: 3rem;
+  border: 2rem;
+  
+  
+}
+
+.india{
+  background-image: url('./../img/india.jpeg');
+  background-attachment: fixed;
+  background-position: auto ;
+  background-repeat:no-repeat;
+
+  background-size:cover;
+  background-size:100% 230%;
+  
+}
+
+
+
+.middleEast{
+  background-image: url('./../img/middleEast.jpeg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat:no-repeat;
+
+  background-size:cover;
+  background-size:100% 230%;
+} */
 
 
 
