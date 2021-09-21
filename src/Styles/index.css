@@ -46,6 +46,10 @@
   
 }
 
+h1{
+  text-align: center;
+}
+
 
 .navbar {
   padding: 20px;
@@ -57,8 +61,7 @@
 }
 .navbar h1 {
   color: #f1356d;
- 
-  
+
 }
 .navbar .links {
   margin-left: auto;
@@ -85,7 +88,6 @@
 }
 .SideBar h1 {
   color: #f1356d;
-
 }
 .SideBar .home-links {
   margin-left: auto;
@@ -108,8 +110,10 @@
   color: #f1356d;
 }
 .content {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
   width: 100%;
-
 }
 
 /* blog previews / list */
@@ -163,7 +167,7 @@
   display: flex;
   margin-left: 30%;
   width: 40%;
-  margin:1rem;
+  /*margin:1rem;*/
 }
 
 .slider-pattern{
@@ -186,7 +190,6 @@
 }
 
 
-.euc
 
 /* create new blog form */
 .create {
@@ -270,8 +273,6 @@
   background-size:cover;
   background-size:100% 230%;
 } */
-
-
 
 
 
