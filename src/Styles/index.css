@@ -167,6 +167,7 @@ h1{
   display: flex;
   margin-left: 30%;
   width: 40%;
+  margin-bottom: 10px;
   /*margin:1rem;*/
 }
 
@@ -174,7 +175,8 @@ h1{
   justify-content: space-between;
   display: flex;
   margin-left: 0%;
-  width: 40%;
+  width: 60%;
+  margin-bottom: 3px;
 }
 
 
@@ -183,7 +185,7 @@ h1{
 }
 
 .slider-pattern>input[type=range]{
-  width: 50%;
+  width: 60%;
 }
 .rev-decay-slider>input[type=range]{
   width: 50%;
@@ -239,11 +241,11 @@ h1{
   width:100%;
 }
 
-.elemento-base{
+/*.elemento-base{
   margin: 1rem;
 }
 
-/* .euclidean-sequencer{
+ .euclidean-sequencer{
   background-color: rgba(19, 14, 14, 0.8);
   padding: 3rem;
   border: 2rem;
