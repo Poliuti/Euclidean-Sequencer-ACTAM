@@ -8,8 +8,10 @@ const ChannelControls = ({ channel, color }) => {
     <div className="channel-controls">
       <PanSlider channel={channel} color = {color}/>
       <VolumeSlider channel={channel} color = {color}/>
-      <MuteButton channel={channel} />
-      <SoloButton channel={channel} />
+      <div className="mute_solo">
+        <MuteButton channel={channel} />
+        <SoloButton channel={channel} />
+        </div>
     </div>
   );
 };

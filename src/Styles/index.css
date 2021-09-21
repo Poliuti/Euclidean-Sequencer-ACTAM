@@ -241,6 +241,33 @@ h1{
   width:100%;
 }
 
+
+/*mute/solo buttons*/
+
+.mute_solo{
+  display: -webkit-inline-box;
+}
+.mute-button{
+  width: 50px;
+  height: 35px;
+  margin-top: 10px;
+  background-image: url('./../img/mute-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.solo-button{
+  width: 50px;
+  height: 35px;
+  margin-top: 10px;
+  background-image: url('./../img/solo-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+
 /*.elemento-base{
   margin: 1rem;
 }
