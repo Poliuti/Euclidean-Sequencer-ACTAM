@@ -1,3 +1,6 @@
+.pattern-controls{
+  margin-top: -1rem;
+}
 
 input[type=range] {
     width: 10%;
@@ -99,6 +102,28 @@ element.style {
     }
   }
   
+/*tempo-modifier style*/
+
 .tempo-modifier{
   margin-top: 1rem;
+}
+
+.per-due{
+  width: 50px;
+  height: 35px;
+  margin-top: 10px;
+  background-image: url('./../img/per-due.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.diviso-due{
+  width: 50px;
+  height: 35px;
+  margin-top: 10px;
+  background-image: url('./../img/Diviso-2.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }

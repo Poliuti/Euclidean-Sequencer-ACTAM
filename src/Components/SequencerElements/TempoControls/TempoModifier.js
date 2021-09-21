@@ -30,10 +30,8 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
   return (
     <div className="tempo-modifier">
       <button onClick={handleDouble} className="per-due">
-        x2
       </button>
       <button onClick={handleHalf} className="diviso-due">
-        :2
       </button>
       
     </div>
