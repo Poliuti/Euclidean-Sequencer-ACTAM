@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+/*main button style*/
+
+.main-buttons-container{
+  text-align: center;
+}
 
 .stop{
   width: 135px;
@@ -8,7 +13,6 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  margin-left: 296px;
 }
 
 .changeMode{
@@ -239,6 +243,40 @@ h1{
 
 .environment{
   width:100%;
+}
+
+
+/*mute/solo buttons*/
+
+.mute_solo{
+  display: -webkit-inline-box;
+}
+.mute-button{
+  width: 50px;
+  height: 35px;
+  margin-top: 10px;
+  background-image: url('./../img/mute-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.solo-button{
+  width: 50px;
+  height: 35px;
+  margin-top: 10px;
+  background-image: url('./../img/solo-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.active{
+  background-color: rgb(88, 205, 209);
+}
+
+.inactive{
+  background-color:white;
 }
 
 /*.elemento-base{

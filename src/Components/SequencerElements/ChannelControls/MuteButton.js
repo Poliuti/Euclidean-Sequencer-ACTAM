@@ -1,26 +1,26 @@
-import { useState } from "react";
-
-
 const MuteButton = ({ channel }) => {
-  const [muteState, setMuteState] = useState("Mute");
+  
 
-  const handleMute = (stringa, channel) => {
-    if (stringa === "Mute") {
+  const handleMute = (classList, channel) => {
+    if (classList.contains("inactive")) {
+      classList.remove("inactive");
+      classList.add("active")
       channel.mute = true;
-      setMuteState("UnMute");
+   
     } else {
+      classList.remove("active");
+      classList.add("inactive")
       channel.mute = false;
-      setMuteState("Mute");
+
     }
   };
 
   return (
     <div className="mute-div">
       <button
-        onClick={(e) => handleMute(e.currentTarget.innerText, channel)}
-        className="mute-button"
+        onClick={(e) => handleMute(e.currentTarget.classList, channel)}
+        className="mute-button inactive"
       >
-        {muteState}
       </button>
     </div>
   );
