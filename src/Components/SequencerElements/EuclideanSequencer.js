@@ -8,17 +8,12 @@ import colora from "./../../Functions/colora";
 import startSequences from "./../../Functions/startSequences";
 import onSequenceListChange from "./../../Functions/onSequenceListChange";
 import initializePatternArray from "./../../Functions/initializePatternArray";
-import {activeColor} from "./../../Default/colori"
-
+import { activeColor } from "./../../Default/colori";
 
 import { EnvironmentContext } from "./../../Contexts/EnvironmentContext";
 import TempoControls from "./TempoControls/TempoControls";
 import MacroControls from "./MacroControls/MacroControls";
 import PatternControlsList from "./PatternControls/PatternControlsList";
-
-
-
-
 
 const EuclideanSequencer = () => {
   const {
@@ -122,14 +117,16 @@ const EuclideanSequencer = () => {
 
   return (
     <div className="euclidean-sequencer">
-      <TempoControls tempo={tempo} setTempo={setTempo} color={activeColor[0]}/>
-      <MacroControls color={activeColor[0]}/>
-      <button onClick={handleStopClick} className="stop">
-      </button>
-      <button onClick={handleContextResumeClick} className="start-context">
-      </button>
-      <button onClick={changeMode} className="changeMode">
-      </button>
+      <TempoControls tempo={tempo} setTempo={setTempo} color={activeColor[0]} />
+      <MacroControls color={activeColor[0]} />
+      <div className="main-buttons-container">
+        <button onClick={handleStopClick} className="stop"></button>
+        <button
+          onClick={handleContextResumeClick}
+          className="start-context"
+        ></button>
+        <button onClick={changeMode} className="changeMode"></button>
+      </div>
 
       {!mode && (
         <div className="dropDown">
