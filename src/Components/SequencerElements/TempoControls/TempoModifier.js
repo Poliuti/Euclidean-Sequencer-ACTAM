@@ -33,7 +33,7 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
       </button>
       <button onClick={handleHalf} className="diviso-due">
       </button>
-      
+      <h4>{`1 / ${8 * tempo.tempoSpeedIndex[index]}`}</h4>
     </div>
   );
 };

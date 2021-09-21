@@ -161,7 +161,7 @@ h1{
 .pattern-controls-list{
   display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 30px;
+  grid-gap: 40px;
   margin-top: 50px;
  }
 /*style of sliders */
@@ -179,7 +179,7 @@ h1{
   justify-content: space-between;
   display: flex;
   margin-left: 0%;
-  width: 60%;
+  width: 58%;
   margin-bottom: 3px;
 }
 
@@ -233,12 +233,7 @@ h1{
 
 .circle-container {
   position: relative;
-  top: 5rem;
-}
-
-.pattern-controls {
-  position: relative;
-
+  top: 8rem;
 }
 
 .environment{

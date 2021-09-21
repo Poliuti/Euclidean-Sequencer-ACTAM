@@ -1,5 +1,6 @@
 .pattern-controls{
-  margin-top: -1rem;
+  position: relative;
+  margin-top: 2rem;
 }
 
 input[type=range] {
@@ -106,6 +107,7 @@ element.style {
 
 .tempo-modifier{
   margin-top: 1rem;
+  display: flex;
 }
 
 .per-due{
@@ -126,4 +128,8 @@ element.style {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+}
+
+h4{
+  margin-left: 2rem;
 }

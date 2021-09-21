@@ -8,7 +8,7 @@ const CircleLine = ({ lineIndex, patternArray }) => {
     anglesArray.push(angle * idx);
   });
 
-  let radius = 55;
+  let radius = 65;
 
   return (
     <div className="circle-line">
