@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+/*main button style*/
+
+.main-buttons-container{
+  text-align: center;
+}
 
 .stop{
   width: 135px;
@@ -8,7 +13,6 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  margin-left: 296px;
 }
 
 .changeMode{
