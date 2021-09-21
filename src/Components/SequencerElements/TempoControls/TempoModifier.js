@@ -6,17 +6,19 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
 
   const handleDouble = () => {
     let tempoUpdate = { ...tempo };
-    tempoUpdate.tempoSpeedIndex[index] *= 2;
+    if (tempoUpdate.tempoSpeedIndex[index] <= 4)
+    {tempoUpdate.tempoSpeedIndex[index] *= 2;
     tempoUpdate.tempoSpeedIndexForTone[index] = `${
       8 * tempoUpdate.tempoSpeedIndex[index]
     }n`;
-    setTempo(tempoUpdate);
+    setTempo(tempoUpdate);}
     Tone.Transport.stop();
     Tone.Transport.start("+0.1");
   };
 
   const handleHalf = () => {
     let tempoUpdate = { ...tempo };
+    if (tempoUpdate.tempoSpeedIndex[index] > 1/8)
     tempoUpdate.tempoSpeedIndex[index] /= 2;
     tempoUpdate.tempoSpeedIndexForTone[index] = `${
       8 * tempoUpdate.tempoSpeedIndex[index]
