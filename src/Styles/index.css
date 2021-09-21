@@ -271,6 +271,13 @@ h1{
   background-position: center;
 }
 
+.active{
+  background-color: rgb(88, 205, 209);
+}
+
+.inactive{
+  background-color:white;
+}
 
 /*.elemento-base{
   margin: 1rem;

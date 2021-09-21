@@ -1,25 +1,26 @@
-import { useState } from "react";
-
 const SoloButton = ({ channel }) => {
-  const [soloState, setSoloState] = useState("Solo");
 
-  const handleSolo = (stringa, channel) => {
-    if (stringa === "Solo") {
+  const handleSolo = (classList, channel) => {
+    if (classList.contains("inactive")) {
+      classList.remove("inactive");
+      classList.add("active")
       channel.solo = true;
-      setSoloState("Unsolo");
+   
     } else {
+      classList.remove("active");
+      classList.add("inactive")
       channel.solo = false;
-      setSoloState("Solo");
+
     }
   };
 
   return (
     <div className="solo-div">
       <button
-        onClick={(e) => handleSolo(e.currentTarget.innerText, channel)}
-        className="solo-button"
+        onClick={(e) => handleSolo(e.currentTarget.classList, channel)}
+        className="solo-button inactive"
       >
-        {soloState}
+  
       </button>
     </div>
   );
