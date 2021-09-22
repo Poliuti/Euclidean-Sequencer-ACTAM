@@ -14,8 +14,8 @@
 }
 
 .stop{
-  width: 135px;
-  height: 50px;
+  width: 6rem;
+  height: 3rem;
   margin-top: 20px;
   background-image: url('./../img/myPause.png');
   background-repeat: no-repeat;
@@ -24,8 +24,8 @@
 }
 
 .changeMode{
-  width: 135px;
-  height: 50px;
+  width: 6rem;
+  height: 3rem;
   margin-top: 20px;
   background-image: url('./../img/change.png');
   background-repeat: no-repeat;
@@ -35,8 +35,8 @@
 }
 
 .start-context{
-  width: 135px;
-  height: 50px;
+  width: 6rem;
+  height: 3rem;
   margin-top: 20px;
   background-image: url('./../img/myPlay2.png');
   background-color: white;
@@ -123,8 +123,8 @@ h1{
 }
 .content {
   max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 30px auto;
+  padding: 10px;
   width: 100%;
 }
 
@@ -170,7 +170,7 @@ h1{
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 40px;
-  margin-top: 50px;
+  margin-top: 1.5rem;
  }
 /*style of sliders */
 
