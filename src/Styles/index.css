@@ -254,8 +254,8 @@ h1{
   display: -webkit-inline-box;
 }
 .mute-button{
-  width: 50px;
-  height: 35px;
+  width: 40px;
+  height: 30px;
   margin-top: 10px;
   background-image: url('./../img/mute-icon.png');
   background-repeat: no-repeat;
@@ -264,8 +264,8 @@ h1{
 }
 
 .solo-button{
-  width: 50px;
-  height: 35px;
+  width: 40px;
+  height: 30px;
   margin-top: 10px;
   background-image: url('./../img/solo-icon.png');
   background-repeat: no-repeat;
