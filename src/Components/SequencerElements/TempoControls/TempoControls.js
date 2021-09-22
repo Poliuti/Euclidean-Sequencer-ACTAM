@@ -18,7 +18,6 @@ const TempoControls = ({ tempo, setTempo, color }) => {
       />
       <SwingSubdivisionSlider transport={Tone.Transport} color={color}/>
 
-      <hr />
     </div>
   );
 };

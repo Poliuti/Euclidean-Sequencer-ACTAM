@@ -116,7 +116,7 @@ element.style {
   margin-top: 10px;
   background-image: url('./../img/per-due.png');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
 }
 
@@ -124,12 +124,19 @@ element.style {
   width: 50px;
   height: 35px;
   margin-top: 10px;
-  background-image: url('./../img/Diviso-2.png');
+  background-image: url('./../img/diviso-due.png');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
 }
 
 h4{
   margin-left: 2rem;
+}
+
+.Limit_up{
+  filter:opacity(60%);
+}
+.Limit_down{
+  filter: opacity(60%);
 }
