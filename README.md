@@ -1,3 +1,13 @@
+# Euclidean Sequencer
+
+Euclidean sequencers divide a number of beat subdivisions over a time interval and place notes as evenly as possible into that time. They are based and take the name from the Euclidean algorithm, that computes the greatest common divisor of two given integers.The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number n of time intervals, and another given number k < n of pulses, distributes the pulses as evenly as possible among these n intervals. 
+Our software is a four voice euclidean sequencer implemented using the Javascript library React. It provides the user with the ability to create polymetries, polyrhythms and melodic arpeggios in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes.
+
+# Usage
+
+There are basically
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
