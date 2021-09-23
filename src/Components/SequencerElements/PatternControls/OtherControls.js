@@ -1,12 +1,13 @@
 import ChannelControls from "../ChannelControls/ChannelControls";
 import TempoModifier from "../TempoControls/TempoModifier";
 
-const OtherControls = ({ channel, tempo, setTempo, index, color }) => {
-    
+const OtherControls = ({ channel, tempo, setTempo, index, color, mode }) => {
+  console.log("eeeeeeeeeee") ;
+  console.log(mode);
   return (
     <div className="other-controls">
       <ChannelControls channel={channel} color={color}/>
-      <TempoModifier tempo={tempo} setTempo={setTempo} index={index} />
+      {mode && (<TempoModifier tempo={tempo} setTempo={setTempo} index={index} />)}
     </div>
   );
 };

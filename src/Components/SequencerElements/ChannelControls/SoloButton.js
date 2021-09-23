@@ -1,17 +1,27 @@
+import { Transport } from "tone";
+
 const SoloButton = ({ channel }) => {
 
   const handleSolo = (classList, channel) => {
-    if (classList.contains("inactive")) {
+    Transport.pause();if (channel.solo === false) {
+      
+      channel.solo = true;
+      
+      
       classList.remove("inactive");
       classList.add("active")
-      channel.solo = true;
+      
    
     } else {
+      
+      channel.solo = false;
+      
       classList.remove("active");
       classList.add("inactive")
-      channel.solo = false;
+      
 
     }
+
   };
 
   return (

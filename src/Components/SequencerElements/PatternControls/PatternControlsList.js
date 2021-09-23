@@ -39,7 +39,7 @@ const PatternControlsList = ({
               color={color}
             />
           )}
-          <OtherControls channel={channelList[id]} tempo={tempo} setTempo={setTempo} index={id} color={color}/>
+          <OtherControls channel={channelList[id]} tempo={tempo} setTempo={setTempo} index={id} color={color} mode={mode}/>
           
           
         </div>
