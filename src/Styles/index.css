@@ -10,7 +10,11 @@
   width: 87%;
   justify-content: space-between;
   grid-gap: 0px;
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
+
+h2{
+  text-align: -webkit-right;
 }
 
 .stop{
