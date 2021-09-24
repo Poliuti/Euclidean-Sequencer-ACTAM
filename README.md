@@ -5,7 +5,7 @@ Our software is a four voice euclidean sequencer implemented using the Javascrip
 
 # Usage
 
-There are basically two different modes. The first one, called **Custom**, allows you to create your own patterns from scratch, modify the speed of the individual lines, .. The second one instead offers different presets for some parts of the world (Africa, India, Middle East, South America and the rest of the world).
+There are basically two different modes. The first one, called **Custom**, allows you to create your own patterns from scratch, modify the speed of the individual lines, .. The second one instead offers different presets from some parts of the world (Africa, India, Middle East, South America and the rest of the world).
 
 
 # Getting Started with Create React App
