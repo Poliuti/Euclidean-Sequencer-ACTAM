@@ -7,6 +7,8 @@ import {
   activeColor,
   currentColor
 } from "./../Default/colori";
+import creaSequenceListModeTwo from "./creaSequenceListMode2";
+import creaSequenceListModeOne from "./creaSequenceListModeOne";
 
 
 const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone.js), ritorna la lista aggiornata e la lista del tick position
@@ -17,7 +19,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
   instrumentList,
   initialPositionArray,
   mode,
-  clickedState
+  selectedPatternExt
 
 
 ) => {
@@ -35,83 +37,24 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
         }); */
 
 
+        
+    
 
-    patternList.map((line, index) => {
+    initialList = creaSequenceListModeOne(patternList, initialList, currentPosArr, instrumentList, noteArray, initialPositionArray, noteSpeedArray);
 
-      initialList.push(
-        new Sequence(
-          (time, event) => {
-
-
-            currentPosArr[index] %= line.length;
-
-
-            if (event === 1 && Transport.state === "started") {
-
-              instrumentList[index].triggerAttackRelease(
-                noteArray[index],
-                "8n",
-                time
-              );
-
-
-            }
-
-
-
-
-
-
-
-
-            /*  */
-
-            let dot = document.getElementById(`${index}${currentPosArr[index]}`);
-
-
-            let dotColor = dot.style.backgroundColor;
-
-
-            if (Transport.state === "started") {
-              dot.style.backgroundColor = "white";
-
-              Transport.scheduleOnce(() => {
-                dot.style.backgroundColor = dotColor;
-              }, "+0.005");
-              currentPosArr[index]++;
-
-            } else {
-              currentPosArr = initialPositionArray;
-            }
-
-
-
-
-
-          },
-          line,
-          noteSpeedArray[index]
-        )
-      );
-
-
-    });
 
     return initialList
 
   } else {
-    let currentPosArr = initialPositionArray[0];
+    let currentPos = initialPositionArray[0];
 
 
 
-    let numLines = clickedState.length;
+    initialList = creaSequenceListModeTwo(selectedPatternExt,initialList,  instrumentList, noteArray, initialPositionArray, noteSpeedArray, currentPos);
 
 
 
-
-    
-
-    clickedState.map((line, index) => {
+    /* selectedPatternExt.map((line, index) => {
 
       initialList.push(
         new Sequence(
@@ -171,7 +114,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
       );
 
 
-    });
+    }); */
 
     return initialList
   }

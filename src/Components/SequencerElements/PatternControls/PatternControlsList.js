@@ -13,7 +13,8 @@ const PatternControlsList = ({
   tempo,
   channelList,
   mode,
-  colors
+  colors,
+  patternArrayList
 }) => {
   const elementoBase = {
     height: "17rem",
@@ -25,7 +26,7 @@ const PatternControlsList = ({
         const color = colors[id];
         return (
         <div key={id} className="elemento-base" style={elementoBase}>
-          <CircleContainer lineIndex={id} tempo={tempo} setTempo={setTempo} />
+          <CircleContainer lineIndex={id} tempo={tempo} setTempo={setTempo} pattern={patternArrayList[id]}/>
 
           {mode && (
             <PatternControls

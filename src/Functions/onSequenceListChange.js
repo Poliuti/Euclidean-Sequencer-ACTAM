@@ -4,13 +4,16 @@ import {
 import colora from "./colora";
 
 const onSequenceListChange = (sequences, patternList) => {
+  console.log("HA CHIAMATO ANCHE SEQUENCELISTCHANGE ")
+  
   sequences.forEach((seq) => {
     seq.start("0:0:0");
   });
+  
+
 
   patternList.forEach((line, ind) => {
     colora(line, ind);
-
   })
 
   Transport.scheduleOnce(() => {
@@ -19,6 +22,7 @@ const onSequenceListChange = (sequences, patternList) => {
 
     })
   }, "+0.5");
+
 
 
 }

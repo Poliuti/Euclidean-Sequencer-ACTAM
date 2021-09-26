@@ -3,7 +3,7 @@ import { Transport } from "tone";
 const SoloButton = ({ channel }) => {
 
   const handleSolo = (classList, channel) => {
-    Transport.pause();if (channel.solo === false) {
+    if (channel.solo === false) {
       
       channel.solo = true;
       

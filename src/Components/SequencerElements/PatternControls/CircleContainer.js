@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import CircleLine from "./CircleLine";
-import { EnvironmentContext } from "./../../../Contexts/EnvironmentContext";
 
-const CircleContainer = ({ lineIndex, tempo, setTempo }) => {
-  const { patternArrayList } = useContext(EnvironmentContext);
-  const euclArray = patternArrayList[lineIndex];
+
+const CircleContainer = ({ lineIndex, tempo, setTempo, pattern }) => {
+ 
+  
 
   return (
     <div className="circle-container">
       <CircleLine
         lineIndex={lineIndex}
-        patternArray={euclArray}
+        patternArray={pattern}
         tempo={tempo}
         setTempo={setTempo}
       />

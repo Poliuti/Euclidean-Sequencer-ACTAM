@@ -1,19 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
-
-import * as Tone from "tone";
 import { Transport } from "tone";
-import Dropdown from "react-dropdown";
-import "./../../../node_modules/react-dropdown/style.css";
-import colora from "./../../Functions/colora";
-import startSequences from "./../../Functions/startSequences";
 import onSequenceListChange from "./../../Functions/onSequenceListChange";
-import initializePatternArray from "./../../Functions/initializePatternArray";
 import { activeColor, macroColor } from "./../../Default/colori";
-
 import { EnvironmentContext } from "./../../Contexts/EnvironmentContext";
 import TempoControls from "./TempoControls/TempoControls";
 import MacroControls from "./MacroControls/MacroControls";
 import PatternControlsList from "./PatternControls/PatternControlsList";
+import PlayButton from "./TransportControls/PlayButton";
+import StopButton from "./TransportControls/StopButton";
+import ChangeModeButton from "./OtherFunctionalityControls/ChangeModeButton";
+import removeClass from "../../Functions/removeClass";
+import DropDownMenu from "./OtherFunctionalityControls/DropDownMenu";
+import initializeToneSwing from "../../Functions/initializeToneSwing";
 
 const EuclideanSequencer = () => {
   const {
@@ -30,24 +28,30 @@ const EuclideanSequencer = () => {
     setMode,
     patternArrayList,
     setSelectedPattern,
+    userLinesList,
+    setUserLinesList,
   } = useContext(EnvironmentContext);
-
-  useEffect(() => {
-    Transport.stop();
-  }, []);
-
-  useEffect(() => {
-    Transport.bpm.value = tempo.bpm;
-    Transport.swing = 0;
-    Transport.swingSubdivision = "8n";
-  }, [tempo]);
 
   const [patternName, setPatternName] = useState(envDefault[0][0].name);
 
   useEffect(() => {
+    Transport.stop();
+    initializeToneSwing();
+  }, []);
+
+
+
+  useEffect(() => {
+    Transport.bpm.value = tempo.bpm;
+  }, [tempo]);
+
+
+  useEffect(() => {
     onSequenceListChange(sequenceList, patternArrayList);
+    console.log("QUI?")
 
     return () => {
+      console.log("ANCHE QUI")
       sequenceList.forEach((seq) => {
         seq.stop();
         seq.dispose();
@@ -55,94 +59,63 @@ const EuclideanSequencer = () => {
     };
   }, [sequenceList]);
 
-  const handleStopClick = () => {
-    Tone.Transport.stop();
+  /* 
+  const handleSave = () => {
+    const tempUserList = userLinesList;
+    tempUserList.push(linesList);
+    setUserLinesList(tempUserList);
+    console.log(userLinesList);
+  } */
 
-    sequenceList.forEach((seq, index) => {
-      seq.stop();
-    });
+  /*   const handleOnPatternLoad = (ev, userLinesList ) => {
+    console.log(userLinesList);
+ 
+    let selectedIndexPattern = ev.label.match(/\d+$/)[0];
+    console.log(selectedIndexPattern);
+    setLinesList(userLinesList[selectedIndexPattern])
 
-    let dumDummy = dummy + 1;
-    setDummy(dumDummy);
-
-    patternArrayList.forEach((line, ind) => {
-      colora(line, ind);
-    });
-  };
-
-  const handleContextResumeClick = () => {
-    if (Tone.context.state === "suspended") {
-      Tone.context.resume();
-      startSequences(sequenceList);
-    } else {
-      startSequences(sequenceList);
-    }
-  };
-
-  const removeClass = (classToRemove, searchClass) => {
-    let $domElements = document.getElementsByClassName(searchClass);
-    for (let item of $domElements) {
-      item.classList.remove(classToRemove);
-    }
-  };
-  const changeMode = () => {
-    setMode(!mode);
-    removeClass("tempInactive", "dot");
-    Tone.Transport.stop();
-  };
-
-  const handleOnChange = (string, linesList) => {
-    Transport.stop();
-    let chosenPattern;
-    linesList.forEach((line, idx) => {
-      if (line.name === string) {
-        chosenPattern = line;
-        let chosenPatternExt = initializePatternArray(chosenPattern, 4);
-        setSelectedPattern(chosenPatternExt);
-        removeClass("tempInactive", "dot");
-        setPatternName(string);
-      }
-    });
-
-    Transport.start("+0.1");
-  };
-
-  let dropDownOptions = envDefault[0].map((line) => {
-    let name;
-    if (line.name !== undefined) {
-      name = line.name;
-    } else return "noNameForNow";
-    return name;
-  });
+  } */
 
   return (
     <div className="euclidean-sequencer">
       <div className="General-Controls">
-      <h2>Tempo Controls</h2>
-      <h2>Macro Controls</h2>
-      <TempoControls tempo={tempo} setTempo={setTempo} color={macroColor} />
-      <MacroControls color={macroColor} />
-      </div>
-      <div className="main-buttons-container">
-        <button onClick={handleStopClick} className="stop"></button>
-        <button
-          onClick={handleContextResumeClick}
-          className="start-context"
-        ></button>
-        <button onClick={changeMode} className="changeMode"></button>
+        <h2>Tempo Controls</h2>
+        <h2>Macro Controls</h2>
+        <TempoControls tempo={tempo} setTempo={setTempo} color={macroColor} />
+        <MacroControls color={macroColor} />
       </div>
 
-      {!mode && (
-        <div className="dropDown">
-          <h2>Chosen Pattern : {patternName}</h2>
-          <Dropdown
-            options={dropDownOptions}
-            onChange={(e) => handleOnChange(e.value, envDefault[0])}
-            value={dropDownOptions[0]}
+      <div className="main-buttons-container">
+        <PlayButton sequenceList={sequenceList} />
+        <StopButton
+          sequenceList={sequenceList}
+          dummy={dummy}
+          setDummy={setDummy}
+          patternArrayList={patternArrayList}
+        />
+        <ChangeModeButton
+          mode={mode}
+          setMode={setMode}
+          removeClass={removeClass}
+        />
+      </div>
+
+      {/*       <Dropdown
+            options={userLinesList.map((line, ind) => `User Pattern ${ind}`)}
+            onChange={(e) => handleOnPatternLoad(e, userLinesList)}
+            value={[]}
             placeholder="Select a Euclidean Pattern"
-          />
-        </div>
+          /> */}
+
+      {!mode && (
+        <DropDownMenu
+          defaultEnvInfo={envDefault[0]}
+          setSelectedPattern={setSelectedPattern}
+          patternName={patternName}
+          setPatternName={setPatternName}
+        />
       )}
+
       <PatternControlsList
         linesList={linesList}
         setLinesList={setLinesList}
@@ -152,6 +125,7 @@ const EuclideanSequencer = () => {
         channelList={channelList}
         mode={mode}
         colors={activeColor}
+        patternArrayList={patternArrayList}
       />
     </div>
   );

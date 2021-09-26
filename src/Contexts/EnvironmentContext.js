@@ -20,8 +20,10 @@ const noteArray = ["A1", "A1", "A1", "A1"]; // info sulle note che suona ogni se
 const EnvironmentContextProvider = (props) => {
   // this context provides common info within the environment
 
+ 
 
   console.log("Context ran");
+  
 
 
  
@@ -33,7 +35,7 @@ const EnvironmentContextProvider = (props) => {
   const numInstr = samplerList[props.num].length;
 
   const tempoInfo = {
-    bpm: 120,
+    bpm: 140,
     tempoSpeedIndex: tempoSpeedIndex,
     tempoSpeedIndexForTone: tempoSpeedIndexForTone,
   };
@@ -42,7 +44,7 @@ const EnvironmentContextProvider = (props) => {
 
   const initPosArray = [0, 0, 0, 0];
   //ogni render del context viene azzerata la posizione del tick
-
+  const [userLinesList, setUserLinesList] = useState([]); 
 
   const [selectedPattern, setSelectedPattern] = useState(
     initializePatternArray(envDefaultInfo[0][0], numInstr)
@@ -105,6 +107,8 @@ const EnvironmentContextProvider = (props) => {
         mode,
         setMode,
         setSelectedPattern,
+        userLinesList,
+        setUserLinesList
       }}
     >
       {props.children}

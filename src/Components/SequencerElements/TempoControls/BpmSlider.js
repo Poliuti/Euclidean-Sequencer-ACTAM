@@ -4,7 +4,7 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
     <div className="slider-base bpm-slider">
       <input
         type="range"
-        min="30"
+        min="50"
         step="1"
         max="230"
         defaultValue={tempo.bpm}

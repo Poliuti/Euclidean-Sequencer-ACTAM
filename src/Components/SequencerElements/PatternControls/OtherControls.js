@@ -2,8 +2,7 @@ import ChannelControls from "../ChannelControls/ChannelControls";
 import TempoModifier from "../TempoControls/TempoModifier";
 
 const OtherControls = ({ channel, tempo, setTempo, index, color, mode }) => {
-  console.log("eeeeeeeeeee") ;
-  console.log(mode);
+
   return (
     <div className="other-controls">
       <ChannelControls channel={channel} color={color}/>
