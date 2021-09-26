@@ -79,10 +79,12 @@ const EuclideanSequencer = () => {
   return (
     <div className="euclidean-sequencer">
       <div className="General-Controls">
-        <h2>Tempo Controls</h2>
-        <h2>Macro Controls</h2>
-        <TempoControls tempo={tempo} setTempo={setTempo} color={macroColor} />
-        <MacroControls color={macroColor} />
+
+      <h2>Tempo Controls</h2>
+      <h2 id="macroControls">Macro Controls</h2>
+      <TempoControls tempo={tempo} setTempo={setTempo} color={macroColor} />
+      <MacroControls color={macroColor} />
+
       </div>
 
       <div className="main-buttons-container">
