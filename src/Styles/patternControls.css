@@ -107,7 +107,6 @@ element.style {
 /*tempo-modifier style*/
 
 .tempo-modifier{
-  margin-top: 1rem;
   display: flex;
 }
 
@@ -129,10 +128,6 @@ element.style {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
-
-h4{
-  margin-left: 2rem;
 }
 
 .Limit_up{

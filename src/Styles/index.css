@@ -2,8 +2,11 @@
 /*main button style*/
 
 .main-buttons-container{
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
+
 .General-Controls{
   display: grid;
   grid-template-columns: 12rem 12rem;
@@ -65,7 +68,9 @@
 h1{
   text-align: center;
 }
-
+h4{
+margin-left: 2rem;
+}
 
 .navbar {
   padding: 20px;
