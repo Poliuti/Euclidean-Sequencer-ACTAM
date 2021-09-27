@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Transport } from "tone";
 
-const SwingSubdivisionSlider = ({ transport, color }) => {
+const SwingSubdivisionSlider = ({ color }) => {
   const [swingSubd, setSwingSubd] = useState("8");
   return (
     <div className="slider-base swing-subd-slider">
@@ -12,7 +13,7 @@ const SwingSubdivisionSlider = ({ transport, color }) => {
         step="4"
         id="swing-subd-slid"
         onChange={(e) => {
-          transport.swingSubdivision = `${parseInt(e.target.valueAsNumber)}n`;
+          Transport.swingSubdivision = `${parseInt(e.target.valueAsNumber)}n`;
           setSwingSubd(parseInt(e.target.valueAsNumber));
         }}
         style={{"--c": `${color}`}}
@@ -25,3 +26,4 @@ const SwingSubdivisionSlider = ({ transport, color }) => {
 };
 
 export default SwingSubdivisionSlider;
+

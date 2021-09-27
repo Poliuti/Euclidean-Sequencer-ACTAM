@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Transport } from "tone";
+import { Context, context, Transport } from "tone";
 import onSequenceListChange from "./../../Functions/onSequenceListChange";
 import { activeColor, macroColor } from "./../../Default/colori";
 import { EnvironmentContext } from "./../../Contexts/EnvironmentContext";
@@ -12,6 +12,8 @@ import ChangeModeButton from "./OtherFunctionalityControls/ChangeModeButton";
 import removeClass from "../../Functions/removeClass";
 import DropDownMenu from "./OtherFunctionalityControls/DropDownMenu";
 import initializeToneSwing from "../../Functions/initializeToneSwing";
+import startSequences from "../../Functions/startSequences";
+import colora from "../../Functions/colora";
 
 const EuclideanSequencer = () => {
   const {
@@ -30,14 +32,70 @@ const EuclideanSequencer = () => {
     setSelectedPattern,
     userLinesList,
     setUserLinesList,
+    currentTransportState,
+    
+    
   } = useContext(EnvironmentContext);
 
+  
   const [patternName, setPatternName] = useState(envDefault[0][0].name);
+
+
+
+
 
   useEffect(() => {
     Transport.stop();
     initializeToneSwing();
+ 
+
   }, []);
+
+
+
+
+
+  const handleContextResumeClick = () => {
+    if (Context.state === "suspended") {
+      Context.resume();
+    }
+    startSequences(sequenceList);
+
+  };
+
+
+  const handleStopClick = () => {
+    Transport.stop();
+
+    sequenceList.forEach((seq, index) => {
+      seq.stop();
+    });
+
+    let dumDummy = dummy + 1;
+    setDummy(dumDummy);
+
+    patternArrayList.forEach((line, ind) => {
+      colora(line, ind);
+    });
+  };
+
+
+
+
+  document.body.onkeyup = function (e) {
+    console.log(e.code)
+    console.log(Transport.state)
+    if (e.code === "Space") {
+      if (Transport.state === "stopped") {
+        handleContextResumeClick();
+      }
+      else {
+       handleStopClick();
+      }
+    } 
+
+  }
+  
 
 
 
@@ -45,17 +103,25 @@ const EuclideanSequencer = () => {
     Transport.bpm.value = tempo.bpm;
   }, [tempo]);
 
+  
+
 
   useEffect(() => {
-    onSequenceListChange(sequenceList, patternArrayList);
-    console.log("QUI?")
+
+    onSequenceListChange(sequenceList, patternArrayList,currentTransportState );
+
+
 
     return () => {
-      console.log("ANCHE QUI")
+ 
       sequenceList.forEach((seq) => {
         seq.stop();
         seq.dispose();
       });
+      console.log(Transport.state);
+
+/*       if (Transport.state === "started")
+      Transport.stop(); */
     };
   }, [sequenceList]);
 

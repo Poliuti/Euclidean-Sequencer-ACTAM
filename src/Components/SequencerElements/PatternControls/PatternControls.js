@@ -1,14 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import PulseSlider from "./PulseSlider";
 import RotateSlider from "./RotateSlider";
 import StepSlider from "./StepSlider";
 import "./../../../Styles/patternControls.css";
 import bjorklund from "../../../Functions/bjorklund";
 import colora from "../../../Functions/colora";
+import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 
 
 
 const PatternControls = ({ idx, linesList, setLinesList, color }) => {
+
+
+
+  const {
+    currentTransportState, setCurrentTransportState
+    
+  } = useContext(EnvironmentContext);
   const [numSteps, setNumSteps] = useState(linesList[idx].numSteps);
   const [numPulses, setNumPulses] = useState(linesList[idx].numPulses);
   const [numRotations, setNumRotations] = useState(linesList[idx].numRotations);
@@ -29,6 +37,8 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
     colora(tempList[idx].euclideanArray, idx);
   }, [numSteps, numPulses, numRotations]);
 
+
+
   return (
     <div className="pattern-controls" id={idx}>
       <StepSlider
@@ -40,6 +50,8 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
         setNumRotations={setNumRotations}
         numRotations={numRotations}
         color={color}
+        currentTransportState = {currentTransportState}
+        setCurrentTransportState={setCurrentTransportState}
        
       />
       <PulseSlider
@@ -48,6 +60,8 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
         max={numSteps}
         setNumPulses={setNumPulses}
         color={color}
+        currentTransportState = {currentTransportState}
+        setCurrentTransportState={setCurrentTransportState}
       />
       <RotateSlider
         defaultValue={numRotations}
@@ -55,6 +69,8 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
         max={numSteps - 1}
         setNumRotations={setNumRotations}
         color={color}
+        currentTransportState = {currentTransportState}
+        setCurrentTransportState={setCurrentTransportState}
       />
       
 

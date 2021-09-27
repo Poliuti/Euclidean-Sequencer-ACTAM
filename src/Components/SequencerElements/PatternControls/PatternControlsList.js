@@ -24,6 +24,8 @@ const PatternControlsList = ({
     <div className="pattern-controls-list">
       {linesList.map((line, id) => {
         const color = colors[id];
+        console.log("Mi interessa qui:")
+        console.log(channelList[id].solo);
         return (
         <div key={id} className="elemento-base" style={elementoBase}>
           <CircleContainer lineIndex={id} tempo={tempo} setTempo={setTempo} pattern={patternArrayList[id]}/>

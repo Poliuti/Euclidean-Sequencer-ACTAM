@@ -11,7 +11,7 @@ const PlayButton = ({sequenceList}) => {
   };
 
     return (<div className="play-button-cont">
-        <button className="start-context" onClick={handleContextResumeClick}></button>
+        <button className="start-context" onClick={handleContextResumeClick} ></button>
     </div> );
 }
  

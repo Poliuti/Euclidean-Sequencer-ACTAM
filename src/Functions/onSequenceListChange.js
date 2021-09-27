@@ -3,12 +3,20 @@ import {
 } from "tone";
 import colora from "./colora";
 
-const onSequenceListChange = (sequences, patternList) => {
+const onSequenceListChange = (sequences, patternList, transportState) => {
   console.log("HA CHIAMATO ANCHE SEQUENCELISTCHANGE ")
+  console.log(transportState)
   
-  sequences.forEach((seq) => {
+
+  if (transportState)
+  {console.log("SIAMO DENTRO")
+    sequences.forEach((seq) => {
     seq.start("0:0:0");
-  });
+  });}
+
+/*   sequences.forEach((seq) => {
+    seq.start("0:0:0");
+  }) */
   
 
 
@@ -22,6 +30,8 @@ const onSequenceListChange = (sequences, patternList) => {
 
     })
   }, "+0.5");
+
+
 
 
 

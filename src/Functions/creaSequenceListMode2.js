@@ -8,11 +8,11 @@ import {
     currentColor
   } from "./../Default/colori";
 
-  const creaSequenceListModeTwo = (selectedPatternExt, initialList, instrumentList, noteArray, initialPositionArray, noteSpeedArray, currentPos) => {
+  const creaSequenceListModeTwo = (selectedPatternExt, initialList, instrumentList, noteArray, initialPositionArray, noteSpeedArray, currentPos, channelList) => {
  
     const numLines = selectedPatternExt.length;
     selectedPatternExt.map((line, index) => {
-
+      let channel = channelList[index];
         initialList.push(
           new Sequence(
             (time, event) => {
@@ -26,7 +26,14 @@ import {
   
               let dotColor = dot.style.backgroundColor;
   
-              if (event === 1 && Transport.state === "started" && dotColor === activeColor[index]) {
+
+              let BooleanSoloArray = channelList.map((channel) => 
+              channel.solo
+            )
+            if (BooleanSoloArray.includes(true)){
+
+              if (channel.mute === false && channel.solo===true)
+              {if (event === 1 && Transport.state === "started" && dotColor === activeColor[index]) {
   
                 instrumentList[index].triggerAttackRelease(
                   noteArray[index],
@@ -35,10 +42,23 @@ import {
                 );
   
   
+              }}
+
+            }
+            else {
+              if (channel.mute === false)
+              {if (event === 1 && Transport.state === "started") {
+  
+                instrumentList[index].triggerAttackRelease(
+                  noteArray[index],
+                  "8n",
+                  time
+                );
   
   
-              }
-  
+              }}
+
+            }
   
   
   

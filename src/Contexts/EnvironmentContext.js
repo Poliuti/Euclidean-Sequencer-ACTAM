@@ -3,6 +3,7 @@ import { samplerList, channelList } from "./../Default/sampler";
 import creaSequenceList from "./../Functions/CreaSequenceList";
 import initializePatternArray from "./../Functions/initializePatternArray";
 import defaultLines from "../Default/defaultLines";
+import { Transport } from "tone";
 
 
 
@@ -20,11 +21,11 @@ const noteArray = ["A1", "A1", "A1", "A1"]; // info sulle note che suona ogni se
 const EnvironmentContextProvider = (props) => {
   // this context provides common info within the environment
 
- 
+ const [currentTransportState, setCurrentTransportState] = useState(0);
 
   console.log("Context ran");
   
-
+ 
 
  
   const envDefaultInfo = defaultLines[props.name];
@@ -85,10 +86,12 @@ const EnvironmentContextProvider = (props) => {
       samplerList[props.num],
       initPosArray,
       mode,
-      selectedPattern
+      selectedPattern,
+      channelList[props.num],
     );
 
-
+   
+  
 
   return (
     <EnvironmentContext.Provider
@@ -108,7 +111,9 @@ const EnvironmentContextProvider = (props) => {
         setMode,
         setSelectedPattern,
         userLinesList,
-        setUserLinesList
+        setUserLinesList,
+        currentTransportState,
+        setCurrentTransportState
       }}
     >
       {props.children}

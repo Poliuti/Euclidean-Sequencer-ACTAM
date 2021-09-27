@@ -1,12 +1,4 @@
-import {
-  Sequence,
-  Transport
-} from "tone";
 
-import {
-  activeColor,
-  currentColor
-} from "./../Default/colori";
 import creaSequenceListModeTwo from "./creaSequenceListMode2";
 import creaSequenceListModeOne from "./creaSequenceListModeOne";
 
@@ -19,7 +11,8 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
   instrumentList,
   initialPositionArray,
   mode,
-  selectedPatternExt
+  selectedPatternExt,
+  channelList
 
 
 ) => {
@@ -40,7 +33,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
         
     
 
-    initialList = creaSequenceListModeOne(patternList, initialList, currentPosArr, instrumentList, noteArray, initialPositionArray, noteSpeedArray);
+    initialList = creaSequenceListModeOne(patternList, initialList, currentPosArr, instrumentList, noteArray, initialPositionArray, noteSpeedArray, channelList);
 
 
     return initialList

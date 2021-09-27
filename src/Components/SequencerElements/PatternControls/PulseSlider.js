@@ -1,13 +1,34 @@
 import { useRef } from "react";
 import { Transport } from "tone";
 
-const PulseSlider = ({ defaultValue, value, max, setNumPulses, color }) => {
+const PulseSlider = ({
+  defaultValue,
+  value,
+  max,
+  setNumPulses,
+  color,
+  currentTransportState,
+  setCurrentTransportState
+}) => {
   const pulseSliderRef = useRef(null);
 
   const handleChange = (sliderValue) => {
     setNumPulses(sliderValue);
-    Transport.stop();
   };
+
+  const handlePointerDown = () => {
+    if (Transport.state === "started") {
+            setCurrentTransportState(1);
+            Transport.stop();
+          } else {
+            setCurrentTransportState(0);
+            Transport.stop();
+          }
+          console.log(Transport.state);
+          Transport.stop();
+  }
+
+
 
   return (
     <div className="slider-pattern Pulse-slider">
@@ -18,13 +39,19 @@ const PulseSlider = ({ defaultValue, value, max, setNumPulses, color }) => {
         min="0"
         defaultValue={defaultValue}
         max={max}
+        onPointerDown={handlePointerDown}
+        onPointerUp={() => {
+          if (currentTransportState) {
+            Transport.start();
+          }
+        }}
         onKeyDown={() => Transport.stop()}
         onKeyUp={() => Transport.start()}
-        onPointerDown={() => Transport.stop()}
-        onPointerUp={() => Transport.start()}
+        
+        
         onChange={(e) => handleChange(e.target.valueAsNumber)}
         id="ps"
-        style={{"--c": `${color}`}}
+        style={{ "--c": `${color}` }}
       />
       <label htmlFor="ps">Pulses: {value}</label>
     </div>
@@ -32,3 +59,7 @@ const PulseSlider = ({ defaultValue, value, max, setNumPulses, color }) => {
 };
 
 export default PulseSlider;
+
+{
+  /*  */
+}

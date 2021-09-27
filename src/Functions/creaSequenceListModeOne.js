@@ -3,27 +3,56 @@ import {
     Transport
   } from "tone";
 
-const creaSequenceListModeOne = (patternList, initialList, currentPosArr, instrumentList, noteArray, initialPositionArray, noteSpeedArray) => {
+const creaSequenceListModeOne = (patternList, initialList, currentPosArr, instrumentList, noteArray, initialPositionArray, noteSpeedArray, channelList) => {
     patternList.map((line, index) => {
+      let channel = channelList[index];
 
         initialList.push(
           new Sequence(
             (time, event) => {
-  
-  
+
+
+
+              
               currentPosArr[index] %= line.length;
-  
-  
-              if (event === 1 && Transport.state === "started") {
-  
-                instrumentList[index].triggerAttackRelease(
-                  noteArray[index],
-                  "8n",
-                  time
-                );
-  
-  
+
+              let BooleanSoloArray = channelList.map((channel) => 
+                channel.solo
+              )
+              if (BooleanSoloArray.includes(true)){
+
+                if (channel.mute === false && channel.solo===true)
+                {if (event === 1 && Transport.state === "started") {
+    
+                  instrumentList[index].triggerAttackRelease(
+                    noteArray[index],
+                    "8n",
+                    time
+                  );
+    
+    
+                }}
+
               }
+              else {
+                if (channel.mute === false)
+                {if (event === 1 && Transport.state === "started") {
+    
+                  instrumentList[index].triggerAttackRelease(
+                    noteArray[index],
+                    "8n",
+                    time
+                  );
+    
+    
+                }}
+
+              }
+              
+  
+             
+  
+             
   
   
   

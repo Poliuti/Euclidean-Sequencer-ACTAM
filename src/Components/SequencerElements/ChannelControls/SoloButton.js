@@ -1,5 +1,3 @@
-import { Transport } from "tone";
-
 const SoloButton = ({ channel }) => {
 
   const handleSolo = (classList, channel) => {

@@ -1,25 +1,32 @@
-import { useState } from "react";
-import * as Tone from "tone";
+import { useContext } from "react";
+import {Transport} from "tone";
+import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 
 const TempoModifier = ({ tempo, setTempo, index }) => {
+  const {
+    currentTransportState, setCurrentTransportState
+    
+  } = useContext(EnvironmentContext);
   
   let perDueClassName='';
 
-  if (tempo.tempoSpeedIndexForTone[index]==='64n') 
+  if (tempo.tempoSpeedIndexForTone[index]==='32n') 
   {
     perDueClassName='Limit_up'
   }
 
   let divisoDueClassName='';
 
-  if (tempo.tempoSpeedIndexForTone[index]==='1n') 
+  if (tempo.tempoSpeedIndexForTone[index]==='2n') 
   {
     divisoDueClassName='Limit_down'
   }
 
+
+
   const handleDouble = (element) => {
     let tempoUpdate = { ...tempo };
-    if (tempoUpdate.tempoSpeedIndex[index] <= 4)
+    if (tempoUpdate.tempoSpeedIndex[index] <= 2)
     {tempoUpdate.tempoSpeedIndex[index] *= 2;
     tempoUpdate.tempoSpeedIndexForTone[index] = `${
       8 * tempoUpdate.tempoSpeedIndex[index]
@@ -28,13 +35,21 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
     if (element.classList.contains('Limit_down'))
         element.classList.remove('Limit_down')
   }
-    Tone.Transport.stop();
-    Tone.Transport.start("+0.1");
+
+  if (Transport.state === "started") {
+    setCurrentTransportState(1);
+    Transport.stop();
+    Transport.start("+0.1");
+  } else {
+    setCurrentTransportState(0);
+    Transport.stop();
+  }
+ 
   };
 
   const handleHalf = (element) => {
     let tempoUpdate = { ...tempo };
-    if (tempoUpdate.tempoSpeedIndex[index] > 1/8)
+    if (tempoUpdate.tempoSpeedIndex[index] > 1/4)
     {tempoUpdate.tempoSpeedIndex[index] /= 2;
     tempoUpdate.tempoSpeedIndexForTone[index] = `${
       8 * tempoUpdate.tempoSpeedIndex[index]
@@ -43,8 +58,15 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
     if (element.classList.contains('Limit_up'))
     element.classList.remove('Limit_up')
     }
-    Tone.Transport.stop();
-    Tone.Transport.start("+0.1");
+  
+    if (Transport.state === "started") {
+      setCurrentTransportState(1);
+      Transport.stop();
+      Transport.start("+0.1");
+    } else {
+      setCurrentTransportState(0);
+      Transport.stop();
+    }
   };
 
 
