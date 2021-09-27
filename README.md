@@ -7,6 +7,12 @@ Our software is a four voice euclidean sequencer implemented using the Javascrip
 
 There are basically two different modes. The first one, called **Custom**, allows you to create your own patterns from scratch, modify the speed of the individual lines, .. The second one instead offers different presets from some parts of the world (Africa, India, Middle East, South America and the rest of the world).
 
+# Sound management
+
+We choose to use [Tone js](https://tonejs.github.io/) to develop all the audio features of our application. Events are triggered using a sampler in four different channels. The user has the control on the volume and the panning of each channel. Moreover mute/solo and step time modifier controls are available.
+
+![schema audio chain](https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG)
+
 
 # Getting Started with Create React App
 
