@@ -154,13 +154,13 @@ const EuclideanSequencer = () => {
       </div>
 
       <div className="main-buttons-container">
-        <PlayButton sequenceList={sequenceList} />
-        <StopButton
+      <StopButton
           sequenceList={sequenceList}
           dummy={dummy}
           setDummy={setDummy}
           patternArrayList={patternArrayList}
         />
+        <PlayButton sequenceList={sequenceList} />
         <ChangeModeButton
           mode={mode}
           setMode={setMode}
