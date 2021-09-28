@@ -4,6 +4,7 @@ import creaSequenceList from "./../Functions/CreaSequenceList";
 import initializePatternArray from "./../Functions/initializePatternArray";
 import defaultLines from "../Default/defaultLines";
 import { Transport } from "tone";
+import useFetchGet from "../useFetchGet";
 
 
 
@@ -24,10 +25,11 @@ const EnvironmentContextProvider = (props) => {
  const [currentTransportState, setCurrentTransportState] = useState(0);
 
   console.log("Context ran");
-  
- 
 
- 
+  /* console.log(props.standard); */
+
+
+  
   const envDefaultInfo = defaultLines[props.name];
   const tempoSpeedIndex = samplerList[props.num].map(() => 1);
   const tempoSpeedIndexForTone = tempoSpeedIndex.map(

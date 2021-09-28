@@ -14,8 +14,10 @@ import DropDownMenu from "./OtherFunctionalityControls/DropDownMenu";
 import initializeToneSwing from "../../Functions/initializeToneSwing";
 import startSequences from "../../Functions/startSequences";
 import colora from "../../Functions/colora";
+import useFetch from "../../useFetchGet";
+import useFetchPost from "../../useFetchPost";
 
-const EuclideanSequencer = () => {
+const EuclideanSequencer =  () => {
   const {
     linesList,
     setLinesList,
@@ -36,9 +38,19 @@ const EuclideanSequencer = () => {
     
     
   } = useContext(EnvironmentContext);
+  
+
+
+
+
+  
 
   
   const [patternName, setPatternName] = useState(envDefault[0][0].name);
+
+
+
+
 
 
 
@@ -50,6 +62,8 @@ const EuclideanSequencer = () => {
  
 
   }, []);
+
+
 
 
 

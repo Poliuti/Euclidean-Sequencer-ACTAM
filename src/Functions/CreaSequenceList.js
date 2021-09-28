@@ -43,7 +43,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
 
 
-    initialList = creaSequenceListModeTwo(selectedPatternExt,initialList,  instrumentList, noteArray, initialPositionArray, noteSpeedArray, currentPos);
+    initialList = creaSequenceListModeTwo(selectedPatternExt,initialList,  instrumentList, noteArray, initialPositionArray, noteSpeedArray, currentPos, channelList);
 
 
 

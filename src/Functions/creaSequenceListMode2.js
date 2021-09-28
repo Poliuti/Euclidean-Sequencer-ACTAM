@@ -47,7 +47,7 @@ import {
             }
             else {
               if (channel.mute === false)
-              {if (event === 1 && Transport.state === "started") {
+              {if (event === 1 && Transport.state === "started" && dotColor === activeColor[index]) {
   
                 instrumentList[index].triggerAttackRelease(
                   noteArray[index],

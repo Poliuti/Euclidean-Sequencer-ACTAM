@@ -6,7 +6,12 @@ import NotFound from "./NotFound";
 import About from "./About";
 import Environments from "../../Environments/Environments";
 
+
 function App() {
+  /* const {data} = useFetchPost('http://localhost:8000/defaultLines', defaultLines);
+  console.log(data); */
+  
+  
   return (
     <Router>
       <div className="App">
