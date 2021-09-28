@@ -11,8 +11,9 @@ The main commands for creating your own rhythmic constructs are:
 * *steps*: sets the number of intervals of the sequence;
 * *pulses*: sets the number of active steps, that are distributed along the sequence according to the Euclidean algorithm;
 * *rotations*: shifts steps along the sequence.
- As said before, this is a comfortable way to generate and play with polyrhythm and polymetries.
- Polyrhythm is the simultaneous combination of contrasting rhythms in music, while polymetries is any of various measuring instruments capable of indicating two or more quantities.
+
+As said before, this is a comfortable way to generate and play with polyrhythm and polymetries.
+Polyrhythm is the simultaneous combination of contrasting rhythms in music, while polymetries is any of various measuring instruments capable of indicating two or more quantities.
 
 
 The second one instead offers different presets from some parts of the world (Africa, India, Middle East, South America and the rest of the world). 
