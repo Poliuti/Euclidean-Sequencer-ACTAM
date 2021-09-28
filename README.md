@@ -6,7 +6,17 @@ Our software is a four voice euclidean sequencer implemented using the Javascrip
 
 ## Description
 
-There are basically two different modes. The first one, called **Custom**, allows you to create your own patterns from scratch, modify the speed of the individual lines, .. The second one instead offers different presets from some parts of the world (Africa, India, Middle East, South America and the rest of the world).
+There are basically two different modes. The first one, called **Custom**, allows you to create your own patterns from scratch, modify the speed of the individual lines, .. 
+The main commands for creating your own rhythmic constructs are:
+* *steps*: sets the number of intervals of the sequence;
+* *pulses*: sets the number of active steps, that are distributed along the sequence according to the Euclidean algorithm;
+* *rotations*: shifts steps along the sequence.
+ As said before, this is a comfortable way to generate and play with polyrhythm and polymetries.
+ Polyrhythm is the simultaneous combination of contrasting rhythms in music, while polymetries is any of various measuring instruments capable of indicating two or more quantities.
+
+
+The second one instead offers different presets from some parts of the world (Africa, India, Middle East, South America and the rest of the world). 
+For each one there are different rhythms taken from traditional music and samples that recall local instruments.
 
 ###
 
