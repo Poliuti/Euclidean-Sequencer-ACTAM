@@ -1,7 +1,7 @@
-import firstSample from "./../Samples/WAV/SHAKER.wav"
-import secondSample from './../Samples/WAV/FLEX1.wav'
-import thirdSample from './../Samples/WAV/CLHH.wav'
-import fourthSample from './../Samples/WAV/SNARE.wav'
+import firstSample from "./WAV/Delay Bell Short.wav"
+import secondSample from './WAV/Chemical Bass 3.wav'
+import thirdSample from './WAV/House Pluck.wav'
+import fourthSample from './WAV/Nylon Muted Rain.wav'
 
 const restOfTheWorldSamples = [
     firstSample, 
