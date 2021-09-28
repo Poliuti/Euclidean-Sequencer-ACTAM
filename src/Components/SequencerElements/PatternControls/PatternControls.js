@@ -2,7 +2,6 @@ import { useState, useEffect, useContext } from "react";
 import PulseSlider from "./PulseSlider";
 import RotateSlider from "./RotateSlider";
 import StepSlider from "./StepSlider";
-import "./../../../Styles/patternControls.css";
 import bjorklund from "../../../Functions/bjorklund";
 import colora from "../../../Functions/colora";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
