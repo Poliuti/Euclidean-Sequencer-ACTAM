@@ -4,9 +4,11 @@
 Euclidean sequencers divide a number of beat subdivisions over a time interval and place notes as evenly as possible into that time. They are based and take the name from the Euclidean algorithm, that computes the greatest common divisor of two given integers.The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.1340&rep=rep1&type=pdf .\
 Our software is a four voice euclidean sequencer implemented using the Javascript library React. It provides the user with the ability to create polymetries, polyrhythms and melodic arpeggios in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
 
-## Usage
+## Description
 
 There are basically two different modes. The first one, called **Custom**, allows you to create your own patterns from scratch, modify the speed of the individual lines, .. The second one instead offers different presets from some parts of the world (Africa, India, Middle East, South America and the rest of the world).
+
+###
 
 ## Sound management
 
@@ -18,6 +20,20 @@ The diagram below describes the audio chain:
 ![schema audio chain](https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG)
 
 ## Graphical User Interface
+
+
+
+
+## Notes
+
+This application was developed as a project for the "Advanced Coding Tools And Methodologies" course at Politecnico di Milano (MSc in Music and Acoustic Engineering).
+
+*Andrea Ravizzotti*
+
+*Lorenzo Brugioni*
+
+*Eugenio Poliuti*
+
 
 # Getting Started with Create React App
 
