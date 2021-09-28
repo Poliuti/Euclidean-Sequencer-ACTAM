@@ -1,7 +1,7 @@
-import firstSample from "./../Samples/WAV/SHAKER.wav"
-import secondSample from './../Samples/WAV/FLEX1.wav'
-import thirdSample from './../Samples/WAV/CLHH.wav'
-import fourthSample from './../Samples/WAV/SNARE.wav'
+import firstSample from "./WAV/Pitch Down Nylon 1.wav"
+import secondSample from './WAV/OMT_OneManTribeSounds_WaterCalabash.wav'
+import thirdSample from './WAV/OMT_OneManTribeSounds_Claps.wav'
+import fourthSample from './WAV/OMT_OneManTribeSounds_KinkiniTone.wav'
 
 const southAmericaSamples = [
     firstSample, 
