@@ -180,7 +180,7 @@ h1{
 /*Controls*/
 
 .elemento-base{
-  height: 18.2rem;
+  height: 18.5rem;
 }
 
 .pattern-controls-list{
@@ -192,8 +192,8 @@ h1{
 
 .pattern-controls{
   position: relative;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .macro-controls{
@@ -387,18 +387,20 @@ input[type=range]:focus::-ms-fill-upper {
 
 .other-controls{
   display: flex;
+  width: 26rem;
 }
 
 /*tempo-modifier style*/
 
 .tempo-modifier{
   display: flex;
+  max-width: 14rem;
   margin-left: 3.7rem;
   margin-top: 79px;
 }
 
 h4{
-  margin-left: 8.1rem;
+  margin-left: 7.9rem;
   }
 
 /*mute/solo buttons*/
