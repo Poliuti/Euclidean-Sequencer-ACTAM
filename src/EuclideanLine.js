@@ -10,7 +10,14 @@ export default class EuclideanLine {
       this.euclideanArray = bjorklund(numSteps, numPulses, numRotations);
     }
 
-    setId(id) {this.id = id}
+    setId(id) {
+      this.id = id
+    }
+
+    setID(id) {
+      this.id = id;
+      return this
+    }
 
     
 

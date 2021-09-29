@@ -1,2711 +1,784 @@
 {
-  "defaultLines": 
-    {
-      "custom": [
-        [
-          {
-            "numSteps": 8,
-            "numPulses": 5,
-            "numRotations": 0,
-            "name": "Tresillo",
-            "euclideanArray": [
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 1,
-            "numRotations": 0,
-            "name": "Cinquillo",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 10,
-            "numPulses": 4,
-            "numRotations": 0,
-            "name": "Settillo",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 5,
-            "numPulses": 2,
-            "numRotations": 0,
-            "name": "Daje",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 3
-          }
-        ],
-        [
-          {
-            "numSteps": 7,
-            "numPulses": 3,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 1,
-            "numRotations": 0,
-            "name": "",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 5,
-            "numPulses": 2,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 10,
-            "numPulses": 4,
-            "numRotations": 7,
-            "name": "",
-            "euclideanArray": [
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 3
-          }
-        ]
+  "userSavedPatterns": [
+    [
+      [
+        {
+          "numSteps": 7,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 1,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 5,
+          "numPulses": 2,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 7,
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 3
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "numSteps": 7,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 1,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 5,
+          "numPulses": 2,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 7,
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 3
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "numSteps": 7,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 1,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 5,
+          "numPulses": 2,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 7,
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 3
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "numSteps": 7,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 1,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 5,
+          "numPulses": 2,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 7,
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 3
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "numSteps": 7,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 1,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 5,
+          "numPulses": 2,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 7,
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 3
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "numSteps": 7,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 1,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 5,
+          "numPulses": 2,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 7,
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 3
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "numSteps": 7,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 1,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 5,
+          "numPulses": 2,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 7,
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 3
+        }
       ],
-      "india": [
-        [
-          {
-            "numSteps": 5,
-            "numPulses": 3,
-            "numRotations": 0,
-            "name": "Caturthaka",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 5,
-            "numPulses": 3,
-            "numRotations": 3,
-            "name": "Dhenki",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              0
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 3,
-            "numRotations": 5,
-            "name": "Mathya-Tisra",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 11,
-            "numPulses": 3,
-            "numRotations": 0,
-            "name": "Savari Tal",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 3
-          },
-          {
-            "numSteps": 14,
-            "numPulses": 3,
-            "numRotations": 0,
-            "name": "Dhamar Tal",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0
-            ],
-            "id": 4
-          },
-          {
-            "numSteps": 11,
-            "numPulses": 4,
-            "numRotations": 0,
-            "name": "Dhruva Tisra",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0
-            ],
-            "id": 5
-          },
-          {
-            "numSteps": 15,
-            "numPulses": 4,
-            "numRotations": 0,
-            "name": "Pancam Savari Tal",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 6
-          },
-          {
-            "numSteps": 11,
-            "numPulses": 5,
-            "numRotations": 0,
-            "name": "Hindustani Sav-ar-i Tala",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 7
-          }
-        ],
-        [
-          {
-            "numSteps": 7,
-            "numPulses": 3,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 1,
-            "numRotations": 0,
-            "name": "",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 5,
-            "numPulses": 2,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 10,
-            "numPulses": 4,
-            "numRotations": 7,
-            "name": "",
-            "euclideanArray": [
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 3
-          }
-        ]
+      [
+        {
+          "numSteps": 7,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 18,
+          "numPulses": 1,
+          "numRotations": 0,
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 5,
+          "numPulses": 2,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 7,
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 3
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "numSteps": 7,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 1,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 5,
+          "numPulses": 2,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 7,
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 3
+        }
       ],
-      "middleEast": [
-        [
-          {
-            "numSteps": 5,
-            "numPulses": 2,
-            "numRotations": 0,
-            "name": "Greek Rhythm 1",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 7,
-            "numPulses": 2,
-            "numRotations": 0,
-            "name": "Macedonian Lesnoto Dance",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 7,
-            "numPulses": 3,
-            "numRotations": 0,
-            "name": "Greek Rhythm 2",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 7,
-            "numPulses": 3,
-            "numRotations": 5,
-            "name": "Serbian Rhythm 1",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0
-            ],
-            "id": 3
-          },
-          {
-            "numSteps": 7,
-            "numPulses": 3,
-            "numRotations": 3,
-            "name": "Turkish Rhythm 1",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 4
-          },
-          {
-            "numSteps": 5,
-            "numPulses": 4,
-            "numRotations": 0,
-            "name": "Greek Mirena Rhythm",
-            "euclideanArray": [
-              1,
-              1,
-              1,
-              1,
-              0
-            ],
-            "id": 5
-          },
-          {
-            "numSteps": 5,
-            "numPulses": 4,
-            "numRotations": 2,
-            "name": "Greek Tik Rhythm",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              1
-            ],
-            "id": 6
-          },
-          {
-            "numSteps": 7,
-            "numPulses": 4,
-            "numRotations": 0,
-            "name": "Bulgarian Ruchenitza Folk Dance",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 7
-          },
-          {
-            "numSteps": 7,
-            "numPulses": 4,
-            "numRotations": 3,
-            "name": "Greek Kalamatianos Dance",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 8
-          },
-          {
-            "numSteps": 9,
-            "numPulses": 4,
-            "numRotations": 0,
-            "name": "Turkish Aksak",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 9
-          },
-          {
-            "numSteps": 9,
-            "numPulses": 4,
-            "numRotations": 7,
-            "name": "Bulgarian and Serbian Rhythm",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0
-            ],
-            "id": 10
-          },
-          {
-            "numSteps": 9,
-            "numPulses": 4,
-            "numRotations": 5,
-            "name": "Bulgarian and Greek Rhythm",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 11
-          },
-          {
-            "numSteps": 9,
-            "numPulses": 4,
-            "numRotations": 3,
-            "name": "Turkish Rhythm 2",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 12
-          },
-          {
-            "numSteps": 11,
-            "numPulses": 4,
-            "numRotations": 5,
-            "name": "Serbian Rhythm 2",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 13
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 5,
-            "numRotations": 5,
-            "name": "Turkish Musemmen",
-            "euclideanArray": [
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0
-            ],
-            "id": 14
-          },
-          {
-            "numSteps": 9,
-            "numPulses": 5,
-            "numRotations": 5,
-            "name": "Turkish Nawahiid",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 15
-          },
-          {
-            "numSteps": 11,
-            "numPulses": 5,
-            "numRotations": 7,
-            "name": "Macedonian Kalajdzijsko Oro Dance",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 16
-          },
-          {
-            "numSteps": 13,
-            "numPulses": 5,
-            "numRotations": 0,
-            "name": "Macedonian Rhythm 1",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 17
-          },
-          {
-            "numSteps": 13,
-            "numPulses": 5,
-            "numRotations": 5,
-            "name": "Macedonian Rhythm 2",
-            "euclideanArray": [
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 18
-          },
-          {
-            "numSteps": 7,
-            "numPulses": 6,
-            "numRotations": 2,
-            "name": "Greek Pontakos",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              1,
-              1,
-              1
-            ],
-            "id": 19
-          },
-          {
-            "numSteps": 13,
-            "numPulses": 6,
-            "numRotations": 0,
-            "name": "Macedonian Mama Cone Pita Dance",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 20
-          },
-          {
-            "numSteps": 13,
-            "numPulses": 6,
-            "numRotations": 9,
-            "name": "Macedonian Postupano Oro Dance",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 21
-          },
-          {
-            "numSteps": 9,
-            "numPulses": 7,
-            "numRotations": 0,
-            "name": "Greek Bazaragana",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              1,
-              0,
-              1,
-              1,
-              1
-            ],
-            "id": 22
-          },
-          {
-            "numSteps": 10,
-            "numPulses": 7,
-            "numRotations": 0,
-            "name": "Turkish Lenk Fahhte",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1
-            ],
-            "id": 23
-          },
-          {
-            "numSteps": 15,
-            "numPulses": 7,
-            "numRotations": 11,
-            "name": "Bulgarian Rhythm 1",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 24
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 7,
-            "numRotations": 13,
-            "name": "Yugoslavian Rhythm 1",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 25
-          },
-          {
-            "numSteps": 17,
-            "numPulses": 7,
-            "numRotations": 14,
-            "name": "Macedonian Rhythm 3",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 26
-          },
-          {
-            "numSteps": 18,
-            "numPulses": 7,
-            "numRotations": 0,
-            "name": "Bulgarian Rhythm 2",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 27
-          },
-          {
-            "numSteps": 17,
-            "numPulses": 8,
-            "numRotations": 0,
-            "name": "Bulgarian Rhythm 3",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 28
-          },
-          {
-            "numSteps": 17,
-            "numPulses": 8,
-            "numRotations": 9,
-            "name": "Bulgarian Rhythm 4",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 29
-          },
-          {
-            "numSteps": 19,
-            "numPulses": 8,
-            "numRotations": 0,
-            "name": "Bulgarian Rhythm 5",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 30
-          },
-          {
-            "numSteps": 19,
-            "numPulses": 8,
-            "numRotations": 16,
-            "name": "Bulgarian Rhythm 6",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 31
-          },
-          {
-            "numSteps": 22,
-            "numPulses": 9,
-            "numRotations": 19,
-            "name": "Bulgarian Rhythm 7",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 32
-          },
-          {
-            "numSteps": 23,
-            "numPulses": 9,
-            "numRotations": 0,
-            "name": "Bulgarian Rhythm 8",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 33
-          },
-          {
-            "numSteps": 24,
-            "numPulses": 11,
-            "numRotations": 21,
-            "name": "Bulgarian Rhythm 9",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 34
-          },
-          {
-            "numSteps": 34,
-            "numPulses": 15,
-            "numRotations": 4,
-            "name": "Bulgarian Rhythm 10",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 35
-          }
-        ],
-        [
-          {
-            "numSteps": 7,
-            "numPulses": 3,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 1,
-            "numRotations": 0,
-            "name": "",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 5,
-            "numPulses": 2,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 10,
-            "numPulses": 4,
-            "numRotations": 7,
-            "name": "",
-            "euclideanArray": [
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 3
-          }
-        ]
+      [
+        {
+          "numSteps": 7,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 18,
+          "numPulses": 1,
+          "numRotations": 0,
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 5,
+          "numPulses": 2,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 7,
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 3
+        }
       ],
-      "restOfTheWorld": [
-        [
-          {
-            "numSteps": 8,
-            "numPulses": 3,
-            "numRotations": 1,
-            "name": "Burmese Rhythm",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 7,
-            "numPulses": 4,
-            "numRotations": 5,
-            "name": "Thai Dance Dramas",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 7,
-            "numPulses": 4,
-            "numRotations": 1,
-            "name": "Yemeni Dar Daasa al Mutawasit",
-            "euclideanArray": [
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 11,
-            "numPulses": 4,
-            "numRotations": 2,
-            "name": "Yemeni Daasa al Kbiri",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 3
-          },
-          {
-            "numSteps": 6,
-            "numPulses": 5,
-            "numRotations": 0,
-            "name": "Arab York-Samai",
-            "euclideanArray": [
-              1,
-              1,
-              1,
-              1,
-              1,
-              0
-            ],
-            "id": 4
-          },
-          {
-            "numSteps": 7,
-            "numPulses": 5,
-            "numRotations": 0,
-            "name": "Arab Nawakhat",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1
-            ],
-            "id": 5
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 5,
-            "numRotations": 7,
-            "name": "Burmese Rhythm",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 6
-          },
-          {
-            "numSteps": 9,
-            "numPulses": 5,
-            "numRotations": 0,
-            "name": "Arab Agsag-Samai",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 7
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 7,
-            "numRotations": 1,
-            "name": "Indonesian Rhythm 1",
-            "euclideanArray": [
-              0,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1
-            ],
-            "id": 8
-          },
-          {
-            "numSteps": 13,
-            "numPulses": 9,
-            "numRotations": 1,
-            "name": "Bohlen-Pierce Scale Pattern",
-            "euclideanArray": [
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1
-            ],
-            "id": 9
-          },
-          {
-            "numSteps": 20,
-            "numPulses": 9,
-            "numRotations": 2,
-            "name": "Balzanos 20 Fold Scale",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 10
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 11,
-            "numRotations": 11,
-            "name": "Omani Sot Silam Dance",
-            "euclideanArray": [
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1,
-              0,
-              1
-            ],
-            "id": 11
-          },
-          {
-            "numSteps": 20,
-            "numPulses": 11,
-            "numRotations": 6,
-            "name": "Eleven-note Scale",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 12
-          },
-          {
-            "numSteps": 30,
-            "numPulses": 19,
-            "numRotations": 5,
-            "name": "Nineteen-note Scale",
-            "euclideanArray": [
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0
-            ],
-            "id": 13
-          }
-        ],
-        [
-          {
-            "numSteps": 7,
-            "numPulses": 3,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 1,
-            "numRotations": 0,
-            "name": "",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 5,
-            "numPulses": 2,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 10,
-            "numPulses": 4,
-            "numRotations": 7,
-            "name": "",
-            "euclideanArray": [
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 3
-          }
-        ]
-      ],
-      "africa": [
-        [
-          {
-            "numSteps": 3,
-            "numPulses": 2,
-            "numRotations": 2,
-            "name": "Hand-clapping Bantu Pattern",
-            "euclideanArray": [
-              1,
-              0,
-              1
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 3,
-            "numPulses": 2,
-            "numRotations": 1,
-            "name": "Complementary African Rhythm",
-            "euclideanArray": [
-              0,
-              1,
-              1
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 5,
-            "numPulses": 2,
-            "numRotations": 3,
-            "name": "Central African Rhythm 1",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 4,
-            "numPulses": 3,
-            "numRotations": 2,
-            "name": "Chingo Mandinka",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1
-            ],
-            "id": 3
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 3,
-            "numRotations": 2,
-            "name": "Ghanaian Nandon Bawaa",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 4
-          },
-          {
-            "numSteps": 10,
-            "numPulses": 3,
-            "numRotations": 7,
-            "name": "Tuareg Rhythm 1",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 5
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 5,
-            "numRotations": 3,
-            "name": "West African Gabada",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1
-            ],
-            "id": 6
-          },
-          {
-            "numSteps": 9,
-            "numPulses": 5,
-            "numRotations": 7,
-            "name": "South African Venda",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0
-            ],
-            "id": 7
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 5,
-            "numRotations": 0,
-            "name": "Central African Aka Pygmies Rhythm 1",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 8
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 5,
-            "numRotations": 7,
-            "name": "Northern Zimbabwean Bemba Pattern 1",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0
-            ],
-            "id": 9
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 5,
-            "numRotations": 4,
-            "name": "African Clapping Pattern",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 10
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 7,
-            "numRotations": 2,
-            "name": "Tuareg Rhythm 2",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              1,
-              1,
-              1,
-              1
-            ],
-            "id": 11
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 7,
-            "numRotations": 0,
-            "name": "Ghanaian Ashanti Rhythm",
-            "euclideanArray": [
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 12
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 7,
-            "numRotations": 10,
-            "name": "Ghanaian Hand Clapping Pattern 1",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1
-            ],
-            "id": 13
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 7,
-            "numRotations": 9,
-            "name": "Sub-Saharan Rhythm 1",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0
-            ],
-            "id": 14
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 7,
-            "numRotations": 7,
-            "name": "Northern Zimbabwean Bemba Pattern 2",
-            "euclideanArray": [
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 15
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 7,
-            "numRotations": 5,
-            "name": "Central African Aka Pygmies Bondo",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1
-            ],
-            "id": 16
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 7,
-            "numRotations": 2,
-            "name": "Nigerian Yoruba",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 17
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 7,
-            "numRotations": 6,
-            "name": "Ghanaian Hand Clapping Pattern 2",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 18
-          },
-          {
-            "numSteps": 14,
-            "numPulses": 9,
-            "numRotations": 12,
-            "name": "Algerian Tsofyan Rhythm",
-            "euclideanArray": [
-              0,
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1
-            ],
-            "id": 19
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 9,
-            "numRotations": 14,
-            "name": "Congolese Luba Pattern",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1
-            ],
-            "id": 20
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 9,
-            "numRotations": 11,
-            "name": "West and Central African Rhythm",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 21
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 9,
-            "numRotations": 6,
-            "name": "Central African Kachacha",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0
-            ],
-            "id": 22
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 9,
-            "numRotations": 4,
-            "name": "Central African Ngbaka-Maibo",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 23
-          },
-          {
-            "numSteps": 24,
-            "numPulses": 11,
-            "numRotations": 0,
-            "name": "Central African Aka Pygmies Rhythm 2",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 24
-          },
-          {
-            "numSteps": 24,
-            "numPulses": 11,
-            "numRotations": 10,
-            "name": "Central African Aka Pygmies Rhythm 3",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 25
-          },
-          {
-            "numSteps": 24,
-            "numPulses": 13,
-            "numRotations": 0,
-            "name": "Central African Aka Pygmies Rhythm 4",
-            "euclideanArray": [
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 26
-          },
-          {
-            "numSteps": 24,
-            "numPulses": 13,
-            "numRotations": 4,
-            "name": "Central African Aka Pygmies Rhythm 5",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 27
-          }
-        ],
-        [
-          {
-            "numSteps": 7,
-            "numPulses": 3,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 1,
-            "numRotations": 0,
-            "name": "",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 5,
-            "numPulses": 2,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 10,
-            "numPulses": 4,
-            "numRotations": 7,
-            "name": "",
-            "euclideanArray": [
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 3
-          }
-        ]
-      ],
-      "southAmerica": [
-        [
-          {
-            "numSteps": 3,
-            "numPulses": 2,
-            "numRotations": 0,
-            "name": "Mexican Corn Dance",
-            "euclideanArray": [
-              1,
-              1,
-              0
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 4,
-            "numPulses": 3,
-            "numRotations": 0,
-            "name": "Brazilian Baiaò Rhythm",
-            "euclideanArray": [
-              1,
-              1,
-              1,
-              0
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 4,
-            "numPulses": 3,
-            "numRotations": 3,
-            "name": "Brazilian Catarete Rhythm",
-            "euclideanArray": [
-              1,
-              1,
-              0,
-              1
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 4,
-            "numPulses": 3,
-            "numRotations": 1,
-            "name": "Flamenco Rhythm",
-            "euclideanArray": [
-              0,
-              1,
-              1,
-              1
-            ],
-            "id": 3
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 3,
-            "numRotations": 0,
-            "name": "Cuban Tresillo",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0
-            ],
-            "id": 4
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 5,
-            "numRotations": 0,
-            "name": "Cuban Cinquillo",
-            "euclideanArray": [
-              1,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 5
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 5,
-            "numRotations": 6,
-            "name": "Argentinian Tango",
-            "euclideanArray": [
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1
-            ],
-            "id": 6
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 5,
-            "numRotations": 2,
-            "name": "Cuban Habanera",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              1,
-              0
-            ],
-            "id": 7
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 5,
-            "numRotations": 9,
-            "name": "Cuban Columbia Pattern 1",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 8
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 5,
-            "numRotations": 2,
-            "name": "Dominican Salve Pattern",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0
-            ],
-            "id": 9
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 5,
-            "numRotations": 0,
-            "name": "Brazilian Bossa Nova 1",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0
-            ],
-            "id": 10
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 5,
-            "numRotations": 10,
-            "name": "Brazilian Bossa Nova 2",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 11
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 5,
-            "numRotations": 13,
-            "name": "Brazilian Bossa Nova 3",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0
-            ],
-            "id": 12
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 7,
-            "numRotations": 4,
-            "name": "Caribbean Tambù",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0
-            ],
-            "id": 13
-          },
-          {
-            "numSteps": 12,
-            "numPulses": 7,
-            "numRotations": 3,
-            "name": "Cuban Columbia Pattern 2",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1
-            ],
-            "id": 14
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 7,
-            "numRotations": 0,
-            "name": "Brazilian Samba 1",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 15
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 7,
-            "numRotations": 2,
-            "name": "Brazilian Samba 2",
-            "euclideanArray": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 16
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 7,
-            "numRotations": 10,
-            "name": "Brazilian Partido Alto Rhythm",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 17
-          },
-          {
-            "numSteps": 16,
-            "numPulses": 9,
-            "numRotations": 0,
-            "name": "Cuban Rumba Palitos Rhythm",
-            "euclideanArray": [
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0,
-              1,
-              0
-            ],
-            "id": 18
-          }
-        ],
-        [
-          {
-            "numSteps": 7,
-            "numPulses": 3,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 0
-          },
-          {
-            "numSteps": 8,
-            "numPulses": 1,
-            "numRotations": 0,
-            "name": "",
-            "euclideanArray": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "id": 1
-          },
-          {
-            "numSteps": 5,
-            "numPulses": 2,
-            "numRotations": 4,
-            "name": "",
-            "euclideanArray": [
-              0,
-              1,
-              0,
-              0,
-              1
-            ],
-            "id": 2
-          },
-          {
-            "numSteps": 10,
-            "numPulses": 4,
-            "numRotations": 7,
-            "name": "",
-            "euclideanArray": [
-              0,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ],
-            "id": 3
-          }
-        ]
-      ],
-      "id": 1
-    }
-  
+      [
+        {
+          "numSteps": 7,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 18,
+          "numPulses": 1,
+          "numRotations": 0,
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 5,
+          "numPulses": 2,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 7,
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "id": 3
+        }
+      ]
+    ]
+  ]
 }

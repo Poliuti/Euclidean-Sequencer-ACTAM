@@ -5,14 +5,17 @@ const useFetchPost = (url, elementToJson) => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
+  if (elementToJson === []) {elementToJson = null};
+
   useEffect(() => {
-    
+    console.log("useFetch is running")
       fetch(url,{
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(elementToJson),
+        
       })
       .then(res => {
         if (!res.ok) { // error coming back from server
@@ -31,7 +34,8 @@ const useFetchPost = (url, elementToJson) => {
         setError(err.message);
       })
     
-  }, [url])
+      
+  }, [url, elementToJson]);
 
   return { data, isPending, error };
 }

@@ -6,6 +6,7 @@ import "./../../../Styles/patternControls.css";
 import bjorklund from "../../../Functions/bjorklund";
 import colora from "../../../Functions/colora";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
+import EuclideanLine from "../../../EuclideanLine";
 
 
 
@@ -25,17 +26,27 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
 
   useEffect(() => {
     let tempList = [...linesList];
-    tempList[idx] = {
+    tempList[idx] = 
+    new EuclideanLine(numSteps, numPulses, numRotations, "").setID(idx);
+    /* {
       numSteps: numSteps,
       numPulses: numPulses,
       numRotations: numRotations,
       euclideanArray: bjorklund(numSteps, numPulses, numRotations),
       id: idx,
-    };
+    }; */
 
     setLinesList(tempList);
     colora(tempList[idx].euclideanArray, idx);
   }, [numSteps, numPulses, numRotations]);
+
+/*   const {numSteps, numPulses, numRotations} = tempList;
+
+  tempList[idx] = 
+  new EuclideanLine(numSteps, numPulses, numRotations, "");
+
+  setLinesList(tempList); */
+  
 
 
 

@@ -22,15 +22,19 @@ const noteArray = ["A1", "A1", "A1", "A1"]; // info sulle note che suona ogni se
 const EnvironmentContextProvider = (props) => {
   // this context provides common info within the environment
 
+
  const [currentTransportState, setCurrentTransportState] = useState(0);
 
   console.log("Context ran");
+
 
   /* console.log(props.standard); */
 
 
   
-  const envDefaultInfo = defaultLines[props.name];
+ /*  const envDefaultInfo = defaultLines[props.name]; */
+
+ 
   const tempoSpeedIndex = samplerList[props.num].map(() => 1);
   const tempoSpeedIndexForTone = tempoSpeedIndex.map(
     (coeff) => `${coeff * 8}n`
@@ -47,14 +51,17 @@ const EnvironmentContextProvider = (props) => {
 
   const initPosArray = [0, 0, 0, 0];
   //ogni render del context viene azzerata la posizione del tick
-  const [userLinesList, setUserLinesList] = useState([]); 
+ /*  const [userLinesList, setUserLinesList] = useState([]);  */
+  
 
   const [selectedPattern, setSelectedPattern] = useState(
-    initializePatternArray(envDefaultInfo[0][0], numInstr)
+    initializePatternArray(defaultLines[props.name][0], numInstr)
   );
-
-  const [linesList, setLinesList] = useState(envDefaultInfo[1]); // memorizzo la lista di linee euclidiane in uno stato
+  const [envDefault, setEnvDefault] = useState(defaultLines[props.name])
+  const [linesList, setLinesList] = useState(defaultLines[props.name][1]); // memorizzo la lista di linee euclidiane in uno stato
   const [tempo, setTempo] = useState(tempoInfo); // memorizzo tempo information in uno stato
+  console.log("FIRST LinesList ");
+  console.log(linesList);
 
   const [dummy, setDummy] = useState(0);
   
@@ -92,7 +99,8 @@ const EnvironmentContextProvider = (props) => {
       channelList[props.num],
     );
 
-   
+   console.log("Second LinesList")
+    console.log(linesList);
   
 
   return (
@@ -102,7 +110,7 @@ const EnvironmentContextProvider = (props) => {
         setLinesList,
         tempo,
         setTempo,
-        envDefault: envDefaultInfo,
+        envDefault,
         sequenceList,
         patternArrayList,
         channelList: channelList[props.num],
@@ -112,8 +120,7 @@ const EnvironmentContextProvider = (props) => {
         mode,
         setMode,
         setSelectedPattern,
-        userLinesList,
-        setUserLinesList,
+        
         currentTransportState,
         setCurrentTransportState
       }}

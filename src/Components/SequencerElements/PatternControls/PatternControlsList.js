@@ -1,6 +1,12 @@
 import PatternControls from "./PatternControls";
 import CircleContainer from "./CircleContainer";
 import OtherControls from "./OtherControls";
+import Dropdown from "react-dropdown";
+import { useState } from "react";
+import "./../../../../node_modules/react-dropdown/style.css"
+import EuclideanLine from "../../../EuclideanLine";
+import PatternDropDown from "./PatternDropDown";
+
 
 
 
@@ -8,17 +14,29 @@ import OtherControls from "./OtherControls";
 const PatternControlsList = ({
   linesList,
   setLinesList,
-  envDefault,
+  envDefaultLinesList,
   setTempo,
   tempo,
   channelList,
   mode,
   colors,
-  patternArrayList
+  patternArrayList,
+  envDefaultPatterns
 }) => {
+  
   const elementoBase = {
     height: "17rem",
   };
+
+  const [patternNames, setPatternNames] = useState(envDefaultPatterns.map(pattern => pattern.name));
+
+
+
+
+
+
+ 
+
 
   return (
     <div className="pattern-controls-list">
@@ -29,7 +47,7 @@ const PatternControlsList = ({
         return (
         <div key={id} className="elemento-base" style={elementoBase}>
           <CircleContainer lineIndex={id} tempo={tempo} setTempo={setTempo} pattern={patternArrayList[id]}/>
-
+x
           {mode && (
             <PatternControls
               setTempo={setTempo}
@@ -38,12 +56,13 @@ const PatternControlsList = ({
               line={line}
               setLinesList={setLinesList}
               linesList={linesList}
-              envDefault={envDefault}
+              envDefaultLinesList={envDefaultLinesList}
               color={color}
             />
           )}
           <OtherControls channel={channelList[id]} tempo={tempo} setTempo={setTempo} index={id} color={color} mode={mode}/>
           
+          <PatternDropDown id ={id} patternNames={patternNames} defaultPatterns={envDefaultPatterns} linesList={linesList} setLinesList={setLinesList}/>
           
         </div>
       )})}

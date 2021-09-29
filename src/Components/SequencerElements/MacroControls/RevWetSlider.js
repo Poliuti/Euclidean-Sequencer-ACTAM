@@ -19,7 +19,7 @@ const RevWetSlider = ({ reverb, color }) => {
         id="wet"
         style={{"--c": `${color}`}}
       />
-      <label htmlFor="wet">Wet: {wet}</label>
+      <label htmlFor="wet">Rev Wet: {wet}</label>
     </div>
   );
 };

@@ -7,7 +7,11 @@ const useFetchGet = (url) => {
 
   useEffect(() => {
     
-      fetch(url)
+    fetch(url,{
+      method: 'GET', // or 'PUT',
+      
+      
+    })
       .then(res => {
         if (!res.ok) { // error coming back from server
           throw Error('could not fetch the data for that resource');

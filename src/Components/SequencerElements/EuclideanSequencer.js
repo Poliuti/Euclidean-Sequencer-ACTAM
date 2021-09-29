@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Context, context, Transport } from "tone";
+import { Context,  Transport } from "tone";
 import onSequenceListChange from "./../../Functions/onSequenceListChange";
 import { activeColor, macroColor } from "./../../Default/colori";
 import { EnvironmentContext } from "./../../Contexts/EnvironmentContext";
@@ -14,8 +14,14 @@ import DropDownMenu from "./OtherFunctionalityControls/DropDownMenu";
 import initializeToneSwing from "../../Functions/initializeToneSwing";
 import startSequences from "../../Functions/startSequences";
 import colora from "../../Functions/colora";
-import useFetch from "../../useFetchGet";
+import SaveButton from "./SaveButton";
+import { Dropdown } from "react-bootstrap";
+import './../../../node_modules/react-dropdown/style.css'
+import { useDropdownMenu } from "react-overlays/esm/DropdownMenu";
+import UserDropDownMenu from "../UserDropDownMenu";
 import useFetchPost from "../../useFetchPost";
+import useFetchGet from "../../useFetchGet";
+import useFetchDelete from "../../useFetchDelete";
 
 const EuclideanSequencer =  () => {
   const {
@@ -39,14 +45,18 @@ const EuclideanSequencer =  () => {
     
   } = useContext(EnvironmentContext);
   
+  console.log("LINESLIST")
 
-
+console.log(linesList);
 
 
   
 
   
   const [patternName, setPatternName] = useState(envDefault[0][0].name);
+  const [userPatternsList, setUserPatternsList] = useState(null);
+
+ 
 
 
 
@@ -139,6 +149,21 @@ const EuclideanSequencer =  () => {
     };
   }, [sequenceList]);
 
+
+
+
+
+/*   useFetchPost("http://localhost:8000/userSavedPatterns", userPatternsList );
+ useFetchDelete("http://localhost:8000/userSavedPatterns"); */
+
+
+
+  
+
+
+  
+  
+
   /* 
   const handleSave = () => {
     const tempUserList = userLinesList;
@@ -154,7 +179,11 @@ const EuclideanSequencer =  () => {
     console.log(selectedIndexPattern);
     setLinesList(userLinesList[selectedIndexPattern])
 
+
   } */
+
+  console.log("ECCO QUESTO MI INTERESSA: ")
+  console.log(userPatternsList);
 
   return (
     <div className="euclidean-sequencer">
@@ -180,7 +209,10 @@ const EuclideanSequencer =  () => {
           setMode={setMode}
           removeClass={removeClass}
         />
-      </div>
+{/*         <SaveButton setUserPatternsList={setUserPatternsList} linesList={linesList} userPatternsList={userPatternsList} />
+ */}      </div>
+
+
 
       {/*       <Dropdown
             options={userLinesList.map((line, ind) => `User Pattern ${ind}`)}
@@ -188,6 +220,17 @@ const EuclideanSequencer =  () => {
             value={[]}
             placeholder="Select a Euclidean Pattern"
           /> */}
+
+{/*           <Dropdown
+            options={userLinesList}
+            onChange={() => {}}
+            value={userLinesList[0]}
+            placeholder="Select a Euclidean Pattern"
+          /> */}
+
+          
+      
+
 
       {!mode && (
         <DropDownMenu
@@ -198,18 +241,28 @@ const EuclideanSequencer =  () => {
         />
       )}
 
+   {/*    {mode && userPatternsList && <UserDropDownMenu choiceOptions={userPatternsList}/>} */}
+
+    
+      
+
       <PatternControlsList
         linesList={linesList}
         setLinesList={setLinesList}
-        envDefault={envDefault[1]}
+        envDefaultLinesList={envDefault[1]}
         tempo={tempo}
         setTempo={setTempo}
         channelList={channelList}
         mode={mode}
         colors={activeColor}
         patternArrayList={patternArrayList}
+        envDefaultPatterns = {envDefault[0]}
       />
+
+
     </div>
+
+    
   );
 };
 
