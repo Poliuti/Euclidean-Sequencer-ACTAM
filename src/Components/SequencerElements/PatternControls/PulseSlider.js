@@ -9,6 +9,10 @@ const PulseSlider = ({
   currentTransportState,
   setCurrentTransportState,
 }) => {
+  const ciao = document.getElementsByClassName('Dropdown-menu');
+  console.log("AH ALLORA C'è");
+  console.log(ciao);
+
   const pulseSliderRef = useRef(null);
 
   const handleChange = (sliderValue) => {

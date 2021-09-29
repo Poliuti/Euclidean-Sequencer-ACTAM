@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Dropdown from "react-dropdown";
 import { Transport } from "tone";
 import EuclideanLine from "../../../EuclideanLine";
+import "./../../../../node_modules/react-dropdown/style.css"
+
 
 
 const PatternDropDown = ({id, patternNames, defaultPatterns, linesList, setLinesList}) => {
@@ -42,7 +44,7 @@ const PatternDropDown = ({id, patternNames, defaultPatterns, linesList, setLines
 
 
 
-    return ( <div className="drop-down-cont">
+    return ( <div className="drop-down-cont" >
         <Dropdown options={patternNames}
           onChange={(e) => handleChange(e.label)}
           value={chosenPatternName}

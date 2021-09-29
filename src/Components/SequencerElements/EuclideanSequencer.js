@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect} from "react";
 import { Context, Transport } from "tone";
 import onSequenceListChange from "./../../Functions/onSequenceListChange";
 import { activeColor, macroColor } from "./../../Default/colori";
@@ -11,7 +11,7 @@ import StopButton from "./TransportControls/StopButton";
 import initializeToneSwing from "../../Functions/initializeToneSwing";
 import startSequences from "../../Functions/startSequences";
 import colora from "../../Functions/colora";
-import "./../../../node_modules/react-dropdown/style.css";
+
 
 const EuclideanSequencer = () => {
   const {
@@ -27,6 +27,10 @@ const EuclideanSequencer = () => {
     patternArrayList,
     currentTransportState,
   } = useContext(EnvironmentContext);
+
+
+
+
 
   console.log("envDefault ");
   console.log(envDefault);

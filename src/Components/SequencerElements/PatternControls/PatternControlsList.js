@@ -2,7 +2,6 @@ import PatternControls from "./PatternControls";
 import CircleContainer from "./CircleContainer";
 import OtherControls from "./OtherControls";
 import { useEffect, useState } from "react";
-import "./../../../../node_modules/react-dropdown/style.css";
 import PatternDropDown from "./PatternDropDown";
 
 const PatternControlsList = ({

@@ -22,6 +22,8 @@
 }
 
 .stop{
+  cursor: pointer;
+  border: 0.5rem;
   width: 6rem;
   height: 3rem;
   margin-top: 20px;
@@ -29,29 +31,32 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  background-color: #dff8f800;
 }
 
-.changeMode{
-  width: 6rem;
-  height: 3rem;
-  margin-top: 20px;
-  background-image: url('./../img/change.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  align-items: center;
+.stop:hover{
+  background-color: #dff8f817;
 }
+
+
 
 .start-context{
+  cursor: pointer;
+  border: 0.5rem;
   width: 6rem;
   height: 3rem;
   margin-top: 20px;
   background-image: url('./../img/myPlay2.png');
-  background-color: white;
+  background-color: #dff8f800;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   text-align: center;
+  color: #fafafa;
+}
+
+.start-context:hover{
+  background-color: #dff8f817;
 }
 
 /* base styles */
@@ -413,6 +418,7 @@ h4{
   display: -webkit-inline-box;
 }
 .mute-button{
+  cursor: pointer;
   width: 40px;
   height: 30px;
   margin-top: 20px;
@@ -420,9 +426,17 @@ h4{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  cursor: pointer;
+  border: 0.5rem;
+
+}
+
+.mute-button:hover{
+  background-color: #dff8f817;
 }
 
 .solo-button{
+  cursor: pointer;
   width: 40px;
   height: 30px;
   margin-top: 20px;
@@ -430,6 +444,13 @@ h4{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  cursor: pointer;
+  border: 0.5rem;
+  
+}
+
+.solo-button:hover{
+  background-color: #dff8f817;
 }
 
 .active{
@@ -437,12 +458,15 @@ h4{
 }
 
 .inactive{
-  background-color:white;
+  background-color: #dff8f800;
+  
+  
 }
 
 /* x2 /2 buttons style*/
 
 .per-due{
+  cursor: pointer;
   width: 40px;
   height: 30px;
   margin-top: 15px;
@@ -454,6 +478,7 @@ h4{
 }
 
 .diviso-due{
+  cursor: pointer;
   width: 40px;
   height: 30px;
   margin-top: 15px;
@@ -461,6 +486,7 @@ h4{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: #dff8f800;
 }
 
 .Limit_up{
@@ -470,3 +496,18 @@ h4{
 .Limit_down{
   filter: opacity(60%);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
