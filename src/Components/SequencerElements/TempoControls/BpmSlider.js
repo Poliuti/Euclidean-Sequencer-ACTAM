@@ -1,26 +1,21 @@
 import { useContext } from "react";
-import {Transport} from "tone";
+import { Transport } from "tone";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 const BpmSlider = ({ tempo, setTempo, color }) => {
-
-  const {
-    currentTransportState, setCurrentTransportState
-    
-  } = useContext(EnvironmentContext);
-
-
+  const { currentTransportState, setCurrentTransportState } =
+    useContext(EnvironmentContext);
 
   const handlePointerDown = () => {
     if (Transport.state === "started") {
-            setCurrentTransportState(1);
-            Transport.stop();
-          } else {
-            setCurrentTransportState(0);
-            Transport.stop();
-          }
-          console.log(Transport.state);
-          Transport.stop();
-  }
+      setCurrentTransportState(1);
+      Transport.stop();
+    } else {
+      setCurrentTransportState(0);
+      Transport.stop();
+    }
+    console.log(Transport.state);
+    Transport.stop();
+  };
 
   return (
     <div className="slider-base bpm-slider">
@@ -36,7 +31,6 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
           let newTempo = { ...tempo, bpm: newBpmValue };
 
           setTempo(newTempo);
-          
         }}
         onPointerDown={handlePointerDown}
         onPointerUp={() => {
@@ -45,7 +39,7 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
           }
         }}
         id="bpms"
-        style={{"--c": `${color}`}}
+        style={{ "--c": `${color}` }}
       />
       <label htmlFor="bpms">BPM: {tempo.bpm}</label>
     </div>

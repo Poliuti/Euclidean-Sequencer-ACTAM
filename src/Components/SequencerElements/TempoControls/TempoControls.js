@@ -1,18 +1,9 @@
-
-
-import {Transport} from "tone";
+import { Transport } from "tone";
 import BpmSlider from "./BpmSlider";
 import SwingSlider from "./SwingSlider";
 import SwingSubdivisionSlider from "./SwingSubdivisionSlider";
 
-
-
 const TempoControls = ({ tempo, setTempo, color }) => {
-  
-
-
-  
-
   return (
     <div className="tempo-controls">
       <BpmSlider tempo={tempo} setTempo={setTempo} color={color} />
@@ -21,8 +12,7 @@ const TempoControls = ({ tempo, setTempo, color }) => {
         transport={Transport}
         color={color}
       />
-      <SwingSubdivisionSlider color={color}/>
-
+      <SwingSubdivisionSlider color={color} />
     </div>
   );
 };

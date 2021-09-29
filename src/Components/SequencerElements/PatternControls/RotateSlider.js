@@ -1,8 +1,14 @@
 import { useRef } from "react";
 import { Transport } from "tone";
 
-const RotateSlider = ({ defaultValue, value, max, setNumRotations, color,   currentTransportState,
-  setCurrentTransportState }) => {
+const RotateSlider = ({
+  value,
+  max,
+  setNumRotations,
+  color,
+  currentTransportState,
+  setCurrentTransportState,
+}) => {
   const rotateSliderRef = useRef(null);
 
   const handleChange = (sliderValue) => {
@@ -12,15 +18,15 @@ const RotateSlider = ({ defaultValue, value, max, setNumRotations, color,   curr
 
   const handlePointerDown = () => {
     if (Transport.state === "started") {
-            setCurrentTransportState(1);
-            Transport.stop();
-          } else {
-            setCurrentTransportState(0);
-            Transport.stop();
-          }
-          console.log(Transport.state);
-          Transport.stop();
-  }
+      setCurrentTransportState(1);
+      Transport.stop();
+    } else {
+      setCurrentTransportState(0);
+      Transport.stop();
+    }
+
+    Transport.stop();
+  };
 
   return (
     <div className="slider-pattern Rotate-slider">
@@ -29,7 +35,7 @@ const RotateSlider = ({ defaultValue, value, max, setNumRotations, color,   curr
         required
         type="range"
         min="0"
-        defaultValue={defaultValue}
+        value={value}
         max={max}
         onKeyDown={() => Transport.stop()}
         onKeyUp={() => Transport.start()}
@@ -41,7 +47,7 @@ const RotateSlider = ({ defaultValue, value, max, setNumRotations, color,   curr
         }}
         onChange={(e) => handleChange(e.target.valueAsNumber)}
         id="rs"
-        style={{"--c": `${color}`}}
+        style={{ "--c": `${color}` }}
       />
       <label htmlFor="rs">Rotations: {value}</label>
     </div>

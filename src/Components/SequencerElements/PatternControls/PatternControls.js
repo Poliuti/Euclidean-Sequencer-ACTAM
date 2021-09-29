@@ -6,85 +6,64 @@ import colora from "../../../Functions/colora";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import EuclideanLine from "../../../EuclideanLine";
 
-
-
 const PatternControls = ({ idx, linesList, setLinesList, color }) => {
-
-
-
-  const {
-    currentTransportState, setCurrentTransportState
-    
-  } = useContext(EnvironmentContext);
+  const { currentTransportState, setCurrentTransportState } =
+    useContext(EnvironmentContext);
   const [numSteps, setNumSteps] = useState(linesList[idx].numSteps);
   const [numPulses, setNumPulses] = useState(linesList[idx].numPulses);
   const [numRotations, setNumRotations] = useState(linesList[idx].numRotations);
 
-
+  useEffect(() => {
+    setNumSteps(linesList[idx].numSteps);
+    setNumPulses(linesList[idx].numPulses);
+    setNumRotations(linesList[idx].numRotations);
+  }, [linesList]);
 
   useEffect(() => {
     let tempList = [...linesList];
-    tempList[idx] = 
-    new EuclideanLine(numSteps, numPulses, numRotations, "").setID(idx);
-    /* {
-      numSteps: numSteps,
-      numPulses: numPulses,
-      numRotations: numRotations,
-      euclideanArray: bjorklund(numSteps, numPulses, numRotations),
-      id: idx,
-    }; */
+    tempList[idx] = new EuclideanLine(
+      numSteps,
+      numPulses,
+      numRotations,
+      ""
+    ).setID(idx);
 
     setLinesList(tempList);
+
     colora(tempList[idx].euclideanArray, idx);
   }, [numSteps, numPulses, numRotations]);
-
-/*   const {numSteps, numPulses, numRotations} = tempList;
-
-  tempList[idx] = 
-  new EuclideanLine(numSteps, numPulses, numRotations, "");
-
-  setLinesList(tempList); */
-  
-
-
 
   return (
     <div className="pattern-controls" id={idx}>
       <StepSlider
-        defaultValue={numSteps}
-        value={linesList[idx].numSteps}
+        value={numSteps}
         numPulses={numPulses}
         setNumSteps={setNumSteps}
         setNumPulses={setNumPulses}
         setNumRotations={setNumRotations}
         numRotations={numRotations}
         color={color}
-        currentTransportState = {currentTransportState}
+        currentTransportState={currentTransportState}
         setCurrentTransportState={setCurrentTransportState}
-       
       />
       <PulseSlider
-        defaultValue={numPulses}
-        value={linesList[idx].numPulses}
+        value={numPulses}
         max={numSteps}
         setNumPulses={setNumPulses}
         color={color}
-        currentTransportState = {currentTransportState}
+        currentTransportState={currentTransportState}
         setCurrentTransportState={setCurrentTransportState}
       />
       <RotateSlider
-        defaultValue={numRotations}
-        value={linesList[idx].numRotations}
+        value={numRotations}
         max={numSteps - 1}
         setNumRotations={setNumRotations}
         color={color}
-        currentTransportState = {currentTransportState}
+        currentTransportState={currentTransportState}
         setCurrentTransportState={setCurrentTransportState}
       />
-      
 
-      <div>
-      </div>
+      
     </div>
   );
 };

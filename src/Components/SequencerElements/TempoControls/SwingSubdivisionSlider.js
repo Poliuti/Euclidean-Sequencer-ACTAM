@@ -16,7 +16,7 @@ const SwingSubdivisionSlider = ({ color }) => {
           Transport.swingSubdivision = `${parseInt(e.target.valueAsNumber)}n`;
           setSwingSubd(parseInt(e.target.valueAsNumber));
         }}
-        style={{"--c": `${color}`}}
+        style={{ "--c": `${color}` }}
       />
       <label htmlFor="swing-subd-slid">
         Swing Subdivision: {`1/${swingSubd}`}{" "}
@@ -26,4 +26,3 @@ const SwingSubdivisionSlider = ({ color }) => {
 };
 
 export default SwingSubdivisionSlider;
-

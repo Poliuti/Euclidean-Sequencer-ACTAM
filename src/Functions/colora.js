@@ -1,4 +1,8 @@
-import {activeColor, nonActiveColor, tempNonActiveColor} from "./../Default/colori"
+import {
+    activeColor,
+    nonActiveColor,
+    tempNonActiveColor
+} from "./../Default/colori"
 
 const colora = (euclideanArray, index) => {
 
@@ -6,12 +10,13 @@ const colora = (euclideanArray, index) => {
         let dot = document.getElementById(`${index}${idx}`);
 
         if (dot !== null) {
-            if (cell === 1 ) {
-                
-                if (dot.classList.contains("tempInactive")){
+            if (cell === 1) {
+
+                if (dot.classList.contains("tempInactive")) {
                     dot.style.backgroundColor = tempNonActiveColor[index]
+                } else {
+                    dot.style.backgroundColor = activeColor[index];
                 }
-                else {dot.style.backgroundColor = activeColor[index];}
             } else {
                 dot.style.backgroundColor = nonActiveColor;
             }

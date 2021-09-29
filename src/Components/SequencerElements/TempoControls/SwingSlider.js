@@ -16,7 +16,7 @@ const SwingSlider = ({ transport, color }) => {
 
           console.log(transport.swing);
         }}
-        style={{"--c": `${color}`}}
+        style={{ "--c": `${color}` }}
       />
       <label htmlFor="swingSlider">Swing: {swing} </label>
     </div>

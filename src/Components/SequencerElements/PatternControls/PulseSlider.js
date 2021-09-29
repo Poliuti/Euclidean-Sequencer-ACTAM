@@ -2,13 +2,12 @@ import { useRef } from "react";
 import { Transport } from "tone";
 
 const PulseSlider = ({
-  defaultValue,
   value,
   max,
   setNumPulses,
   color,
   currentTransportState,
-  setCurrentTransportState
+  setCurrentTransportState,
 }) => {
   const pulseSliderRef = useRef(null);
 
@@ -18,17 +17,15 @@ const PulseSlider = ({
 
   const handlePointerDown = () => {
     if (Transport.state === "started") {
-            setCurrentTransportState(1);
-            Transport.stop();
-          } else {
-            setCurrentTransportState(0);
-            Transport.stop();
-          }
-          console.log(Transport.state);
-          Transport.stop();
-  }
+      setCurrentTransportState(1);
+      Transport.stop();
+    } else {
+      setCurrentTransportState(0);
+      Transport.stop();
+    }
 
-
+    Transport.stop();
+  };
 
   return (
     <div className="slider-pattern Pulse-slider">
@@ -37,7 +34,7 @@ const PulseSlider = ({
         required
         type="range"
         min="0"
-        defaultValue={defaultValue}
+        value={value}
         max={max}
         onPointerDown={handlePointerDown}
         onPointerUp={() => {
@@ -47,8 +44,6 @@ const PulseSlider = ({
         }}
         onKeyDown={() => Transport.stop()}
         onKeyUp={() => Transport.start()}
-        
-        
         onChange={(e) => handleChange(e.target.valueAsNumber)}
         id="ps"
         style={{ "--c": `${color}` }}
@@ -60,6 +55,3 @@ const PulseSlider = ({
 
 export default PulseSlider;
 
-{
-  /*  */
-}

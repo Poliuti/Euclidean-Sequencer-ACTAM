@@ -12,19 +12,23 @@ const PatternDropDown = ({id, patternNames, defaultPatterns, linesList, setLines
     if (chosenPattern === null) {
       chosenPatternName = null;
     } else {
-      chosenPatternName = chosenPattern.name;
+      chosenPatternName = chosenPattern.name + `   (${chosenPattern.numSteps}, ${chosenPattern.numPulses}, ${chosenPattern.numRotations})`;
     }
 
     const handleChange = (patternName) => {
-        Transport.stop();
-        
-        defaultPatterns.forEach(pattern => {
-      if (pattern.name === patternName) {
-        setChosenPattern(pattern);
-      }
-      Transport.start("+0.05")
 
-    })
+        Transport.stop();
+ 
+        const modifPatternName = patternName.slice(0, patternName.indexOf('(')).trimEnd();
+
+        defaultPatterns.forEach((pattern) => {
+          if (pattern.name === modifPatternName) {
+            setChosenPattern(pattern);
+          }
+        });
+
+        
+    
   }
 
   useEffect(() => {
@@ -34,10 +38,7 @@ const PatternDropDown = ({id, patternNames, defaultPatterns, linesList, setLines
     setLinesList(tempList);
     
 }
-    
-
-          
-  }, [chosenPattern])
+}, [chosenPattern])
 
 
 

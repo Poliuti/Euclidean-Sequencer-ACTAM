@@ -1,8 +1,7 @@
-import { useRef } from "react";
+import {useRef } from "react";
 import { Transport } from "tone";
 
 const StepSlider = ({
-  defaultValue,
   value,
   setNumSteps,
   setNumPulses,
@@ -11,10 +10,9 @@ const StepSlider = ({
   numRotations,
   color,
   currentTransportState,
-  setCurrentTransportState
+  setCurrentTransportState,
 }) => {
   const stepSliderRef = useRef(null);
-
 
   const onStepChange = (num) => {
     setNumSteps(num);
@@ -25,20 +23,20 @@ const StepSlider = ({
       setNumRotations(num - 1);
     }
 
-    Transport.stop()
+    Transport.stop();
   };
 
   const handlePointerDown = () => {
     if (Transport.state === "started") {
-            setCurrentTransportState(1);
-            Transport.stop();
-          } else {
-            setCurrentTransportState(0);
-            Transport.stop();
-          }
-          console.log(Transport.state);
-          Transport.stop();
-  }
+      setCurrentTransportState(1);
+      Transport.stop();
+    } else {
+      setCurrentTransportState(0);
+      Transport.stop();
+    }
+    console.log(Transport.state);
+    Transport.stop();
+  };
 
   return (
     <div className="slider-pattern step-slider">
@@ -48,7 +46,6 @@ const StepSlider = ({
         min="1"
         step="1"
         max="32"
-        defaultValue={defaultValue}
         required
         onKeyDown={() => Transport.stop()}
         onKeyUp={() => Transport.start()}
@@ -58,8 +55,9 @@ const StepSlider = ({
             Transport.start();
           }
         }}
+        value={value}
         onChange={(e) => onStepChange(e.target.valueAsNumber)}
-        style={{"--c": `${color}`}}
+        style={{ "--c": `${color}` }}
       />
       <label htmlFor="ss">Steps: {value}</label>
     </div>
