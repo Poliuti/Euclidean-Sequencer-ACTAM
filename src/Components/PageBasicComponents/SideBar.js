@@ -19,7 +19,7 @@ const SideBar = () => {
         <Link to="/environments/india" id="India">
           India
         </Link>
-        <Link to="/environments/rest" id="rest">
+        <Link to="/environments/restOfTheWorld" id="rest">
           Rest of the World
         </Link>
       </div>

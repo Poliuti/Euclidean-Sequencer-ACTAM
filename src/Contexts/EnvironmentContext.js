@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { samplerList, channelList } from "./../Default/sampler";
 import creaSequenceList from "./../Functions/CreaSequenceList";
 import initializePatternArray from "./../Functions/initializePatternArray";
@@ -26,6 +26,10 @@ const EnvironmentContextProvider = (props) => {
  const [currentTransportState, setCurrentTransportState] = useState(0);
 
   console.log("Context ran");
+  console.log(props.name);
+  console.log(props.num);
+  console.log(defaultLines[props.name][1]);
+  console.log(defaultLines[props.name][0]);
 
 
   /* console.log(props.standard); */
@@ -57,14 +61,34 @@ const EnvironmentContextProvider = (props) => {
   const [selectedPattern, setSelectedPattern] = useState(
     initializePatternArray(defaultLines[props.name][0], numInstr)
   );
-  const [envDefault, setEnvDefault] = useState(defaultLines[props.name])
+
   const [linesList, setLinesList] = useState(defaultLines[props.name][1]); // memorizzo la lista di linee euclidiane in uno stato
+
+  useEffect(() => {
+    if (Transport.state === "started")
+    {Transport.stop()
+    if (linesList)
+    {setLinesList(defaultLines[props.name][1])}
+    setTempo(tempoInfo);
+    Transport.start("+0.05")}
+    else {Transport.stop()
+      if (linesList)
+      {setLinesList(defaultLines[props.name][1])}
+      setTempo(tempoInfo);
+    }
+  
+  }, [props.name])
+
+  console.log("defaultLines[props.name][1]");
+  console.log(defaultLines[props.name][1]);
+
+
   const [tempo, setTempo] = useState(tempoInfo); // memorizzo tempo information in uno stato
-  console.log("FIRST LinesList ");
-  console.log(linesList);
+
 
   const [dummy, setDummy] = useState(0);
   
+
 
   let sequencesList = []; //inizializzo la lista iniziale delle sequenze come vuota
 
@@ -99,8 +123,6 @@ const EnvironmentContextProvider = (props) => {
       channelList[props.num],
     );
 
-   console.log("Second LinesList")
-    console.log(linesList);
   
 
   return (
@@ -110,7 +132,7 @@ const EnvironmentContextProvider = (props) => {
         setLinesList,
         tempo,
         setTempo,
-        envDefault,
+        envDefault: defaultLines[props.name],
         sequenceList,
         patternArrayList,
         channelList: channelList[props.num],

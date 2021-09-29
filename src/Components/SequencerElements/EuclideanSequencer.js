@@ -45,9 +45,9 @@ const EuclideanSequencer =  () => {
     
   } = useContext(EnvironmentContext);
   
-  console.log("LINESLIST")
 
-console.log(linesList);
+console.log("envDefault ");  
+console.log(envDefault);
 
 
   
@@ -107,8 +107,6 @@ console.log(linesList);
 
 
   document.body.onkeyup = function (e) {
-    console.log(e.code)
-    console.log(Transport.state)
     if (e.code === "Space") {
       if (Transport.state === "stopped") {
         handleContextResumeClick();
@@ -182,8 +180,7 @@ console.log(linesList);
 
   } */
 
-  console.log("ECCO QUESTO MI INTERESSA: ")
-  console.log(userPatternsList);
+
 
   return (
     <div className="euclidean-sequencer">
@@ -232,14 +229,7 @@ console.log(linesList);
       
 
 
-      {!mode && (
-        <DropDownMenu
-          defaultEnvInfo={envDefault[0]}
-          setSelectedPattern={setSelectedPattern}
-          patternName={patternName}
-          setPatternName={setPatternName}
-        />
-      )}
+
 
    {/*    {mode && userPatternsList && <UserDropDownMenu choiceOptions={userPatternsList}/>} */}
 

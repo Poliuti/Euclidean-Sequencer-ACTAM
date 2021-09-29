@@ -2,7 +2,7 @@ import PatternControls from "./PatternControls";
 import CircleContainer from "./CircleContainer";
 import OtherControls from "./OtherControls";
 import Dropdown from "react-dropdown";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./../../../../node_modules/react-dropdown/style.css"
 import EuclideanLine from "../../../EuclideanLine";
 import PatternDropDown from "./PatternDropDown";
@@ -25,10 +25,26 @@ const PatternControlsList = ({
 }) => {
   
   const elementoBase = {
-    height: "17rem",
+    height: "18.5rem",
   };
 
+
+  console.log("UEEEEEEEEEE: ");
+  console.log(envDefaultPatterns);
+
   const [patternNames, setPatternNames] = useState(envDefaultPatterns.map(pattern => pattern.name));
+/*   console.log("envDefaultPatterns");
+  console.log(envDefaultPatterns);
+
+  console.log("envDefaultLinesList");
+  console.log(envDefaultLinesList); */
+useEffect(() => {
+  setPatternNames(envDefaultPatterns.map(pattern => pattern.name))
+}, [envDefaultPatterns])
+
+
+
+
 
 
 
@@ -42,12 +58,11 @@ const PatternControlsList = ({
     <div className="pattern-controls-list">
       {linesList.map((line, id) => {
         const color = colors[id];
-        console.log("Mi interessa qui:")
-        console.log(channelList[id].solo);
+
         return (
         <div key={id} className="elemento-base" style={elementoBase}>
           <CircleContainer lineIndex={id} tempo={tempo} setTempo={setTempo} pattern={patternArrayList[id]}/>
-x
+
           {mode && (
             <PatternControls
               setTempo={setTempo}

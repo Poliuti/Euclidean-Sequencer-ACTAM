@@ -32,7 +32,7 @@ let defaultLines = {
         new EuclideanLine(7, 3, 4, ''),
         new EuclideanLine(8, 1, 0, ''),
         new EuclideanLine(5, 2, 4, ''),
-        new EuclideanLine(10, 4, 7, '')
+        new EuclideanLine(14, 4, 7, '')
        ],
        
        
