@@ -40,12 +40,14 @@ const EuclideanSequencer = () => {
     initializeToneSwing();
   }, []);
 
+
   const handleContextResumeClick = () => {
     if (Context.state === "suspended") {
       Context.resume();
     }
     startSequences(sequenceList);
   };
+
 
   const handleStopClick = () => {
     Transport.stop();
@@ -61,6 +63,7 @@ const EuclideanSequencer = () => {
       colora(line, ind);
     });
   };
+
 
   document.body.onkeyup = function (e) {
     if (e.code === "Space") {
@@ -84,7 +87,7 @@ const EuclideanSequencer = () => {
         seq.stop();
         seq.dispose();
       });
-      console.log(Transport.state);
+      
 
       /*       if (Transport.state === "started")
       Transport.stop(); */

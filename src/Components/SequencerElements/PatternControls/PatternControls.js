@@ -5,6 +5,7 @@ import StepSlider from "./StepSlider";
 import colora from "../../../Functions/colora";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import EuclideanLine from "../../../EuclideanLine";
+import PitchSlider from "./PitchSlider";
 
 const PatternControls = ({ idx, linesList, setLinesList, color }) => {
   const { currentTransportState, setCurrentTransportState } =
@@ -62,6 +63,7 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
         currentTransportState={currentTransportState}
         setCurrentTransportState={setCurrentTransportState}
       />
+      
 
       
     </div>

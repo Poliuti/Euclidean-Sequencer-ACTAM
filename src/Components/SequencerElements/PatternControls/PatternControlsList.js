@@ -16,7 +16,7 @@ const PatternControlsList = ({
   envDefaultPatterns,
 }) => {
   const elementoBase = {
-    height: "22.5rem",
+    height: "24rem",
   };
 
   const [patternNames, setPatternNames] = useState(

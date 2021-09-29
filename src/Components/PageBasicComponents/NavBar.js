@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1>The Euclidean Sequencer</h1>
+      <h1 className="title-header" style={{fontSize: "2rem"}}>The Euclidean Sequencer</h1>
       <div className="links">
         <Link to="/">Home</Link>
         <Link

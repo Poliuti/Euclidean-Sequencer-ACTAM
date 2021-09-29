@@ -70,6 +70,7 @@
 
 h1{
   text-align: center;
+
 }
 
 .navbar {
@@ -240,13 +241,13 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 input[type=range]::-webkit-slider-thumb {
-  margin-top: -8.1px;
-  width: 20px;
-  height: 20px;
+  margin-top: -6px;
+  width: 15px;
+  height: 15px;
   display: flex;
   background: #ffffff;
-  border: 2.7px solid #000000;
-  border-radius: 50px;
+  border: 1px solid #000000;
+  border-radius: 100%;
   cursor: pointer;
   -webkit-appearance: none;
 }
@@ -405,7 +406,7 @@ input[type=range]:focus::-ms-fill-upper {
   display: flex;
   width: 20rem;
   margin-left: 3.7rem;
-  margin-top: 79px;
+  margin-top: 116px;
 }
 
 h4{
@@ -454,7 +455,13 @@ h4{
 }
 
 .active{
-  background-color: rgb(88, 205, 209);
+  
+  background-color:rgb(241, 53, 109);
+}
+
+.active:hover{
+
+  background-color: rgb(247, 115, 155);;
 }
 
 .inactive{
@@ -501,8 +508,21 @@ h4{
 
 
 
+.env-header {
+  font-weight: 400;
+}
 
+h2 {
+  font-weight: 400;
+}
 
+label {
+  font-weight: 250;
+}
+
+a{
+  font-weight: 400;
+}
 
 
 

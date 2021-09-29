@@ -4,7 +4,7 @@ import EuclideanSequencer from "./../Components/SequencerElements/EuclideanSeque
 const Environment = ({ envName, num, envNamePath }) => {
   return (
     <div className="environment">
-      <h1>{envName}</h1>
+      <h1 className="env-header" >{envName}</h1>
       <EnvironmentContextProvider name={envNamePath} num={num}>
         <EuclideanSequencer />
       </EnvironmentContextProvider>

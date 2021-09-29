@@ -18,6 +18,9 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
 ) => {
 
+  channelList.forEach((channel) =>
+            (console.log(channel.solo))
+          )
 
 
   let currentPosArr = initialPositionArray;
@@ -39,13 +42,15 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
             channel.solo
           )
           if (BooleanSoloArray.includes(true)) {
+            console.log("IFFFFFFFF");
 
             if (channel.mute === false && channel.solo === true) {
+
               if (event === 1 && Transport.state === "started") {
 
                 instrumentList[index].triggerAttackRelease(
                   noteArray[index],
-                  "8n",
+                  "64n",
                   time
                 );
 
@@ -54,7 +59,9 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
             }
 
           } else {
+            console.log("ELSEEEEE");
             if (channel.mute === false) {
+              console.log("IFFFF DOPO  ELSEEEEE");
               if (event === 1 && Transport.state === "started") {
 
                 instrumentList[index].triggerAttackRelease(
