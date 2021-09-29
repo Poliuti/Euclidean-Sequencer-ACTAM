@@ -11,7 +11,7 @@
 .General-Controls{
   display: grid;
   grid-template-columns: 12rem 12rem;
-  width: 88%;
+  width: 87%;
   justify-content: space-between;
   grid-gap: 0px;
   margin-top: 1rem;
@@ -116,7 +116,7 @@ h1{
 }
 
 .SideBar a {
-  margin-left: 40px;
+  margin-left: 60px;
   text-decoration: none;
   padding: 10px;
   color: rgb(136, 209, 209);
@@ -127,10 +127,14 @@ h1{
 }
 
 .content {
-  max-width: 1000px;
+  max-width: 1188px;
   margin: 30px auto;
   padding: 10px;
   width: 100%;
+}
+
+.euclidean-sequencer{
+ height: 76rem; 
 }
 
 /* blog previews / list */
@@ -180,28 +184,28 @@ h1{
 /*Controls*/
 
 .elemento-base{
-  height: 18.5rem;
+  height: 24.5rem;
 }
 
 .pattern-controls-list{
   display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 40px;
-  margin-top: 1.5rem;
+  grid-gap: 55px;
+  margin-top: 2.5rem;
  }
 
 .pattern-controls{
   position: relative;
   margin-top: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 
 .macro-controls{
-  width: 220%;
+  width: 235%;
   margin-left: -7rem;
 }
 .tempo-controls{
-width:220%;}
+width:235%;}
 
 
 
@@ -387,20 +391,20 @@ input[type=range]:focus::-ms-fill-upper {
 
 .other-controls{
   display: flex;
-  width: 26rem;
+  width:35rem;
 }
 
 /*tempo-modifier style*/
 
 .tempo-modifier{
   display: flex;
-  max-width: 14rem;
+  width: 20rem;
   margin-left: 3.7rem;
   margin-top: 79px;
 }
 
 h4{
-  margin-left: 7.9rem;
+  margin-left: 12.5rem;
   }
 
 /*mute/solo buttons*/

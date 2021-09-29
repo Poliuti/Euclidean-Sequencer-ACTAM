@@ -25,7 +25,7 @@ const PatternControlsList = ({
 }) => {
   
   const elementoBase = {
-    height: "18.5rem",
+    height: "22.5rem",
   };
 
 
