@@ -29,6 +29,7 @@
   grid-row-start: 1;
   grid-row-end: 1;
   justify-self: start;
+  margin-left: 48px;
 }
 
 .stop{
@@ -556,6 +557,7 @@ h4{
 h2 {
   justify-self: end;
   font-weight: 400;
+  margin-right: 48px;
 }
 
 label {

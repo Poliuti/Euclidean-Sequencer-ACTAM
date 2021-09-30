@@ -18,28 +18,29 @@
         "id": 0
       },
       {
-        "numSteps": 18,
-        "numPulses": 7,
-        "numRotations": 11,
+        "numSteps": 19,
+        "numPulses": 1,
+        "numRotations": 0,
         "name": "",
         "euclideanArray": [
           1,
           0,
           0,
-          1,
-          0,
-          1,
           0,
           0,
-          1,
           0,
           0,
-          1,
-          0,
-          1,
           0,
           0,
-          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0
         ],
         "id": 1
@@ -76,36 +77,6 @@
           1
         ],
         "id": 3
-      },
-      {
-        "numSteps": 21,
-        "numPulses": 8,
-        "numRotations": 7,
-        "name": "",
-        "euclideanArray": [
-          1,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          0
-        ],
-        "id": 4
       }
     ]
   ]
