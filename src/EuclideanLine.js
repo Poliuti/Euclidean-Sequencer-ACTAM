@@ -18,8 +18,4 @@ export default class EuclideanLine {
     this.id = id;
     return this
   }
-
-
-
-
 }
