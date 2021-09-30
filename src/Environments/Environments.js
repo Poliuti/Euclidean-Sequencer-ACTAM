@@ -2,23 +2,27 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SideBar from "../Components/PageBasicComponents/SideBar";
 import Environment from "./Environment";
 
+
+const envNamesPath = [
+  "custom",
+  "africa",
+  "southAmerica",
+  "middleEast",
+  "india",
+  "restOfTheWorld",
+];
+const envNames = [
+  "Custom",
+  "Africa",
+  "South America",
+  "Middle East",
+  "India",
+  "Rest Of The World",
+];
+
+
 const Environments = () => {
-  const envNamesPath = [
-    "custom",
-    "africa",
-    "southAmerica",
-    "middleEast",
-    "india",
-    "restOfTheWorld",
-  ];
-  const envNames = [
-    "Custom",
-    "Africa",
-    "South America",
-    "Middle East",
-    "India",
-    "Rest Of The World",
-  ];
+  
 
   return (
     <Router>
@@ -27,7 +31,11 @@ const Environments = () => {
 
         <Switch>
           {envNamesPath.map((environment, index) => {
-            const address = `/environments/${environment}`;
+            let address;
+            if (environment === "custom") {address='/'}
+            else {address=`/${environment}`}
+
+      
             return (
               <Route exact path={address} key={index}>
                 <Environment

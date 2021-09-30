@@ -5,23 +5,20 @@ import NotFound from "./NotFound";
 import About from "./About";
 import Environments from "../../Environments/Environments";
 
-
 function App() {
-
-  
-  
   return (
     <Router>
       <div className="App">
         <NavBar />
         <div className="content">
           <Switch>
-            <Route path="/environments">
-              <Environments />
-            </Route>
-            <Route path="/about">
+            <Route exact path="/about">
               <About />
             </Route>
+            <Route path="/">
+              <Environments />
+            </Route>
+
             <Route path="*">
               <NotFound />
             </Route>

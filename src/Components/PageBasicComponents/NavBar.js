@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar">
       <h1 className="title-header" style={{fontSize: "2rem"}}>The Euclidean Sequencer</h1>
       <div className="links">
-        <Link to="/environments/custom">Home</Link>
+        <Link to="/">Home</Link>
         <Link
           to="/about"
           style={{

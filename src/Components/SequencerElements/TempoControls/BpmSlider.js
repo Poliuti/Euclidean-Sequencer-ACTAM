@@ -14,6 +14,7 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
     } else {
       setCurrentTransportState(0);
     }
+    Transport.stop();
     
   };
 
