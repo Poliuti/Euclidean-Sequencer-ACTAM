@@ -25,8 +25,8 @@ const Dot = ({ isActive, cellIdx, radius, angle, lineIndex }) => {
 
   const active = {
     position: "absolute",
-    height: "14px",
-    width: "14px",
+    height: "17px",
+    width: "17px",
     backgroundColor: color,
     borderRadius: "50%",
     left: "80%",
