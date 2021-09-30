@@ -642,6 +642,8 @@ a{
   cursor: pointer;
   display: block;
   padding: 8px 10px;
+  text-align: center;
+  text-indent: -43px;
 }
 
 .Dropdown-option:last-child {

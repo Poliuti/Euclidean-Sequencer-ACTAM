@@ -78,6 +78,188 @@
         ],
         "id": 3
       }
+    ],
+    [
+      {
+        "numSteps": 7,
+        "numPulses": 3,
+        "numRotations": 4,
+        "name": "",
+        "euclideanArray": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "id": 0
+      },
+      {
+        "numSteps": 19,
+        "numPulses": 1,
+        "numRotations": 14,
+        "name": "",
+        "euclideanArray": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "id": 1
+      },
+      {
+        "numSteps": 5,
+        "numPulses": 2,
+        "numRotations": 4,
+        "name": "",
+        "euclideanArray": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "id": 2
+      },
+      {
+        "numSteps": 10,
+        "numPulses": 4,
+        "numRotations": 7,
+        "name": "",
+        "euclideanArray": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "id": 3
+      }
+    ],
+    [
+      {
+        "numSteps": 31,
+        "numPulses": 3,
+        "numRotations": 4,
+        "name": "",
+        "euclideanArray": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "id": 0
+      },
+      {
+        "numSteps": 19,
+        "numPulses": 1,
+        "numRotations": 14,
+        "name": "",
+        "euclideanArray": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "id": 1
+      },
+      {
+        "numSteps": 5,
+        "numPulses": 2,
+        "numRotations": 4,
+        "name": "",
+        "euclideanArray": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "id": 2
+      },
+      {
+        "numSteps": 10,
+        "numPulses": 4,
+        "numRotations": 7,
+        "name": "",
+        "euclideanArray": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "id": 3
+      }
     ]
   ]
 }
