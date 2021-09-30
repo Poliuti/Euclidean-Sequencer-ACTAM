@@ -129,10 +129,11 @@ const EuclideanSequencer = () => {
         />
         <PlayButton sequenceList={sequenceList} />
         <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} />
-        <LoadDropDown userList={userList} setLinesList={setLinesList} />
-        
-        
-      </div>
+        </div>
+
+
+      <LoadDropDown className="LoadDropDown" userList={userList} setLinesList={setLinesList} />
+
 
       <PatternControlsList
         linesList={linesList}
