@@ -12,20 +12,6 @@ const SaveButton = ({ actualLinesList, userList, setUserList }) => {
     if (!userList){setUserList(response.data)}
     else
     setUserList([...userList, response.data]);
-
-
-
-
-    /* if (userPatternsList == null){
-        prova.push(linesList);
-        setUserPatternsList(prova);
-}
-    
-    else
-    { 
-        let tempUserPatternsList = [...userPatternsList];
-        tempUserPatternsList.push(linesList);
-    setUserPatternsList(tempUserPatternsList);} */
   };
 
   return (

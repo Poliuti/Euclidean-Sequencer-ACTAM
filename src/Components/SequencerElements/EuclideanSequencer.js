@@ -34,7 +34,7 @@ const EuclideanSequencer = () => {
 
   const [userList, setUserList] = useState(null);
   
-/* 
+
   const retrieveUserLinesList = async () => {
     const response = await api.get("/userLinesList");
     return response.data;
@@ -52,7 +52,7 @@ const EuclideanSequencer = () => {
     }
     getAllUserLinesList();
     
-  }, []); */
+  }, []); 
 
 
 /*   const handleContextResumeClick = () => {
@@ -128,11 +128,12 @@ const EuclideanSequencer = () => {
           patternArrayList={patternArrayList}
         />
         <PlayButton sequenceList={sequenceList} />
-{/*         <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} />
-        <LoadDropDown userList={userList} setLinesList={setLinesList} /> */}
-        
-        
-      </div>
+        <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} />
+        </div>
+
+
+      <LoadDropDown className="LoadDropDown" userList={userList} setLinesList={setLinesList} />
+
 
       <PatternControlsList
         linesList={linesList}
