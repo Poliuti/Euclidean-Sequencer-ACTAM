@@ -33,6 +33,7 @@
   background-size: contain;
   background-position: center;
   background-color: #dff8f800;
+  margin-left:11.5rem;
 }
 
 .stop:hover{
@@ -158,7 +159,7 @@ h1{
 }
 
 .euclidean-sequencer{
- height: 76rem; 
+ height: 80rem; 
 }
 
 /* blog previews / list */
@@ -445,9 +446,7 @@ h4{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  cursor: pointer;
-  border: 0.5rem;
-
+  border: 1px solid #A8FFFF;
 }
 
 .mute-button:hover{
@@ -463,8 +462,7 @@ h4{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  cursor: pointer;
-  border: 0.5rem;
+  border: 1px solid #A8FFFF;
   
 }
 
@@ -500,6 +498,12 @@ h4{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: #dff8f800;
+  border: 1px solid #A8FFFF;
+}
+
+.per-due:hover{
+  background-color: #7df8f834;
 }
 
 .diviso-due{
@@ -512,19 +516,20 @@ h4{
   background-size: cover;
   background-position: center;
   background-color: #dff8f800;
+  border: 1px solid #A8FFFF;
+}
+
+.diviso-due:hover{
+  background-color: #7df8f834;
 }
 
 .Limit_up{
-  filter:opacity(60%);
+  filter:opacity(40%);
 }
 
 .Limit_down{
-  filter: opacity(60%);
+  filter: opacity(40%);
 }
-
-
-
-
 
 .env-header {
   font-weight: 400;
