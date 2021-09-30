@@ -30,6 +30,7 @@ const EuclideanSequencer = () => {
     setDummy,
     patternArrayList,
     currentTransportState,
+    setCurrentTransportState,
   } = useContext(EnvironmentContext);
 
   const [userList, setUserList] = useState(null);
@@ -126,13 +127,14 @@ const EuclideanSequencer = () => {
           dummy={dummy}
           setDummy={setDummy}
           patternArrayList={patternArrayList}
+          setCurrentTransportState={setCurrentTransportState}
         />
         <PlayButton sequenceList={sequenceList} />
         <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} />
         </div>
 
 
-      <LoadDropDown className="LoadDropDown" userList={userList} setLinesList={setLinesList} />
+      <LoadDropDown className="LoadDropDown" userList={userList} setLinesList={setLinesList} linesList={linesList}/>
 
 
       <PatternControlsList

@@ -7,9 +7,11 @@ const onSequenceListChange = (sequences, patternList, transportState) => {
 
 
   if (transportState) {
+    
     sequences.forEach((seq) => {
-      seq.start("0:0:0");
+      seq.start("+0.3");
     });
+    
   }
 
 
@@ -23,7 +25,7 @@ const onSequenceListChange = (sequences, patternList, transportState) => {
       colora(line, ind);
 
     })
-  }, "+0.5");
+  }, "+0.4");
 
 
 

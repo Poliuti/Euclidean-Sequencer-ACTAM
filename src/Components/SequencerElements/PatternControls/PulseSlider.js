@@ -20,13 +20,13 @@ const PulseSlider = ({
   const handlePointerDown = () => {
     if (Transport.state === "started") {
       setCurrentTransportState(1);
-      Transport.stop();
+      
     } else {
       setCurrentTransportState(0);
-      Transport.stop();
+      
     }
 
-    Transport.stop();
+    
   };
 
   return (

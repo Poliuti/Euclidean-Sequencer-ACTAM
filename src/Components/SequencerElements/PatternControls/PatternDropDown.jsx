@@ -22,6 +22,15 @@ const PatternDropDown = ({id, patternNames, defaultPatterns, linesList, setLines
     const handleChange = (patternName) => {
 
         
+      if (Transport.state === "started") {
+        setCurrentTransportState(1);
+   
+      } else {
+        setCurrentTransportState(0);
+  
+      }
+      
+      /* Transport.stop(); */
         
  
         const modifPatternName = patternName.slice(0, patternName.indexOf('(')).trimEnd();
@@ -32,6 +41,11 @@ const PatternDropDown = ({id, patternNames, defaultPatterns, linesList, setLines
           }
         });
 
+
+
+
+
+
         
 
         
@@ -39,16 +53,19 @@ const PatternDropDown = ({id, patternNames, defaultPatterns, linesList, setLines
   }
 
   useEffect(() => {
+ 
     if (chosenPattern)
     {let tempList = [...linesList];
     tempList[id] = new EuclideanLine(chosenPattern.numSteps, chosenPattern.numPulses, chosenPattern.numRotations, chosenPatternName).setID(id);;
     setLinesList(tempList);
+/*     if (Transport.state === "started"){setCurrentTransportState(1)}
+    else {setCurrentTransportState(0)} */
+    /* if (currentTransportState) {
+      Transport.start("+0.05");
+    } */
 
-    if (Transport.state === "started"){setCurrentTransportState(1)}
-    else {setCurrentTransportState(0)}
-    console.log("Transport.state");
-        console.log(Transport.state);
-}
+    }
+
 }, [chosenPattern])
 
 

@@ -8,7 +8,6 @@ const africaSamples = [
     firstSample, 
     secondSample, 
     thirdSample, 
-    fourthSample,
     fourthSample
   ];
 

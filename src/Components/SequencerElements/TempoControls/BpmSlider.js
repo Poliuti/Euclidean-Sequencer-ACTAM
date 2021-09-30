@@ -5,16 +5,16 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
   const { currentTransportState, setCurrentTransportState } =
     useContext(EnvironmentContext);
 
+ 
+
   const handlePointerDown = () => {
+    
     if (Transport.state === "started") {
       setCurrentTransportState(1);
-      Transport.stop();
     } else {
       setCurrentTransportState(0);
-      Transport.stop();
     }
-    console.log(Transport.state);
-    Transport.stop();
+    
   };
 
   return (
@@ -27,9 +27,9 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
         defaultValue={tempo.bpm}
         required
         onChange={(e) => {
+          
           let newBpmValue = parseInt(e.target.valueAsNumber);
           let newTempo = { ...tempo, bpm: newBpmValue };
-
           setTempo(newTempo);
         }}
         onPointerDown={handlePointerDown}
@@ -38,6 +38,8 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
             Transport.start();
           }
         }}
+        onKeyDown={() => Transport.stop()}
+        onKeyUp={() => Transport.start()}
         id="bpms"
         style={{ "--c": `${color}` }}
       />
@@ -47,6 +49,3 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
 };
 
 export default BpmSlider;
-
-/* {{Transport.stop();
-  Transport.start("+0.1");}} */

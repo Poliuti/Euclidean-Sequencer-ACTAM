@@ -4,7 +4,7 @@ import {
 
 const startSequences = (sequences) => {
   sequences.forEach((seq) => {
-    seq.start("0:0:0");
+    seq.start("+0.1");
   });
   Transport.start("+0.1");
 }

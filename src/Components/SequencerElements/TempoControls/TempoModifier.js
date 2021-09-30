@@ -38,11 +38,10 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
 
   if (Transport.state === "started") {
     setCurrentTransportState(1);
-    Transport.stop();
-    Transport.start("+0.1");
+    
   } else {
     setCurrentTransportState(0);
-    Transport.stop();
+    
   }
  
   };

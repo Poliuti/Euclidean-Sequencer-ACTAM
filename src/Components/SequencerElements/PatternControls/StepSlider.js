@@ -23,19 +23,19 @@ const StepSlider = ({
       setNumRotations(num - 1);
     }
 
-    Transport.stop();
+    
   };
 
   const handlePointerDown = () => {
     if (Transport.state === "started") {
       setCurrentTransportState(1);
-      Transport.stop();
+      
     } else {
       setCurrentTransportState(0);
-      Transport.stop();
+      
     }
-    console.log(Transport.state);
-    Transport.stop();
+    
+  
   };
 
   return (

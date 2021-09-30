@@ -13,12 +13,13 @@ const PitchSlider = ({id}) => {
     const { currentTransportState, setCurrentTransportState, chosenNotes, setChosenNotes } = useContext(EnvironmentContext);
 
     const handlePointerDown = () => {
+      console.log("On Pointer Down")
     if (Transport.state === "started") {
       setCurrentTransportState(1);
-      Transport.stop();
+ 
     } else {
       setCurrentTransportState(0);
-      Transport.stop();
+
     }
     
     Transport.stop();
@@ -40,7 +41,8 @@ const PitchSlider = ({id}) => {
         defaultValue="19"
         required
         onChange={(e) => {
-          let noteArray = [...chosenNotes]
+          let noteArray = [...chosenNotes];
+          console.log("On Change")
 
           noteArray[id] = allNotesArray[parseInt(e.target.valueAsNumber)];
           setChosenNotes(noteArray);
