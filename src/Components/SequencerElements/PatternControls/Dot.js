@@ -1,4 +1,4 @@
-import { activeColor, nonActiveColor, tempNonActiveColor } from "./../../../Default/colori";
+import { activeColor, nonActiveColor } from "./../../../Default/colori";
 
 const Dot = ({ isActive, cellIdx, radius, angle, lineIndex }) => {
   angle = angle - 90;
@@ -9,7 +9,7 @@ const Dot = ({ isActive, cellIdx, radius, angle, lineIndex }) => {
 
   const dotId = `${lineIndex}${cellIdx}`;
 
-  const handleClick = (elem) => {
+  /* const handleClick = (elem) => {
 
     let actualColor = elem.style.backgroundColor;
    
@@ -21,7 +21,7 @@ const Dot = ({ isActive, cellIdx, radius, angle, lineIndex }) => {
       elem.style.backgroundColor = activeColor[lineIndex];
       elem.classList.remove("tempInactive");
     }
-  };
+  }; */
 
   const active = {
     position: "absolute",
@@ -40,7 +40,7 @@ const Dot = ({ isActive, cellIdx, radius, angle, lineIndex }) => {
       style={active}
       className={dotClassName}
       id={dotId}
-      onClick={(e) => handleClick(e.currentTarget)}
+      
     ></div>
   );
 };

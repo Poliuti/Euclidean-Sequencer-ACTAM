@@ -78,14 +78,6 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
 
 
-
-
-
-
-
-
-
-
          
 
           let dot = document.getElementById(`${index}${currentPosArr[index]}`);

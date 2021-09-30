@@ -16,6 +16,7 @@ const noteArray = ["A1", "A1", "A1", "A1"]; // info sulle note che suona ogni se
 
 const EnvironmentContextProvider = (props) => {
   // this context provides common info within the environment
+  console.log(Context.state);
 
   const [currentTransportState, setCurrentTransportState] = useState(0);
 
@@ -38,7 +39,7 @@ const EnvironmentContextProvider = (props) => {
 
   const initPosArray = [0, 0, 0, 0];
   //ogni render del context viene azzerata la posizione del tick
-  /*  const [userLinesList, setUserLinesList] = useState([]);  */
+  
 
   const [linesList, setLinesList] = useState(defaultLines[props.name][1]); // memorizzo la lista di linee euclidiane in uno stato
   const [chosenNotes, setChosenNotes] = useState(noteArray);
