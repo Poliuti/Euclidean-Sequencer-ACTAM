@@ -52,8 +52,7 @@ for (let j = 0; j < samplesPools.length; j++) {
   }
 }
 
-console.log("samplerList");
-console.log(samplerList);
+
 
 export {
   samplerList,

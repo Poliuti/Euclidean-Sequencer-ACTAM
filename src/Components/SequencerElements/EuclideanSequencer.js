@@ -51,14 +51,14 @@ const EuclideanSequencer = () => {
       if (allUserLinesList) setUserList(allUserLinesList)
     }
     getAllUserLinesList();
-    console.log(userList);
+    
   }, []);
 
 
-  const handleContextResumeClick = () => {
+/*   const handleContextResumeClick = () => {
     if (Context.state === "suspended") {
       Context.resume();
-    }
+    } else {Transport.start()}
     startSequences(sequenceList);
   };
 
@@ -76,10 +76,10 @@ const EuclideanSequencer = () => {
     patternArrayList.forEach((line, ind) => {
       colora(line, ind);
     });
-  };
+  }; */
 
 
-  document.body.onkeyup = function (e) {
+/*   document.body.onkeyup = function (e) {
     if (e.code === "Space") {
       if (Transport.state === "stopped") {
         handleContextResumeClick();
@@ -87,7 +87,7 @@ const EuclideanSequencer = () => {
         handleStopClick();
       }
     }
-  };
+  }; */
 
   useEffect(() => {
     Transport.bpm.value = tempo.bpm;
@@ -109,8 +109,7 @@ const EuclideanSequencer = () => {
   }, [sequenceList]);
 
 
-  console.log("userList");
-  console.log(userList);
+
 
   return (
     <div className="euclidean-sequencer">

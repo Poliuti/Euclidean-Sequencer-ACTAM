@@ -5,8 +5,6 @@ import colora from "./colora";
 
 const onSequenceListChange = (sequences, patternList, transportState) => {
 
-console.log("transportState");
-console.log(transportState);
 
   if (transportState) {
     sequences.forEach((seq) => {

@@ -3,7 +3,7 @@ import Dropdown from "react-dropdown";
 import { Transport } from "tone";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import EuclideanLine from "../../../EuclideanLine";
-import "./../../../../node_modules/react-dropdown/style.css"
+
 
 
 
