@@ -1,13 +1,23 @@
-const SaveButton = ({setUserPatternsList, linesList, userPatternsList}) => {
+import { v4 as uuidv4 } from "uuid";
+import api from "./../../api/userLinesList";
 
-    let prova = [];
-    
-    
+const SaveButton = ({ actualLinesList, userList, setUserList }) => {
+  const saveLinesList = async () => {
 
-const handleOnClick = () => {
-    
-    
-    if (userPatternsList == null){
+    const request = 
+      [...actualLinesList]
+    ;
+
+    const response = await api.post("/userLinesList", request);
+
+    if (!userList){setUserList(response.data)}
+    else
+    setUserList([...userList, response.data]);
+
+
+
+
+    /* if (userPatternsList == null){
         prova.push(linesList);
         setUserPatternsList(prova);
 }
@@ -16,15 +26,19 @@ const handleOnClick = () => {
     { 
         let tempUserPatternsList = [...userPatternsList];
         tempUserPatternsList.push(linesList);
-    setUserPatternsList(tempUserPatternsList);}
-}
-    
+    setUserPatternsList(tempUserPatternsList);} */
+  };
 
-    return ( <div className="save-cont">
-        <button className="save-button" onClick={handleOnClick} >
-            Save Patterns
-        </button>
-    </div> );
-}
- 
+  return (
+    <div className="save-cont">
+      <button
+        className="save-button"
+        onClick={() => saveLinesList()}
+      >
+        Save Patterns
+      </button>
+    </div>
+  );
+};
+
 export default SaveButton;

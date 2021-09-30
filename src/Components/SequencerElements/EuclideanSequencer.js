@@ -1,4 +1,4 @@
-import React, { useContext, useEffect} from "react";
+import React, { useContext, useEffect, useState} from "react";
 import { Context, Transport } from "tone";
 import onSequenceListChange from "./../../Functions/onSequenceListChange";
 import { activeColor, macroColor } from "./../../Default/colori";
@@ -11,6 +11,10 @@ import StopButton from "./TransportControls/StopButton";
 import initializeToneSwing from "../../Functions/initializeToneSwing";
 import startSequences from "../../Functions/startSequences";
 import colora from "../../Functions/colora";
+import api from "./../../api/userLinesList"
+import SaveButton from "./../SequencerElements/SaveButton"
+import LoadDropDown from "./LoadDropDown";
+
 
 
 const EuclideanSequencer = () => {
@@ -28,16 +32,26 @@ const EuclideanSequencer = () => {
     currentTransportState,
   } = useContext(EnvironmentContext);
 
+  const [userList, setUserList] = useState(null);
+  
+
+  const retrieveUserLinesList = async () => {
+    const response = await api.get("/userLinesList");
+    return response.data;
+  }
 
 
 
-
-  console.log("envDefault ");
-  console.log(envDefault);
 
   useEffect(() => {
     Transport.stop();
     initializeToneSwing();
+    const getAllUserLinesList = async () => {
+      const allUserLinesList = await retrieveUserLinesList();
+      if (allUserLinesList) setUserList(allUserLinesList)
+    }
+    getAllUserLinesList();
+    console.log(userList);
   }, []);
 
 
@@ -94,26 +108,9 @@ const EuclideanSequencer = () => {
     };
   }, [sequenceList]);
 
-  /*   useFetchPost("http://localhost:8000/userSavedPatterns", userPatternsList );
- useFetchDelete("http://localhost:8000/userSavedPatterns"); */
 
-  /* 
-  const handleSave = () => {
-    const tempUserList = userLinesList;
-    tempUserList.push(linesList);
-    setUserLinesList(tempUserList);
-    console.log(userLinesList);
-  } */
-
-  /*   const handleOnPatternLoad = (ev, userLinesList ) => {
-    console.log(userLinesList);
- 
-    let selectedIndexPattern = ev.label.match(/\d+$/)[0];
-    console.log(selectedIndexPattern);
-    setLinesList(userLinesList[selectedIndexPattern])
-
-
-  } */
+  console.log("userList");
+  console.log(userList);
 
   return (
     <div className="euclidean-sequencer">
@@ -132,6 +129,10 @@ const EuclideanSequencer = () => {
           patternArrayList={patternArrayList}
         />
         <PlayButton sequenceList={sequenceList} />
+        <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} />
+        <LoadDropDown userList={userList} setLinesList={setLinesList} />
+        
+        
       </div>
 
       <PatternControlsList

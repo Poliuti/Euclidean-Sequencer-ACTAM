@@ -35,7 +35,7 @@
 }
 
 .stop:hover{
-  background-color: #dff8f817;
+  background-color: #7df8f834;
 }
 
 
@@ -56,7 +56,7 @@
 }
 
 .start-context:hover{
-  background-color: #dff8f817;
+  background-color: #7df8f834;
 }
 
 /* base styles */
@@ -65,7 +65,7 @@
   margin: 0;
   font-family: "Quicksand";
   color: rgb(169, 212, 212);
-  background: linear-gradient(to right, #08090e, #27333a);
+  background: linear-gradient(to right, #000000, #1b0415);
 }
 
 h1{
@@ -433,7 +433,7 @@ h4{
 }
 
 .mute-button:hover{
-  background-color: #dff8f817;
+  background-color: #7df8f834;
 }
 
 .solo-button{
@@ -451,7 +451,7 @@ h4{
 }
 
 .solo-button:hover{
-  background-color: #dff8f817;
+  background-color: #7df8f834;
 }
 
 .active{

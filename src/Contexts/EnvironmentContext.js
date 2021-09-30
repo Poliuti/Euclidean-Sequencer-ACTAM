@@ -4,13 +4,13 @@ import creaSequenceList from "./../Functions/CreaSequenceList";
 import defaultLines from "../Default/defaultLines";
 import { Transport } from "tone";
 
+
 // INFO ABOUT THE VARIOUS LISTS:
 // linesList is the list of all the info contained in the line object
 // euclideanArrayList is the list of just the euclidean arrays
 // sequenceList is the list of all the Sequence Objects (Tone Objects) that have been created
 
 export const EnvironmentContext = createContext();
-const allNotesArray = ["A-2", "B-2", "C-2", "D-2", "E-2", "F-2", "G-2","A-1", "B-1", "C-1", "D-1", "E-1", "F-1", "G-1", "A0", "B0", "C0", "D0", "E0", "F0", "G0", "A1", "B1", "C1", "D1", "E1", "F1", "G1", "A2", "B2", "C2", "D2", "E2", "F2", "G2", "A3", "B3", "C3", "D3","E3", "F3", "G3"]
 const noteArray = ["A1", "A1", "A1", "A1"]; // info sulle note che suona ogni sequenza (mi serve quando creo la sequenza)
 
 
@@ -20,6 +20,9 @@ const EnvironmentContextProvider = (props) => {
   const [currentTransportState, setCurrentTransportState] = useState(0);
 
   console.log("Context ran");
+
+
+
 
   const tempoSpeedIndex = samplerList[props.num].map(() => 1);
   const tempoSpeedIndexForTone = tempoSpeedIndex.map(
