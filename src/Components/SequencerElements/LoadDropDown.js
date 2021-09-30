@@ -2,11 +2,11 @@ import Dropdown from "react-dropdown";
 
 const LoadDropDown = ({userList, setLinesList}) => {
     let savedListNames;
-    let placeholder;
+    
     if (userList) {
         savedListNames = userList.map((linesList, id) => `User Lines List ${id}`);
         
-    } else savedListNames = ["Boh"];
+    } else savedListNames = ["Failed"];
 
 
     const handleOnChange = (label) => {

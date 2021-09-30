@@ -5,7 +5,7 @@ const PlayButton = ({ sequenceList }) => {
   const handleContextResumeClick = () => {
     if (Context.state === "suspended") {
       Context.resume();
-    }
+    } 
     startSequences(sequenceList);
   };
 

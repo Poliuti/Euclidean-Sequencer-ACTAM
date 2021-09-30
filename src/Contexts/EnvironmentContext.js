@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { samplerList, channelList } from "./../Default/sampler";
 import creaSequenceList from "./../Functions/CreaSequenceList";
 import defaultLines from "../Default/defaultLines";
-import { Transport } from "tone";
+import { Context, Transport } from "tone";
 
 
 // INFO ABOUT THE VARIOUS LISTS:
@@ -53,7 +53,7 @@ const EnvironmentContextProvider = (props) => {
   }, []);
 
   useEffect(() => {
-    let wasPlaying;
+    if (Context.state !== "suspended") {let wasPlaying;
     if (Transport.state === "started") {
       wasPlaying = true;
     } else {
@@ -67,7 +67,7 @@ const EnvironmentContextProvider = (props) => {
     setTempo(tempoInfo);
     if (wasPlaying) {
       Transport.start("+0.05");
-    }
+    }}
   }, [props.name]);
 
   const [tempo, setTempo] = useState(tempoInfo); // memorizzo tempo information in uno stato
