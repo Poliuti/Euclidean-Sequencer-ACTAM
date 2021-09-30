@@ -1,55 +1,35 @@
 import React, { createContext, useEffect, useState } from "react";
-import { samplerList, channelList } from "./../Default/sampler";
+import { samplerList, channelList, numInstr } from "./../Default/sampler";
 import creaSequenceList from "./../Functions/CreaSequenceList";
 import defaultLines from "../Default/defaultLines";
-import { context,  Transport } from "tone";
-
+import { context, Transport } from "tone";
+import initEnvironmentInfo from "../Functions/initEnvironmentInfo";
 
 // INFO ABOUT THE VARIOUS LISTS:
-// linesList is the list of all the info contained in the line object
+// LinesList è la lista di N EuclideanLine Objects
 // euclideanArrayList is the list of just the euclidean arrays
 // sequenceList is the list of all the Sequence Objects (Tone Objects) that have been created
 
 export const EnvironmentContext = createContext();
-const noteArray = ["A1", "A1", "A1", "A1"]; // info sulle note che suona ogni sequenza (mi serve quando creo la sequenza)
-
 
 const EnvironmentContextProvider = (props) => {
   // this context provides common info within the environment
-  console.log(context.state);
+console.log(numInstr[props.num]);
 
 
-  console.log(Transport.state);
-
-  
-  const [currentTransportState, setCurrentTransportState] = useState(0);
+  const [currentTransportState, setCurrentTransportState] = useState(0); //needed for starting the sequence in the right way when modifying some sliders
 
   console.log("Context ran");
 
+  const { tempoInfo, noteArray, initPosArray } = initEnvironmentInfo(
+    numInstr[props.num],
+    140
+  ); //initializing Tempo Object, note array that the samplers will play, initial Tick Position for the sequences
 
-
-
-  const tempoSpeedIndex = samplerList[props.num].map(() => 1);
-  const tempoSpeedIndexForTone = tempoSpeedIndex.map(
-    (coeff) => `${coeff * 8}n`
-  );
-
-
-  const tempoInfo = {
-    bpm: 140,
-    tempoSpeedIndex: tempoSpeedIndex,
-    tempoSpeedIndexForTone: tempoSpeedIndexForTone,
-  };
-
-  const initPosArray = [0, 0, 0, 0];
-  //ogni render del context viene azzerata la posizione del tick
-  
-
-  const [linesList, setLinesList] = useState(defaultLines[props.name][1]); // memorizzo la lista di linee euclidiane in uno stato
-  const [chosenNotes, setChosenNotes] = useState(noteArray);
 
   useEffect(() => {
     return () => {
+      //On Environment UnMount, i set all mutes and solos to false
       channelList[props.num].forEach((channel) => {
         channel.solo = false;
         channel.mute = false;
@@ -57,52 +37,53 @@ const EnvironmentContextProvider = (props) => {
     };
   }, []);
 
-  useEffect(() => {
-    if (context.state !== "suspended") {let wasPlaying;
-    if (Transport.state === "started") {
-      wasPlaying = true;
-    } else {
-      wasPlaying = false;
-    }
+  const [linesList, setLinesList] = useState(defaultLines[props.name][1]); // Saving EuclideanLines List in a state (initially linesList comes from a default list of lines, one for each Environment)
+  const [chosenNotes, setChosenNotes] = useState(noteArray); //saving the note Array that will be read from the samplers
 
-    Transport.stop();
-    if (linesList) {
-      setLinesList(defaultLines[props.name][1]);
+  useEffect(() => {
+    //runs every time we change environment
+    if (context.state !== "suspended") {
+      let wasPlaying;
+      if (Transport.state === "started") {
+        wasPlaying = true;
+      } else {
+        wasPlaying = false;
+      }
+
+      Transport.stop();
+
+      if (linesList) {
+        setLinesList(defaultLines[props.name][1]);
+      }
+
+      setTempo(tempoInfo);
+
+      if (wasPlaying) {
+        Transport.start("+0.05");
+      }
     }
-    setTempo(tempoInfo);
-    if (wasPlaying) {
-      Transport.start("+0.05");
-    }}
   }, [props.name]);
 
-  const [tempo, setTempo] = useState(tempoInfo); // memorizzo tempo information in uno stato
+  const [tempo, setTempo] = useState(tempoInfo); // memorizing tempo object in a state
 
   const [dummy, setDummy] = useState(0);
 
   let sequencesList = []; //inizializzo la lista iniziale delle sequenze come vuota
 
-  // 1 Tick in secondi = tatum
-  // current Tick Index : parametri sono --> 1) Transport.getSecondsAtTime    2)BPM   3)SpeedModifier 4) N° of Steps of the line
-  // Gli ultimi due parametri sono disponibili in tempoInfo
-  //
   let patternArrayList = linesList.map(
-    (
-      line,
-      id // creo una lista di Euclidean Arrays chiamata euclideanArrayList
-    ) => line.euclideanArray
+    // creating a List of just euclidean patterns from linesList
+    (line, id) => line.euclideanArray
   );
 
-  let sequenceList =
-    // chiamo la funzione creaSequenceList e assegno i due valori di ritorno a due variabili
-    creaSequenceList(
-      patternArrayList,
-      sequencesList,
-      chosenNotes,
-      tempo.tempoSpeedIndexForTone,
-      samplerList[props.num],
-      initPosArray,
-      channelList[props.num]
-    );
+  let sequenceList = creaSequenceList( //creating a list of Tone.Sequence from each Eucldean Pattern
+    patternArrayList,
+    sequencesList,
+    chosenNotes,
+    tempo.tempoSpeedIndexForTone,
+    samplerList[props.num],
+    initPosArray,
+    channelList[props.num]
+  );
 
   return (
     <EnvironmentContext.Provider
@@ -121,7 +102,7 @@ const EnvironmentContextProvider = (props) => {
         currentTransportState,
         setCurrentTransportState,
         chosenNotes,
-        setChosenNotes
+        setChosenNotes,
       }}
     >
       {props.children}

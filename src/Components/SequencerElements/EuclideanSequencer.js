@@ -52,7 +52,7 @@ const EuclideanSequencer = () => {
     }
     getAllUserLinesList();
     
-  }, []); 
+  }, []);
 
 
 /*   const handleContextResumeClick = () => {

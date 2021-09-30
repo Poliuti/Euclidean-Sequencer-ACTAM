@@ -10,7 +10,7 @@ import southAmericaSamples from "../Samples/southAmericaSamples";
 
 
 
-const samplesPools = [
+const samplesPool = [
 
   customSamples,
   africaSamples,
@@ -20,41 +20,40 @@ const samplesPools = [
   restOfTheWorldSamples
 ]
 
-
+const numInstr = samplesPool.map((samplesList) => samplesList.length)
 
 
 let samplerList = [
-  [],
-  [],
-  [],
-  [],
-  [],
-  []
-];
-let channelList = [
-  [],
-  [],
-  [],
-  [],
-  [],
-  []
 ];
 
-for (let j = 0; j < samplesPools.length; j++) {
-  for (let i = 0; i < samplesPools[j].length; i++) {
+let channelList = [];
+
+for (let i = 0; i < samplesPool.length; i++) {
+  samplerList.push([]);
+  channelList.push([]);
+}
+
+
+
+for (let j = 0; j < samplesPool.length; j++) {
+  for (let i = 0; i < samplesPool[j].length; i++) {
     let {
       sampler,
       channel
-    } = makeChannel(samplesPools[j][i], 0.2 * i, -2);
+    } = makeChannel(samplesPool[j][i], 0.2 * i, -2);
 
     samplerList[j].push(sampler);
     channelList[j].push(channel);
   }
 }
 
+console.log(samplerList);
+console.log(channelList);
+
 
 
 export {
   samplerList,
   channelList,
+  numInstr
 };
