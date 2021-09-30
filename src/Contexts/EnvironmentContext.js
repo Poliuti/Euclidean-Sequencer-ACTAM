@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { samplerList, channelList } from "./../Default/sampler";
 import creaSequenceList from "./../Functions/CreaSequenceList";
 import defaultLines from "../Default/defaultLines";
-import { Context, Transport } from "tone";
+import { context,  Transport } from "tone";
 
 
 // INFO ABOUT THE VARIOUS LISTS:
@@ -16,8 +16,12 @@ const noteArray = ["A1", "A1", "A1", "A1"]; // info sulle note che suona ogni se
 
 const EnvironmentContextProvider = (props) => {
   // this context provides common info within the environment
-  console.log(Context.state);
+  console.log(context.state);
 
+
+  console.log(Transport.state);
+
+  
   const [currentTransportState, setCurrentTransportState] = useState(0);
 
   console.log("Context ran");
@@ -54,7 +58,7 @@ const EnvironmentContextProvider = (props) => {
   }, []);
 
   useEffect(() => {
-    if (Context.state !== "suspended") {let wasPlaying;
+    if (context.state !== "suspended") {let wasPlaying;
     if (Transport.state === "started") {
       wasPlaying = true;
     } else {

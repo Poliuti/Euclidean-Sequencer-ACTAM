@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState} from "react";
-import { Context, Transport } from "tone";
+import { context, Transport } from "tone";
 import onSequenceListChange from "./../../Functions/onSequenceListChange";
 import { activeColor, macroColor } from "./../../Default/colori";
 import { EnvironmentContext } from "./../../Contexts/EnvironmentContext";
@@ -34,7 +34,7 @@ const EuclideanSequencer = () => {
 
   const [userList, setUserList] = useState(null);
   
-
+/* 
   const retrieveUserLinesList = async () => {
     const response = await api.get("/userLinesList");
     return response.data;
@@ -52,7 +52,7 @@ const EuclideanSequencer = () => {
     }
     getAllUserLinesList();
     
-  }, []);
+  }, []); */
 
 
 /*   const handleContextResumeClick = () => {
@@ -93,7 +93,7 @@ const EuclideanSequencer = () => {
     Transport.bpm.value = tempo.bpm;
   }, [tempo]);
 
-  useEffect(() => {
+  useEffect(() => {if (context.state === "running"){
     onSequenceListChange(sequenceList, patternArrayList, currentTransportState);
 
     return () => {
@@ -105,7 +105,7 @@ const EuclideanSequencer = () => {
 
       /*       if (Transport.state === "started")
       Transport.stop(); */
-    };
+    };}
   }, [sequenceList]);
 
 
@@ -128,8 +128,8 @@ const EuclideanSequencer = () => {
           patternArrayList={patternArrayList}
         />
         <PlayButton sequenceList={sequenceList} />
-        <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} />
-        <LoadDropDown userList={userList} setLinesList={setLinesList} />
+{/*         <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} />
+        <LoadDropDown userList={userList} setLinesList={setLinesList} /> */}
         
         
       </div>
