@@ -16,7 +16,7 @@ As said before, this is a comfortable way to generate and play with polyrhythm a
 Polyrhythm is the simultaneous combination of contrasting rhythms in music, while polymetries is any of various measuring instruments capable of indicating two or more quantities.
 
 
-The second one instead offers different presets from some parts of the world (Africa, India, Middle East, South America and the rest of the world). 
+The second one instead offers different presets from some parts of the world (Africa, India, Europe, Central & South America and the rest of the world). 
 For each one there are different rhythms taken from traditional music and samples that recall local instruments.
 
 ###
