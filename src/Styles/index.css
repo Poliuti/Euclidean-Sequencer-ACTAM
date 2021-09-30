@@ -6,6 +6,8 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .General-Controls{
@@ -26,7 +28,6 @@
   border: 0.5rem;
   width: 6rem;
   height: 3rem;
-  margin-top: 20px;
   background-image: url('./../img/myPause.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -38,14 +39,11 @@
   background-color: #7df8f834;
 }
 
-
-
 .start-context{
   cursor: pointer;
   border: 0.5rem;
   width: 6rem;
   height: 3rem;
-  margin-top: 20px;
   background-image: url('./../img/myPlay2.png');
   background-color: #dff8f800;
   background-repeat: no-repeat;
@@ -56,6 +54,26 @@
 }
 
 .start-context:hover{
+  background-color: #7df8f834;
+}t:hover{
+  background-color: #7df8f834;
+}
+
+.save-button {
+  cursor: pointer;
+  border: 0.5rem;
+  width: 6rem;
+  height: 3rem;
+  background-image: url('./../img/saveIcon.png');
+  background-color: #dff8f800;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  text-align: center;
+  color: #fafafa;
+}
+
+.save-button:hover{
   background-color: #7df8f834;
 }
 
