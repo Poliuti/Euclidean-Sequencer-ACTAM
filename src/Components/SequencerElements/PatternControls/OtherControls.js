@@ -1,6 +1,6 @@
 import ChannelControls from "../ChannelControls/ChannelControls";
 import TempoModifier from "../TempoControls/TempoModifier";
-import PitchSlider from "./PitchSlider";
+
 
 const OtherControls = ({ channel, tempo, setTempo, index, color }) => {
   return (
