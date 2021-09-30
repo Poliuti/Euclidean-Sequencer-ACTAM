@@ -48,7 +48,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
                 instrumentList[index].triggerAttackRelease(
                   noteArray[index],
-                  "64n",
+                  "8n",
                   time
                 );
 
