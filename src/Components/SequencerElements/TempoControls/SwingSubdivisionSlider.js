@@ -5,6 +5,9 @@ const SwingSubdivisionSlider = ({ color }) => {
   const [swingSubd, setSwingSubd] = useState("8");
   return (
     <div className="slider-base swing-subd-slider">
+      <label htmlFor="swing-subd-slid">
+        Swing Subdivision: {`1/${swingSubd}`}{" "}
+      </label>
       <input
         type="range"
         defaultValue="8"
@@ -18,9 +21,6 @@ const SwingSubdivisionSlider = ({ color }) => {
         }}
         style={{ "--c": `${color}` }}
       />
-      <label htmlFor="swing-subd-slid">
-        Swing Subdivision: {`1/${swingSubd}`}{" "}
-      </label>
     </div>
   );
 };
