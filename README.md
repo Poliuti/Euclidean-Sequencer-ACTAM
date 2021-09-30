@@ -6,7 +6,6 @@ Our software is a four voice euclidean sequencer implemented using the Javascrip
 
 ## Description
 
-There are basically two different modes. The first one, called **Custom**, allows you to create your own patterns from scratch, modify the speed of the individual lines, .. 
 The main commands for creating your own rhythmic constructs are:
 * *steps*: sets the number of intervals of the sequence;
 * *pulses*: sets the number of active steps, that are distributed along the sequence according to the Euclidean algorithm;
@@ -15,9 +14,10 @@ The main commands for creating your own rhythmic constructs are:
 As said before, this is a comfortable way to generate and play with polyrhythm and polymetries.
 Polyrhythm is the simultaneous combination of contrasting rhythms in music, while polymetries is any of various measuring instruments capable of indicating two or more quantities.
 
+If you find a pattern you like, just press the save command to store the settings for steps, pulses and rotation of the 4 lines. Then just select it from a dropdown list to upload it again when you want. For greater expressive freedom,  user also has commands to adjust the volumes, panning and pitch of each individual channel.
 
-The second one instead offers different presets from some parts of the world (Africa, India, Europe, Central & South America and the rest of the world). 
-For each one there are different rhythms taken from traditional music and samples that recall local instruments.
+**Custom** is the default mode of usage and provide typical drum samples. Instead of that, it is also possible to experiment using different pattern presets taken from traditional music of some parts of the world (Africa, India, Europe, Central & South America and the rest of the world) and mix them together. In these options also samples recall local instruments of the country.
+
 
 ###
 
@@ -33,6 +33,22 @@ The diagram below describes the audio chain:
 ## Graphical User Interface
 
 
+## How to use it
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+First of all, make sure to have [Node.js](https://github.com/nodejs) installed on your pc.
+
+Then, you have to run:
+
+### `npm install`
+
+command in your shell, in order to install all the packages needed for a correct Euclidean Sequencer functioning.
+
+Now you are ready to use the application, runnig from the terminal:
+
+### `npm run start`
+
 
 
 ## Notes
@@ -46,73 +62,3 @@ This application was developed as a project for the "Advanced Coding Tools And M
 *Eugenio Poliuti*
 
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

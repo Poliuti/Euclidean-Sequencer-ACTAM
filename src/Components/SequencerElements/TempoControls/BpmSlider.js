@@ -19,6 +19,7 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
 
   return (
     <div className="slider-base bpm-slider">
+      <label htmlFor="bpms">BPM: {tempo.bpm}</label>
       <input
         type="range"
         min="50"
@@ -43,7 +44,6 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
         id="bpms"
         style={{ "--c": `${color}` }}
       />
-      <label htmlFor="bpms">BPM: {tempo.bpm}</label>
     </div>
   );
 };
