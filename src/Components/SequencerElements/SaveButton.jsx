@@ -34,7 +34,6 @@ const SaveButton = ({ actualLinesList, userList, setUserList }) => {
         className="save-button"
         onClick={() => saveLinesList()}
       >
-        Save Patterns
       </button>
     </div>
   );
