@@ -10,8 +10,9 @@ The main commands for creating your own rhythmic constructs are:
 * *steps*: sets the number of intervals of the sequence;
 * *pulses*: sets the number of active steps, that are distributed along the sequence according to the Euclidean algorithm;
 * *rotations*: shifts steps along the sequence.
-
-As said before, this is a comfortable way to generate and play with polyrhythm and polymetries.
+ 
+A pattern could be identified using this three parameters, using a standard notation in which we have *(NumberOfSteps, NumberOfPulses, Rotation)*.  For example, a Flamenco Rhytm is (4,3,1), meaning 4 steps, with 3 active pulses and 1 position of shift. 
+As said before, combining the different lines is a comfortable way to generate and play with polyrhythms and polymetries.
 Polyrhythm is the simultaneous combination of contrasting rhythms in music, while polymetries is any of various measuring instruments capable of indicating two or more quantities.
 
 If you find a pattern you like, just press the save command to store the settings for steps, pulses and rotation of the 4 lines. Then just select it from a dropdown list to upload it again when you want. For greater expressive freedom,  user also has commands to adjust the volumes, panning and pitch of each individual channel.
@@ -35,8 +36,6 @@ The diagram below describes the audio chain:
 
 ## How to use it
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 First of all, make sure to have [Node.js](https://github.com/nodejs) installed on your pc.
 
 Then, you have to run:
@@ -49,7 +48,13 @@ Now you are ready to use the application, runnig from the terminal:
 
 ### `npm run start`
 
+To activate the pattern saving function, go to the server-api folder:
 
+### `cd src\server-api`
+
+Once inside, just run this command again:
+
+### `npm run start`
 
 ## Notes
 
