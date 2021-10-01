@@ -11,7 +11,7 @@ The main commands for creating your own rhythmic constructs are:
 * *pulses*: sets the number of active steps, that are distributed along the sequence according to the Euclidean algorithm;
 * *rotations*: shifts steps along the sequence.
  
-A pattern could be identified using this three parameters, using a standard notation in which we have *(NumberOfSteps, NumberOfPulses, Rotation)*.  For example, a Flamenco Rhytm is (4,3,1), meaning 4 steps, with 3 active pulses and 1 position of shift. 
+A pattern could be identified using this three parameters, using a standard notation in which we have *(NumberOfSteps, NumberOfPulses, Rotation)*.  For example, a Flamenco Rhythm is (4,3,1), meaning 4 steps, with 3 active pulses and 1 position of shift. 
 As said before, combining the different lines is a comfortable way to generate and play with polyrhythms and polymetries.
 Polyrhythm is the simultaneous combination of contrasting rhythms in music, while polymetries is any of various measuring instruments capable of indicating two or more quantities.
 
