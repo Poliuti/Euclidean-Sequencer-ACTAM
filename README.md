@@ -56,6 +56,10 @@ Once inside, just run this command again:
 
 ### `npm run start`
 
+## Conclusions
+
+This Euclidean Sequencer does not pretend to be a DAW or a program for making professional music productions, but rather an application to have fun and get inspiration for possible projects. Possible future developments in this sense could be the addition of effects available to the user. It could also be interesting to add other sounds and rhythmic patterns typical of countries around the world.
+
 ## Notes
 
 This application was developed as a project for the "Advanced Coding Tools And Methodologies" course at Politecnico di Milano (MSc in Music and Acoustic Engineering).
