@@ -6,16 +6,16 @@ import Environment from "./Environment";
 const envNamesPath = [
   "custom",
   "africa",
-  "southAmerica",
-  "middleEast",
+  "latinAmerica",
+  "europe",
   "india",
   "restOfTheWorld",
 ];
 const envNames = [
   "Custom",
   "Africa",
-  "South America",
-  "Middle East",
+  "Latin America",
+  "Europe",
   "India",
   "Rest Of The World",
 ];

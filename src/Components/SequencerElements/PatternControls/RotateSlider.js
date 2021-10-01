@@ -24,7 +24,7 @@ const RotateSlider = ({
       setCurrentTransportState(0);
       
     }
-
+    Transport.stop();
     
   };
 

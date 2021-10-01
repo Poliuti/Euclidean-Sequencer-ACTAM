@@ -12,7 +12,7 @@ const SwingSubdivisionSlider = ({ color }) => {
         type="range"
         defaultValue="8"
         min="4"
-        max="32"
+        max="16"
         step="4"
         id="swing-subd-slid"
         onChange={(e) => {

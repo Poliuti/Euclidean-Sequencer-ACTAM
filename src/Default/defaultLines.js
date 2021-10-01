@@ -38,8 +38,8 @@ let defaultLines = {
 
     ],
 
-    // IMPORTANT CHANGE THE NAME: middleEast --> Europe 
-    middleEast: [
+    
+    europe: [
         [
             new EuclideanLine(5, 2, 0, 'Greek Rhythm 1'),
             new EuclideanLine(7, 2, 0, 'Macedonian Lesnoto Dance'),
@@ -154,8 +154,8 @@ let defaultLines = {
 
     ],
 
-    // IMPORTANT CHANGE THE NAME: southAmerica --> CentralAndSouthAmerica 
-    southAmerica: [
+    
+    latinAmerica: [
         [
             new EuclideanLine(3, 2, 0, 'Mexican Corn Dance'),
             new EuclideanLine(4, 3, 0, 'Brazilian Baiaò Rhythm'),

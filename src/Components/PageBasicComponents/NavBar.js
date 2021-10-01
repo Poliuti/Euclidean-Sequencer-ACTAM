@@ -3,19 +3,17 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1 className="title-header" style={{fontSize: "2rem"}}>The Euclidean Sequencer</h1>
+      <h1 className="title-header" style={{ fontSize: "2rem" }}>
+        The Euclidean Sequencer
+      </h1>
       <div className="links">
         <Link to="/">Home</Link>
-        <Link
-          to="/about"
-          style={{
+        <a rel="noopener noreferrer" style={{
             color: "white",
             backgroundColor: "#f1356d",
             borderRadius: "8px",
-          }}
-        >
-          About
-        </Link>
+          }} href="https://github.com/Poliuti/Euclidean-Sequencer-ACTAM/blob/main/README.md" target="_blank">About</a>
+        
       </div>
     </nav>
   );

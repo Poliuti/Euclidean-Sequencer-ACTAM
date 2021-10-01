@@ -25,6 +25,7 @@ const PulseSlider = ({
       setCurrentTransportState(0);
       
     }
+    Transport.stop();
 
     
   };

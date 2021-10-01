@@ -22,7 +22,7 @@ const StepSlider = ({
     if (num <= numRotations) {
       setNumRotations(num - 1);
     }
-
+    Transport.stop();
     
   };
 

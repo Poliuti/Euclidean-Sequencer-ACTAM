@@ -2,8 +2,8 @@ import "./../../Styles/App.css";
 import NavBar from "./NavBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NotFound from "./NotFound";
-import About from "./About";
 import Environments from "../../Environments/Environments";
+
 
 function App() {
   return (
@@ -12,9 +12,6 @@ function App() {
         <NavBar />
         <div className="content">
           <Switch>
-            <Route exact path="/about">
-              <About />
-            </Route>
             <Route path="/">
               <Environments />
             </Route>

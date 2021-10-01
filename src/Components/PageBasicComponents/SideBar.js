@@ -10,11 +10,11 @@ const SideBar = () => {
         <Link to="/africa" id="Africa">
           Africa
         </Link>
-        <Link to="/southamerica" id="South-America">
-          South America
+        <Link to="/latinamerica" id="Latin-America">
+          Latin America
         </Link>
-        <Link to="/middleeast" id="Middle-East">
-          Middle East
+        <Link to="/europe" id="Europe">
+          Europe
         </Link>
         <Link to="/india" id="India">
           India
