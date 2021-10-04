@@ -37,12 +37,18 @@ We tried to keep the user interface as simple and minimalistic as possible. The 
 
 In order to make every channel easier to control, the rhythm of each one of them is represented next to the channel controls as a dotted circumference where every dot represents a step and every coloured dot represent a pulse. When the sequencer starts playing a white dot tracks the current position inside the loop.
 
+![dotted_circumference](https://user-images.githubusercontent.com/58031495/135873963-5a0ce6e5-de27-4070-a334-e8f161040690.jpg)
+
 In the upper part of the screen, just below the title 'Euclidean Sequencer' we find the list of the geographic areas that we decided to explore to find how the Euclidean rhythms are exploited in different part of the world to construct etnic rhythms.
 Alongside these areas there is the 'Custom' mode that can be used to create new rhythms, following the Euclidean rules.
+
+![list_of_regions](https://user-images.githubusercontent.com/58031495/135874143-a65ce0fc-897f-4875-9520-fa535e698b5c.jpg)
 
 ## Channel Controls
 
 Each channel is controlled by 3 sliders that set the rhythm, 3 sliders that adjust the output, 'Mute' and 'Solo' buttons, 'Double Tempo' and 'Half Tempo' buttons and, with the exeption of the 'Custom' section, a drop down menu to choose from pre-existing Euclidean Pattern belonging to the specific region the user is currently selecting.
+
+![channel_controls1](https://user-images.githubusercontent.com/58031495/135874441-fb80bcc9-a058-46ec-90c7-26b68b76f544.jpg)
 
 In order to set the rhythm the user can choose the number of steps and pulses which represents respectively the number of total subdivisions and the number of instances that produce sound, both using the corresponding sliders and in addition the user can rigidly rotate the shape by using the 'Rotations' slider.
 
@@ -53,6 +59,8 @@ Their function is self explenatory: 'Mute' makes the corresponding channel silen
 
 The 'Double Tempo' and 'Half Tempo' buttons are shaped respectively as 'x2' and ':2' and have the function of modify the measure of the period of each channel. The current measure is written below the dotted circle representation of the channel.
 
+![channel_controls2](https://user-images.githubusercontent.com/58031495/135874551-470881b8-0250-497d-ae8d-9a7a3ab5938b.jpg)
+
 Finally if the user has selected a geographic area, hence it is not in the 'Custom' section, there is an additional dropdown menu that allows to choose between several pre-existing rhythm, typical of the selected geograhic area.
 Every rhythm is specified by its regional name and contains the information that defines the rhythm itself, enclosed in brackets in the following format: (Steps, Pulses, Rotations).
 
@@ -61,16 +69,21 @@ Every rhythm is specified by its regional name and contains the information that
 In the upper left part of the screen, just below the 'Custom' menu selection, there are the 'Tempo Controls' that affects the channels all together.
 These are shaped as sliders and allows the user to control the BPM, the amount of swing which is a coefficient that drags the pulses slightly to create a pleasing and more natural sound, and the swing subdivision which defines the subdivision of the slightly dragged pulses.
 
+![TempoControls](https://user-images.githubusercontent.com/58031495/135874618-8f59695e-79e9-4ed4-809d-946116eee760.jpg)
+
 ## Macro Controls
 
 'Macro controls' are located in the upper right part of the screen, oppostite to the 'Tempo Controls' in a mirrored style.
 They are made up of 4 sliders that controls the master volume, the reverberation that sets the persistance of the sound after the sound is produced, the wet/dry slider that controls the amount of effect with respect to the pure sound and a lowpass filter that controls the cutoff of the signal.
+
+![MacroControls](https://user-images.githubusercontent.com/58031495/135874667-182fee3c-e288-4718-8612-c7fed86d28c2.jpg)
 
 ## Reproduction Buttons
 
 Finally the most important buttons are placed between the 'Tempo Controls' and the 'Macro Controls' and they are the 'Play', 'Pause' and 'Save' buttons.
 'Play' and 'Pause' function is self explanatory and they controls the reproduction, while the 'Save' button allows the user to save the currently used patterns for later reproductions. The saved pattern is shown on a dropdown menu below the reproduction buttons alongside with all the other previously saved patterns.
 
+![ReproductionButtons](https://user-images.githubusercontent.com/58031495/135874722-62190b23-07f3-4e0b-b04a-da500dc283f5.jpg)
 
 ## How to use it
 
