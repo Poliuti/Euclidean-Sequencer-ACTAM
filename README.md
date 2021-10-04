@@ -31,7 +31,45 @@ The channels then flow into the master, on which a low pass filter (whose cutoff
 The diagram below describes the audio chain:
 ![schema audio chain](https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG)
 
-## Graphical User Interface
+## GUI Overview
+
+We tried to keep the user interface as simple and minimalistic as possible. The sequencer is made up of 4 channels, each one of them has its own controls to modify the characteristics of the rhythm and all of them are managed all together by 'Tempo Controls' and 'Mactro controls', as well as 'Play', 'Pause' and 'Save' buttons. 
+
+In order to make every channel easier to control, the rhythm of each one of them is represented next to the channel controls as a dotted circumference where every dot represents a step and every coloured dot represent a pulse. When the sequencer starts playing a white dot tracks the current position inside the loop.
+
+In the upper part of the screen, just below the title 'Euclidean Sequencer' we find the list of the geographic areas that we decided to explore to find how the Euclidean rhythms are exploited in different part of the world to construct etnic rhythms.
+Alongside these areas there is the 'Custom' mode that can be used to create new rhythms, following the Euclidean rules.
+
+## Channel Controls
+
+Each channel is controlled by 3 sliders that set the rhythm, 3 sliders that adjust the output, 'Mute' and 'Solo' buttons, 'Double Tempo' and 'Half Tempo' buttons and, with the exeption of the 'Custom' section, a drop down menu to choose from pre-existing Euclidean Pattern belonging to the specific region the user is currently selecting.
+
+In order to set the rhythm the user can choose the number of steps and pulses which represents respectively the number of total subdivisions and the number of instances that produce sound, both using the corresponding sliders and in addition the user can rigidly rotate the shape by using the 'Rotations' slider.
+
+To adjust the output the user can modify the volume using the 'Vol' slider, the panning using the 'Pan' slider and the pitch shift using the 'Note' slider.
+
+The 'Mute' button and the 'Solo' button are placed below the channel control sliders and are shaped as capital letters M and S.
+Their function is self explenatory: 'Mute' makes the corresponding channel silent, 'Solo' makes every other non-solo channel silent.
+
+The 'Double Tempo' and 'Half Tempo' buttons are shaped respectively as 'x2' and ':2' and have the function of modify the measure of the period of each channel. The current measure is written below the dotted circle representation of the channel.
+
+Finally if the user has selected a geographic area, hence it is not in the 'Custom' section, there is an additional dropdown menu that allows to choose between several pre-existing rhythm, typical of the selected geograhic area.
+Every rhythm is specified by its regional name and contains the information that defines the rhythm itself, enclosed in brackets in the following format: (Steps, Pulses, Rotations).
+
+## Tempo Controls
+
+In the upper left part of the screen, just below the 'Custom' menu selection, there are the 'Tempo Controls' that affects the channels all together.
+These are shaped as sliders and allows the user to control the BPM, the amount of swing which is a coefficient that drags the pulses slightly to create a pleasing and more natural sound, and the swing subdivision which defines the subdivision of the slightly dragged pulses.
+
+## Macro Controls
+
+'Macro controls' are located in the upper right part of the screen, oppostite to the 'Tempo Controls' in a mirrored style.
+They are made up of 4 sliders that controls the master volume, the reverberation that sets the persistance of the sound after the sound is produced, the wet/dry slider that controls the amount of effect with respect to the pure sound and a lowpass filter that controls the cutoff of the signal.
+
+## Reproduction Buttons
+
+Finally the most important buttons are placed between the 'Tempo Controls' and the 'Macro Controls' and they are the 'Play', 'Pause' and 'Save' buttons.
+'Play' and 'Pause' function is self explanatory and they controls the reproduction, while the 'Save' button allows the user to save the currently used patterns for later reproductions. The saved pattern is shown on a dropdown menu below the reproduction buttons alongside with all the other previously saved patterns.
 
 
 ## How to use it
