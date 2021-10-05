@@ -12,8 +12,7 @@ The main commands for creating your own rhythmic constructs are:
 * *rotations*: shifts steps along the sequence.
  
 A pattern could be identified using this three parameters, using a standard notation in which we have *(NumberOfSteps, NumberOfPulses, Rotation)*.  For example, a Flamenco Rhythm is (4,3,1), meaning 4 steps, with 3 active pulses and 1 position of shift. 
-As said before, combining the different lines is a comfortable way to generate and play with polyrhythms and polymetries.
-Polyrhythm is the simultaneous combination of contrasting rhythms in music, while polymetries is any of various measuring instruments capable of indicating two or more quantities.
+As said before, combining the different lines is a comfortable way to generate and play with polyrhythms and polymetries, simultaneously combining contrasting rhythms.
 
 If you find a pattern you like, just press the save command to store the settings for steps, pulses and rotation of the 4 lines. Then just select it from a dropdown list to upload it again when you want. For greater expressive freedom,  user also has commands to adjust the volumes, panning and pitch of each individual channel.
 
@@ -50,7 +49,7 @@ Alongside these areas there is the 'Custom' mode that can be used to create new 
     <img width="100%" src="https://user-images.githubusercontent.com/58031495/135874143-a65ce0fc-897f-4875-9520-fa535e698b5c.jpg">
 </p>
 
-## Channel Controls
+### Channel Controls
 
 Each channel is controlled by 3 sliders that set the rhythm, 3 sliders that adjust the output, 'Mute' and 'Solo' buttons, 'Double Tempo' and 'Half Tempo' buttons and, with the exeption of the 'Custom' section, a drop down menu to choose from pre-existing Euclidean Pattern belonging to the specific region the user is currently selecting.
 
@@ -76,7 +75,7 @@ The 'Double Tempo' and 'Half Tempo' buttons are shaped respectively as 'x2' and 
 Finally if the user has selected a geographic area, hence it is not in the 'Custom' section, there is an additional dropdown menu that allows to choose between several pre-existing rhythm, typical of the selected geograhic area.
 Every rhythm is specified by its regional name and contains the information that defines the rhythm itself, enclosed in brackets in the following format: (Steps, Pulses, Rotations).
 
-## Tempo Controls
+### Tempo Controls
 
 In the upper left part of the screen, just below the 'Custom' menu selection, there are the 'Tempo Controls' that affects the channels all together.
 These are shaped as sliders and allows the user to control the BPM, the amount of swing which is a coefficient that drags the pulses slightly to create a pleasing and more natural sound, and the swing subdivision which defines the subdivision of the slightly dragged pulses.
@@ -86,7 +85,7 @@ These are shaped as sliders and allows the user to control the BPM, the amount o
     <img width="50%" src="https://user-images.githubusercontent.com/58031495/135874618-8f59695e-79e9-4ed4-809d-946116eee760.jpg">
 </p>
 
-## Macro Controls
+### Macro Controls
 
 'Macro controls' are located in the upper right part of the screen, oppostite to the 'Tempo Controls' in a mirrored style.
 They are made up of 4 sliders that controls the master volume, the reverberation that sets the persistance of the sound after the sound is produced, the wet/dry slider that controls the amount of effect with respect to the pure sound and a lowpass filter that controls the cutoff of the signal.
@@ -96,7 +95,7 @@ They are made up of 4 sliders that controls the master volume, the reverberation
     <img width="50%" src="https://user-images.githubusercontent.com/58031495/135874667-182fee3c-e288-4718-8612-c7fed86d28c2.jpg">
 </p>
 
-## Reproduction Buttons
+### Reproduction Buttons
 
 Finally the most important buttons are placed between the 'Tempo Controls' and the 'Macro Controls' and they are the 'Play', 'Pause' and 'Save' buttons.
 'Play' and 'Pause' function is self explanatory and they controls the reproduction, while the 'Save' button allows the user to save the currently used patterns for later reproductions. The saved pattern is shown on a dropdown menu below the reproduction buttons alongside with all the other previously saved patterns.
