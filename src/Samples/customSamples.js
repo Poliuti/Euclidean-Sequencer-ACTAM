@@ -1,7 +1,7 @@
-import firstSample from "./WAV/newSamples/Custom/Kick.wav"
-import secondSample from "./WAV/newSamples/Custom/Snare.wav"
-import thirdSample from "./WAV/newSamples/Custom/Hat.wav"
-import fourthSample from "./WAV/newSamples/Custom/Hat2.wav"
+import firstSample from "./WAV/Custom/Kick.wav"
+import secondSample from "./WAV/Custom/Snare.wav"
+import thirdSample from "./WAV/Custom/Hat.wav"
+import fourthSample from "./WAV/Custom/Hat2.wav"
 
 const customSamples = [
     firstSample, 
