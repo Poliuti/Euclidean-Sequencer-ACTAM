@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
   return (
@@ -7,7 +7,7 @@ const Navbar = () => {
         The Euclidean Sequencer
       </h1>
       <div className="links">
-        <Link to="/">Home</Link>
+        
         <a rel="noopener noreferrer" style={{
             color: "white",
             backgroundColor: "#f1356d",

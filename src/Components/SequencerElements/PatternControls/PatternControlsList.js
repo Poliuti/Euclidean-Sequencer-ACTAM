@@ -1,8 +1,9 @@
 import PatternControls from "./PatternControls";
-import CircleContainer from "./CircleContainer";
 import OtherControls from "./OtherControls";
 import { useEffect, useState } from "react";
 import PatternDropDown from "./PatternDropDown";
+import initPatternNames from "../../../Functions/initPatternNames";
+import Circle from "./Circle";
 
 const PatternControlsList = ({
   linesList,
@@ -15,29 +16,18 @@ const PatternControlsList = ({
   patternArrayList,
   envDefaultPatterns,
 }) => {
+  
   const elementoBase = {
     height: "24rem",
   };
 
   const [patternNames, setPatternNames] = useState(
-    envDefaultPatterns.map((pattern) => {
-      let patternName =
-        pattern.name +
-        "    " +
-        `(${pattern.numSteps}, ${pattern.numPulses}, ${pattern.numRotations})`;
-      return patternName;
-    })
+    initPatternNames(envDefaultPatterns)
   );
 
   useEffect(() => {
     setPatternNames(
-      envDefaultPatterns.map((pattern) => {
-        let patternName =
-          pattern.name +
-          "    " +
-          `(${pattern.numSteps}, ${pattern.numPulses}, ${pattern.numRotations})`;
-        return patternName;
-      })
+      initPatternNames(envDefaultPatterns)
     );
   }, [envDefaultPatterns]);
 
@@ -48,11 +38,10 @@ const PatternControlsList = ({
 
         return (
           <div key={id} className="elemento-base" style={elementoBase}>
-            <CircleContainer
+          
+            <Circle
               lineIndex={id}
-              tempo={tempo}
-              setTempo={setTempo}
-              pattern={patternArrayList[id]}
+              euclideanPattern ={patternArrayList[id]}
             />
 
             <PatternControls

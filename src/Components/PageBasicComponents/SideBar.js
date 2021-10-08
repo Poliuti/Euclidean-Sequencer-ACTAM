@@ -16,12 +16,10 @@ const SideBar = () => {
         <Link to="/europe" id="Europe">
           Europe
         </Link>
-        <Link to="/india" id="India">
-          India
+        <Link to="/asia" id="Asia">
+          Asia
         </Link>
-        <Link to="/restOfTheWorld" id="rest">
-          Rest of the World
-        </Link>
+        
       </div>
     </nav>
   );

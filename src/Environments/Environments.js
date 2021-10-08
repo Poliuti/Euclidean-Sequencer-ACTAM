@@ -8,16 +8,14 @@ const envNamesPath = [
   "africa",
   "latinAmerica",
   "europe",
-  "india",
-  "restOfTheWorld",
+  "asia"
 ];
 const envNames = [
   "Custom",
   "Africa",
   "Latin America",
   "Europe",
-  "India",
-  "Rest Of The World",
+  "Asia"
 ];
 
 

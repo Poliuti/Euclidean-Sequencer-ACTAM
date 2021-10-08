@@ -1,7 +1,7 @@
-import firstSample from "./WAV/OMT_OneManTribeSounds_DjembeBass.wav"
-import secondSample from './WAV/OMT_OneManTribeSounds_DjembeBass.wav'
-import thirdSample from './WAV/OMT_OneManTribeSounds_DjembeBass.wav'
-import fourthSample from './WAV/OMT_OneManTribeSounds_DjembeBass.wav'
+import firstSample from "./WAV/newSamples/Custom/Kick.wav"
+import secondSample from "./WAV/newSamples/Custom/Snare.wav"
+import thirdSample from "./WAV/newSamples/Custom/Hat.wav"
+import fourthSample from "./WAV/newSamples/Custom/Hat2.wav"
 
 const customSamples = [
     firstSample, 

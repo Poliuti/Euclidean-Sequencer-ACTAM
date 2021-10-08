@@ -1,3 +1,4 @@
+
 import api from "./../../api/userLinesList";
 
 const SaveButton = ({ actualLinesList, userList, setUserList }) => {
@@ -15,12 +16,15 @@ const SaveButton = ({ actualLinesList, userList, setUserList }) => {
   };
 
   return (
-    <div className="save-cont">
+    <div className="save-cont tooltip">
       <button
+        id="saveButton"
         className="save-button"
         onClick={() => saveLinesList()}
-      >
-      </button>
+
+      ></button>
+      {/* <span className="tooltiptext">Save the Euclidean Lines State</span> */}
+      
     </div>
   );
 };

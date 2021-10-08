@@ -1,7 +1,9 @@
-import firstSample from "./WAV/OMT_OneManTribeSounds_DjembeBass.wav"
-import secondSample from './WAV/OMT_OneManTribeSounds_KinkiniMuffledTone.wav'
-import thirdSample from './WAV/OMT_OneManTribeSounds_Shells.wav'
-import fourthSample from './WAV/OMT_OneManTribeSounds_TalmbatToneRoom.wav'
+import firstSample from "./WAV/Africa/OMT_OneManTribeSounds_DjembeBass.wav"
+import secondSample from './WAV/Africa/Perc_Clap6.wav'
+import thirdSample from './WAV/Africa/Perc5.wav'
+import fourthSample from './WAV/Africa/Tamb.wav'
+
+
 
 
 const africaSamples = [

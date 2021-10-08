@@ -5,7 +5,7 @@ const SwingSlider = ({ transport, color }) => {
   return (
     
     <div className="slider-base swing-slider">
-      <label htmlFor="swingSlider">Swing: {swing} </label>
+      <label htmlFor="swingSlider">Swing: {Math.round(swing * 100)} %</label>
       <input
         type="range"
         defaultValue={0}

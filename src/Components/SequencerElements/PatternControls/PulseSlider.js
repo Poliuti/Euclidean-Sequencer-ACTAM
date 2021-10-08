@@ -8,6 +8,8 @@ const PulseSlider = ({
   color,
   currentTransportState,
   setCurrentTransportState,
+  dummy,
+  setDummy
 }) => {
   
 
@@ -44,6 +46,9 @@ const PulseSlider = ({
           if (currentTransportState) {
             Transport.start();
           }
+          let tempDummy = dummy + 1;
+          setDummy(tempDummy);
+
         }}
         onKeyDown={() => Transport.stop()}
         onKeyUp={() => Transport.start()}

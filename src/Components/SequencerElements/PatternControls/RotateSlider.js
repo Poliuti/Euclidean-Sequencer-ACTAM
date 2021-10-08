@@ -8,6 +8,8 @@ const RotateSlider = ({
   color,
   currentTransportState,
   setCurrentTransportState,
+  dummy,
+  setDummy
 }) => {
   const rotateSliderRef = useRef(null);
 
@@ -44,6 +46,8 @@ const RotateSlider = ({
           if (currentTransportState) {
             Transport.start();
           }
+          let tempDummy = dummy + 1;
+          setDummy(tempDummy);
         }}
         onChange={(e) => handleChange(e.target.valueAsNumber)}
         id="rs"

@@ -148,13 +148,13 @@ h1{
   margin-left: auto;
   color: #f1356d; 
   border-radius: 8px; 
-  font-size: larger;
+  font-size: 1.5rem;
   font-weight: 600;
   background-color: linear-gradient(to right, #292E49, #536976);
 }
 
 .SideBar a {
-  margin-left: 60px;
+  margin-left: 100px;
   text-decoration: none;
   padding: 24px;
   color: rgb(136, 209, 209);
@@ -551,7 +551,8 @@ h4{
 }
 
 .env-header {
-  font-weight: 'bold';
+  font-weight: 500;
+  font-size: 3rem;
 }
 
 h2 {
@@ -672,7 +673,32 @@ a{
 
 
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  
+}
 
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #a7fdfd;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: auto;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 
 

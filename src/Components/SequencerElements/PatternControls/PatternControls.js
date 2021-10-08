@@ -7,9 +7,12 @@ import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import EuclideanLine from "../../../EuclideanLine";
 
 
+
 const PatternControls = ({ idx, linesList, setLinesList, color }) => {
-  const { currentTransportState, setCurrentTransportState } =
+  const { currentTransportState, setCurrentTransportState, dummy, setDummy } =
     useContext(EnvironmentContext);
+
+
   const [numSteps, setNumSteps] = useState(linesList[idx].numSteps);
   const [numPulses, setNumPulses] = useState(linesList[idx].numPulses);
   const [numRotations, setNumRotations] = useState(linesList[idx].numRotations);
@@ -20,19 +23,29 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
     setNumRotations(linesList[idx].numRotations);
   }, [linesList]);
 
+  
+
+
   useEffect(() => {
-    let tempList = [...linesList];
-    tempList[idx] = new EuclideanLine(
-      numSteps,
-      numPulses,
-      numRotations,
-      ""
-    ).setID(idx);
 
-    setLinesList(tempList);
+      let tempList = [...linesList];
+      tempList[idx] = new EuclideanLine(
+        numSteps,
+        numPulses,
+        numRotations,
+        ""
+      ).setID(idx);
 
-    colora(tempList[idx].euclideanArray, idx);
+      setLinesList(tempList);
+
+
+      colora(tempList[idx].euclideanArray, idx);
+
   }, [numSteps, numPulses, numRotations]);
+
+ 
+
+
 
   return (
     <div className="pattern-controls" id={idx}>
@@ -46,6 +59,8 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
         color={color}
         currentTransportState={currentTransportState}
         setCurrentTransportState={setCurrentTransportState}
+        dummy={dummy}
+        setDummy={setDummy}
       />
       <PulseSlider
         value={numPulses}
@@ -54,6 +69,8 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
         color={color}
         currentTransportState={currentTransportState}
         setCurrentTransportState={setCurrentTransportState}
+        dummy={dummy}
+        setDummy={setDummy}
       />
       <RotateSlider
         value={numRotations}
@@ -62,6 +79,8 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
         color={color}
         currentTransportState={currentTransportState}
         setCurrentTransportState={setCurrentTransportState}
+        dummy={dummy}
+        setDummy={setDummy}
       />
       
 

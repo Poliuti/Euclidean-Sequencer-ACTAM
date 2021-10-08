@@ -19,7 +19,7 @@ const RevDecaySlider = ({ reverb, color }) => {
         id="decay"
         style={{"--c": `${color}`}}
       />
-      <label htmlFor="decay">Rev Decay: {decay}</label>
+      <label htmlFor="decay">Rev Decay: {decay} s</label>
     </div>
   );
 };

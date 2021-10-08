@@ -4,79 +4,66 @@ import { Transport } from "tone";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import EuclideanLine from "../../../EuclideanLine";
 
+const PatternDropDown = ({
+  id,
+  patternNames,
+  defaultPatterns,
+  linesList,
+  setLinesList,
+}) => {
+  const { setCurrentTransportState } = useContext(EnvironmentContext);
 
+  const [chosenPattern, setChosenPattern] = useState(null);
 
-
-
-const PatternDropDown = ({id, patternNames, defaultPatterns, linesList, setLinesList}) => {
-  const { currentTransportState, setCurrentTransportState} = useContext(EnvironmentContext);
-    
-    const [chosenPattern, setChosenPattern] = useState(null);
-    let chosenPatternName;
-    if (chosenPattern === null) {
-      chosenPatternName = null;
+  let chosenPatternName;
+  if (chosenPattern === null) {
+    chosenPatternName = null;
+  } else {
+    chosenPatternName =
+      chosenPattern.name +
+      `   (${chosenPattern.numSteps}, ${chosenPattern.numPulses}, ${chosenPattern.numRotations})`;
+  }
+  const handleChange = (patternName) => {
+    if (Transport.state === "started") {
+      setCurrentTransportState(1);
     } else {
-      chosenPatternName = chosenPattern.name + `   (${chosenPattern.numSteps}, ${chosenPattern.numPulses}, ${chosenPattern.numRotations})`;
+      setCurrentTransportState(0);
     }
 
-    const handleChange = (patternName) => {
+    const modifPatternName = patternName
+      .slice(0, patternName.indexOf("("))
+      .trimEnd();
 
-        
-      if (Transport.state === "started") {
-        setCurrentTransportState(1);
-   
-      } else {
-        setCurrentTransportState(0);
-  
+    defaultPatterns.forEach((pattern) => {
+      if (pattern.name === modifPatternName) {
+        setChosenPattern(pattern);
       }
-      
-      /* Transport.stop(); */
-        
- 
-        const modifPatternName = patternName.slice(0, patternName.indexOf('(')).trimEnd();
-
-        defaultPatterns.forEach((pattern) => {
-          if (pattern.name === modifPatternName) {
-            setChosenPattern(pattern);
-          }
-        });
-
-
-
-
-
-
-        
-
-        
-    
-  }
+    });
+  };
 
   useEffect(() => {
- 
-    if (chosenPattern)
-    {let tempList = [...linesList];
-    tempList[id] = new EuclideanLine(chosenPattern.numSteps, chosenPattern.numPulses, chosenPattern.numRotations, chosenPatternName).setID(id);;
-    setLinesList(tempList);
-/*     if (Transport.state === "started"){setCurrentTransportState(1)}
-    else {setCurrentTransportState(0)} */
-    /* if (currentTransportState) {
-      Transport.start("+0.05");
-    } */
-
+    if (chosenPattern) {
+      let tempList = [...linesList];
+      tempList[id] = new EuclideanLine(
+        chosenPattern.numSteps,
+        chosenPattern.numPulses,
+        chosenPattern.numRotations,
+        chosenPatternName
+      ).setID(id);
+      setLinesList(tempList);
     }
+  }, [chosenPattern]);
 
-}, [chosenPattern])
+  return (
+    <div className="drop-down-cont">
+      <Dropdown
+        options={patternNames}
+        onChange={(e) => handleChange(e.label)}
+        value={chosenPatternName}
+        placeholder="Select a Euclidean Pattern"
+      />
+    </div>
+  );
+};
 
-
-
-    return ( <div className="drop-down-cont" >
-        <Dropdown options={patternNames}
-          onChange={(e) => handleChange(e.label)}
-          value={chosenPatternName}
-          placeholder="Select a Euclidean Pattern"
-          />
-    </div> );
-}
- 
 export default PatternDropDown;

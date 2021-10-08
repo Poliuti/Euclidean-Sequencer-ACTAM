@@ -8,13 +8,14 @@ import MacroControls from "./MacroControls/MacroControls";
 import PatternControlsList from "./PatternControls/PatternControlsList";
 import PlayButton from "./TransportControls/PlayButton";
 import StopButton from "./TransportControls/StopButton";
-import initializeToneSwing from "../../Functions/initializeToneSwing";
-import startSequences from "../../Functions/startSequences";
-import colora from "../../Functions/colora";
 import api from "./../../api/userLinesList"
 import SaveButton from "./../SequencerElements/SaveButton"
 import LoadDropDown from "./LoadDropDown";
+import defaultLines from "../../Default/defaultLines";
 
+let customDefaultPatterns =  Object.keys(defaultLines).map((key) =>
+defaultLines[key][0]
+).flat().sort((a, b) => {return a.numSteps - b.numSteps});
 
 
 const EuclideanSequencer = () => {
@@ -31,12 +32,13 @@ const EuclideanSequencer = () => {
     patternArrayList,
     currentTransportState,
     setCurrentTransportState,
+    name
   } = useContext(EnvironmentContext);
 
   const [userList, setUserList] = useState(null);
   
 
-  const retrieveUserLinesList = async () => {
+  const retrieveUserLinesList = async () => {  // function that returns the response object from the db.json where we save the user pattern
     const response = await api.get("/userLinesList");
     return response.data;
   }
@@ -44,9 +46,9 @@ const EuclideanSequencer = () => {
 
 
 
-  useEffect(() => {
+  useEffect(() => { 
     Transport.stop();
-    initializeToneSwing();
+    
     const getAllUserLinesList = async () => {
       const allUserLinesList = await retrieveUserLinesList();
       if (allUserLinesList) setUserList(allUserLinesList)
@@ -56,60 +58,36 @@ const EuclideanSequencer = () => {
   }, []);
 
 
-/*   const handleContextResumeClick = () => {
-    if (Context.state === "suspended") {
-      Context.resume();
-    } else {Transport.start()}
-    startSequences(sequenceList);
-  };
 
 
-  const handleStopClick = () => {
-    Transport.stop();
-
-    sequenceList.forEach((seq, index) => {
-      seq.stop();
-    });
-
-    let dumDummy = dummy + 1;
-    setDummy(dumDummy);
-
-    patternArrayList.forEach((line, ind) => {
-      colora(line, ind);
-    });
-  }; */
-
-
-/*   document.body.onkeyup = function (e) {
-    if (e.code === "Space") {
-      if (Transport.state === "stopped") {
-        handleContextResumeClick();
-      } else {
-        handleStopClick();
-      }
-    }
-  }; */
-
-  useEffect(() => {
+  useEffect(() => { 
     Transport.bpm.value = tempo.bpm;
   }, [tempo]);
 
-  useEffect(() => {if (context.state === "running"){
-    onSequenceListChange(sequenceList, patternArrayList, currentTransportState);
+  
+  useEffect(() => { //what to do after every sequences update
+    if (context.state === "running") {
+      onSequenceListChange(sequenceList, patternArrayList, currentTransportState);
 
-    return () => {
-      sequenceList.forEach((seq) => {
-        seq.stop();
-        seq.dispose();
-      });
-      
+      return () => {
+        sequenceList.forEach((seq) => {
+          seq.stop();
+          seq.dispose();
+        });
 
-      /*       if (Transport.state === "started")
-      Transport.stop(); */
-    };}
+      };
+    }
   }, [sequenceList]);
 
 
+
+
+  let envDefaultPatterns;
+
+  if (name === "custom"){envDefaultPatterns = customDefaultPatterns }
+  else {envDefaultPatterns = envDefault[0]}
+
+  
 
 
   return (
@@ -144,7 +122,7 @@ const EuclideanSequencer = () => {
         channelList={channelList}
         colors={activeColor}
         patternArrayList={patternArrayList}
-        envDefaultPatterns={envDefault[0]}
+        envDefaultPatterns={envDefaultPatterns}
       />
     </div>
   );

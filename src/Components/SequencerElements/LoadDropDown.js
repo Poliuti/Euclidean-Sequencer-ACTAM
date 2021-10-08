@@ -4,7 +4,7 @@ import { Transport } from "tone";
 import { EnvironmentContext } from "../../Contexts/EnvironmentContext";
 
 const LoadDropDown = ({ userList, setLinesList }) => {
-    const { currentTransportState, setCurrentTransportState} = useContext(EnvironmentContext);
+    const {setCurrentTransportState} = useContext(EnvironmentContext);
     
   let savedListNames;
 

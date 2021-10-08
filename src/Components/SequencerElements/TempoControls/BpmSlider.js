@@ -2,20 +2,16 @@ import { useContext } from "react";
 import { Transport } from "tone";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 const BpmSlider = ({ tempo, setTempo, color }) => {
-  const { currentTransportState, setCurrentTransportState } =
+  const { currentTransportState, setCurrentTransportState, dummy, setDummy } =
     useContext(EnvironmentContext);
 
- 
-
   const handlePointerDown = () => {
-    
     if (Transport.state === "started") {
       setCurrentTransportState(1);
     } else {
       setCurrentTransportState(0);
     }
     Transport.stop();
-    
   };
 
   return (
@@ -29,7 +25,6 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
         defaultValue={tempo.bpm}
         required
         onChange={(e) => {
-          
           let newBpmValue = parseInt(e.target.valueAsNumber);
           let newTempo = { ...tempo, bpm: newBpmValue };
           setTempo(newTempo);
@@ -39,6 +34,8 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
           if (currentTransportState) {
             Transport.start();
           }
+          let tempDummy = dummy + 1;
+          setDummy(tempDummy);
         }}
         onKeyDown={() => Transport.stop()}
         onKeyUp={() => Transport.start()}

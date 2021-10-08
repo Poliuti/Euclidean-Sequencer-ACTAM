@@ -6,6 +6,9 @@ import {
 
 
 
+
+
+
 const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone.js), ritorna la lista aggiornata e la lista del tick position
   patternList,
   initialList,
@@ -13,7 +16,8 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
   noteSpeedArray,
   instrumentList,
   initialPositionArray,
-  channelList
+  channelList,
+  
 
 
 ) => {
@@ -24,21 +28,23 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
   let currentPosArr = initialPositionArray;
 
 
-  patternList.map((line, index) => {
+  patternList.forEach((euclideanPattern, index) => {
+    
     let channel = channelList[index];
 
     initialList.push(
       new Sequence(
         (time, event) => {
 
+        
+         
 
-
-
-          currentPosArr[index] %= line.length;
+          currentPosArr[index] %= euclideanPattern.length;
 
           let BooleanSoloArray = channelList.map((channel) =>
             channel.solo
           )
+
           if (BooleanSoloArray.includes(true)) {
             
 
@@ -80,18 +86,18 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
          
 
-          let dot = document.getElementById(`${index}${currentPosArr[index]}`);
+          let dot = document.getElementById(`${index}${currentPosArr[index]}`); // I grab the current Dot of the index-th Circle from the DOM
 
 
-          let dotColor = dot.style.backgroundColor;
+          let dotColor = dot.style.backgroundColor; 
 
 
           if (Transport.state === "started") {
-            dot.style.backgroundColor = "white";
+            dot.style.backgroundColor = "white"; // I paint the current Dot of white 
 
-            Transport.scheduleOnce(() => {
+            Transport.scheduleOnce(() => { // after 0.008 sec I paint it to its previous color
               dot.style.backgroundColor = dotColor;
-            }, "+0.005");
+            }, "+0.008");
             currentPosArr[index]++;
 
           } else {
@@ -103,8 +109,8 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
 
         },
-        line,
-        noteSpeedArray[index]
+        euclideanPattern, // events that the sequence iterate on
+        noteSpeedArray[index] // Sequence division
       )
     );
 

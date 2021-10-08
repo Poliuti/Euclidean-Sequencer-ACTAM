@@ -1,25 +1,28 @@
 import React, { createContext, useEffect, useState } from "react";
-import { samplerList, channelList, numInstr } from "./../Default/sampler";
+import { samplerList, channelList, numInstr } from "./../Default/audioChainInitialization";
 import creaSequenceList from "./../Functions/CreaSequenceList";
 import defaultLines from "../Default/defaultLines";
 import { context, Transport } from "tone";
 import initEnvironmentInfo from "../Functions/initEnvironmentInfo";
+import initializeToneSwing from "../Functions/initializeToneSwing";
 
 // INFO ABOUT THE VARIOUS LISTS:
 // LinesList è la lista di N EuclideanLine Objects
 // euclideanArrayList is the list of just the euclidean arrays
 // sequenceList is the list of all the Sequence Objects (Tone Objects) that have been created
 
+
+
 export const EnvironmentContext = createContext();
 
-const EnvironmentContextProvider = (props) => {
-  // this context provides common info within the environment
-console.log(numInstr[props.num]);
+const EnvironmentContextProvider = (props) => {  // this context provides common info within the environment
+
+
 
 
   const [currentTransportState, setCurrentTransportState] = useState(0); //needed for starting the sequence in the right way when modifying some sliders
 
-  console.log("Context ran");
+
 
   const { tempoInfo, noteArray, initPosArray } = initEnvironmentInfo(
     numInstr[props.num],
@@ -34,22 +37,22 @@ console.log(numInstr[props.num]);
         channel.solo = false;
         channel.mute = false;
       });
+      
     };
   }, []);
 
   const [linesList, setLinesList] = useState(defaultLines[props.name][1]); // Saving EuclideanLines List in a state (initially linesList comes from a default list of lines, one for each Environment)
   const [chosenNotes, setChosenNotes] = useState(noteArray); //saving the note Array that will be read from the samplers
+  
 
   useEffect(() => {
     //runs every time we change environment
+   
+    initializeToneSwing();
+    
+   
     if (context.state !== "suspended") {
-      let wasPlaying;
-      if (Transport.state === "started") {
-        wasPlaying = true;
-      } else {
-        wasPlaying = false;
-      }
-
+     
       Transport.stop();
 
       if (linesList) {
@@ -57,10 +60,8 @@ console.log(numInstr[props.num]);
       }
 
       setTempo(tempoInfo);
+   
 
-      if (wasPlaying) {
-        Transport.start("+0.05");
-      }
     }
   }, [props.name]);
 
@@ -75,7 +76,7 @@ console.log(numInstr[props.num]);
     (line, id) => line.euclideanArray
   );
 
-  let sequenceList = creaSequenceList( //creating a list of Tone.Sequence from each Eucldean Pattern
+  let sequenceList = creaSequenceList( //creating a list of Tone.Sequence from each Euclidean Pattern
     patternArrayList,
     sequencesList,
     chosenNotes,
@@ -84,6 +85,8 @@ console.log(numInstr[props.num]);
     initPosArray,
     channelList[props.num]
   );
+
+
 
   return (
     <EnvironmentContext.Provider
@@ -103,6 +106,8 @@ console.log(numInstr[props.num]);
         setCurrentTransportState,
         chosenNotes,
         setChosenNotes,
+        name : props.name
+        
       }}
     >
       {props.children}

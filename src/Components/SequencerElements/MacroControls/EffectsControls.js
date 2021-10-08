@@ -1,4 +1,4 @@
-import myReverb from "./../../../Default/reverb";
+import myReverb from "../../../Default/myReverb";
 import CutOffSlider from "./CutOffSlider";
 import RevDecaySlider from "./RevDecaySlider";
 import RevWetSlider from "./RevWetSlider";

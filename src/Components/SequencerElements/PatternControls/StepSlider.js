@@ -11,6 +11,8 @@ const StepSlider = ({
   color,
   currentTransportState,
   setCurrentTransportState,
+  dummy,
+  setDummy
 }) => {
   const stepSliderRef = useRef(null);
 
@@ -22,7 +24,7 @@ const StepSlider = ({
     if (num <= numRotations) {
       setNumRotations(num - 1);
     }
-    Transport.stop();
+    /* Transport.stop(); */
     
   };
 
@@ -34,6 +36,7 @@ const StepSlider = ({
       setCurrentTransportState(0);
       
     }
+    Transport.stop();
     
   
   };
@@ -54,6 +57,8 @@ const StepSlider = ({
           if (currentTransportState) {
             Transport.start();
           }
+          let tempDummy = dummy + 1;
+          setDummy(tempDummy);
         }}
         value={value}
         onChange={(e) => onStepChange(e.target.valueAsNumber)}

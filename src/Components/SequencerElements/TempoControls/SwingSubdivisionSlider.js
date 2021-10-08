@@ -6,18 +6,18 @@ const SwingSubdivisionSlider = ({ color }) => {
   return (
     <div className="slider-base swing-subd-slider">
       <label htmlFor="swing-subd-slid">
-        Swing Subdivision: {`1/${swingSubd}`}{" "}
+        Swing Subdivision: {`1/${swingSubd}`}
       </label>
       <input
         type="range"
-        defaultValue="8"
-        min="4"
-        max="16"
-        step="4"
+        defaultValue="3"
+        min="2"
+        max="4"
+        step="1"
         id="swing-subd-slid"
         onChange={(e) => {
-          Transport.swingSubdivision = `${parseInt(e.target.valueAsNumber)}n`;
-          setSwingSubd(parseInt(e.target.valueAsNumber));
+          Transport.swingSubdivision = `${Math.pow(2, parseInt(e.target.valueAsNumber))}n`;
+          setSwingSubd(Math.pow(2, parseInt(e.target.valueAsNumber)));
         }}
         style={{ "--c": `${color}` }}
       />

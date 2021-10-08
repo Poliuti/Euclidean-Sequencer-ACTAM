@@ -9,19 +9,7 @@ const Dot = ({ isActive, cellIdx, radius, angle, lineIndex }) => {
 
   const dotId = `${lineIndex}${cellIdx}`;
 
-  /* const handleClick = (elem) => {
-
-    let actualColor = elem.style.backgroundColor;
-   
-
-    if (actualColor === activeColor[lineIndex]) {
-      elem.style.backgroundColor = tempNonActiveColor[lineIndex];
-      elem.classList.add("tempInactive");
-    } else if (actualColor === tempNonActiveColor[lineIndex]) {
-      elem.style.backgroundColor = activeColor[lineIndex];
-      elem.classList.remove("tempInactive");
-    }
-  }; */
+ 
 
   const active = {
     position: "absolute",

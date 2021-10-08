@@ -4,7 +4,7 @@ import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 
 const TempoModifier = ({ tempo, setTempo, index }) => {
   const {
-    currentTransportState, setCurrentTransportState
+    setCurrentTransportState
     
   } = useContext(EnvironmentContext);
   
