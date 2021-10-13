@@ -5,7 +5,8 @@ const initTempo = (numInstr, bpm) => {
   let tempoSpeedIndexForTone = [];
   for (let i = 0; i < numInstr; i++) {
         tempoSpeedIndex.push(1);
-        tempoSpeedIndexForTone.push("8n");
+        tempoSpeedIndexForTone.push("8n");  
+        
   };
 
   const tempoInfo = {

@@ -1,10 +1,11 @@
 import Dot from "./Dot";
 
 const Circle = ({ lineIndex, euclideanPattern }) => {
+  
   const angle = 360 / euclideanPattern.length;
 
   const anglesArray = [];
-  euclideanPattern.map((_, idx) => {
+  euclideanPattern.forEach((_, idx) => {
     anglesArray.push(angle * idx);
   });
 

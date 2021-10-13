@@ -5,7 +5,7 @@ import {
 
 
 let myLPFilter = new Filter({
-    frequency: 10000,
+    frequency: 20000,
     type: "lowpass",
     rolloff: -48,
 

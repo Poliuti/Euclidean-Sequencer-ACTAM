@@ -13,7 +13,7 @@ import SaveButton from "./../SequencerElements/SaveButton"
 import LoadDropDown from "./LoadDropDown";
 import defaultLines from "../../Default/defaultLines";
 
-let customDefaultPatterns =  Object.keys(defaultLines).map((key) =>
+let customDefaultPatterns =  Object.keys(defaultLines).map((key) => //retrieving all the traditional pattterns from all around the world for custom environment
 defaultLines[key][0]
 ).flat().sort((a, b) => {return a.numSteps - b.numSteps});
 
@@ -25,17 +25,18 @@ const EuclideanSequencer = () => {
     tempo,
     setTempo,
     envDefault,
-    sequenceList,
+    sequencesList,
     channelList,
     dummy,
     setDummy,
-    patternArrayList,
+    euclideanPatternsList,
     currentTransportState,
     setCurrentTransportState,
     name
   } = useContext(EnvironmentContext);
 
-  const [userList, setUserList] = useState(null);
+  
+ 
   
 
   const retrieveUserLinesList = async () => {  // function that returns the response object from the db.json where we save the user pattern
@@ -46,16 +47,19 @@ const EuclideanSequencer = () => {
 
 
 
-  useEffect(() => { 
+  useEffect(() => { // on first render we retrieve the user LinesList from thedb.json
     Transport.stop();
     
     const getAllUserLinesList = async () => {
       const allUserLinesList = await retrieveUserLinesList();
       if (allUserLinesList) setUserList(allUserLinesList)
+      return allUserLinesList;
     }
     getAllUserLinesList();
-    
+
   }, []);
+
+  const [userList, setUserList] = useState(null); 
 
 
 
@@ -67,17 +71,17 @@ const EuclideanSequencer = () => {
   
   useEffect(() => { //what to do after every sequences update
     if (context.state === "running") {
-      onSequenceListChange(sequenceList, patternArrayList, currentTransportState);
+      onSequenceListChange(sequencesList, euclideanPatternsList, currentTransportState);
 
       return () => {
-        sequenceList.forEach((seq) => {
+        sequencesList.forEach((seq) => {
           seq.stop();
           seq.dispose();
         });
 
       };
     }
-  }, [sequenceList]);
+  }, [sequencesList]);
 
 
 
@@ -86,6 +90,8 @@ const EuclideanSequencer = () => {
 
   if (name === "custom"){envDefaultPatterns = customDefaultPatterns }
   else {envDefaultPatterns = envDefault[0]}
+
+
 
   
 
@@ -97,20 +103,20 @@ const EuclideanSequencer = () => {
         <TempoControls tempo={tempo} setTempo={setTempo} color={macroColor} />
         <div className="main-buttons-container">
         <StopButton
-          sequenceList={sequenceList}
+          sequenceList={sequencesList}
           dummy={dummy}
           setDummy={setDummy}
-          patternArrayList={patternArrayList}
+          euclideanPatternsList={euclideanPatternsList}
           setCurrentTransportState={setCurrentTransportState}
         />
-        <PlayButton sequenceList={sequenceList} />
+        <PlayButton sequencesList={sequencesList} />
         <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} />
         </div>
         <h2 id="macroControls">Macro Controls</h2>
         <MacroControls color={macroColor} />
       </div>
 
-      <LoadDropDown className="LoadDropDown" userList={userList} setLinesList={setLinesList} linesList={linesList}/>
+      <LoadDropDown className="LoadDropDown" userList={userList} setLinesList={setLinesList} linesList={linesList}/> 
 
 
       <PatternControlsList
@@ -121,7 +127,7 @@ const EuclideanSequencer = () => {
         setTempo={setTempo}
         channelList={channelList}
         colors={activeColor}
-        patternArrayList={patternArrayList}
+        euclideanPatternsList={euclideanPatternsList}
         envDefaultPatterns={envDefaultPatterns}
       />
     </div>

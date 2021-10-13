@@ -3,6 +3,7 @@ import { Transport } from "tone";
 
 const SwingSubdivisionSlider = ({ color }) => {
   const [swingSubd, setSwingSubd] = useState("8");
+  
   return (
     <div className="slider-base swing-subd-slider">
       <label htmlFor="swing-subd-slid">

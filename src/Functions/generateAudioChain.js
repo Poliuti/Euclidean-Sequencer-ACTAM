@@ -27,7 +27,7 @@ export const generateAudioChain = (url, pan, volume) => {
   
 
 
-    sampler = sampler.chain(channel, myLPFilter, myReverb)
+    sampler = sampler.chain(channel, myLPFilter, myReverb) //audio chain
     return {
         sampler,
         channel

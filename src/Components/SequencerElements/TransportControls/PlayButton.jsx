@@ -1,13 +1,14 @@
 import { context } from "tone";
 import startSequences from "../../../Functions/startSequences";
 
-const PlayButton = ({ sequenceList }) => {
+const PlayButton = ({ sequencesList }) => {
+  
  
   const handleContextResumeClick = () => {
     if (context.state === "suspended") {
       context.resume();
     } 
-    startSequences(sequenceList);
+    startSequences(sequencesList);
   };
 
   return (

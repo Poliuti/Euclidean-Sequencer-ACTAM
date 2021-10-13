@@ -3,6 +3,8 @@ import Dropdown from "react-dropdown";
 import { Transport } from "tone";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import EuclideanLine from "../../../EuclideanLine";
+import { useIsMount } from "../../../Functions/useIsMount";
+
 
 const PatternDropDown = ({
   id,
@@ -15,14 +17,17 @@ const PatternDropDown = ({
 
   const [chosenPattern, setChosenPattern] = useState(null);
 
+  const isMount = useIsMount();
+
   let chosenPatternName;
-  if (chosenPattern === null) {
-    chosenPatternName = null;
-  } else {
+  if (chosenPattern) {
     chosenPatternName =
       chosenPattern.name +
       `   (${chosenPattern.numSteps}, ${chosenPattern.numPulses}, ${chosenPattern.numRotations})`;
+  } else {
+    chosenPatternName = "Select a Euclidean Pattern";
   }
+  
   const handleChange = (patternName) => {
     if (Transport.state === "started") {
       setCurrentTransportState(1);
@@ -53,6 +58,18 @@ const PatternDropDown = ({
       setLinesList(tempList);
     }
   }, [chosenPattern]);
+
+  useEffect(() => {
+    if (!isMount) {
+      let traditionalPattern = defaultPatterns.find(
+        (lineObj) =>
+          JSON.stringify(lineObj.euclideanArray) ===
+          JSON.stringify(linesList[id].euclideanArray)
+      );
+
+      setChosenPattern(traditionalPattern);
+    }
+  }, [linesList[id]]);
 
   return (
     <div className="drop-down-cont">

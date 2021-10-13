@@ -4,12 +4,15 @@ import { Transport } from "tone";
 import { EnvironmentContext } from "../../Contexts/EnvironmentContext";
 
 const LoadDropDown = ({ userList, setLinesList }) => {
-    const {setCurrentTransportState} = useContext(EnvironmentContext);
+  
+  
+  const {setCurrentTransportState} = useContext(EnvironmentContext);
+
     
   let savedListNames;
 
   if (userList) {
-    savedListNames = userList.map((linesList, id) => `User Lines List ${id}`);
+    savedListNames = userList.map((_, id) => `User Lines List ${id}`);
   } else savedListNames = ["Failed"];
 
   const handleOnChange = (label) => {
@@ -25,12 +28,18 @@ const LoadDropDown = ({ userList, setLinesList }) => {
 
   };
 
+
+  
+
+
   let value;
   if (!savedListNames[0]) {
     value = null;
   } else {
-    value = "Select a User Pattern";
+    value =  "Select a User Pattern";
   }
+
+
 
   return (
     <div id="saved-dropdown">

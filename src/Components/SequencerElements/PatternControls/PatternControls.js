@@ -5,29 +5,34 @@ import StepSlider from "./StepSlider";
 import colora from "../../../Functions/colora";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import EuclideanLine from "../../../EuclideanLine";
-
-
+import { useIsMount } from "../../../Functions/useIsMount";
+import { context } from "tone";
 
 const PatternControls = ({ idx, linesList, setLinesList, color }) => {
+  
   const { currentTransportState, setCurrentTransportState, dummy, setDummy } =
     useContext(EnvironmentContext);
-
 
   const [numSteps, setNumSteps] = useState(linesList[idx].numSteps);
   const [numPulses, setNumPulses] = useState(linesList[idx].numPulses);
   const [numRotations, setNumRotations] = useState(linesList[idx].numRotations);
+  console.log("Context state inPatternControls: ");
+  console.log(context.state);
+
+  const isMount = useIsMount();
 
   useEffect(() => {
-    setNumSteps(linesList[idx].numSteps);
-    setNumPulses(linesList[idx].numPulses);
-    setNumRotations(linesList[idx].numRotations);
+    if (!isMount) {
+      setNumSteps(linesList[idx].numSteps);
+      setNumPulses(linesList[idx].numPulses);
+      setNumRotations(linesList[idx].numRotations);
+    }
   }, [linesList]);
 
-  
-
-
   useEffect(() => {
+    //updating LinesList when numSteps or numPulses or numRotations changes
 
+    if (!isMount) {
       let tempList = [...linesList];
       tempList[idx] = new EuclideanLine(
         numSteps,
@@ -38,14 +43,9 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
 
       setLinesList(tempList);
 
-
       colora(tempList[idx].euclideanArray, idx);
-
+    }
   }, [numSteps, numPulses, numRotations]);
-
- 
-
-
 
   return (
     <div className="pattern-controls" id={idx}>
@@ -82,9 +82,6 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
         dummy={dummy}
         setDummy={setDummy}
       />
-      
-
-      
     </div>
   );
 };

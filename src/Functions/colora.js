@@ -10,8 +10,6 @@ const colora = (euclideanArray, index) => {
 
         if (dot !== null) {
             if (cell === 1) {
-
-
                 dot.style.backgroundColor = activeColor[index];
 
             } else {

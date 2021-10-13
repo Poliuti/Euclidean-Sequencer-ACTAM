@@ -13,23 +13,20 @@ const PatternControlsList = ({
   tempo,
   channelList,
   colors,
-  patternArrayList,
+  euclideanPatternsList,
   envDefaultPatterns,
 }) => {
+  
   
   const elementoBase = {
     height: "24rem",
   };
 
-  const [patternNames, setPatternNames] = useState(
+  const [patternNames, setPatternNames] = useState( //adding numSteps, numPulses, numRotations to the pattern name
     initPatternNames(envDefaultPatterns)
   );
 
-  useEffect(() => {
-    setPatternNames(
-      initPatternNames(envDefaultPatterns)
-    );
-  }, [envDefaultPatterns]);
+  
 
   return (
     <div className="pattern-controls-list">
@@ -41,7 +38,7 @@ const PatternControlsList = ({
           
             <Circle
               lineIndex={id}
-              euclideanPattern ={patternArrayList[id]}
+              euclideanPattern ={euclideanPatternsList[id]}
             />
 
             <PatternControls

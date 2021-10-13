@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Transport } from "tone";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 const BpmSlider = ({ tempo, setTempo, color }) => {
+  
   const { currentTransportState, setCurrentTransportState, dummy, setDummy } =
     useContext(EnvironmentContext);
 

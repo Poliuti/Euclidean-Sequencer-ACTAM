@@ -5,7 +5,7 @@ import {
 const initializeToneSwing = () => {
 
     Transport.swing = 0;
-    Transport.swingSubdivision = '8n';
+    Transport.swingSubdivision = "8n";
 
 }
 

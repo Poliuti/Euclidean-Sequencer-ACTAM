@@ -14,9 +14,10 @@ const StepSlider = ({
   dummy,
   setDummy
 }) => {
+  
   const stepSliderRef = useRef(null);
 
-  const onStepChange = (num) => {
+  const handleChange = (num) => {
     setNumSteps(num);
     if (num <= numPulses - 1) {
       setNumPulses(num);
@@ -24,7 +25,7 @@ const StepSlider = ({
     if (num <= numRotations) {
       setNumRotations(num - 1);
     }
-    /* Transport.stop(); */
+    
     
   };
 
@@ -61,7 +62,7 @@ const StepSlider = ({
           setDummy(tempDummy);
         }}
         value={value}
-        onChange={(e) => onStepChange(e.target.valueAsNumber)}
+        onChange={(e) => handleChange(e.target.valueAsNumber)}
         style={{ "--c": `${color}` }}
       />
       <label htmlFor="ss">Steps: {value}</label>

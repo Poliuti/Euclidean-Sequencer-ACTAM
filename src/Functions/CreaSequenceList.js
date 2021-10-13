@@ -8,40 +8,39 @@ import {
 
 
 
-
-const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone.js), ritorna la lista aggiornata e la lista del tick position
-  patternList,
-  initialList,
+const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone.js), ritorna la lista aggiornata
+  euclideanPatternsList,
+  /* sequencesList, */
   noteArray,
   noteSpeedArray,
   instrumentList,
   initialPositionArray,
-  channelList,
+  channelList
   
 
 
 ) => {
 
 
+  let sequencesList = [];
+
+  let currentPosArr = initialPositionArray; //This array keeps track of the positions of the tick in the various sequences, initially all the ticks are at 0th position
 
 
-  let currentPosArr = initialPositionArray;
-
-
-  patternList.forEach((euclideanPattern, index) => {
+  euclideanPatternsList.forEach((euclideanPattern, index) => {  // creating a Sequence Obj for each pattern and pushing it into sequencesList
     
     let channel = channelList[index];
+    
 
-    initialList.push(
+    sequencesList.push(
       new Sequence(
-        (time, event) => {
+        (time, event) => { // callback function called for each event in the sequence, every sequence division time
+
+        currentPosArr[index] %= euclideanPattern.length;
 
         
-         
 
-          currentPosArr[index] %= euclideanPattern.length;
-
-          let BooleanSoloArray = channelList.map((channel) =>
+          let BooleanSoloArray = channelList.map((channel) => //there are problems in the solo/mute functionalities, but we think it's a problem from Tone.js side, so we solved the problem in this way, even if it's not elegant
             channel.solo
           )
 
@@ -50,16 +49,15 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
             if (channel.mute === false && channel.solo === true) {
 
-              if (event === 1 && Transport.state === "started") {
+              if (event === 1 && Transport.state === "started") { // if the event from the euclideanPattern is 1, we trigger the instrument
 
+                
                 instrumentList[index].triggerAttackRelease(
                   noteArray[index],
                   "8n",
                   time
                 );
-
-
-              }
+               }
             }
 
           } else {
@@ -95,9 +93,10 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
           if (Transport.state === "started") {
             dot.style.backgroundColor = "white"; // I paint the current Dot of white 
 
-            Transport.scheduleOnce(() => { // after 0.008 sec I paint it to its previous color
+            Transport.scheduleOnce(() => { // after 0.008 sec I paint it of its previous color
               dot.style.backgroundColor = dotColor;
             }, "+0.008");
+            
             currentPosArr[index]++;
 
           } else {
@@ -118,7 +117,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
   });
 
 
-  return initialList
+  return sequencesList
 
 
 

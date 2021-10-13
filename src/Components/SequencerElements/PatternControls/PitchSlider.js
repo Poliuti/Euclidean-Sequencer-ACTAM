@@ -4,48 +4,56 @@ import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import { activeColor } from "./../../../Default/colori";
 
 const allNotesArray = [
-  "C-1",
-  "D-1",
-  "E-1",
-  "F-1",
-  "G-1",
+  
   "A-1",
+  "A#-1",
   "B-1",
-  "C-0",
-  "D-0",
-  "E-0",
-  "F-0",
-  "G-0",
+  "C0",
+  "C#0",
+  "D0",
+  "D#0",
+  "E0",
+  "F0",
+  "F#0",
+  "G0",
+  "G#0",
   "A0",
+  "A#0",
   "B0",
   "C1",
+  "C#1",
   "D1",
+  "D#1",
   "E1",
   "F1",
+  "F#1",
   "G1",
+  "G#1",
   "A1",
+  "A#1",
   "B1",
   "C2",
+  "C#2",
   "D2",
+  "D#2",
   "E2",
   "F2",
+  "F#2",
   "G2",
+  "G#2",
   "A2",
+  "A#2",
   "B2",
   "C3",
+  "C#3",
   "D3",
+  "D#3",
   "E3",
   "F3",
+  "F#3",
   "G3",
-  "A3",
-  "B3",
-  "C4",
-  "D4",
-  "E4",
-  "F4",
-  "G4",
-  "A4",
-  "B4",
+  "G#3",
+  "A3"
 ];
 
 const PitchSlider = ({ id }) => {
@@ -58,8 +66,10 @@ const PitchSlider = ({ id }) => {
     setDummy,
   } = useContext(EnvironmentContext);
 
+  
+
   const handlePointerDown = () => {
-    console.log("On Pointer Down");
+    
     if (Transport.state === "started") {
       setCurrentTransportState(1);
     } else {
@@ -69,7 +79,7 @@ const PitchSlider = ({ id }) => {
     Transport.stop();
   };
 
-  let note = allNotesArray.indexOf(chosenNotes[id]) - 19;
+  let note = allNotesArray.indexOf(chosenNotes[id]) - 24;
   let sign;
   if (note > 0) {
     sign = "+";
@@ -84,8 +94,8 @@ const PitchSlider = ({ id }) => {
           type="range"
           min="0"
           step="1"
-          max="34"
-          defaultValue="19"
+          max="48"
+          defaultValue="24"
           required
           onChange={(e) => {
             let noteArray = [...chosenNotes];
@@ -106,7 +116,7 @@ const PitchSlider = ({ id }) => {
           style={{ "--c": `${activeColor[id]}` }}
         />
         <label htmlFor="pitch">
-          Note: {sign + `${allNotesArray.indexOf(chosenNotes[id]) - 19}`}
+          Note: {sign + `${allNotesArray.indexOf(chosenNotes[id]) - 24}`}
         </label>
       </div>
     </div>

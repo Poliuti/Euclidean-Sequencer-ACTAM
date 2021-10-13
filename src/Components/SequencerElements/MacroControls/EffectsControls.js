@@ -4,6 +4,7 @@ import RevDecaySlider from "./RevDecaySlider";
 import RevWetSlider from "./RevWetSlider";
 
 const EffectsControls = ({color}) => {
+  
   return (
     <div className="effects-controls">
       <RevDecaySlider reverb={myReverb} color={color} />

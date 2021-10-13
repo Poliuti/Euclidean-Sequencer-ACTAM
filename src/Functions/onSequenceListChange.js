@@ -1,6 +1,3 @@
-import {
-  Transport
-} from "tone";
 import colora from "./colora";
 
 const onSequenceListChange = (sequences, patternList, transportState) => {
@@ -14,20 +11,9 @@ const onSequenceListChange = (sequences, patternList, transportState) => {
   }
 
 
-
   patternList.forEach((line, ind) => {
     colora(line, ind);
   })
-
-  Transport.scheduleOnce(() => {
-    patternList.forEach((line, ind) => {
-      colora(line, ind);
-
-    })
-  }, "+0.4");
-
-
-
 
 
 }

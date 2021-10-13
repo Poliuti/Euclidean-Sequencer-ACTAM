@@ -20,7 +20,6 @@ const EnvironmentContextProvider = (props) => {  // this context provides common
 
 
 
-  const [currentTransportState, setCurrentTransportState] = useState(0); //needed for starting the sequence in the right way when modifying some sliders
 
 
 
@@ -43,17 +42,21 @@ const EnvironmentContextProvider = (props) => {  // this context provides common
 
   const [linesList, setLinesList] = useState(defaultLines[props.name][1]); // Saving EuclideanLines List in a state (initially linesList comes from a default list of lines, one for each Environment)
   const [chosenNotes, setChosenNotes] = useState(noteArray); //saving the note Array that will be read from the samplers
-  
+  const [currentTransportState, setCurrentTransportState] = useState(0); //needed for starting the sequence in the right way when modifying some sliders
+
 
   useEffect(() => {
     //runs every time we change environment
    
     initializeToneSwing();
+
+
     
    
     if (context.state !== "suspended") {
      
       Transport.stop();
+      
 
       if (linesList) {
         setLinesList(defaultLines[props.name][1]);
@@ -67,24 +70,26 @@ const EnvironmentContextProvider = (props) => {  // this context provides common
 
   const [tempo, setTempo] = useState(tempoInfo); // memorizing tempo object in a state
 
-  const [dummy, setDummy] = useState(0);
+  const [dummy, setDummy] = useState(0); //dummy variable to trigger re-render in certain cases
 
-  let sequencesList = []; //inizializzo la lista iniziale delle sequenze come vuota
 
-  let patternArrayList = linesList.map(
+  let euclideanPatternsList = linesList.map(
     // creating a List of just euclidean patterns from linesList
     (line, id) => line.euclideanArray
   );
 
-  let sequenceList = creaSequenceList( //creating a list of Tone.Sequence from each Euclidean Pattern
-    patternArrayList,
-    sequencesList,
+
+
+   let sequencesList = creaSequenceList( //creating a list of Tone.Sequence from each Euclidean Pattern
+    euclideanPatternsList,
     chosenNotes,
     tempo.tempoSpeedIndexForTone,
     samplerList[props.num],
     initPosArray,
     channelList[props.num]
   );
+
+
 
 
 
@@ -96,8 +101,8 @@ const EnvironmentContextProvider = (props) => {  // this context provides common
         tempo,
         setTempo,
         envDefault: defaultLines[props.name],
-        sequenceList,
-        patternArrayList,
+        sequencesList,
+        euclideanPatternsList,
         channelList: channelList[props.num],
         initialPositionArray: initPosArray,
         dummy,

@@ -2,7 +2,7 @@ import { useState } from "react";
 import myLPFilter from "../../../Default/myLPFilter";
 
 const CutOffSlider = ({color}) => {
-  const [cutoff, setCutoff] = useState(20000);
+  const [cutoff, setCutoff] = useState(parseInt(myLPFilter.frequency.value));
 
     
 
@@ -12,7 +12,7 @@ const CutOffSlider = ({color}) => {
         min="0"
         step="10"
         max="20000"
-        defaultValue="20000"
+        defaultValue={parseInt(myLPFilter.frequency.value)}
         required
         onChange={(e) => {
           myLPFilter.frequency.value = e.target.valueAsNumber;

@@ -1,5 +1,6 @@
 import EuclideanLine from "../EuclideanLine";
 
+//Default Info for every environment
 
 let defaultLines = {
     custom: [ 
@@ -45,12 +46,8 @@ let defaultLines = {
             new EuclideanLine(5, 2, 4, ''),
             new EuclideanLine(14, 6, 7, '')
         ],
-
-
     ],
-
-    
-    europe: [
+     europe: [
         [
             new EuclideanLine(5, 2, 0, 'Greek Rhythm 1'),
             new EuclideanLine(5, 4, 0, 'Greek Mirena Rhythm'),
@@ -139,8 +136,6 @@ let defaultLines = {
 
 
     ],
-
-    
     latinAmerica: [
         [
             new EuclideanLine(3, 2, 0, 'Mexican Corn Dance'),
@@ -172,7 +167,6 @@ let defaultLines = {
 
 
     ],
-
 }
 
 //setting EuclideanLines.id

@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const RevDecaySlider = ({ reverb, color }) => {
   const [decay, setDecay] = useState(reverb.decay);
+  
 
   
     return ( <div className="slider-base rev-decay-slider">
@@ -9,7 +10,7 @@ const RevDecaySlider = ({ reverb, color }) => {
         type="range"
         min="0.01"
         step="0.1"
-        max="10"
+        max="4"
         defaultValue={reverb.decay}
         required
         onChange={(e) => {
