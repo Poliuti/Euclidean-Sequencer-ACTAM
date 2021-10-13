@@ -6,6 +6,8 @@ Our software is a four voice euclidean sequencer implemented using the Javascrip
 
 ## Description
 
+For each channel a Rhythmic Structure is provided and it basically consists in a sequence of 0 (doesn't trigger a note) and 1 (trigger a note/sampler).
+
 The main commands for creating your own rhythmic constructs are:
 * *steps*: sets the number of intervals of the sequence;
 * *pulses*: sets the number of active steps, that are distributed along the sequence according to the Euclidean algorithm;
@@ -107,7 +109,7 @@ Finally the most important buttons are placed between the 'Tempo Controls' and t
 
 ## How to use it
 
-First of all, make sure to have [Node.js](https://github.com/nodejs) installed on your pc.
+First of all, clone the repo and make sure to have [Node.js](https://github.com/nodejs) installed on your pc.
 
 Then, you have to run:
 
