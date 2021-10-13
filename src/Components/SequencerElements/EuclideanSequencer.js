@@ -101,13 +101,14 @@ const EuclideanSequencer = () => {
         <TempoControls tempo={tempo} setTempo={setTempo} color={macroColor} />
         <div className="main-buttons-container">
         <StopButton
-          sequenceList={sequencesList}
+          sequencesList={sequencesList}
           dummy={dummy}
           setDummy={setDummy}
           euclideanPatternsList={euclideanPatternsList}
           setCurrentTransportState={setCurrentTransportState}
         />
-        <PlayButton sequencesList={sequencesList} />
+        <PlayButton sequencesList={sequencesList}  dummy={dummy}
+          setDummy={setDummy} />
         <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} />
         </div>
         <h2 id="macroControls">Macro Controls</h2>

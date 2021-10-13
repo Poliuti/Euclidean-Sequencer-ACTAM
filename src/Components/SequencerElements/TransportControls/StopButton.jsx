@@ -1,18 +1,16 @@
 import colora from "../../../Functions/colora";
 import { Transport } from "tone";
 
-const StopButton = ({ sequenceList, dummy, setDummy, euclideanPatternsList, setCurrentTransportState }) => {
+const StopButton = ({ sequencesList, dummy, setDummy, euclideanPatternsList, setCurrentTransportState }) => {
   
 
   const handleStopClick = () => {
     Transport.stop();
 
-    sequenceList.forEach((seq, index) => {
+    sequencesList.forEach((seq, index) => {
       seq.stop();
     });
     
-    if (Transport.state === "started"){setCurrentTransportState(1)}
-    else {setCurrentTransportState(0)}
 
     let dumDummy = dummy + 1;
     setDummy(dumDummy);
@@ -20,6 +18,8 @@ const StopButton = ({ sequenceList, dummy, setDummy, euclideanPatternsList, setC
     euclideanPatternsList.forEach((line, ind) => {
       colora(line, ind);
     });
+
+   
 
     
   };
