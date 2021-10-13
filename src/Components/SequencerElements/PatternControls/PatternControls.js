@@ -16,8 +16,7 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
   const [numSteps, setNumSteps] = useState(linesList[idx].numSteps);
   const [numPulses, setNumPulses] = useState(linesList[idx].numPulses);
   const [numRotations, setNumRotations] = useState(linesList[idx].numRotations);
-  console.log("Context state inPatternControls: ");
-  console.log(context.state);
+
 
   const isMount = useIsMount();
 

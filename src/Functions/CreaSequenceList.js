@@ -95,7 +95,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
             Transport.scheduleOnce(() => { // after 0.008 sec I paint it of its previous color
               dot.style.backgroundColor = dotColor;
-            }, "+0.008");
+            }, "+0.01");
             
             currentPosArr[index]++;
 
