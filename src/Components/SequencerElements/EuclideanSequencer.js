@@ -36,13 +36,11 @@ const EuclideanSequencer = () => {
   } = useContext(EnvironmentContext);
 
   
- 
-  
-
   const retrieveUserLinesList = async () => {  // function that returns the response object from the db.json where we save the user pattern
     const response = await api.get("/userLinesList");
     return response.data;
   }
+
 
 
 

@@ -1,5 +1,99 @@
 {
   "userLinesList": [
-    
+    [
+      {
+        "numSteps": 17,
+        "numPulses": 5,
+        "numRotations": 0,
+        "name": "",
+        "euclideanArray": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "id": 0
+      },
+      {
+        "numSteps": 8,
+        "numPulses": 1,
+        "numRotations": 4,
+        "name": "",
+        "euclideanArray": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "id": 1
+      },
+      {
+        "numSteps": 24,
+        "numPulses": 9,
+        "numRotations": 0,
+        "name": "",
+        "euclideanArray": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "id": 2
+      },
+      {
+        "numSteps": 8,
+        "numPulses": 3,
+        "numRotations": 2,
+        "name": "",
+        "euclideanArray": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "id": 3
+      }
+    ]
   ]
 }

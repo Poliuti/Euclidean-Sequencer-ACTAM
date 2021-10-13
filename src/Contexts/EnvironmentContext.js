@@ -17,11 +17,7 @@ export const EnvironmentContext = createContext();
 
 const EnvironmentContextProvider = (props) => {  // this context provides common info within the environment
 
-
-
-
-
-
+  
 
   const { tempoInfo, noteArray, initPosArray } = initEnvironmentInfo(
     numInstr[props.num],
@@ -88,8 +84,6 @@ const EnvironmentContextProvider = (props) => {  // this context provides common
     initPosArray,
     channelList[props.num]
   );
-
-
 
 
 

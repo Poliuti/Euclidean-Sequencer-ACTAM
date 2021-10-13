@@ -10,7 +10,6 @@ import {
 
 const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone.js), ritorna la lista aggiornata
   euclideanPatternsList,
-  /* sequencesList, */
   noteArray,
   noteSpeedArray,
   instrumentList,
@@ -93,7 +92,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
           if (Transport.state === "started") {
             dot.style.backgroundColor = "white"; // I paint the current Dot of white 
 
-            Transport.scheduleOnce(() => { // after 0.008 sec I paint it of its previous color
+            Transport.scheduleOnce(() => { // after 0.01 sec I paint it of its previous color
               dot.style.backgroundColor = dotColor;
             }, "+0.01");
             

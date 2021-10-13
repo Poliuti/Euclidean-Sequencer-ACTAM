@@ -1,6 +1,6 @@
 import PatternControls from "./PatternControls";
 import OtherControls from "./OtherControls";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PatternDropDown from "./PatternDropDown";
 import initPatternNames from "../../../Functions/initPatternNames";
 import Circle from "./Circle";
