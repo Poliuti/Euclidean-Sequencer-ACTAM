@@ -85,8 +85,8 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
           let dot = document.getElementById(`${index}${currentPosArr[index]}`); // I grab the current Dot of the index-th Circle from the DOM
 
-
-          let dotColor = dot.style.backgroundColor; 
+          if (dot)
+          {let dotColor = dot.style.backgroundColor; 
 
 
           if (Transport.state === "started") {
@@ -96,7 +96,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
               dot.style.backgroundColor = dotColor;
             }, "+0.01");
             
-            currentPosArr[index]++;
+            currentPosArr[index]++;}
 
           } else {
             currentPosArr = initialPositionArray;

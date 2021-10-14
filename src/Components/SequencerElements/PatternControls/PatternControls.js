@@ -2,11 +2,10 @@ import { useState, useEffect, useContext } from "react";
 import PulseSlider from "./PulseSlider";
 import RotateSlider from "./RotateSlider";
 import StepSlider from "./StepSlider";
-import colora from "../../../Functions/colora";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import EuclideanLine from "../../../EuclideanLine";
 import { useIsMount } from "../../../Functions/useIsMount";
-import { context } from "tone";
+
 
 const PatternControls = ({ idx, linesList, setLinesList, color }) => {
   
@@ -41,8 +40,6 @@ const PatternControls = ({ idx, linesList, setLinesList, color }) => {
       ).setID(idx);
 
       setLinesList(tempList);
-
-      colora(tempList[idx].euclideanArray, idx);
     }
   }, [numSteps, numPulses, numRotations]);
 

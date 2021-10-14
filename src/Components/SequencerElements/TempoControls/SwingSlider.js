@@ -16,8 +16,6 @@ const SwingSlider = ({ transport, color }) => {
         onChange={(e) => {
           transport.swing = parseInt(e.target.valueAsNumber) / 100;
           setSwing(parseInt(e.target.valueAsNumber) / 100);
-
-          console.log(transport.swing);
         }}
         style={{ "--c": `${color}` }}
       />

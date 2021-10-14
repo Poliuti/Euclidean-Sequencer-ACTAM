@@ -5,6 +5,7 @@ import defaultLines from "../Default/defaultLines";
 import { context, Transport } from "tone";
 import initEnvironmentInfo from "../Functions/initEnvironmentInfo";
 import initializeToneSwing from "../Functions/initializeToneSwing";
+import colora from "../Functions/colora";
 
 // INFO ABOUT THE VARIOUS LISTS:
 // LinesList è la lista di N EuclideanLine Objects
@@ -64,6 +65,17 @@ const EnvironmentContextProvider = (props) => {  // this context provides common
     }
   }, [props.name]);
 
+  useEffect(() => {
+    let setIntervalID = setInterval(() => {
+      euclideanPatternsList.forEach((line, ind) => {
+        colora(line, ind);
+      })
+    }, 200);
+    
+  
+    return () => clearInterval(setIntervalID);
+  }, [linesList])
+
   const [tempo, setTempo] = useState(tempoInfo); // memorizing tempo object in a state
 
   const [dummy, setDummy] = useState(0); //dummy variable to trigger re-render in certain cases
@@ -86,6 +98,9 @@ const EnvironmentContextProvider = (props) => {  // this context provides common
   );
 
 
+
+
+  
 
   return (
     <EnvironmentContext.Provider

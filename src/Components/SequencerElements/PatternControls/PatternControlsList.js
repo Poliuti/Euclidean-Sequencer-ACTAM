@@ -66,6 +66,7 @@ const PatternControlsList = ({
               defaultPatterns={envDefaultPatterns}
               linesList={linesList}
               setLinesList={setLinesList}
+              euclideanPatternsList={euclideanPatternsList}
             />
           </div>
         );

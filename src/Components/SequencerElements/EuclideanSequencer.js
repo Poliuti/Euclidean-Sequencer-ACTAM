@@ -69,7 +69,15 @@ const EuclideanSequencer = () => {
   
   useEffect(() => { //what to do after every sequences update
     if (context.state === "running") {
-      onSequenceListChange(sequencesList, euclideanPatternsList, currentTransportState);
+    
+
+      if (currentTransportState) {
+    
+        sequencesList.forEach((seq) => {
+          seq.start("+0.1");
+        });
+        
+      }
 
       return () => {
         sequencesList.forEach((seq) => {
@@ -107,8 +115,8 @@ const EuclideanSequencer = () => {
           euclideanPatternsList={euclideanPatternsList}
           setCurrentTransportState={setCurrentTransportState}
         />
-        <PlayButton sequencesList={sequencesList}  dummy={dummy}
-          setDummy={setDummy} />
+        <PlayButton sequencesList={sequencesList} dummy={dummy}
+          setDummy={setDummy}/>
         <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} />
         </div>
         <h2 id="macroControls">Macro Controls</h2>

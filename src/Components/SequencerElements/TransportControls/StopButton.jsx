@@ -1,4 +1,4 @@
-import colora from "../../../Functions/colora";
+
 import { Transport } from "tone";
 
 const StopButton = ({ sequencesList, dummy, setDummy, euclideanPatternsList, setCurrentTransportState }) => {
@@ -15,13 +15,6 @@ const StopButton = ({ sequencesList, dummy, setDummy, euclideanPatternsList, set
     let dumDummy = dummy + 1;
     setDummy(dumDummy);
 
-    euclideanPatternsList.forEach((line, ind) => {
-      colora(line, ind);
-    });
-
-   
-
-    
   };
 
   return (
