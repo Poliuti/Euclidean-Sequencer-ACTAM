@@ -26,7 +26,7 @@ If you find a pattern you like, just press the save command to store the setting
 ## Sound management
 
 We choose to use [Tone js](https://tonejs.github.io/) to develop all the audio features of our application. Events are triggered using a sampler in four different channels. The user has the control on the volume and the panning of each channel. Moreover mute/solo and step time modifier controls are available. 
-The channels then flow into the master, on which a low pass filter (whose cutoff frequency can be adjusted by the user) acts in series with a reverb. Dry / wet ratio and decay time can be set too.
+The channels then flow into the master, on which a low pass filter (whose cutoff frequency can be adjusted by the user) acts in series with a reverb. Dry/wet ratio and decay time can be set too.
 
 
 The diagram below describes the audio chain:
@@ -53,7 +53,7 @@ Alongside these areas there is the 'Custom' mode that can be used to create new 
 
 ### Channel Controls
 
-Each channel is controlled by 3 sliders that set the rhythm, 3 sliders that adjust the output, 'Mute' and 'Solo' buttons, 'Double Tempo' and 'Half Tempo' buttons and, with the exeption of the 'Custom' section, a drop down menu to choose from pre-existing Euclidean Pattern belonging to the specific region the user is currently selecting.
+Each channel is controlled by 3 sliders that set the rhythm, 3 sliders that adjust the output, 'Mute' and 'Solo' buttons, 'Double Tempo' and 'Half Tempo' buttons and a drop down menu to choose from pre-existing Euclidean Pattern belonging to the specific region the user is currently selecting.
 
 <br>
 <p align="center" width="100%">
