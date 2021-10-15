@@ -2,19 +2,22 @@ import api from "./../../api/userLinesList";
 
 
 
-const SaveButton = ({ actualLinesList, userList, setUserList }) => {
+const SaveButton = ({ actualLinesList, userList, setUserList, tempo}) => {
   
   const saveLinesList = async () => {
 
     const request = 
-      [...actualLinesList]
+      {linesList : actualLinesList, tempo : tempo}
     ;
 
     const response = await api.post("/userLinesList", request);
 
-    if (!userList){setUserList(response.data)}
-    else
-    setUserList([...userList, response.data]);
+    if (!userList) {
+      setUserList(response.data);
+      
+    } else
+      setUserList([...userList, response.data]);
+      
   };
 
 

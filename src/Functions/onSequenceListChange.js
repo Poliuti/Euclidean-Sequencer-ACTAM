@@ -1,5 +1,3 @@
-import { Transport } from "tone";
-import colora from "./colora";
 
 const onSequenceListChange = (sequences, patternList, transportState) => {
 

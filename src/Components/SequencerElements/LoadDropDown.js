@@ -3,7 +3,7 @@ import Dropdown from "react-dropdown";
 import { Transport } from "tone";
 import { EnvironmentContext } from "../../Contexts/EnvironmentContext";
 
-const LoadDropDown = ({ userList, setLinesList }) => {
+const LoadDropDown = ({ userList, setLinesList, setTempo }) => {
   
   
   const {setCurrentTransportState} = useContext(EnvironmentContext);
@@ -16,8 +16,15 @@ const LoadDropDown = ({ userList, setLinesList }) => {
   } else savedListNames = ["Failed"];
 
   const handleOnChange = (label) => {
-   
-    setLinesList(userList[label.slice(label.length - 1)]);
+    /* console.log(userList);
+    console.log(label.slice(label.length - 1))
+    console.log(userList[label.slice(label.length - 1)][0]);
+    console.log(userList[label.slice(label.length - 1)].linesList);
+    console.log(userList[label.slice(label.length - 1)].tempo); */
+
+    setLinesList(userList[label.slice(label.length - 1)].linesList);
+    setTempo(userList[label.slice(label.length - 1)].tempo);
+
     if (Transport.state === "started") {
         setCurrentTransportState(1);
    

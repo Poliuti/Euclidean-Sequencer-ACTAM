@@ -117,13 +117,13 @@ const EuclideanSequencer = () => {
         />
         <PlayButton sequencesList={sequencesList} dummy={dummy}
           setDummy={setDummy}/>
-        <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} />
+        <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} tempo={tempo} setTempo = {setTempo}/>
         </div>
         <h2 id="macroControls">Macro Controls</h2>
         <MacroControls color={macroColor} />
       </div>
 
-      <LoadDropDown className="LoadDropDown" userList={userList} setLinesList={setLinesList} linesList={linesList}/> 
+      <LoadDropDown className="LoadDropDown" userList={userList} setLinesList={setLinesList} setTempo = {setTempo}/> 
 
 
       <PatternControlsList

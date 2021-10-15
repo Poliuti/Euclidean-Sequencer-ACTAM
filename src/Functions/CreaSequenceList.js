@@ -92,9 +92,9 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
           if (Transport.state === "started") {
             dot.style.backgroundColor = "white"; // I paint the current Dot of white 
 
-            Transport.scheduleOnce(() => { // after 0.01 sec I paint it of its previous color
+            Transport.scheduleOnce(() => { // after 0.006 sec I paint it of its previous color
               dot.style.backgroundColor = dotColor;
-            }, "+0.01");
+            }, "+0.006");
             
             currentPosArr[index]++;}
 
