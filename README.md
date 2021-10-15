@@ -35,26 +35,32 @@ The diagram below describes the audio chain:
 
 ## GUI and Commands Overview
 
-We tried to keep the user interface as simple and minimalistic as possible. As previously states, our Sequencer is made up of 4 Euclidean Lines that play together. We have a series of controls for each Euclidean Line as well as more general controls for tempo, transport and master effects.
+We tried to keep the user interface as simple and minimalistic as possible. As previously stated, our Sequencer is made up of 4 Euclidean Lines that play together. A series of controls is provided for each Euclidean Line, called Line Controls, as well as more general controls for tempo, transport and master effects.
 
-In order to make every channel easier to control, the rhythm of each one of them is represented next to the channel controls as a dotted circumference where every dot represents a step and every coloured dot represent a pulse. When the sequencer starts playing a white dot tracks the current position inside the loop.
+In order to better visualize the Euclidean Patterns, each one of them is represented next to the Line Controls as a dotted circumference where every dot represents a step and every coloured dot represent a pulse. When the sequencer starts playing a white dot tracks the current position inside the loop.
 
 <br> 
 <p align="center" width="100%">
     <img width="33%" src="https://user-images.githubusercontent.com/58031495/135873963-5a0ce6e5-de27-4070-a334-e8f161040690.jpg">
 </p>
 
-In the upper part of the screen, just below the title 'Euclidean Sequencer' we find the list of the geographic areas that we decided to explore to find how the Euclidean rhythms are exploited in different part of the world to construct etnic rhythms.
-Alongside these areas there is the 'Custom' mode that can be used to create new rhythms, following the Euclidean rules.
+In the upper part of the screen, just below the title 'Euclidean Sequencer' we find Custom mode and the list of the geographic areas that we decided to explore to find how the Euclidean rhythms are exploited in different part of the world to construct ethnic rhythms.
+
 
 <br>
 <p align="center" width="100%">
     <img width="100%" src="https://user-images.githubusercontent.com/58031495/135874143-a65ce0fc-897f-4875-9520-fa535e698b5c.jpg">
 </p>
 
-### Channel Controls
+### Line Controls
 
-Each channel is controlled by 3 sliders that set the rhythm, 3 sliders that adjust the output, 'Mute' and 'Solo' buttons, 'Double Tempo' and 'Half Tempo' buttons and a drop down menu to choose from pre-existing Euclidean Pattern belonging to the specific region the user is currently selecting.
+Each Euclidean Line is controlled by:
+* Pattern Controls that determine the binary sequence inside the Euclidean Array
+* Channel Controls that set the channel parameters 
+* Tatum Control that doubles of halves the time interval between two subsequent steps
+* a drop down menu that allows the user to choose from some default patterns 
+
+3 sliders that set the rhythm, 3 sliders that adjust the output, 'Mute' and 'Solo' buttons, 'Double Tempo' and 'Half Tempo' buttons and a drop down menu to choose from pre-existing Euclidean Pattern belonging to the specific region the user is currently selecting.
 
 <br>
 <p align="center" width="100%">
