@@ -5,6 +5,8 @@ Euclidean rhythm divide a number of beat subdivisions over a time interval and p
 
 Our application is an euclidean sequencer implemented using the Javascript library React. It provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
 
+**SCREEN TOTALE**
+
 ## Description
 
 For each Euclidean line an Euclidean pattern is provided and it basically consists in a binary sequence where 0 doesn't trigger a sample and 1 triggers it.
@@ -57,37 +59,49 @@ In the upper part of the screen, just below the title 'Euclidean Sequencer' we f
 Each Euclidean Line is controlled by:
 * Pattern Controls that determine the binary sequence inside the Euclidean Array
 * Channel Controls that set the channel parameters 
-* Tatum Control that doubles of halves the time interval between two subsequent steps
+* Tatum Control that modify the interval between steps
 * a drop down menu that allows the user to choose from some default patterns 
 
-3 sliders that set the rhythm, 3 sliders that adjust the output, 'Mute' and 'Solo' buttons, 'Double Tempo' and 'Half Tempo' buttons and a drop down menu to choose from pre-existing Euclidean Pattern belonging to the specific region the user is currently selecting.
+**CAMBIA SCREEN LINE CONTROL**
 
 <br>
 <p align="center" width="100%">
     <img width="33%" src="https://user-images.githubusercontent.com/58031495/135874441-fb80bcc9-a058-46ec-90c7-26b68b76f544.jpg">
 </p>
 
+#### Pattern Controls
+
 In order to set the rhythm the user can choose the number of steps and pulses which represents respectively the number of total subdivisions and the number of instances that produce sound, both using the corresponding sliders and in addition the user can rigidly rotate the shape by using the 'Rotations' slider.
 
-To adjust the output the user can modify the volume using the 'Vol' slider, the panning using the 'Pan' slider and the pitch shift using the 'Note' slider.
+**SCREEN PATTERN CONTROLS**
 
-The 'Mute' button and the 'Solo' button are placed below the channel control sliders and are shaped as capital letters M and S.
-Their function is self explenatory: 'Mute' makes the corresponding channel silent, 'Solo' makes every other non-solo channel silent.
+#### Channel Controls
 
-The 'Double Tempo' and 'Half Tempo' buttons are shaped respectively as 'x2' and ':2' and have the function of modify the measure of the period of each channel. The current measure is written below the dotted circle representation of the channel.
+The user can modify channel parameters such as volume, panning and pitch of the sample through the corresponding sliders respectively called 'Vol', 'Pan' and 'Pitch'.
+
+The other Channel Controls available are the 'Mute' and 'Solo' buttons, placed below the sliders and are shaped as capital letters M and S.
+Their function is self explanatory: 'Mute' makes the corresponding channel silent, 'Solo' makes every other non-solo channel silent.
+
+#### Tatum Controls
+
+The 'Double Tempo' and 'Half Tempo' buttons are shaped respectively as 'x2' and ':2' and have the function of doubling or halving the time interval between two subsequent steps. The current measure is written below the dotted circle representation of the Euclidean Line.
+
+**CONTROLLA TERMINOLOGIA CMRM
 
 <br>
 <p align="center" width="100%">
     <img width="48%" src="https://user-images.githubusercontent.com/58031495/135874551-470881b8-0250-497d-ae8d-9a7a3ab5938b.jpg">
 </p>
 
-Finally if the user has selected a geographic area, hence it is not in the 'Custom' section, there is an additional dropdown menu that allows to choose between several pre-existing rhythm, typical of the selected geograhic area.
-Every rhythm is specified by its regional name and contains the information that defines the rhythm itself, enclosed in brackets in the following format: (Steps, Pulses, Rotations).
+Finally, from the dropdown menu, the user is able to select traditional rhythm patterns typical of the chosen geograhic area, among the selection we provide.
+Every rhythm is specified by its own name and contains the information that defines the pattern itself, enclosed in brackets using the previously described standard notation as follows: (Steps, Pulses, Rotations).
+
+### AGGIUNGI FOTO DROPDOWN APERTO ###
 
 ### Tempo Controls
 
-In the upper left part of the screen, just below the 'Custom' menu selection, there are the 'Tempo Controls' that affects the channels all together.
-These are shaped as sliders and allows the user to control the BPM, the amount of swing which is a coefficient that drags the pulses slightly to create a pleasing and more natural sound, and the swing subdivision which defines the subdivision of the slightly dragged pulses.
+The 'Tempo Controls' are located in the upper left part of the screen and they manage the general tempo settings of the Euclidean Sequencer.
+These are shaped as sliders and allow the user to control the BPM, the amount of swing, which is a coefficient that drags the pulses slightly to create a pleasing and more natural sound, and the swing subdivision which defines the subdivision of the slightly dragged pulses.
 
 <br>
 <p align="center" width="100%">
@@ -96,8 +110,12 @@ These are shaped as sliders and allows the user to control the BPM, the amount o
 
 ### Macro Controls
 
-'Macro controls' are located in the upper right part of the screen, oppostite to the 'Tempo Controls' in a mirrored style.
-They are made up of 4 sliders that controls the master volume, the reverberation that sets the persistance of the sound after the sound is produced, the wet/dry slider that controls the amount of effect with respect to the pure sound and a lowpass filter that controls the cutoff of the signal.
+'Macro controls' are located in the upper right part of the screen, opposite to the 'Tempo Controls' in a mirrored style.
+They are made up of 4 sliders that control:
+* the master volume ('Volume' slider)
+* the reverb decay time in seconds, that sets the persistance of the sound after it is produced ('Rev Decay' slider)
+* the reverb dry/wet percentage, that controls the amount of effect with respect to the clean sound ('Rev Wet' slider)
+* the cutoff frequency of the low pass filter ('Cutoff' slider)
 
 <br>
 <p align="center" width="100%">
