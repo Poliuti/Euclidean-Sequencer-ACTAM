@@ -35,7 +35,7 @@ The diagram below describes the audio chain:
 
 ## GUI and Commands Overview
 
-We tried to keep the user interface as simple and minimalistic as possible. Our sequencer is made up of 4 Euclidean Lines, each one of them has its own controls to modify the characteristics of the rhythm and all of them are managed all together by 'Tempo Controls' and 'Macro controls', as well as 'Play', 'Pause' and 'Save' buttons. 
+We tried to keep the user interface as simple and minimalistic as possible. As previously states, our Sequencer is made up of 4 Euclidean Lines that play together. We have a series of controls for each Euclidean Line as well as more general controls for tempo, transport and master effects.
 
 In order to make every channel easier to control, the rhythm of each one of them is represented next to the channel controls as a dotted circumference where every dot represents a step and every coloured dot represent a pulse. When the sequencer starts playing a white dot tracks the current position inside the loop.
 
