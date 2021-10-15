@@ -1,8 +1,9 @@
 # Euclidean Sequencer
 
 ## Overview
-Euclidean rhythm divide a number of beat subdivisions over a time interval and place notes as evenly as possible into that time. They are based and take the name from the Euclidean algorithm, that computes the greatest common divisor of two given integers.The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.1340&rep=rep1&type=pdf .\
-Our application is an euclidean sequencer implemented using the Javascript library React. It provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines,, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
+Euclidean rhythm divide a number of beat subdivisions over a time interval and place notes as evenly as possible into that time. They are based and take the name from the Euclidean algorithm, that computes the greatest common divisor of two given integers.The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.1340&rep=rep1&type=pdf .
+
+Our application is an euclidean sequencer implemented using the Javascript library React. It provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
 
 ## Description
 
@@ -25,16 +26,16 @@ If you find a pattern you like, just press the save command to store the setting
 
 ## Sound management
 
-We choose to use [Tone js](https://tonejs.github.io/) to develop all the audio features of our application. All Events .....   are triggered using a sampler in four different channels. The user has the control on the volume and the panning of each channel as well as on the pitch of the sample. Moreover mute/solo and step time modifier controls are available. 
-The channels then flow into the master, on which a low pass filter (whose cutoff frequency can be adjusted by the user) acts in series with a reverb. Dry/wet ratio and decay time can be set too.
+We choose to use [Tone js](https://tonejs.github.io/) to develop all the audio features of our application. All Events .....   are triggered using a sampler in four different channels. The user has the control on the volume and the panning of each channel as well as on the pitch of the sample. Moreover mute/solo controls are available. 
+The channels then flow into the master, on which a low pass filter (whose cutoff frequency can be adjusted by the user) acts in series with a reverb, whose dry/wet ratio and decay time can be modified.
 
 
 The diagram below describes the audio chain:
 ![schema audio chain](https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG)
 
-## GUI Overview
+## GUI and Commands Overview
 
-We tried to keep the user interface as simple and minimalistic as possible. The sequencer is made up of 4 channels, each one of them has its own controls to modify the characteristics of the rhythm and all of them are managed all together by 'Tempo Controls' and 'Macro controls', as well as 'Play', 'Pause' and 'Save' buttons. 
+We tried to keep the user interface as simple and minimalistic as possible. Our sequencer is made up of 4 Euclidean Lines, each one of them has its own controls to modify the characteristics of the rhythm and all of them are managed all together by 'Tempo Controls' and 'Macro controls', as well as 'Play', 'Pause' and 'Save' buttons. 
 
 In order to make every channel easier to control, the rhythm of each one of them is represented next to the channel controls as a dotted circumference where every dot represents a step and every coloured dot represent a pulse. When the sequencer starts playing a white dot tracks the current position inside the loop.
 
