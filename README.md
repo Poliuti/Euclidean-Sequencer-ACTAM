@@ -34,7 +34,7 @@ The diagram below describes the audio chain:
 
 ## GUI Overview
 
-We tried to keep the user interface as simple and minimalistic as possible. The sequencer is made up of 4 channels, each one of them has its own controls to modify the characteristics of the rhythm and all of them are managed all together by 'Tempo Controls' and 'Mactro controls', as well as 'Play', 'Pause' and 'Save' buttons. 
+We tried to keep the user interface as simple and minimalistic as possible. The sequencer is made up of 4 channels, each one of them has its own controls to modify the characteristics of the rhythm and all of them are managed all together by 'Tempo Controls' and 'Macro controls', as well as 'Play', 'Pause' and 'Save' buttons. 
 
 In order to make every channel easier to control, the rhythm of each one of them is represented next to the channel controls as a dotted circumference where every dot represents a step and every coloured dot represent a pulse. When the sequencer starts playing a white dot tracks the current position inside the loop.
 
