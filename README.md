@@ -51,8 +51,9 @@ In order to better visualize the Euclidean Patterns, each one of them is represe
 </p>
 <br>
 
-In the upper part of the screen, just below the title 'Euclidean Sequencer' we find Custom mode and the list of the geographic areas that we decided to explore to find how the Euclidean rhythms are exploited in different part of the world to construct ethnic rhythms.
-
+In the upper part of the screen, just below the title 'Euclidean Sequencer', we can find the Navigation Bar that includes the Custom mode and the list of the geographic areas that we decided to explore to find how the Euclidean rhythms are exploited in different part of the world to construct ethnic rhythms.
+For each area, the user can find the selection of ethnic rhythms, typical of the chosen area, inside the dropdown menu of each Euclidean Line while the Custom section includes 
+all the rhythms from every area. Moreover for each geographic area the selection of samples changes accordingly, in order to imitate the characteristic sounds of the chosen culture.
 
 <br>
 <p align="center" width="100%">
