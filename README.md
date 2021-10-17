@@ -36,8 +36,12 @@ The channels then flow into the master, on which a low pass filter (whose cutoff
 
 
 The diagram below describes the audio chain:
-<br>
-![schema audio chain](https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG)
+
+<br> 
+<p align="center" width="100%">
+    <img width="75%" src="https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG">
+</p>
+
 
 ## GUI and Commands Overview
 
