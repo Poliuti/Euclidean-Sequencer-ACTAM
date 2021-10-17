@@ -5,7 +5,10 @@ Euclidean rhythm divide a number of beat subdivisions over a time interval and p
 
 Our application is an euclidean sequencer implemented using the Javascript library React. It provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
 
-**SCREEN TOTALE**
+<br> 
+<p align="center" width="100%">
+    <img width="75%" src="https://user-images.githubusercontent.com/58031495/137636128-9e4ccf7c-588f-4e52-ba1f-bedd5f6a9eb1.jpg">
+</p>
 
 ## Description
 
@@ -33,6 +36,7 @@ The channels then flow into the master, on which a low pass filter (whose cutoff
 
 
 The diagram below describes the audio chain:
+<br>
 ![schema audio chain](https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG)
 
 ## GUI and Commands Overview
@@ -45,6 +49,7 @@ In order to better visualize the Euclidean Patterns, each one of them is represe
 <p align="center" width="100%">
     <img width="33%" src="https://user-images.githubusercontent.com/58031495/135873963-5a0ce6e5-de27-4070-a334-e8f161040690.jpg">
 </p>
+<br>
 
 In the upper part of the screen, just below the title 'Euclidean Sequencer' we find Custom mode and the list of the geographic areas that we decided to explore to find how the Euclidean rhythms are exploited in different part of the world to construct ethnic rhythms.
 
@@ -62,18 +67,19 @@ Each Euclidean Line is controlled by:
 * Tatum Control that modify the interval between steps
 * a drop down menu that allows the user to choose from some default patterns 
 
-**CAMBIA SCREEN LINE CONTROL**
-
 <br>
 <p align="center" width="100%">
-    <img width="33%" src="https://user-images.githubusercontent.com/58031495/135874441-fb80bcc9-a058-46ec-90c7-26b68b76f544.jpg">
+    <img width="45%" src="https://user-images.githubusercontent.com/58031495/137636239-6274d665-8306-4738-b905-cc99d5d5f487.jpg">
 </p>
 
 #### Pattern Controls
 
 In order to set the rhythm the user can choose the number of steps and pulses which represents respectively the number of total subdivisions and the number of instances that produce sound, both using the corresponding sliders and in addition the user can rigidly rotate the shape by using the 'Rotations' slider.
 
-**SCREEN PATTERN CONTROLS**
+<br>
+<p align="center" width="100%">
+    <img width="33%" src="https://user-images.githubusercontent.com/58031495/137636542-7035e763-ad0a-4c45-a529-53e6fdd0ebfd.jpg">
+</p>
 
 #### Channel Controls
 
@@ -82,21 +88,31 @@ The user can modify channel parameters such as volume, panning and pitch of the 
 The other Channel Controls available are the 'Mute' and 'Solo' buttons, placed below the sliders and are shaped as capital letters M and S.
 Their function is self explanatory: 'Mute' makes the corresponding channel silent, 'Solo' makes every other non-solo channel silent.
 
+
+<br>
+<p align="center" width="100%">
+    <img width="33%" src="https://user-images.githubusercontent.com/58031495/137637051-7af8b993-4a69-4a96-b79d-660f92ac85a3.jpg">
+</p>
+
 #### Pattern Subdivision Controls
 
 The 'Double Tempo' and 'Half Tempo' buttons are shaped respectively as 'x2' and ':2' and have the function of doubling or halving the time interval between two subsequent steps. The current measure is written below the dotted circle representation of the Euclidean Line.
 
-**CONTROLLA TERMINOLOGIA CMRM
 
 <br>
 <p align="center" width="100%">
-    <img width="48%" src="https://user-images.githubusercontent.com/58031495/135874551-470881b8-0250-497d-ae8d-9a7a3ab5938b.jpg">
+    <img width="48%" src="https://user-images.githubusercontent.com/58031495/137636668-cdc312c9-d77b-4f13-9429-10c9df3d039e.jpg">
 </p>
 
 Finally, from the dropdown menu, the user is able to select traditional rhythm patterns typical of the chosen geograhic area, among the selection we provide.
 Every rhythm is specified by its own name and contains the information that defines the pattern itself, enclosed in brackets using the previously described standard notation as follows: (Steps, Pulses, Rotations).
 
-### AGGIUNGI FOTO DROPDOWN APERTO ###
+
+<br>
+<p align="center" width="100%">
+    <img width="48%" src="https://user-images.githubusercontent.com/58031495/137636692-896bee8a-159f-4f65-9668-1814016fe9a4.jpg">
+</p>
+
 
 ### Tempo Controls
 
@@ -105,7 +121,7 @@ These are shaped as sliders and allow the user to control the BPM, the amount of
 
 <br>
 <p align="center" width="100%">
-    <img width="50%" src="https://user-images.githubusercontent.com/58031495/135874618-8f59695e-79e9-4ed4-809d-946116eee760.jpg">
+    <img width="50%" src="https://user-images.githubusercontent.com/58031495/137636722-e05c3d15-566f-4167-9544-33aef0da1c1b.jpg">
 </p>
 
 ### Macro Controls
@@ -119,7 +135,7 @@ They are made up of 4 sliders that control:
 
 <br>
 <p align="center" width="100%">
-    <img width="50%" src="https://user-images.githubusercontent.com/58031495/135874667-182fee3c-e288-4718-8612-c7fed86d28c2.jpg">
+    <img width="50%" src="https://user-images.githubusercontent.com/58031495/137636729-d7b50968-941c-4c2b-aea6-cd61fb1ec5a0.jpg">
 </p>
 
 ### Reproduction Buttons
