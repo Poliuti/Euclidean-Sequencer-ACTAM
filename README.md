@@ -1,7 +1,7 @@
 # Euclidean Sequencer
 
 ## Overview
-Euclidean rhythm divide a number of beat subdivisions over a time interval and place notes as evenly as possible into that time. They are based and take the name from the Euclidean algorithm, that computes the greatest common divisor of two given integers.The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.1340&rep=rep1&type=pdf .
+Euclidean rhythm divide a number of beat subdivisions over a time interval and place notes as evenly as possible into that time. They are based and take the name from the Euclidean algorithm, that computes the greatest common divisor of two given integers. The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.1340&rep=rep1&type=pdf .
 
 Our application is an euclidean sequencer implemented using the Javascript library React. It provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
 
@@ -82,7 +82,7 @@ The user can modify channel parameters such as volume, panning and pitch of the 
 The other Channel Controls available are the 'Mute' and 'Solo' buttons, placed below the sliders and are shaped as capital letters M and S.
 Their function is self explanatory: 'Mute' makes the corresponding channel silent, 'Solo' makes every other non-solo channel silent.
 
-#### Tatum Controls
+#### Pattern Subdivision Controls
 
 The 'Double Tempo' and 'Half Tempo' buttons are shaped respectively as 'x2' and ':2' and have the function of doubling or halving the time interval between two subsequent steps. The current measure is written below the dotted circle representation of the Euclidean Line.
 
