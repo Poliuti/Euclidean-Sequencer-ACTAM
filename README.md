@@ -88,7 +88,7 @@ In order to set the rhythm the user can choose the number of steps and pulses wh
 
 #### Channel Controls
 
-The user can modify channel parameters such as volume, panning and pitch of the sample through the corresponding sliders respectively called 'Vol', 'Pan' and 'Pitch'.
+The user can modify channel parameters such as volume, panning and pitch of the sample through the corresponding sliders respectively called 'Vol', 'Pan' and 'Note'.
 
 The other Channel Controls available are the 'Mute' and 'Solo' buttons, placed below the sliders and are shaped as capital letters M and S.
 Their function is self explanatory: 'Mute' makes the corresponding channel silent, 'Solo' makes every other non-solo channel silent.
