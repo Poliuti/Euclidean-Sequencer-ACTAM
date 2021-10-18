@@ -69,7 +69,7 @@ all the rhythms from every area. Moreover for each geographic area the selection
 Each Euclidean Line is controlled by:
 * Pattern Controls that determine the binary sequence inside the Euclidean Array
 * Channel Controls that set the channel parameters 
-* Tatum Control that modify the interval between steps
+* Pattern Subdivision Control that modifies the interval between subsequent steps
 * a drop down menu that allows the user to choose from some default patterns 
 
 <br>
