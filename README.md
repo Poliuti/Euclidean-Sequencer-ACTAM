@@ -1,7 +1,8 @@
 # Euclidean Sequencer
 
 ## Overview
-Euclidean rhythm divide a number of beat subdivisions over a time interval and place notes as evenly as possible into that time. They are based and take the name from the Euclidean algorithm, that computes the greatest common divisor of two given integers. The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.1340&rep=rep1&type=pdf .
+
+An Euclidean sequencer is a simultaneous combination of multiple rhythmic lines, called Euclidean rhythms. They distribute a determined number of onsets as evenly as possible across a determined number of time interval subdivisions.. They are based and take the name from the Euclidean algorithm, that computes the greatest common divisor of two given integers. The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.1340&rep=rep1&type=pdf .
 
 Our application is an euclidean sequencer implemented using the Javascript library React. It provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
 
@@ -12,9 +13,9 @@ Our application is an euclidean sequencer implemented using the Javascript libra
 
 ## Description
 
-For each Euclidean line an Euclidean pattern is provided and it basically consists in a binary sequence where 0 doesn't trigger a sample and 1 triggers it.
+For each Euclidean Line an Euclidean Pattern is provided and it basically consists in a binary sequence where 0 doesn't trigger a sample and 1 represents an onset and triggers it.
 
-The main commands for creating your own Euclidean pattern are:
+The main commands for creating your own Euclidean Pattern are:
 * *steps*: sets the number of intervals of the sequence;
 * *pulses*: sets the number of active steps, that are distributed along the sequence according to the Euclidean algorithm;
 * *rotations*: shifts circularly the pattern.
@@ -31,8 +32,8 @@ If you find a pattern you like, just press the save command to store the setting
 
 ## Sound management
 
-We choose to use [Tone js](https://tonejs.github.io/) to develop all the audio features of our application. All Events .....   are triggered using a sampler in four different channels. The user has the control on the volume and the panning of each channel as well as on the pitch of the sample. Moreover mute/solo controls are available. 
-The channels then flow into the master, on which a low pass filter (whose cutoff frequency can be adjusted by the user) acts in series with a reverb, whose dry/wet ratio and decay time can be modified.
+We choose to use [Tone js](https://tonejs.github.io/) to develop all the audio features of our application. Four independent Euclidean Lies are provided, each one corresponding to a different channel. Each of them is associated with a sampler that trigger all the events of the pattern. The user has the control on the volume and the panning of each channel as well as on the pitch of the sample. Moreover mute/solo controls are available. 
+The channels then flow into the master channel, on which a low pass filter (whose cutoff frequency can be adjusted by the user) acts in series with a reverb, whose dry/wet ratio and decay time can be modified.
 
 
 The diagram below describes the audio chain:
@@ -88,7 +89,7 @@ In order to set the rhythm the user can choose the number of steps and pulses wh
 
 #### Channel Controls
 
-The user can modify channel parameters such as volume, panning and pitch of the sample through the corresponding sliders respectively called 'Vol', 'Pan' and 'Note'.
+The user can modify channel parameters such as volume, panning and pitch of the sample through the corresponding sliders respectively called 'Vol', 'Pan' and 'Pitch'.
 
 The other Channel Controls available are the 'Mute' and 'Solo' buttons, placed below the sliders and are shaped as capital letters M and S.
 Their function is self explanatory: 'Mute' makes the corresponding channel silent, 'Solo' makes every other non-solo channel silent.
