@@ -2,10 +2,10 @@
 
 ## Overview
 
-An Euclidean sequencer is a simultaneous combination of multiple rhythmic lines, called Euclidean rhythms. They distribute a determined number of onsets as evenly as possible across a determined number of time interval subdivisions.. They are based and take the name from the Euclidean algorithm, that computes the greatest common divisor of two given integers. The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper:
+An **Euclidean sequencer** is a simultaneous combination of multiple rhythmic lines, called ***Euclidean rhythms***. They distribute a determined number of onsets as evenly as possible across a determined number of time interval subdivisions.. They are based and take the name from the *Euclidean algorithm*, that computes the greatest common divisor of two given integers. The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper:
 https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.1340&rep=rep1&type=pdf.
 
-Our application is an euclidean sequencer implemented using the Javascript library React. It provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
+Our application is an euclidean sequencer implemented using the Javascript library **React**. It provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
 
 <br> 
 <p align="center" width="100%">
@@ -14,26 +14,35 @@ Our application is an euclidean sequencer implemented using the Javascript libra
 
 ## Description
 
-For each Euclidean Line an Euclidean Pattern is provided and it basically consists in a binary sequence where 0 doesn't trigger a sample and 1 represents an onset and triggers it.
+For each channel we define **Euclidean Line** the set of commands for creating the sequence and managing the sound. 
+The patterns, called **Euclidean Patterns**, can be described using the representation of the Euclidean algorithm given by Bjorklund. He represents this problem as a binary
+sequence of k one’s and n - k zero’s, where each integer represents a time interval, and the one’s represent
+the pulses. The problem then reduces to the following: construct a binary sequence of n bits with
+k one’s, such that the k one’s are distributed as evenly as possible among the zero’s. For each Euclidean Line an Euclidean Pattern is provided, in which a 1 trigger a sample, while a 0 corresponds to a silence time.
+
+<br> 
+<p align="center" width="100%">
+    <img width="45%" src="https://user-images.githubusercontent.com/58279476/137896273-fbd224a6-b3db-49ac-b369-5f4c8d745e41.PNG">
+</p>
+
+
 
 The main commands for creating your own Euclidean Pattern are:
-* *steps*: sets the number of intervals of the sequence;
-* *pulses*: sets the number of active steps, that are distributed along the sequence according to the Euclidean algorithm;
-* *rotations*: shifts circularly the pattern.
+* ***steps***: sets the number of intervals of the sequence;
+* ***pulses***: sets the number of active steps, that are distributed along the sequence according to the Euclidean algorithm;
+* ***rotations***: shifts circularly the pattern.
  
 A pattern is uniquely identified by these three parameters, using a standard notation in which we have *(NumberOfSteps, NumberOfPulses, Rotation)*.  For example, a Flamenco Rhythm is (4,3,1), meaning 4 steps, with 3 active pulses and 1 position of shift. 
 As said before, combining the different lines is a comfortable way to generate and play with polyrhythms and polymeters, simultaneously combining contrasting rhythms.
 
 If you find a pattern you like, just press the save command to store the settings for steps, pulses and rotation of the 4 Euclidean lines. Then just select it from a dropdown list to upload it again when you want. For greater expressive freedom,  user also has commands to adjust the volumes, panning and pitch of each individual channel.
 
-**Custom** is the default mode of usage and provide typical drum samples. Instead of that, it is also possible to experiment using different pattern presets taken from traditional music of some parts of the world (Africa, Asia, Europe and Latin America) and mix them together. In these options also samples recall local instruments of the country.
+**Custom** is the default mode of usage and provide typical drum samples. Instead of that, it is also possible to experiment using different pattern presets taken from traditional music of some parts of the world (**Africa, Asia, Europe and Latin America**) and mix them together. In these options also samples recall local instruments of the country.
 
-
-###
 
 ## Sound management
 
-We choose to use [Tone js](https://tonejs.github.io/) to develop all the audio features of our application. Four independent Euclidean Lies are provided, each one corresponding to a different channel. Each of them is associated with a sampler that trigger all the events of the pattern. The user has the control on the volume and the panning of each channel as well as on the pitch of the sample. Moreover mute/solo controls are available. 
+We choose to use [Tone js](https://tonejs.github.io/) to develop all the audio features of our application. Four independent Euclidean Lines are provided, each one corresponding to a different channel. Each of them is associated with a sampler that trigger all the events of the pattern, corresponding to the pulses of the sequence. The user has the control on the volume and the panning of each channel as well as on the pitch of the sample. Moreover mute/solo controls are available. 
 The channels then flow into the master channel, on which a low pass filter (whose cutoff frequency can be adjusted by the user) acts in series with a reverb, whose dry/wet ratio and decay time can be modified.
 
 
@@ -41,13 +50,13 @@ The diagram below describes the audio chain:
 
 <br> 
 <p align="center" width="100%">
-    <img width="75%" src="https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG">
+    <img width="85%" src="https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG">
 </p>
 
 
 ## GUI and Commands Overview
 
-We tried to keep the user interface as simple and minimalistic as possible. As previously stated, our Sequencer is made up of 4 Euclidean Lines that play together. A series of controls is provided for each Euclidean Line, called Line Controls, as well as more general controls for tempo, transport and master effects.
+We tried to keep the user interface as simple and minimalistic as possible. As previously stated, our Sequencer is made up of 4 Euclidean Lines that play together. A series of controls is provided for each Euclidean Line, called *Line Controls*, as well as more general controls for tempo, transport and master effects.
 
 In order to better visualize the Euclidean Patterns, each one of them is represented next to the Line Controls as a dotted circumference where every dot represents a step and every coloured dot represent a pulse. When the sequencer starts playing a white dot tracks the current position inside the loop.
 
@@ -69,10 +78,10 @@ all the rhythms from every area. Moreover for each geographic area the selection
 ### Line Controls
 
 Each Euclidean Line is controlled by:
-* Pattern Controls that determine the binary sequence inside the Euclidean Array
-* Channel Controls that set the channel parameters 
-* Pattern Subdivision Control that modifies the interval between subsequent steps
-* a drop down menu that allows the user to choose from some default patterns 
+* ***Pattern Controls*** that determine the binary sequence inside the Euclidean Array
+* ***Channel Controls*** that set the channel parameters 
+* ***Pattern Subdivision Control*** that modifies the interval between subsequent steps
+* a drop down menu that allows the user to choose from some default patterns.
 
 <br>
 <p align="center" width="100%">
@@ -81,7 +90,7 @@ Each Euclidean Line is controlled by:
 
 #### Pattern Controls
 
-In order to set the rhythm the user can choose the number of steps and pulses which represents respectively the number of total subdivisions and the number of instances that produce sound, both using the corresponding sliders and in addition the user can rigidly rotate the shape by using the 'Rotations' slider.
+In order to set the rhythm the user can choose the number of *steps* and *pulses* which represents respectively the number of total subdivisions and the number of instances that produce sound, both using the corresponding sliders and in addition the user can rigidly rotate the shape by using the *'Rotations'* slider.
 
 <br>
 <p align="center" width="100%">
@@ -90,9 +99,9 @@ In order to set the rhythm the user can choose the number of steps and pulses wh
 
 #### Channel Controls
 
-The user can modify channel parameters such as volume, panning and pitch of the sample through the corresponding sliders respectively called 'Vol', 'Pan' and 'Pitch'.
+The user can modify channel parameters such as *volume*, *panning* and *pitch* of the sample through the corresponding sliders respectively called 'Vol', 'Pan' and 'Pitch'.
 
-The other Channel Controls available are the 'Mute' and 'Solo' buttons, placed below the sliders and are shaped as capital letters M and S.
+The other Channel Controls available are the *'Mute'* and *'Solo'* buttons, placed below the sliders and are shaped as capital letters M and S.
 Their function is self explanatory: 'Mute' makes the corresponding channel silent, 'Solo' makes every other non-solo channel silent.
 
 
@@ -103,7 +112,7 @@ Their function is self explanatory: 'Mute' makes the corresponding channel silen
 
 #### Pattern Subdivision Controls
 
-The 'Double Tempo' and 'Half Tempo' buttons are shaped respectively as 'x2' and ':2' and have the function of doubling or halving the time interval between two subsequent steps. The current measure is written below the dotted circle representation of the Euclidean Line.
+The *'Double Tempo'* and *'Half Tempo'* buttons are shaped respectively as 'x2' and ':2' and have the function of doubling or halving the time interval between two subsequent steps. The current measure is written below the dotted circle representation of the Euclidean Line.
 
 
 <br>
@@ -123,7 +132,7 @@ Every rhythm is specified by its own name and contains the information that defi
 
 ### Tempo Controls
 
-The 'Tempo Controls' are located in the upper left part of the screen and they manage the general tempo settings of the Euclidean Sequencer.
+The *'Tempo Controls'* are located in the upper left part of the screen and they manage the general tempo settings of the Euclidean Sequencer.
 These are shaped as sliders and allow the user to control the BPM, the amount of swing, which is a coefficient that drags the pulses slightly to create a pleasing and more natural sound, and the swing subdivision which defines the subdivision of the slightly dragged pulses.
 
 <br>
@@ -133,12 +142,12 @@ These are shaped as sliders and allow the user to control the BPM, the amount of
 
 ### Macro Controls
 
-'Macro controls' are located in the upper right part of the screen, opposite to the 'Tempo Controls' in a mirrored style.
+*'Macro controls'* are located in the upper right part of the screen, opposite to the 'Tempo Controls' in a mirrored style.
 They are made up of 4 sliders that control:
-* the master volume ('Volume' slider)
-* the reverb decay time in seconds, that sets the persistance of the sound after it is produced ('Rev Decay' slider)
-* the reverb dry/wet percentage, that controls the amount of effect with respect to the clean sound ('Rev Wet' slider)
-* the cutoff frequency of the low pass filter ('Cutoff' slider)
+* the *master volume* ('Volume' slider)
+* the *reverb decay time* in seconds, that sets the persistance of the sound after it is produced ('Rev Decay' slider)
+* the *reverb dry/wet percentage*, that controls the amount of effect with respect to the clean sound ('Rev Wet' slider)
+* the *cutoff frequency* of the low pass filter ('Cutoff' slider).
 
 <br>
 <p align="center" width="100%">
@@ -147,7 +156,7 @@ They are made up of 4 sliders that control:
 
 ### Reproduction Buttons
 
-Finally the most important buttons are placed between the 'Tempo Controls' and the 'Macro Controls' and they are the 'Play', 'Pause' and 'Save' buttons.
+Finally the most important buttons are placed between the *'Tempo Controls'* and the *'Macro Controls'* and they are the 'Play', 'Pause' and 'Save' buttons.
 'Play' and 'Pause' function is self explanatory and they controls the reproduction, while the 'Save' button allows the user to save the currently used patterns for later reproductions. The saved pattern is shown on a dropdown menu below the reproduction buttons alongside with all the other previously saved patterns.
 
 <br>
@@ -180,6 +189,9 @@ Once inside, just run this command again:
 ## Conclusions
 
 This Euclidean Sequencer does not pretend to be a DAW or a program for making professional music productions, but rather an application to have fun and get inspiration for possible projects. Some future developments in this sense could be the addition of effects available to the user. It could also be interesting to add other sounds and rhythmic patterns typical of countries around the world.
+
+Here a video tutorial to see how the Euclidean Sequencer works:
+https://youtu.be/cF6LMqtsbRo.
 
 ## Notes
 
