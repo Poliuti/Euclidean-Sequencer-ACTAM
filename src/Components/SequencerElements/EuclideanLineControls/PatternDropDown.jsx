@@ -2,16 +2,16 @@ import { useContext, useEffect, useState } from "react";
 import Dropdown from "react-dropdown";
 import { Transport } from "tone";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
-import EuclideanLine from "../../../EuclideanLine";
+import EuclideanUnit from "../../../EuclideanUnit";
 import { useIsMount } from "../../../Functions/useIsMount";
 
 
 const PatternDropDown = ({
   id,
   patternNames,
-  defaultPatterns,
-  linesList,
-  setLinesList,
+  defaultUnits,
+  unitList,
+  setUnitList,
 }) => {
   const { setCurrentTransportState } = useContext(EnvironmentContext);
 
@@ -39,37 +39,37 @@ const PatternDropDown = ({
       .slice(0, patternName.indexOf("("))
       .trimEnd();
 
-    defaultPatterns.forEach((pattern) => {
-      if (pattern.name === modifPatternName) {
-        setChosenPattern(pattern);
+    defaultUnits.forEach((unit) => {
+      if (unit.name === modifPatternName) {
+        setChosenPattern(unit);
       }
     });
   };
 
   useEffect(() => {
     if (chosenPattern) {
-      let tempList = [...linesList];
-      tempList[id] = new EuclideanLine(
+      let tempList = [...unitList];
+      tempList[id] = new EuclideanUnit(
         chosenPattern.numSteps,
         chosenPattern.numPulses,
         chosenPattern.numRotations,
         chosenPatternName
       ).setID(id);
-      setLinesList(tempList);
+      setUnitList(tempList);
     }
   }, [chosenPattern]);
 
   useEffect(() => {
     if (!isMount) {
-      let traditionalPattern = defaultPatterns.find(
-        (lineObj) =>
-          JSON.stringify(lineObj.euclideanArray) ===
-          JSON.stringify(linesList[id].euclideanArray)
+      let traditionalPattern = defaultUnits.find(
+        (unitObj) =>
+          JSON.stringify(unitObj.euclideanArray) ===
+          JSON.stringify(unitList[id].euclideanArray)
       );
 
       setChosenPattern(traditionalPattern);
     }
-  }, [linesList[id]]);
+  }, [unitList[id]]);
 
   return (
     <div className="drop-down-cont">

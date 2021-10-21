@@ -5,39 +5,36 @@ import PatternDropDown from "./PatternDropDown";
 import initPatternNames from "../../../Functions/initPatternNames";
 import Circle from "./Circle";
 
-const PatternControlsList = ({
-  linesList,
-  setLinesList,
-  envDefaultLinesList,
+const EuclideanLinesControls = ({
+  unitList,
+  setUnitList,
   setTempo,
   tempo,
   channelList,
   colors,
   euclideanPatternsList,
-  envDefaultPatterns,
+  envDefaultUnits,
 }) => {
   
-  
-  const elementoBase = {
-    height: "24rem",
-  };
+
+
 
   const [patternNames, setPatternNames] = useState( //adding numSteps, numPulses, numRotations to the pattern name
-    initPatternNames(envDefaultPatterns)
+    initPatternNames(envDefaultUnits)
   );
 
   
 
   return (
-    <div className="pattern-controls-list">
-      {linesList.map((line, id) => {
+    <div className="euclideanline-control-list">
+      {unitList.map((unit, id) => {
         const color = colors[id];
 
         return (
-          <div key={id} className="elemento-base" style={elementoBase}>
+          <div key={id} className="elemento-base" >
           
             <Circle
-              lineIndex={id}
+              unitIndex={id}
               euclideanPattern ={euclideanPatternsList[id]}
             />
 
@@ -45,10 +42,10 @@ const PatternControlsList = ({
               setTempo={setTempo}
               tempo={tempo}
               idx={id}
-              line={line}
-              setLinesList={setLinesList}
-              linesList={linesList}
-              envDefaultLinesList={envDefaultLinesList}
+              unit={unit}
+              setUnitList={setUnitList}
+              unitList={unitList}
+              
               color={color}
             />
 
@@ -63,9 +60,9 @@ const PatternControlsList = ({
             <PatternDropDown
               id={id}
               patternNames={patternNames}
-              defaultPatterns={envDefaultPatterns}
-              linesList={linesList}
-              setLinesList={setLinesList}
+              defaultUnits={envDefaultUnits}
+              unitList={unitList}
+              setUnitList={setUnitList}
               euclideanPatternsList={euclideanPatternsList}
             />
           </div>
@@ -75,4 +72,4 @@ const PatternControlsList = ({
   );
 };
 
-export default PatternControlsList;
+export default EuclideanLinesControls;

@@ -1,18 +1,18 @@
 const initTempo = (numInstr, bpm) => {
 
 
-  let tempoSpeedIndex = [];
-  let tempoSpeedIndexForTone = [];
+  let stepDurationModifierArray = [];
+  let stepDurationArray = [];
   for (let i = 0; i < numInstr; i++) {
-        tempoSpeedIndex.push(1);
-        tempoSpeedIndexForTone.push("8n");  
+        stepDurationModifierArray.push(1);
+        stepDurationArray.push("8n");  
         
   };
 
   const tempoInfo = {
       bpm: bpm,
-      tempoSpeedIndex: tempoSpeedIndex,
-      tempoSpeedIndexForTone: tempoSpeedIndexForTone
+      stepDurationModifierArray: stepDurationModifierArray,
+      stepDurationArray: stepDurationArray
   }
 
   return tempoInfo

@@ -1,7 +1,6 @@
 
 import startSequences from "../../../Functions/startSequences";
 import * as Tone from 'tone'
-import { useEffect } from "react";
 import { useIsMount } from "../../../Functions/useIsMount";
 
 

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Transport } from "tone";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
-import { activeColor } from "./../../../Default/colori";
+import { activeColor } from "../../../Default/colori";
 
 const allNotesArray = [
   
@@ -116,7 +116,7 @@ const PitchSlider = ({ id }) => {
           style={{ "--c": `${activeColor[id]}` }}
         />
         <label htmlFor="pitch">
-          Note: {sign + `${allNotesArray.indexOf(chosenNotes[id]) - 24}`}
+          Pitch: {sign + `${allNotesArray.indexOf(chosenNotes[id]) - 24}`} st
         </label>
       </div>
     </div>

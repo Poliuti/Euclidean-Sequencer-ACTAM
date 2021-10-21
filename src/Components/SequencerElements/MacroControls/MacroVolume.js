@@ -22,7 +22,7 @@ const MacroVolume = ({color}) => {
         id="volume"
         style={{"--c": `${color}`}}
       />
-      <label htmlFor="volume">Volume: {volume}</label>
+      <label htmlFor="volume">Volume: {volume} dB</label>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import PitchSlider from "../PatternControls/PitchSlider";
+import PitchSlider from "../EuclideanLineControls/PitchSlider";
 import MuteButton from "./MuteButton";
 import PanSlider from "./PanSlider";
 import SoloButton from "./SoloButton";

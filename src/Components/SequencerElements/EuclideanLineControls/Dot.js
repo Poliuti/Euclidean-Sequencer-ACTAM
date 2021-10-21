@@ -1,13 +1,13 @@
-import { activeColor, nonActiveColor } from "./../../../Default/colori";
+import { activeColor, nonActiveColor } from "../../../Default/colori";
 
-const Dot = ({ isActive, cellIdx, radius, angle, lineIndex }) => {
+const Dot = ({ isActive, cellIdx, radius, angle, unitIndex }) => {
   angle = angle - 90;
   let color;
-  isActive ? (color = activeColor[lineIndex]) : (color = nonActiveColor);
+  isActive ? (color = activeColor[unitIndex]) : (color = nonActiveColor);
 
   const dotClassName = `dot`;
 
-  const dotId = `${lineIndex}${cellIdx}`;
+  const dotId = `${unitIndex}${cellIdx}`;
 
  
 

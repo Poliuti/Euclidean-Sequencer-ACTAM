@@ -1,7 +1,7 @@
 import bjorklund from "./Functions/bjorklund";
 
 
-export default class EuclideanLine {
+export default class EuclideanUnit {
   constructor(numSteps, numPulses, numRotations, name) {
     this.numSteps = numSteps;
     this.numPulses = numPulses;

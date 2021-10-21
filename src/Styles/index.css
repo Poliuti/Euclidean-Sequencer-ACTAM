@@ -225,7 +225,7 @@ h1{
   height: 24.5rem;
 }
 
-.pattern-controls-list{
+.euclideanline-control-list{
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 92px;
@@ -238,13 +238,13 @@ h1{
   margin-bottom: 1.8rem;
 }
 
-.macro-controls{
+#macro-controls{
   grid-column-start: 3;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 2;
 }
-.tempo-controls{
+#tempo-controls{
   grid-column-start: 1;
   grid-column-end: 1;
   grid-row-start: 2;
@@ -438,9 +438,9 @@ input[type=range]:focus::-ms-fill-upper {
   width:35rem;
 }
 
-/*tempo-modifier style*/
+/*step-subd-modifier style*/
 
-.tempo-modifier{
+.step-subd-modifier{
   display: flex;
   width: 23rem;
   margin-left: 3.7rem;

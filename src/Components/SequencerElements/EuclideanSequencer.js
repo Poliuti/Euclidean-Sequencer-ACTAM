@@ -1,27 +1,26 @@
 import React, { useContext, useEffect, useState} from "react";
 import { context, Transport } from "tone";
-import onSequenceListChange from "./../../Functions/onSequenceListChange";
 import { activeColor, macroColor } from "./../../Default/colori";
 import { EnvironmentContext } from "./../../Contexts/EnvironmentContext";
 import TempoControls from "./TempoControls/TempoControls";
 import MacroControls from "./MacroControls/MacroControls";
-import PatternControlsList from "./PatternControls/PatternControlsList";
+import EuclideanLineControlsList from "./EuclideanLineControls/EuclideanLineControlsList";
 import PlayButton from "./TransportControls/PlayButton";
 import StopButton from "./TransportControls/StopButton";
-import api from "./../../api/userLinesList"
+import api from "./../../api/userUnitList"
 import SaveButton from "./../SequencerElements/SaveButton"
 import LoadDropDown from "./LoadDropDown";
-import defaultLines from "../../Default/defaultLines";
+import defaultUnits from "../../Default/defaultUnits";
 
-let customDefaultPatterns =  Object.keys(defaultLines).map((key) => //retrieving all the traditional pattterns from all around the world for custom environment
-defaultLines[key][0]
+let customDefaultUnits =  Object.keys(defaultUnits).map((environment) => //retrieving all the traditional patterns from all around the world for custom environment
+defaultUnits[environment].traditional
 ).flat().sort((a, b) => {return a.numSteps - b.numSteps});
 
 
 const EuclideanSequencer = () => {
   const {
-    linesList,
-    setLinesList,
+    unitList,
+    setUnitList,
     tempo,
     setTempo,
     envDefault,
@@ -31,13 +30,12 @@ const EuclideanSequencer = () => {
     setDummy,
     euclideanPatternsList,
     currentTransportState,
-    setCurrentTransportState,
     name
   } = useContext(EnvironmentContext);
 
   
-  const retrieveUserLinesList = async () => {  // function that returns the response object from the db.json where we save the user pattern
-    const response = await api.get("/userLinesList");
+  const retrieveUnitxList = async () => {  // function that returns the response object from the db.json where we save the user pattern
+    const response = await api.get("/userUnitList");
     return response.data;
   }
 
@@ -45,20 +43,19 @@ const EuclideanSequencer = () => {
 
 
 
-  useEffect(() => { // on first render we retrieve the user LinesList from thedb.json
+  useEffect(() => { // on first render we retrieve the user UnitList from thedb.json
     Transport.stop();
     
-    const getAllUserLinesList = async () => {
-      const allUserLinesList = await retrieveUserLinesList();
-      if (allUserLinesList) setUserList(allUserLinesList)
-      return allUserLinesList;
+    const getAllUserUnitList = async () => {
+      const allUserUnitList = await retrieveUnitxList();
+      if (allUserUnitList) setUserList(allUserUnitList)
+      return allUserUnitList;
     }
-    getAllUserLinesList();
+    getAllUserUnitList();
 
   }, []);
 
   const [userList, setUserList] = useState(null); 
-
 
 
 
@@ -92,10 +89,10 @@ const EuclideanSequencer = () => {
 
 
 
-  let envDefaultPatterns;
+  let envDefaultUnits;
 
-  if (name === "custom"){envDefaultPatterns = customDefaultPatterns }
-  else {envDefaultPatterns = envDefault[0]}
+  if (name === "custom"){envDefaultUnits = customDefaultUnits }
+  else {envDefaultUnits = envDefault.traditional}
 
 
 
@@ -112,30 +109,27 @@ const EuclideanSequencer = () => {
           sequencesList={sequencesList}
           dummy={dummy}
           setDummy={setDummy}
-          euclideanPatternsList={euclideanPatternsList}
-          setCurrentTransportState={setCurrentTransportState}
         />
         <PlayButton sequencesList={sequencesList} dummy={dummy}
           setDummy={setDummy}/>
-        <SaveButton actualLinesList={linesList} userList={userList} setUserList={setUserList} tempo={tempo} setTempo = {setTempo}/>
+        <SaveButton currentUnitList={unitList} userList={userList} setUserList={setUserList} tempo={tempo} setTempo = {setTempo}/>
         </div>
         <h2 id="macroControls">Macro Controls</h2>
         <MacroControls color={macroColor} />
       </div>
 
-      <LoadDropDown className="LoadDropDown" userList={userList} setLinesList={setLinesList} setTempo = {setTempo}/> 
+      <LoadDropDown className="LoadDropDown" userList={userList} setUnitList={setUnitList} setTempo = {setTempo}/> 
 
 
-      <PatternControlsList
-        linesList={linesList}
-        setLinesList={setLinesList}
-        envDefaultLinesList={envDefault[1]}
+      <EuclideanLineControlsList
+        unitList={unitList}
+        setUnitList={setUnitList}
         tempo={tempo}
         setTempo={setTempo}
         channelList={channelList}
         colors={activeColor}
         euclideanPatternsList={euclideanPatternsList}
-        envDefaultPatterns={envDefaultPatterns}
+        envDefaultUnits={envDefaultUnits}
       />
     </div>
   );

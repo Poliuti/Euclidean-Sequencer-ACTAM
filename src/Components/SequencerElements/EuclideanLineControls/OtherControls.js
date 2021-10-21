@@ -1,5 +1,5 @@
 import ChannelControls from "../ChannelControls/ChannelControls";
-import TempoModifier from "../TempoControls/TempoModifier";
+import StepSubdModifier from "./StepSubdModifier";
 
 
 const OtherControls = ({ channel, tempo, setTempo, index, color }) => {
@@ -7,7 +7,7 @@ const OtherControls = ({ channel, tempo, setTempo, index, color }) => {
     <div className="other-controls">
       <ChannelControls channel={channel} color={color} index = {index}/>
       
-      <TempoModifier tempo={tempo} setTempo={setTempo} index={index} />
+      <StepSubdModifier tempo={tempo} setTempo={setTempo} index={index} />
     </div>
   );
 };

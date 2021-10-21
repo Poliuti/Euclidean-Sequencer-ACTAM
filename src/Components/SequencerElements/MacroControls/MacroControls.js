@@ -4,7 +4,7 @@ import EffectsControls from "./EffectsControls";
 
 const MacroControls = ({color}) => {
     
-    return ( <div className="macro-controls">
+    return ( <div id="macro-controls">
         <MacroVolume color={color}/>
         <EffectsControls destination = {Destination} color={color}/>
        

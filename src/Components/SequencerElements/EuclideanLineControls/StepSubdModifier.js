@@ -2,7 +2,7 @@ import { useContext } from "react";
 import {Transport} from "tone";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 
-const TempoModifier = ({ tempo, setTempo, index }) => {
+const StepSubdModifier = ({ tempo, setTempo, index }) => {
   const {
     setCurrentTransportState
     
@@ -10,14 +10,14 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
   
   let perDueClassName='';
 
-  if (tempo.tempoSpeedIndexForTone[index]==='32n') 
+  if (tempo.stepDurationArray[index]==='32n') 
   {
     perDueClassName='Limit_up'
   }
 
   let divisoDueClassName='';
 
-  if (tempo.tempoSpeedIndexForTone[index]==='2n') 
+  if (tempo.stepDurationArray[index]==='2n') 
   {
     divisoDueClassName='Limit_down'
   }
@@ -26,10 +26,10 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
 
   const handleDouble = (element) => {
     let tempoUpdate = { ...tempo };
-    if (tempoUpdate.tempoSpeedIndex[index] <= 2)
-    {tempoUpdate.tempoSpeedIndex[index] *= 2;
-    tempoUpdate.tempoSpeedIndexForTone[index] = `${
-      8 * tempoUpdate.tempoSpeedIndex[index]
+    if (tempoUpdate.stepDurationModifierArray[index] <= 2)
+    {tempoUpdate.stepDurationModifierArray[index] *= 2;
+    tempoUpdate.stepDurationArray[index] = `${
+      8 * tempoUpdate.stepDurationModifierArray[index]
     }n`;
     setTempo(tempoUpdate);
     if (element.classList.contains('Limit_down'))
@@ -48,10 +48,10 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
 
   const handleHalf = (element) => {
     let tempoUpdate = { ...tempo };
-    if (tempoUpdate.tempoSpeedIndex[index] > 1/4)
-    {tempoUpdate.tempoSpeedIndex[index] /= 2;
-    tempoUpdate.tempoSpeedIndexForTone[index] = `${
-      8 * tempoUpdate.tempoSpeedIndex[index]
+    if (tempoUpdate.stepDurationModifierArray[index] > 1/4)
+    {tempoUpdate.stepDurationModifierArray[index] /= 2;
+    tempoUpdate.stepDurationArray[index] = `${
+      8 * tempoUpdate.stepDurationModifierArray[index]
     }n`;
     setTempo(tempoUpdate);
     if (element.classList.contains('Limit_up'))
@@ -60,24 +60,23 @@ const TempoModifier = ({ tempo, setTempo, index }) => {
   
     if (Transport.state === "started") {
       setCurrentTransportState(1);
-      Transport.stop();
-      Transport.start("+0.1");
+      
     } else {
       setCurrentTransportState(0);
-      Transport.stop();
+      
     }
   };
 
 
   return (
-    <div className="tempo-modifier">
+    <div className="step-subd-modifier">
       <button onClick= {(e)=>handleDouble(e.currentTarget)} className={`per-due ${perDueClassName}` } >
       </button>
       <button onClick={(e)=>handleHalf(e.currentTarget)} className={`diviso-due ${divisoDueClassName}`}>
       </button>
-      <h4>{`1 / ${8 * tempo.tempoSpeedIndex[index]}`}</h4>
+      <h4>{`1 / ${8 * tempo.stepDurationModifierArray[index]}`}</h4>
     </div>
   );
 };
 
-export default TempoModifier;
+export default StepSubdModifier;

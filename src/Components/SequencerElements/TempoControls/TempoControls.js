@@ -6,7 +6,7 @@ import SwingSubdivisionSlider from "./SwingSubdivisionSlider";
 const TempoControls = ({ tempo, setTempo, color }) => {
   
   return (
-    <div className="tempo-controls">
+    <div id="tempo-controls">
       <BpmSlider tempo={tempo} setTempo={setTempo} color={color} />
       <SwingSlider
         swingPercentage={Transport.swing}

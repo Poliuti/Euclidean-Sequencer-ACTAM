@@ -3,48 +3,49 @@ import PulseSlider from "./PulseSlider";
 import RotateSlider from "./RotateSlider";
 import StepSlider from "./StepSlider";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
-import EuclideanLine from "../../../EuclideanLine";
+import EuclideanUnit from "../../../EuclideanUnit";
 import { useIsMount } from "../../../Functions/useIsMount";
 
 
-const PatternControls = ({ idx, linesList, setLinesList, color }) => {
+
+const PatternControls = ({ idx, unitList, setUnitList, color }) => {
   
   const { currentTransportState, setCurrentTransportState, dummy, setDummy } =
     useContext(EnvironmentContext);
 
-  const [numSteps, setNumSteps] = useState(linesList[idx].numSteps);
-  const [numPulses, setNumPulses] = useState(linesList[idx].numPulses);
-  const [numRotations, setNumRotations] = useState(linesList[idx].numRotations);
+  const [numSteps, setNumSteps] = useState(unitList[idx].numSteps);
+  const [numPulses, setNumPulses] = useState(unitList[idx].numPulses);
+  const [numRotations, setNumRotations] = useState(unitList[idx].numRotations);
 
 
   const isMount = useIsMount();
 
   useEffect(() => {
     if (!isMount) {
-      setNumSteps(linesList[idx].numSteps);
-      setNumPulses(linesList[idx].numPulses);
-      setNumRotations(linesList[idx].numRotations);
+      setNumSteps(unitList[idx].numSteps);
+      setNumPulses(unitList[idx].numPulses);
+      setNumRotations(unitList[idx].numRotations);
     }
-  }, [linesList]);
+  }, [unitList]);
 
   useEffect(() => {
-    //updating LinesList when numSteps or numPulses or numRotations changes
+    //updating unitList when numSteps or numPulses or numRotations changes
 
     if (!isMount) {
-      let tempList = [...linesList];
-      tempList[idx] = new EuclideanLine(
+      let tempList = [...unitList];
+      tempList[idx] = new EuclideanUnit(
         numSteps,
         numPulses,
         numRotations,
         ""
       ).setID(idx);
 
-      setLinesList(tempList);
+      setUnitList(tempList);
     }
   }, [numSteps, numPulses, numRotations]);
 
   return (
-    <div className="pattern-controls" id={idx}>
+    <div className="pattern-controls" >
       <StepSlider
         value={numSteps}
         numPulses={numPulses}

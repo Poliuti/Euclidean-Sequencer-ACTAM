@@ -1,6 +1,6 @@
 import Dot from "./Dot";
 
-const Circle = ({ lineIndex, euclideanPattern }) => {
+const Circle = ({ unitIndex, euclideanPattern }) => {
   
   const angle = 360 / euclideanPattern.length;
 
@@ -20,7 +20,7 @@ const Circle = ({ lineIndex, euclideanPattern }) => {
             cellIdx={cellIndex}
             radius={radius}
             angle={anglesArray[cellIndex]}
-            lineIndex={lineIndex}
+            unitIndex={unitIndex}
           />
         </div>
       ))}

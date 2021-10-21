@@ -21,6 +21,7 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 ) => {
 
 
+  
   let sequencesList = [];
 
   let currentPosArr = initialPositionArray; //This array keeps track of the positions of the tick in the various sequences, initially all the ticks are at 0th position
@@ -87,13 +88,18 @@ const creaSequenceList = ( // funzione che crea le vere e proprie sequenze (Tone
 
           if (dot)
           {let dotColor = dot.style.backgroundColor; 
+            let dotRadius = dot.style.width;
 
 
           if (Transport.state === "started") {
             dot.style.backgroundColor = "white"; // I paint the current Dot of white 
+            dot.style.height= "20px";
+            dot.style.width= "20px";
 
             Transport.scheduleOnce(() => { // after 0.006 sec I paint it of its previous color
               dot.style.backgroundColor = dotColor;
+              dot.style.height= dotRadius;
+            dot.style.width= dotRadius;
             }, "+0.006");
             
             currentPosArr[index]++;}

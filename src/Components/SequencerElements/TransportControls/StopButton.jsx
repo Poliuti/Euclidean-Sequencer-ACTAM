@@ -1,13 +1,13 @@
 
 import { Transport } from "tone";
 
-const StopButton = ({ sequencesList, dummy, setDummy, euclideanPatternsList, setCurrentTransportState }) => {
+const StopButton = ({ sequencesList, dummy, setDummy }) => {
   
 
   const handleStopClick = () => {
     Transport.stop();
 
-    sequencesList.forEach((seq, index) => {
+    sequencesList.forEach((seq) => {
       seq.stop();
     });
     

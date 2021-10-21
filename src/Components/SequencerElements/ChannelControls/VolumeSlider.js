@@ -22,7 +22,7 @@ const VolumeSlider = ({ channel, color }) => {
         id="volume"
         style={{"--c": `${color}`}}
       />
-      <label htmlFor="volume">Vol: {volume}</label>
+      <label htmlFor="volume">Vol: {volume} dB</label>
     </div>
   );
 };

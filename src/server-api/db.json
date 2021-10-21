@@ -1,5 +1,310 @@
 {
-  "userLinesList": [
-    
+  "userUnitList": [
+    {
+      "unitList": [
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 5,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 16,
+          "numPulses": 5,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 3,
+          "numRotations": 2,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "id": 3
+        }
+      ],
+      "tempo": {
+        "bpm": 140,
+        "tempoSpeedIndex": [
+          1,
+          2,
+          1,
+          1
+        ],
+        "tempoSpeedIndexForTone": [
+          "8n",
+          "16n",
+          "8n",
+          "8n"
+        ]
+      },
+      "id": 1
+    },
+    {
+      "unitList": [
+        {
+          "numSteps": 22,
+          "numPulses": 4,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 3,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 16,
+          "numPulses": 5,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 3,
+          "numRotations": 2,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "id": 3
+        }
+      ],
+      "tempo": {
+        "bpm": 170,
+        "tempoSpeedIndex": [
+          1,
+          2,
+          1,
+          1
+        ],
+        "tempoSpeedIndexForTone": [
+          "8n",
+          "16n",
+          "8n",
+          "8n"
+        ]
+      },
+      "id": 2
+    },
+    {
+      "unitList": [
+        {
+          "numSteps": 10,
+          "numPulses": 4,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "id": 0
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 1,
+          "numRotations": 4,
+          "name": "",
+          "euclideanArray": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "id": 1
+        },
+        {
+          "numSteps": 16,
+          "numPulses": 5,
+          "numRotations": 0,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "id": 2
+        },
+        {
+          "numSteps": 8,
+          "numPulses": 3,
+          "numRotations": 2,
+          "name": "",
+          "euclideanArray": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "id": 3
+        }
+      ],
+      "tempo": {
+        "bpm": 103,
+        "stepDurationModifierArray": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "stepDurationArray": [
+          "8n",
+          "8n",
+          "16n",
+          "16n"
+        ]
+      },
+      "id": 3
+    }
   ]
 }
