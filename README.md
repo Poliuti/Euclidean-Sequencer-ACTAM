@@ -5,7 +5,7 @@
 An **Euclidean sequencer** is a simultaneous combination of multiple rhythmic lines, called ***Euclidean rhythms***. They distribute a determined number of onsets as evenly as possible across a determined number of time interval subdivisions.. They are based and take the name from the *Euclidean algorithm*, that computes the greatest common divisor of two given integers. The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper:
 https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.1340&rep=rep1&type=pdf.
 
-Our application is an euclidean sequencer implemented using the Javascript library **React**. It provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
+Our application provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
 
 <br> 
 <p align="center" width="100%">
@@ -39,19 +39,6 @@ If you find a pattern you like, just press the save command to store the setting
 
 **Custom** is the default mode of usage and provide typical drum samples. Instead of that, it is also possible to experiment using different pattern presets taken from traditional music of some parts of the world (**Africa, Asia, Europe and Latin America**) and mix them together. In these options also samples recall local instruments of the country.
 
-
-## Sound management
-
-We choose to use [Tone js](https://tonejs.github.io/) to develop all the audio features of our application. Four independent Euclidean Lines are provided, each one corresponding to a different channel. Each of them is associated with a sampler that trigger all the events of the pattern, corresponding to the pulses of the sequence. The user has the control on the volume and the panning of each channel as well as on the pitch of the sample. Moreover mute/solo controls are available. 
-The channels then flow into the master channel, on which a low pass filter (whose cutoff frequency can be adjusted by the user) acts in series with a reverb, whose dry/wet ratio and decay time can be modified.
-
-
-The diagram below describes the audio chain:
-
-<br> 
-<p align="center" width="100%">
-    <img width="85%" src="https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG">
-</p>
 
 
 ## GUI and Commands Overview
@@ -163,6 +150,54 @@ Finally the most important buttons are placed between the *'Tempo Controls'* and
 <p align="center" width="100%">
     <img width="35%" src="https://user-images.githubusercontent.com/58031495/135874722-62190b23-07f3-4e0b-b04a-da500dc283f5.jpg">
 </p>
+
+
+## Code Details
+
+We used **React** as framework to develop our application, while for the audio synthesis and routing part as well as for the clock and time handling, we used the Javascript audio library [Tone js](https://tonejs.github.io/).
+Our App allows to explore different geographic areas, that we will call Environments.
+For each one of these, we dynamically create an Euclidean Sequencer, starting from data contained or generated inside the Context called *EnvironmentContext*.
+The main subscriber of the EnvironmentContext is the EuclideanSequencer react component, that then will use the data to render and make our application work.
+We want the context to run whenever some sensible data is changed, so we stored here some very important state variables.
+
+### Main State Variables
+
+The main object that contains all the information related to the pattern defined by the user is called **EuclideanUnit**, while the object that stores all the useful info about the different environments is the **defaultUnits**. 
+For every environment we have an array of traditional Euclidean Patterns of that region, that we can then choose from the dropdown menus,  and an array of the  default 4 Euclidean Units that will be used when we first access the specific environment.
+
+The two most important state variables are **unitList** and **tempo**.
+unitList is a list of 4 Euclidean Unit that is needed to generate the 4 sequences and to render many components of the application. Every time we change environment unitList is set to the default 4 units of the specific environment.
+Since the 2 state variables are very important to the sequencing part, we run the function that creates the sequences, called creaSequenceList, in the context script.
+Every time through DOM interaction we change either tempo or unitList, the context re-run and creaSequenceList is called.
+creaSequenceList return a list of 4 Tone.Sequence objects.
+
+Tone.Sequence constructor requires:
+*	the array of the events, called *Euclidean Array*, contained in unitList
+*	the sequence subdivision (or step duration): *stepDurationArray[ n ]*,  contained in tempo
+*	A callback function that runs every sequence subdivision: in this function we say that if the current event is 1, we trigger a sampler associated with that Euclidean Sequence, otherwise if it’s a zero we don’t.
+
+
+
+### Sound management
+
+As said before, we choose to use *Tone.js* to develop all the audio features of our application. Four independent Euclidean Lines are provided, each one corresponding to a different channel. Each of them is associated with a sampler that trigger all the events of the pattern, corresponding to the pulses of the sequence. The user has the control on the volume and the panning of each channel as well as on the pitch of the sample. Moreover mute/solo controls are available. 
+The channels then flow into the master channel, on which a low pass filter (whose cutoff frequency can be adjusted by the user) acts in series with a reverb, whose dry/wet ratio and decay time can be modified.
+the management of the Clock, event handling and transport commands, is realized through Tone.Transport.
+
+
+The diagram below describes the audio chain:
+
+<br> 
+<p align="center" width="100%">
+    <img width="85%" src="https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG">
+</p>
+
+### Save & Load function
+
+The Save & Load function is implemented using json-server, a node module that allows to create a rest API.
+When we save, we POST request on a db.json file the JSONification of unitList and tempo state variables.
+When we want to load, we GET request from the db.json file the JSON object literal representing the saved preset, we convert it into a Javascript object, and we set the state variables to their corresponding values.
+
 
 ## How to use it
 
