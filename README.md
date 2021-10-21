@@ -167,9 +167,9 @@ For every environment we have an array of traditional Euclidean Patterns of that
 
 The two most important state variables are **unitList** and **tempo**.
 unitList is a list of 4 Euclidean Unit that is needed to generate the 4 sequences and to render many components of the application. Every time we change environment unitList is set to the default 4 units of the specific environment.
-Since the 2 state variables are very important to the sequencing part, we run the function that creates the sequences, called creaSequenceList, in the context script.
-Every time through DOM interaction we change either tempo or unitList, the context re-run and creaSequenceList is called.
-creaSequenceList return a list of 4 Tone.Sequence objects.
+Since the 2 state variables are very important to the sequencing part, we run the function that creates the sequences, called **creaSequenceList**, in the context script.
+Every time through DOM interaction we change either tempo or unitList, the context re-runs and creaSequenceList is called.
+creaSequenceList return a list of 4 *Tone.Sequence objects*.
 
 Tone.Sequence constructor requires:
 *	the array of the events, called *Euclidean Array*, contained in unitList
