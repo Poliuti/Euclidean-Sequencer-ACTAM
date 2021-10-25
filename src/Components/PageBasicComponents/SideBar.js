@@ -1,22 +1,23 @@
 import { Link } from "react-router-dom";
 
-const SideBar = () => {
+const SideBar = ({basePath}) => {
+  
   return (
     <nav className="SideBar">
       <div className="home-links">
-        <Link to="/" id="Custom">
+        <Link to={`${basePath}`} id="Custom">
           Custom
         </Link>
-        <Link to="/africa" id="Africa">
+        <Link to={`${basePath}/africa`} id="Africa">
           Africa
         </Link>
-        <Link to="/latinamerica" id="Latin-America">
+        <Link to={`${basePath}/latinamerica`} id="Latin-America">
           Latin America
         </Link>
-        <Link to="/europe" id="Europe">
+        <Link to={`${basePath}/europe`} id="Europe">
           Europe
         </Link>
-        <Link to="/asia" id="Asia">
+        <Link to={`${basePath}/asia`} id="Asia">
           Asia
         </Link>
         

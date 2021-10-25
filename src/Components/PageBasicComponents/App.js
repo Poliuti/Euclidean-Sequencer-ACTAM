@@ -8,20 +8,25 @@ import Environments from "../../Environments/Environments";
 
 
 
-function App() {
 
+function App() {
+  const basePath = "/euclidean-sequencer";
+  
+  
   
 
   
 
   return (
+  
+    
     <Router>
       <div className="App">
         <NavBar />
         <div className="content">
           <Switch>
-            <Route path="/">
-              <Environments />
+            <Route path="/euclidean-sequencer">
+              <Environments urlPath={basePath} />
             </Route>
 
             <Route path="*">
@@ -33,6 +38,7 @@ function App() {
         
       </div>
     </Router>
+   
   );
 }
 
