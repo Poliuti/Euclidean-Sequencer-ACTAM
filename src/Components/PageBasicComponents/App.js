@@ -5,7 +5,7 @@ import NotFound from "./NotFound";
 import Environments from "../../Environments/Environments";
 
 function App() {
-  const basePath = "/";
+  
 
   return (
     <Router>
@@ -14,7 +14,7 @@ function App() {
         <div className="content">
           <Switch>
             <Route path="/">
-              <Environments urlPath={basePath} />
+              <Environments  />
             </Route>
 
             <Route path="*">
