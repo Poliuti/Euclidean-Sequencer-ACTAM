@@ -2,7 +2,7 @@
 
 ## Overview
 
-An **Euclidean sequencer** is a simultaneous combination of multiple rhythmic lines, called ***Euclidean rhythms***. They distribute a determined number of onsets as evenly as possible across a determined number of time interval subdivisions.. They are based and take the name from the *Euclidean algorithm*, that computes the greatest common divisor of two given integers. The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper:
+An **Euclidean sequencer** is a simultaneous combination of multiple rhythmic lines, called ***Euclidean rhythms***. They distribute a determined number of onsets as evenly as possible across a determined number of time interval subdivisions. They are based and take the name from the *Euclidean algorithm*, that computes the greatest common divisor of two given integers. The idea is very simple: repeatedly replace the larger of the two numbers by their difference until both are equal. This final number is then the greatest common divisor. That algorithm, given number *n* of time intervals, and another given number *k* < *n* of pulses, distributes the pulses as evenly as possible among these n intervals. Several traditional musical rhythms from all over the world are based on Euclidean rhythms. If you are looking for more information about it, you can check this paper:
 https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.1340&rep=rep1&type=pdf.
 
 Our application provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
@@ -10,7 +10,7 @@ Our application provides the user with the ability to create polymeters and poly
 You can try the application at [this page](https://brugio96.github.io/euclidean-sequencer).
 `
 
-[Here](https://youtu.be/cF6LMqtsbRo) a video tutorial to see how the Euclidean Sequencer works.
+[Here](https://youtu.be/cF6LMqtsbRo) is a video tutorial to see how the Euclidean Sequencer works.
 
 <br> 
 <p align="center" width="100%">
@@ -22,7 +22,7 @@ You can try the application at [this page](https://brugio96.github.io/euclidean-
 For each channel we define **Euclidean Line** the set of commands for creating the sequence and managing the sound. 
 The patterns, called **Euclidean Patterns**, can be described using the representation of the Euclidean algorithm given by Bjorklund. He represents this problem as a binary
 sequence of k one’s and n - k zero’s, where each integer represents a time interval, and the one’s represent
-the pulses. The problem then reduces to the following: construct a binary sequence of n bits with
+the pulses. The problem then reduces to the following: construct a binary sequence of n bits with 
 k one’s, such that the k one’s are distributed as evenly as possible among the zero’s. For each Euclidean Line an Euclidean Pattern is provided, in which a 1 trigger a sample, while a 0 corresponds to a silence time.
 
 <br> 
@@ -210,7 +210,7 @@ Then, you have to run:
 
 command in your shell, in order to install all the packages needed for a correct Euclidean Sequencer functioning.
 
-Now you are ready to use the application, runnig from the terminal:
+Now you are ready to use the application, running from the terminal:
 
 ### `npm run start`
 
