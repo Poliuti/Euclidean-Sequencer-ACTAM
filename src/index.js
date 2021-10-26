@@ -4,10 +4,8 @@ import "./Styles/index.css";
 import reportWebVitals from "./reportWebVitals";
 import App from "./Components/PageBasicComponents/App";
 
-
 ReactDOM.render(
   <React.StrictMode>
-  
     <App />
   </React.StrictMode>,
   document.getElementById("root")

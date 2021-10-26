@@ -1,5 +1,7 @@
-
-import {Channel, Sampler } from "tone";
+import {
+    Channel,
+    Sampler
+} from "tone";
 import myReverb from "./../Default/myReverb";
 import myLPFilter from "./../Default/myLPFilter";
 
@@ -11,10 +13,6 @@ export const generateAudioChain = (url, pan, volume) => {
             A1: `${url}`
         },
 
-        onload: () => {
-            console.log("LOADED");
-        }
-
     });
 
     let channel = new Channel({
@@ -24,7 +22,7 @@ export const generateAudioChain = (url, pan, volume) => {
         solo: false
     });
 
-  
+
 
 
     sampler = sampler.chain(channel, myLPFilter, myReverb) //audio chain

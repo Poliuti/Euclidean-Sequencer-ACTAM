@@ -1,9 +1,11 @@
-
-
-const SaveButton = ({ currentUnitList, userPresets, setUserPresets, tempo }) => {
+const SaveButton = ({
+  currentUnitList,
+  userPresets,
+  setUserPresets,
+  tempo,
+}) => {
   const saveUnitList = async () => {
     const request = { unitList: currentUnitList, tempo: tempo };
-    
 
     if (!userPresets) {
       setUserPresets(request);

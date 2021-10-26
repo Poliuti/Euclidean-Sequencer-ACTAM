@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect } from "react";
 import { context, Transport } from "tone";
 import { activeColor, macroColor } from "./../../Default/colori";
 import { EnvironmentContext } from "./../../Contexts/EnvironmentContext";
@@ -7,16 +7,22 @@ import MacroControls from "./MacroControls/MacroControls";
 import EuclideanLineControlsList from "./EuclideanLineControls/EuclideanLineControlsList";
 import PlayButton from "./TransportControls/PlayButton";
 import StopButton from "./TransportControls/StopButton";
-import SaveButton from "./../SequencerElements/SaveButton"
+import SaveButton from "./../SequencerElements/SaveButton";
 import LoadDropDown from "./LoadDropDown";
 import defaultUnits from "../../Default/defaultUnits";
 
-let customDefaultUnits =  Object.keys(defaultUnits).map((environment) => //retrieving all the traditional patterns from all around the world for custom environment
-defaultUnits[environment].traditional
-).flat().sort((a, b) => {return a.numSteps - b.numSteps});
+let customDefaultUnits = Object.keys(defaultUnits)
+  .map(
+    (
+      environment //retrieving all the traditional patterns from all around the world for custom environment
+    ) => defaultUnits[environment].traditional
+  )
+  .flat()
+  .sort((a, b) => {
+    return a.numSteps - b.numSteps;
+  });
 
-
-const EuclideanSequencer = ({userPresets, setUserPresets}) => {
+const EuclideanSequencer = ({ userPresets, setUserPresets }) => {
   const {
     unitList,
     setUnitList,
@@ -29,47 +35,31 @@ const EuclideanSequencer = ({userPresets, setUserPresets}) => {
     setDummy,
     euclideanPatternsList,
     currentTransportState,
-    name
+    name,
   } = useContext(EnvironmentContext);
 
-  
-  
-
-
-
-
-
-  useEffect(() => { 
+  useEffect(() => {
     Transport.stop();
-    
-    const getAllUserPresets =  () => {
-      const allUserPresets = userPresets;
-      if (allUserPresets) setUserPresets(allUserPresets)
-      return allUserPresets;
-    }
-    getAllUserPresets();
 
+    const getAllUserPresets = () => {
+      const allUserPresets = userPresets;
+      if (allUserPresets) setUserPresets(allUserPresets);
+      return allUserPresets;
+    };
+    getAllUserPresets();
   }, []);
 
-  
-
-
-
-  useEffect(() => { 
+  useEffect(() => {
     Transport.bpm.value = tempo.bpm;
   }, [tempo]);
 
-  
-  useEffect(() => { //what to do after every sequences update
+  useEffect(() => {
+    //what to do after every sequences update
     if (context.state === "running") {
-    
-
       if (currentTransportState) {
-    
         sequencesList.forEach((seq) => {
           seq.start("+0.1");
         });
-        
       }
 
       return () => {
@@ -77,23 +67,17 @@ const EuclideanSequencer = ({userPresets, setUserPresets}) => {
           seq.stop();
           seq.dispose();
         });
-
       };
     }
   }, [sequencesList]);
 
-
-
-
   let envDefaultUnits;
 
-  if (name === "custom"){envDefaultUnits = customDefaultUnits }
-  else {envDefaultUnits = envDefault.traditional}
-
-
-
-  
-
+  if (name === "custom") {
+    envDefaultUnits = customDefaultUnits;
+  } else {
+    envDefaultUnits = envDefault.traditional;
+  }
 
   return (
     <div className="euclidean-sequencer">
@@ -101,21 +85,34 @@ const EuclideanSequencer = ({userPresets, setUserPresets}) => {
         <h2>Tempo Controls</h2>
         <TempoControls tempo={tempo} setTempo={setTempo} color={macroColor} />
         <div className="main-buttons-container">
-        <StopButton
-          sequencesList={sequencesList}
-          dummy={dummy}
-          setDummy={setDummy}
-        />
-        <PlayButton sequencesList={sequencesList} dummy={dummy}
-          setDummy={setDummy}/>
-        <SaveButton currentUnitList={unitList} userPresets={userPresets} setUserPresets={setUserPresets} tempo={tempo} setTempo = {setTempo}/>
+          <StopButton
+            sequencesList={sequencesList}
+            dummy={dummy}
+            setDummy={setDummy}
+          />
+          <PlayButton
+            sequencesList={sequencesList}
+            dummy={dummy}
+            setDummy={setDummy}
+          />
+          <SaveButton
+            currentUnitList={unitList}
+            userPresets={userPresets}
+            setUserPresets={setUserPresets}
+            tempo={tempo}
+            setTempo={setTempo}
+          />
         </div>
         <h2 id="macroControls">Macro Controls</h2>
         <MacroControls color={macroColor} />
       </div>
 
-      <LoadDropDown className="LoadDropDown" userPresets={userPresets} setUnitList={setUnitList} setTempo = {setTempo}/> 
-
+      <LoadDropDown
+        className="LoadDropDown"
+        userPresets={userPresets}
+        setUnitList={setUnitList}
+        setTempo={setTempo}
+      />
 
       <EuclideanLineControlsList
         unitList={unitList}

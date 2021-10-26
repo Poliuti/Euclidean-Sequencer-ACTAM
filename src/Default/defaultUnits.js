@@ -3,10 +3,9 @@ import EuclideanUnit from "../EuclideanUnit";
 //Default Info for every environment
 
 let defaultUnits = {
-    custom: { 
-        traditional: [
-        ],
-        init:[ 
+    custom: {
+        traditional: [],
+        init: [
             new EuclideanUnit(8, 3, 0, ''),
             new EuclideanUnit(8, 1, 4, ''),
             new EuclideanUnit(5, 2, 2, ''),
@@ -46,9 +45,9 @@ let defaultUnits = {
             new EuclideanUnit(5, 2, 4, ''),
             new EuclideanUnit(14, 6, 7, '')
         ],
-     } ,
-     europe: {
-        traditional:[
+    },
+    europe: {
+        traditional: [
             new EuclideanUnit(5, 2, 0, 'Greek Rhythm 1'),
             new EuclideanUnit(5, 4, 0, 'Greek Mirena Rhythm'),
             new EuclideanUnit(5, 4, 2, 'Greek Tik Rhythm'),
@@ -73,7 +72,7 @@ let defaultUnits = {
             new EuclideanUnit(13, 5, 5, 'Macedonian Rhythm 2'),
             new EuclideanUnit(13, 6, 0, 'Macedonian Mama Cone Pita Dance'),
             new EuclideanUnit(13, 6, 9, 'Macedonian Postupano Oro Dance'),
-            
+
             new EuclideanUnit(15, 7, 11, 'Bulgarian Rhythm 1'),
             new EuclideanUnit(16, 7, 13, 'Yugoslavian Rhythm 1'),
             new EuclideanUnit(17, 7, 14, 'Macedonian Rhythm 3'),
@@ -85,7 +84,7 @@ let defaultUnits = {
             new EuclideanUnit(22, 9, 19, 'Bulgarian Rhythm 7'),
             new EuclideanUnit(23, 9, 0, 'Bulgarian Rhythm 8'),
             new EuclideanUnit(24, 11, 21, 'Bulgarian Rhythm 9')
-            
+
         ],
         init: [ // Lista iniziale dei parametri euclidiani MODE 1
             new EuclideanUnit(7, 3, 0, ''),
@@ -95,9 +94,9 @@ let defaultUnits = {
         ],
 
 
-     },
+    },
     africa: {
-        traditional:[
+        traditional: [
             new EuclideanUnit(3, 2, 2, 'Hand-clapping Bantu Pattern'),
             new EuclideanUnit(3, 2, 1, 'Complementary African Rhythm'),
             new EuclideanUnit(4, 3, 2, 'Chingo Mandinka'),
@@ -127,7 +126,7 @@ let defaultUnits = {
             new EuclideanUnit(24, 13, 0, 'Central African Aka Pygmies Rhythm 4'),
             new EuclideanUnit(24, 13, 4, 'Central African Aka Pygmies Rhythm 5')
         ],
-        init:[ // Lista iniziale dei parametri euclidiani MODE 1
+        init: [ // Lista iniziale dei parametri euclidiani MODE 1
             new EuclideanUnit(17, 5, 0, ''),
             new EuclideanUnit(8, 1, 4, ''),
             new EuclideanUnit(24, 9, 0, ''),
@@ -137,7 +136,7 @@ let defaultUnits = {
 
     },
     latinAmerica: {
-        traditional:[
+        traditional: [
             new EuclideanUnit(3, 2, 0, 'Mexican Corn Dance'),
             new EuclideanUnit(4, 3, 0, 'Brazilian Baiaò Rhythm'),
             new EuclideanUnit(4, 3, 1, 'Flamenco Rhythm'),
@@ -158,7 +157,7 @@ let defaultUnits = {
             new EuclideanUnit(16, 7, 10, 'Brazilian Partido Alto Rhythm'),
             new EuclideanUnit(16, 9, 0, 'Cuban Rumba Palitos Rhythm')
         ],
-        init:[ // Lista iniziale dei parametri euclidiani MODE 1
+        init: [ // Lista iniziale dei parametri euclidiani MODE 1
             new EuclideanUnit(10, 4, 0, ''),
             new EuclideanUnit(8, 1, 4, ''),
             new EuclideanUnit(16, 5, 0, ''),
@@ -169,8 +168,8 @@ let defaultUnits = {
     },
 }
 
- //setting EuclideanUnit.id
-Object.keys(defaultUnits).forEach((environment) => { 
+//setting EuclideanUnit.id
+Object.keys(defaultUnits).forEach((environment) => {
     Object.keys(defaultUnits[environment]).forEach((modality) => {
         defaultUnits[environment][modality] = defaultUnits[environment][modality].map((unit, ind) => {
             unit.setId(ind);

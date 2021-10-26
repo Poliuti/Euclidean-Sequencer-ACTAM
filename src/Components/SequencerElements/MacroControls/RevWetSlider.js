@@ -3,9 +3,9 @@ import { useState } from "react";
 const RevWetSlider = ({ reverb, color }) => {
   const [wet, setWet] = useState(reverb.wet.value);
 
-  
-    return ( <div className="slider-base rev-wet-slider">
-        <input
+  return (
+    <div className="slider-base rev-wet-slider">
+      <input
         type="range"
         min="0"
         step="0.01"
@@ -17,7 +17,7 @@ const RevWetSlider = ({ reverb, color }) => {
           setWet(Math.round(reverb.wet.value * 100) / 100);
         }}
         id="wet"
-        style={{"--c": `${color}`}}
+        style={{ "--c": `${color}` }}
       />
       <label htmlFor="wet">Rev Wet: {wet} %</label>
     </div>

@@ -15,15 +15,10 @@ const EuclideanLinesControls = ({
   euclideanPatternsList,
   envDefaultUnits,
 }) => {
-  
-
-
-
-  const [patternNames, setPatternNames] = useState( //adding numSteps, numPulses, numRotations to the pattern name
+  const [patternNames, setPatternNames] = useState(
+    //adding numSteps, numPulses, numRotations to the pattern name
     initPatternNames(envDefaultUnits)
   );
-
-  
 
   return (
     <div className="euclideanline-control-list">
@@ -31,11 +26,10 @@ const EuclideanLinesControls = ({
         const color = colors[id];
 
         return (
-          <div key={id} className="elemento-base" >
-          
+          <div key={id} className="elemento-base">
             <Circle
               unitIndex={id}
-              euclideanPattern ={euclideanPatternsList[id]}
+              euclideanPattern={euclideanPatternsList[id]}
             />
 
             <PatternControls
@@ -45,7 +39,6 @@ const EuclideanLinesControls = ({
               unit={unit}
               setUnitList={setUnitList}
               unitList={unitList}
-              
               color={color}
             />
 

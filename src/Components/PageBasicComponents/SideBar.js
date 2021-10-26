@@ -20,7 +20,6 @@ const SideBar = ({basePath}) => {
         <Link to={`${basePath}/asia`} id="Asia">
           Asia
         </Link>
-        
       </div>
     </nav>
   );

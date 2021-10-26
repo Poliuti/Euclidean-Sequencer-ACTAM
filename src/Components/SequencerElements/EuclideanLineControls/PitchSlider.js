@@ -4,7 +4,6 @@ import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import { activeColor } from "../../../Default/colori";
 
 const allNotesArray = [
-  
   "A-1",
   "A#-1",
   "B-1",
@@ -53,7 +52,7 @@ const allNotesArray = [
   "F#3",
   "G3",
   "G#3",
-  "A3"
+  "A3",
 ];
 
 const PitchSlider = ({ id }) => {
@@ -66,10 +65,7 @@ const PitchSlider = ({ id }) => {
     setDummy,
   } = useContext(EnvironmentContext);
 
-  
-
   const handlePointerDown = () => {
-    
     if (Transport.state === "started") {
       setCurrentTransportState(1);
     } else {

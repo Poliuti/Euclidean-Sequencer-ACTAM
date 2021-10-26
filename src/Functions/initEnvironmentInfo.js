@@ -10,7 +10,11 @@ const initEnvironmentInfo = (numInstr, bpm) => {
     for (let i = 0; i < numInstr; i++) {
         noteArray.push("A1");
     }
-    return {tempoInfo, initPosArray, noteArray}
+    return {
+        tempoInfo,
+        initPosArray,
+        noteArray
+    }
 }
 
 export default initEnvironmentInfo

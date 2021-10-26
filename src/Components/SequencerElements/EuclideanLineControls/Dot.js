@@ -9,8 +9,6 @@ const Dot = ({ isActive, cellIdx, radius, angle, unitIndex }) => {
 
   const dotId = `${unitIndex}${cellIdx}`;
 
- 
-
   const active = {
     position: "absolute",
     height: "17px",
@@ -23,14 +21,7 @@ const Dot = ({ isActive, cellIdx, radius, angle, unitIndex }) => {
     transform: `rotate(${angle}deg) translate(${radius}px)`,
   };
 
-  return (
-    <div
-      style={active}
-      className={dotClassName}
-      id={dotId}
-      
-    ></div>
-  );
+  return <div style={active} className={dotClassName} id={dotId}></div>;
 };
 
 export default Dot;

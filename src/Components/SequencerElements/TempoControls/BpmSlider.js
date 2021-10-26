@@ -1,8 +1,7 @@
 import { useContext } from "react";
-import { context, Transport } from "tone";
+import { Transport } from "tone";
 import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 const BpmSlider = ({ tempo, setTempo, color }) => {
-  
   const { currentTransportState, setCurrentTransportState, dummy, setDummy } =
     useContext(EnvironmentContext);
 
@@ -15,8 +14,6 @@ const BpmSlider = ({ tempo, setTempo, color }) => {
     Transport.stop();
   };
 
-  
-  
   return (
     <div className="slider-base bpm-slider">
       <label htmlFor="bpms">BPM: {tempo.bpm}</label>

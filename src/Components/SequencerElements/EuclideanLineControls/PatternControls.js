@@ -6,17 +6,13 @@ import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import EuclideanUnit from "../../../EuclideanUnit";
 import { useIsMount } from "../../../Functions/useIsMount";
 
-
-
 const PatternControls = ({ idx, unitList, setUnitList, color }) => {
-  
   const { currentTransportState, setCurrentTransportState, dummy, setDummy } =
     useContext(EnvironmentContext);
 
   const [numSteps, setNumSteps] = useState(unitList[idx].numSteps);
   const [numPulses, setNumPulses] = useState(unitList[idx].numPulses);
   const [numRotations, setNumRotations] = useState(unitList[idx].numRotations);
-
 
   const isMount = useIsMount();
 
@@ -45,7 +41,7 @@ const PatternControls = ({ idx, unitList, setUnitList, color }) => {
   }, [numSteps, numPulses, numRotations]);
 
   return (
-    <div className="pattern-controls" >
+    <div className="pattern-controls">
       <StepSlider
         value={numSteps}
         numPulses={numPulses}

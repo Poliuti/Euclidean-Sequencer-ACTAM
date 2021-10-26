@@ -9,25 +9,21 @@ const RotateSlider = ({
   currentTransportState,
   setCurrentTransportState,
   dummy,
-  setDummy
+  setDummy,
 }) => {
   const rotateSliderRef = useRef(null);
 
   const handleChange = (sliderValue) => {
     setNumRotations(sliderValue);
-    
   };
 
   const handlePointerDown = () => {
     if (Transport.state === "started") {
       setCurrentTransportState(1);
-      
     } else {
       setCurrentTransportState(0);
-      
     }
     Transport.stop();
-    
   };
 
   return (

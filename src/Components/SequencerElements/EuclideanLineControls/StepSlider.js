@@ -1,4 +1,4 @@
-import {useRef } from "react";
+import { useRef } from "react";
 import { Transport } from "tone";
 
 const StepSlider = ({
@@ -12,9 +12,8 @@ const StepSlider = ({
   currentTransportState,
   setCurrentTransportState,
   dummy,
-  setDummy
+  setDummy,
 }) => {
-  
   const stepSliderRef = useRef(null);
 
   const handleChange = (num) => {
@@ -25,21 +24,15 @@ const StepSlider = ({
     if (num <= numRotations) {
       setNumRotations(num - 1);
     }
-    
-    
   };
 
   const handlePointerDown = () => {
     if (Transport.state === "started") {
       setCurrentTransportState(1);
-      
     } else {
       setCurrentTransportState(0);
-      
     }
     Transport.stop();
-    
-  
   };
 
   return (

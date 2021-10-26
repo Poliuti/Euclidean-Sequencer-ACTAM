@@ -22,8 +22,7 @@ const samplesPool = [
 const numInstr = samplesPool.map((samplesList) => samplesList.length)
 
 
-let samplerList = [
-];
+let samplerList = [];
 
 let channelList = [];
 
@@ -36,7 +35,6 @@ for (let i = 0; i < samplesPool.length; i++) {
 }
 
 
-
 for (let j = 0; j < samplesPool.length; j++) { // for every sample of every environment we create the audio chain
   for (let i = 0; i < samplesPool[j].length; i++) {
     let {
@@ -46,15 +44,8 @@ for (let j = 0; j < samplesPool.length; j++) { // for every sample of every envi
 
     samplerList[j].push(sampler);
     channelList[j].push(channel);
-  
-
-
   }
 }
-
-
-
-
 
 
 export {

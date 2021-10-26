@@ -4,22 +4,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NotFound from "./NotFound";
 import Environments from "../../Environments/Environments";
 
-
-
-
-
-
 function App() {
   const basePath = "/euclidean-sequencer";
-  
-  
-  
-
-  
 
   return (
-  
-    
     <Router>
       <div className="App">
         <NavBar />
@@ -32,13 +20,10 @@ function App() {
             <Route path="*">
               <NotFound />
             </Route>
-
           </Switch>
         </div>
-        
       </div>
     </Router>
-   
   );
 }
 

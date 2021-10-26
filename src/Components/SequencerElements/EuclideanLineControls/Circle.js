@@ -1,7 +1,6 @@
 import Dot from "./Dot";
 
 const Circle = ({ unitIndex, euclideanPattern }) => {
-  
   const angle = 360 / euclideanPattern.length;
 
   const anglesArray = [];

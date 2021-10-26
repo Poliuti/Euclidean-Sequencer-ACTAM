@@ -5,7 +5,6 @@ import { EnvironmentContext } from "../../../Contexts/EnvironmentContext";
 import EuclideanUnit from "../../../EuclideanUnit";
 import { useIsMount } from "../../../Functions/useIsMount";
 
-
 const PatternDropDown = ({
   id,
   patternNames,
@@ -27,7 +26,7 @@ const PatternDropDown = ({
   } else {
     chosenPatternName = "Select a Euclidean Pattern";
   }
-  
+
   const handleChange = (patternName) => {
     if (Transport.state === "started") {
       setCurrentTransportState(1);

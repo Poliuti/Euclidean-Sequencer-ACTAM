@@ -2,9 +2,8 @@ import { useState } from "react";
 
 const SwingSlider = ({ transport, color }) => {
   const [swing, setSwing] = useState(0);
-  
+
   return (
-    
     <div className="slider-base swing-slider">
       <label htmlFor="swingSlider">Swing: {Math.round(swing * 100)} %</label>
       <input

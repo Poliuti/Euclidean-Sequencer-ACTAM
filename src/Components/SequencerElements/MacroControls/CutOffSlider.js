@@ -1,13 +1,12 @@
 import { useState } from "react";
 import myLPFilter from "../../../Default/myLPFilter";
 
-const CutOffSlider = ({color}) => {
+const CutOffSlider = ({ color }) => {
   const [cutoff, setCutoff] = useState(parseInt(myLPFilter.frequency.value));
 
-    
-
-    return ( <div className="slider-base cutoff-slider">
-        <input
+  return (
+    <div className="slider-base cutoff-slider">
+      <input
         type="range"
         min="0"
         step="10"
@@ -19,7 +18,7 @@ const CutOffSlider = ({color}) => {
           setCutoff(myLPFilter.frequency.value);
         }}
         id="cutoff"
-        style={{"--c": `${color}`}}
+        style={{ "--c": `${color}` }}
       />
       <label htmlFor="cutoff">CutOff: {Math.round(cutoff)} Hz</label>
     </div>

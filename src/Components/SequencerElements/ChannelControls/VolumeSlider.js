@@ -4,7 +4,6 @@ const VolumeSlider = ({ channel, color }) => {
   const [volume, setVolume] = useState(
     parseInt(Math.round(channel.volume.value))
   );
-  
 
   return (
     <div className="slider-pattern volume-slider">
@@ -20,7 +19,7 @@ const VolumeSlider = ({ channel, color }) => {
           setVolume(e.target.valueAsNumber);
         }}
         id="volume"
-        style={{"--c": `${color}`}}
+        style={{ "--c": `${color}` }}
       />
       <label htmlFor="volume">Vol: {volume} dB</label>
     </div>

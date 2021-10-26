@@ -3,7 +3,7 @@ import { Transport } from "tone";
 
 const SwingSubdivisionSlider = ({ color }) => {
   const [swingSubd, setSwingSubd] = useState("8");
-  
+
   return (
     <div className="slider-base swing-subd-slider">
       <label htmlFor="swing-subd-slid">
@@ -17,7 +17,10 @@ const SwingSubdivisionSlider = ({ color }) => {
         step="1"
         id="swing-subd-slid"
         onChange={(e) => {
-          Transport.swingSubdivision = `${Math.pow(2, parseInt(e.target.valueAsNumber))}n`;
+          Transport.swingSubdivision = `${Math.pow(
+            2,
+            parseInt(e.target.valueAsNumber)
+          )}n`;
           setSwingSubd(Math.pow(2, parseInt(e.target.valueAsNumber)));
         }}
         style={{ "--c": `${color}` }}

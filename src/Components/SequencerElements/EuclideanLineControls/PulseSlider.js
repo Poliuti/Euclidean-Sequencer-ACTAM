@@ -9,10 +9,8 @@ const PulseSlider = ({
   currentTransportState,
   setCurrentTransportState,
   dummy,
-  setDummy
+  setDummy,
 }) => {
-  
-
   const pulseSliderRef = useRef(null);
 
   const handleChange = (sliderValue) => {
@@ -22,14 +20,10 @@ const PulseSlider = ({
   const handlePointerDown = () => {
     if (Transport.state === "started") {
       setCurrentTransportState(1);
-      
     } else {
       setCurrentTransportState(0);
-      
     }
     Transport.stop();
-
-    
   };
 
   return (
@@ -48,7 +42,6 @@ const PulseSlider = ({
           }
           let tempDummy = dummy + 1;
           setDummy(tempDummy);
-
         }}
         onKeyDown={() => Transport.stop()}
         onKeyUp={() => Transport.start()}
@@ -62,4 +55,3 @@ const PulseSlider = ({
 };
 
 export default PulseSlider;
-

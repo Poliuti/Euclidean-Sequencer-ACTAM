@@ -1,5 +1,9 @@
 import React, { createContext, useEffect, useState } from "react";
-import { samplerList, channelList, numInstr } from "./../Default/audioChainInitialization";
+import {
+  samplerList,
+  channelList,
+  numInstr,
+} from "./../Default/audioChainInitialization";
 import creaSequenceList from "./../Functions/CreaSequenceList";
 import defaultUnits from "../Default/defaultUnits";
 import { context, Transport } from "tone";
@@ -12,19 +16,15 @@ import colora from "../Functions/colora";
 // euclideanArrayList is the list of just the euclidean arrays
 // sequenceList is the list of all the Sequence Objects (Tone Objects) that have been created
 
-
-
 export const EnvironmentContext = createContext();
 
-const EnvironmentContextProvider = (props) => {  // this context provides common info within the environment
-
-
+const EnvironmentContextProvider = (props) => {
+  // this context provides common info within the environment
 
   const { tempoInfo, noteArray, initPosArray } = initEnvironmentInfo(
     numInstr[props.num],
     140
   ); //initializing Tempo Object, note array that the samplers will play, initial Tick Position for the sequences
-
 
   useEffect(() => {
     return () => {
@@ -33,38 +33,29 @@ const EnvironmentContextProvider = (props) => {  // this context provides common
         channel.solo = false;
         channel.mute = false;
       });
-      
     };
   }, []);
 
-  const [unitList, setUnitList] = useState(defaultUnits[props.name].init);       // Saving EuclideanUnit List in a state (initially unitList comes from a default list of units, one for each Environment)
-  
-  const [tempo, setTempo] = useState(tempoInfo);                                    // memorizing tempo object in a state
-  
-  
-  const [currentTransportState, setCurrentTransportState] = useState(0);            //needed for starting the sequence in the right way when modifying some sliders
-  const [chosenNotes, setChosenNotes] = useState(noteArray);                        //saving the note Array that will be read from the samplers
+  const [unitList, setUnitList] = useState(defaultUnits[props.name].init); // Saving EuclideanUnit List in a state (initially unitList comes from a default list of units, one for each Environment)
+
+  const [tempo, setTempo] = useState(tempoInfo); // memorizing tempo object in a state
+
+  const [currentTransportState, setCurrentTransportState] = useState(0); //needed for starting the sequence in the right way when modifying some sliders
+  const [chosenNotes, setChosenNotes] = useState(noteArray); //saving the note Array that will be read from the samplers
 
   useEffect(() => {
     //runs every time we change environment
-   
+
     initializeToneSwing();
 
-
-    
-   
     if (context.state !== "suspended") {
-     
       Transport.stop();
-      
 
       if (unitList) {
         setUnitList(defaultUnits[props.name].init);
       }
 
       setTempo(tempoInfo);
-   
-
     }
   }, [props.name]);
 
@@ -72,27 +63,21 @@ const EnvironmentContextProvider = (props) => {  // this context provides common
     let setIntervalID = setInterval(() => {
       euclideanPatternsList.forEach((pattern, ind) => {
         colora(pattern, ind);
-      })
+      });
     }, 200);
-    
-  
-    return () => clearInterval(setIntervalID);
-  }, [unitList])
 
-  
+    return () => clearInterval(setIntervalID);
+  }, [unitList]);
 
   const [dummy, setDummy] = useState(0); //dummy variable to trigger re-render in certain cases
-
-
 
   let euclideanPatternsList = unitList.map(
     // creating a List of just euclidean patterns from unitList
     (unit) => unit.euclideanArray
   );
 
-
-
-   let sequencesList = creaSequenceList( //creating a list of Tone.Sequence from each Euclidean Pattern
+  let sequencesList = creaSequenceList(
+    //creating a list of Tone.Sequence from each Euclidean Pattern
     euclideanPatternsList,
     chosenNotes,
     tempo.stepDurationArray,
@@ -100,11 +85,6 @@ const EnvironmentContextProvider = (props) => {  // this context provides common
     initPosArray,
     channelList[props.num]
   );
-
-    
-
-
-  
 
   return (
     <EnvironmentContext.Provider
@@ -124,8 +104,7 @@ const EnvironmentContextProvider = (props) => {  // this context provides common
         setCurrentTransportState,
         chosenNotes,
         setChosenNotes,
-        name : props.name
-        
+        name: props.name,
       }}
     >
       {props.children}

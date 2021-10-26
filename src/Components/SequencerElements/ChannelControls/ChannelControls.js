@@ -7,13 +7,13 @@ import VolumeSlider from "./VolumeSlider";
 const ChannelControls = ({ channel, color, index }) => {
   return (
     <div className="channel-controls">
-      <PanSlider channel={channel} color = {color}/>
-      <VolumeSlider channel={channel} color = {color}/>
-      <PitchSlider id = {index} />
+      <PanSlider channel={channel} color={color} />
+      <VolumeSlider channel={channel} color={color} />
+      <PitchSlider id={index} />
       <div className="mute_solo">
         <MuteButton channel={channel} />
         <SoloButton channel={channel} />
-        </div>
+      </div>
     </div>
   );
 };

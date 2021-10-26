@@ -1,13 +1,13 @@
 const initPatternNames = (envDefaultPatterns) => {
-    const patternNames = envDefaultPatterns.map((pattern) => {
-      let patternName =
-        pattern.name +
-        "    " +
-        `(${pattern.numSteps}, ${pattern.numPulses}, ${pattern.numRotations})`;
-      return patternName;
-    })
+  const patternNames = envDefaultPatterns.map((pattern) => {
+    let patternName =
+      pattern.name +
+      "    " +
+      `(${pattern.numSteps}, ${pattern.numPulses}, ${pattern.numRotations})`;
+    return patternName;
+  })
 
-    return patternNames
+  return patternNames
 }
 
 
