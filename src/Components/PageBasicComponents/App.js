@@ -5,7 +5,7 @@ import NotFound from "./NotFound";
 import Environments from "../../Environments/Environments";
 
 function App() {
-  const basePath = "/euclidean-sequencer";
+  const basePath = "/";
 
   return (
     <Router>
@@ -13,7 +13,7 @@ function App() {
         <NavBar />
         <div className="content">
           <Switch>
-            <Route path="/euclidean-sequencer">
+            <Route path="/">
               <Environments urlPath={basePath} />
             </Route>
 

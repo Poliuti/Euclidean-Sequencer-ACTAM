@@ -6,21 +6,21 @@ import Environment from "./Environment";
 const envNamesPath = ["custom", "africa", "latinAmerica", "europe", "asia"];
 const envNames = ["Custom", "Africa", "Latin America", "Europe", "Asia"];
 
-const Environments = ({ urlPath }) => {
+const Environments = () => {
   const [userPresets, setUserPresets] = useState([]);
 
   return (
     <Router>
       <div className="environments">
-        <SideBar basePath={urlPath} />
+        <SideBar  />
 
         <Switch>
           {envNamesPath.map((environment, index) => {
             let address;
             if (environment === "custom") {
-              address = urlPath;
+              address = "/";
             } else {
-              address = `${urlPath}/${environment}`;
+              address = `/${environment}`;
             }
 
             return (
