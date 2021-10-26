@@ -7,6 +7,11 @@ https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.1340&rep=rep1&type=
 
 Our application provides the user with the ability to create polymeters and polyrhythms in a very intuitive and effective way. In fact, the user has at his disposal four circle lines, with which he can easily build his own patterns, modifying the number of intervals and pulses and their arrangement. To increase the expressive power and playability, he can also add some effects to the sequencer sounds, or act on the various channels to change the panning or individual volumes. Finally we provide several presets to discover and experience musicality from different parts of the world.
 
+You can try the application at [this page](https://brugio96.github.io/euclidean-sequencer).
+`
+
+[Here](https://youtu.be/cF6LMqtsbRo) a video tutorial to see how the Euclidean Sequencer works.
+
 <br> 
 <p align="center" width="100%">
     <img width="75%" src="https://user-images.githubusercontent.com/58031495/137636128-9e4ccf7c-588f-4e52-ba1f-bedd5f6a9eb1.jpg">
@@ -195,12 +200,7 @@ The diagram below describes the audio chain:
 
 ## How to use it
 
-You can try the Euclidean Sequencer at [this page](https://brugio96.github.io/euclidean-sequencer).
-`
-
-[Here](https://youtu.be/cF6LMqtsbRo) a video tutorial to see how the Euclidean Sequencer works.
-
-<br />If you want to test the application locally instead, just follow the next instructions.
+If you want to test the application locally, just follow the next instructions.
 
 First of all, clone the repo and make sure to have [Node.js](https://github.com/nodejs) installed on your pc.
 
