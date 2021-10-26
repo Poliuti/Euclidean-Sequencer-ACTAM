@@ -144,7 +144,7 @@ They are made up of 4 sliders that control:
 ### Reproduction Buttons
 
 Finally the most important buttons are placed between the *'Tempo Controls'* and the *'Macro Controls'* and they are the 'Play', 'Pause' and 'Save' buttons.
-'Play' and 'Pause' function is self explanatory and they controls the reproduction, while the 'Save' button allows the user to save the currently used patterns for later reproductions. The saved pattern is shown on a dropdown menu below the reproduction buttons alongside with all the other previously saved patterns.
+'Play' and 'Pause' function is self explanatory and they controls the reproduction, while the 'Save' button allows the user to save the currently used patterns for later reproductions (together with BPM and Pattern Subdivision informations). The saved pattern is shown on a dropdown menu below the reproduction buttons alongside with all the other previously saved patterns.
 
 <br>
 <p align="center" width="100%">
@@ -192,14 +192,15 @@ The diagram below describes the audio chain:
     <img width="85%" src="https://user-images.githubusercontent.com/58279476/134890257-ceb31fec-a9ef-4275-b9a2-50eed7b94f90.PNG">
 </p>
 
-### Save & Load function
-
-The Save & Load function is implemented using json-server, a node module that allows to create a rest API.
-When we save, we POST request on a db.json file the JSONification of unitList and tempo state variables.
-When we want to load, we GET request from the db.json file the JSON object literal representing the saved preset, we convert it into a Javascript object, and we set the state variables to their corresponding values.
-
 
 ## How to use it
+
+You can try the Euclidean Sequencer at [this page](https://brugio96.github.io/euclidean-sequencer).
+`
+
+[Here](https://youtu.be/cF6LMqtsbRo) a video tutorial to see how the Euclidean Sequencer works.
+
+<br />If you want to test the application locally instead, just follow the next instructions.
 
 First of all, clone the repo and make sure to have [Node.js](https://github.com/nodejs) installed on your pc.
 
@@ -213,20 +214,10 @@ Now you are ready to use the application, runnig from the terminal:
 
 ### `npm run start`
 
-To activate the pattern saving function, go to the server-api folder:
-
-### `cd src\server-api`
-
-Once inside, just run this command again:
-
-### `npm run start`
-
 ## Conclusions
 
-This Euclidean Sequencer does not pretend to be a DAW or a program for making professional music productions, but rather an application to have fun and get inspiration for possible projects. Some future developments in this sense could be the addition of effects available to the user. It could also be interesting to add other sounds and rhythmic patterns typical of countries around the world.
+This Euclidean Sequencer does not pretend to be a DAW or a program for making professional music productions, but rather an application to have fun and get inspiration for possible projects. Some future developments in this sense could be the addition of effects available to the user. It could also be interesting to add other sounds and rhythmic patterns typical of countries around the world, in order to expand the catalog of available presets.
 
-Here a video tutorial to see how the Euclidean Sequencer works:
-https://youtu.be/cF6LMqtsbRo.
 
 ## Notes
 
